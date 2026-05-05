@@ -1,0 +1,12 @@
+# Visual Studio temporary files
+.vs/
+[Bb]in/
+[Oo]bj/
+*.user
+*.suo
+*.cache
+*.pdb
+
+# SQL Server files
+*.mdf
+*.ldf
