@@ -1,0 +1,9 @@
+C:\Users\PRO\source\repos\DVLD_DAL\bin\Debug\DVLD_DAL.dll
+C:\Users\PRO\source\repos\DVLD_DAL\bin\Debug\DVLD_DAL.pdb
+C:\Users\PRO\source\repos\DVLD_DAL\bin\Debug\System.Data.SqlClient.dll
+C:\Users\PRO\source\repos\DVLD_DAL\bin\Debug\System.Data.SqlClient.xml
+C:\Users\PRO\source\repos\DVLD_DAL\obj\Debug\DVLD_DAL.csproj.AssemblyReference.cache
+C:\Users\PRO\source\repos\DVLD_DAL\obj\Debug\DVLD_DAL.csproj.CoreCompileInputs.cache
+C:\Users\PRO\source\repos\DVLD_DAL\obj\Debug\DVLD_DAL.csproj.Up2Date
+C:\Users\PRO\source\repos\DVLD_DAL\obj\Debug\DVLD_DAL.dll
+C:\Users\PRO\source\repos\DVLD_DAL\obj\Debug\DVLD_DAL.pdb
