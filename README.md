@@ -10,7 +10,7 @@ A complete system for managing driving licenses, vehicle registrations, and all 
 ---
 
 ### 🛠️ Tech Stack
-- **Language:** C# (#CSharp) 💻
+- **Language:** C# (CSharp) 💻
 - **Framework:** .NET Framework
 - **UI Library:** SunnyUI
 - **Database:** Microsoft SQL Server
