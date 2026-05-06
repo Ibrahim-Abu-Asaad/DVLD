@@ -1,4 +1,4 @@
-# 🚗 DVLD - Driving & Vehicle Licensing Department System
+# 🚗 Driving & Vehicle Licensing Department System
 
 A comprehensive Driving and Vehicle Licensing System built using **C#** and a strictly decoupled **3-Tier Architecture**. This project automates licensing processes, vehicle management, and administrative tasks.
 
