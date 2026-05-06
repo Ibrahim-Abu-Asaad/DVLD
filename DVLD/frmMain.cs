@@ -1,3 +1,4 @@
+using DVLD.Users;
 using Sunny.UI;
 
 namespace DVLD
@@ -13,6 +14,14 @@ namespace DVLD
         {
 
             frmManagePeople frm = new frmManagePeople();
+            frm.ShowDialog();
+
+        }
+
+        private void usersToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            frmManageUsers frm = new frmManageUsers();
             frm.ShowDialog();
 
         }

@@ -15,7 +15,7 @@ namespace DVLD_BLL
         public int ID { get; set; }
         public string Username { get; set; }
         public string Password { get; set; }
-        public int IsActive { get; set; }
+        public bool IsActive { get; set; }
         public int PersonID { get; set; }
         public clsPerson PersonInfo;
 
@@ -37,11 +37,11 @@ namespace DVLD_BLL
             PersonInfo = new clsPerson();
             Username = "";
             Password = "";
-            IsActive = 0;
+            IsActive = false;
             
         }
 
-        public clsUser(int ID, int PersonID, string Username, string Password, int IsActive)
+        public clsUser(int ID, int PersonID, string Username, string Password, bool IsActive)
         {
             this.ID = ID;
             this.Username = Username;
@@ -51,7 +51,7 @@ namespace DVLD_BLL
             this.PersonInfo = clsPerson.Find(PersonID);
         }
 
-        private clsUser(int PersonID, string Username, string Password, int IsActive)
+        private clsUser(int PersonID, string Username, string Password, bool IsActive)
         {
             this.ID = -1;
             this.Username = Username;
@@ -68,7 +68,7 @@ namespace DVLD_BLL
             int PersonID = -1;
             string Username = "";
             string Password = "";
-            int IsActive = 0;
+            bool IsActive = false;
 
             bool IsUserFound = clsDataUser.GetUserInfoByID(ID, ref PersonID, ref Username, ref Password, ref IsActive);
 
@@ -84,7 +84,7 @@ namespace DVLD_BLL
             int ID = -1;
             string Username = "";
             string Password = "";
-            int IsActive = 0;
+            bool IsActive = false;
 
             bool IsUserFound = clsDataUser.GetUserInfoByPersonID(ref ID, PersonID, ref Username, ref Password, ref IsActive);
 
@@ -100,7 +100,7 @@ namespace DVLD_BLL
             int ID = -1;
             int PersonID = -1;
             string Password = "";
-            int IsActive = 0;
+            bool IsActive = false;
 
             bool IsUserFound = clsDataUser.GetUserInfoByUsername(ref ID, ref PersonID, Username, ref Password, ref IsActive);
 
@@ -162,8 +162,12 @@ namespace DVLD_BLL
         public static DataTable GetAllUsers()
             => clsDataUser.GetAllUsers();
 
+        public static int NumberOfTotalUsersAndAdmins()
+            => clsDataUser.NumberOfTotalUsersAndAdmins();
 
 
+        //public static int NumberOfTotalUsersOnly()
+        //    => clsDataUser.NumberOfTotalUsersOnly();
 
 
 

@@ -14,7 +14,7 @@ namespace DVLD_DAL
         readonly static string ConnectionString = clsDataAccessSettings.ConnectionString;
         static SqlConnection connection = new SqlConnection(ConnectionString);
 
-        public static bool GetUserInfoByID(int ID, ref int PersonID, ref string Username, ref string Password, ref int IsActive)
+        public static bool GetUserInfoByID(int ID, ref int PersonID, ref string Username, ref string Password, ref bool IsActive)
         {
 
             bool IsFound = false;
@@ -39,7 +39,7 @@ namespace DVLD_DAL
 
                     Username = reader["Username"].ToString();
                     Password = reader["Password"].ToString();
-                    IsActive = (int)reader["IsActive"];
+                    IsActive = (bool)reader["IsActive"];
                     PersonID = (int)reader["PersonID"];
 
                 }
@@ -59,7 +59,7 @@ namespace DVLD_DAL
 
         }
 
-        public static bool GetUserInfoByPersonID(ref int ID, int PersonID, ref string Username, ref string Password, ref int IsActive)
+        public static bool GetUserInfoByPersonID(ref int ID, int PersonID, ref string Username, ref string Password, ref bool IsActive)
         {
 
             bool IsFound = false;
@@ -85,7 +85,7 @@ namespace DVLD_DAL
                     ID = (int)reader["ID"];
                     Username = reader["Username"].ToString();
                     Password = reader["Password"].ToString();
-                    IsActive = (int)reader["IsActive"];
+                    IsActive = (bool)reader["IsActive"];
 
                 }
 
@@ -104,7 +104,7 @@ namespace DVLD_DAL
 
         }
 
-        public static bool GetUserInfoByUsername(ref int ID, ref int PersonID, string Username, ref string Password, ref int IsActive)
+        public static bool GetUserInfoByUsername(ref int ID, ref int PersonID, string Username, ref string Password, ref bool IsActive)
         {
 
             bool IsFound = false;
@@ -129,7 +129,7 @@ namespace DVLD_DAL
 
                     ID = (int)reader["ID"];
                     Password = reader["Password"].ToString();
-                    IsActive = (int)reader["IsActive"];
+                    IsActive = (bool)reader["IsActive"];
                     PersonID = (int)reader["PersonID"];
 
                 }
@@ -263,7 +263,7 @@ namespace DVLD_DAL
 
         }
 
-        public static int AddNewUser(int PersonID, string Username, string Password, int IsActive)
+        public static int AddNewUser(int PersonID, string Username, string Password, bool IsActive)
         {
 
             int NewUserID = -1;
@@ -301,7 +301,7 @@ namespace DVLD_DAL
 
         }
 
-        public static bool UpdateUser(int ID, int PersonID, string Username, string Password, int IsActive)
+        public static bool UpdateUser(int ID, int PersonID, string Username, string Password, bool IsActive)
         {
 
             bool IsUpdated = false;
@@ -375,6 +375,74 @@ namespace DVLD_DAL
             return dtUsers;
 
         }
+
+        public static int NumberOfTotalUsersAndAdmins()
+        {
+
+            int TotalUsers = -1;
+            string msg = "";
+
+            string query = @"SELECT COUNT(ID) FROM Users";
+
+            SqlCommand command = new SqlCommand(query, connection);
+
+            try
+            {
+
+                connection.Open();
+
+                object result = command.ExecuteScalar();
+                if (result != null && int.TryParse(result.ToString(), out int NumberOfTotalUsers))
+                    TotalUsers = NumberOfTotalUsers;
+
+
+            }
+            catch (Exception ex)
+            {
+                msg = ex.Message;
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+            return TotalUsers;
+
+        }
+
+        //public static int NumberOfTotalUsersOnly()
+        //{
+
+        //    int TotalUsers = -1;
+        //    string msg = "";
+
+        //    string query = @"SELECT COUNT(ID) FROM Users WHERE RoleID = 1";
+
+        //    SqlCommand command = new SqlCommand(query, connection);
+
+        //    try
+        //    {
+
+        //        connection.Open();
+
+        //        object result = command.ExecuteScalar();
+        //        if (result != null && int.TryParse(result.ToString(), out int NumberOfTotalUsers))
+        //            TotalUsers = NumberOfTotalUsers;
+
+
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        msg = ex.Message;
+        //    }
+        //    finally
+        //    {
+        //        connection.Close();
+        //    }
+
+        //    return TotalUsers;
+
+        //}
 
 
 

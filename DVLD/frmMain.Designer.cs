@@ -85,13 +85,14 @@
             // usersToolStripMenuItem
             // 
             usersToolStripMenuItem.Font = new Font("Trebuchet MS", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            usersToolStripMenuItem.Image = Properties.Resources.Add_New_User_72;
+            usersToolStripMenuItem.Image = Properties.Resources.Users_2_64;
             usersToolStripMenuItem.ImageAlign = ContentAlignment.MiddleLeft;
             usersToolStripMenuItem.ImageScaling = ToolStripItemImageScaling.None;
             usersToolStripMenuItem.Margin = new Padding(10);
             usersToolStripMenuItem.Name = "usersToolStripMenuItem";
             usersToolStripMenuItem.Size = new Size(256, 68);
             usersToolStripMenuItem.Text = "Users";
+            usersToolStripMenuItem.Click += usersToolStripMenuItem_Click;
             // 
             // accountSettingsToolStripMenuItem
             // 
