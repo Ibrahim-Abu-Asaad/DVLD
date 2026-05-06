@@ -147,6 +147,12 @@ namespace DVLD.Users
         {
             _FilterUsers();
         }
+
+        private void pbAddNewUser_Click(object sender, EventArgs e)
+        {
+            frmAddEditUser frm = new frmAddEditUser();
+            frm.ShowDialog();
+        }
     }
 
 

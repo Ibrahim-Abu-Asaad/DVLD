@@ -34,6 +34,7 @@
             driversToolStripMenuItem = new ToolStripMenuItem();
             usersToolStripMenuItem = new ToolStripMenuItem();
             accountSettingsToolStripMenuItem = new ToolStripMenuItem();
+            logoutToolStripMenuItem = new ToolStripMenuItem();
             MainFormMenuStrip.SuspendLayout();
             SuspendLayout();
             // 
@@ -41,12 +42,13 @@
             // 
             MainFormMenuStrip.Dock = DockStyle.Left;
             MainFormMenuStrip.ImageScalingSize = new Size(20, 20);
-            MainFormMenuStrip.Items.AddRange(new ToolStripItem[] { peopleToolStripMenuItem, trebuchetMS12ptToolStripMenuItem, driversToolStripMenuItem, usersToolStripMenuItem, accountSettingsToolStripMenuItem });
+            MainFormMenuStrip.Items.AddRange(new ToolStripItem[] { peopleToolStripMenuItem, trebuchetMS12ptToolStripMenuItem, driversToolStripMenuItem, usersToolStripMenuItem, accountSettingsToolStripMenuItem, logoutToolStripMenuItem });
             MainFormMenuStrip.Location = new Point(0, 35);
             MainFormMenuStrip.Name = "MainFormMenuStrip";
             MainFormMenuStrip.Size = new Size(289, 634);
             MainFormMenuStrip.TabIndex = 0;
             MainFormMenuStrip.Text = "menuStrip1";
+            MainFormMenuStrip.ItemClicked += MainFormMenuStrip_ItemClicked;
             // 
             // peopleToolStripMenuItem
             // 
@@ -105,6 +107,17 @@
             accountSettingsToolStripMenuItem.Size = new Size(256, 68);
             accountSettingsToolStripMenuItem.Text = "Account Settings";
             // 
+            // logoutToolStripMenuItem
+            // 
+            logoutToolStripMenuItem.Font = new Font("Trebuchet MS", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            logoutToolStripMenuItem.Image = Properties.Resources.SignOut_64;
+            logoutToolStripMenuItem.ImageAlign = ContentAlignment.BottomLeft;
+            logoutToolStripMenuItem.ImageScaling = ToolStripItemImageScaling.None;
+            logoutToolStripMenuItem.Margin = new Padding(10);
+            logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
+            logoutToolStripMenuItem.Size = new Size(256, 68);
+            logoutToolStripMenuItem.Text = "Logout";
+            // 
             // frmMain
             // 
             AutoScaleMode = AutoScaleMode.None;
@@ -134,5 +147,6 @@
         private ToolStripMenuItem driversToolStripMenuItem;
         private ToolStripMenuItem usersToolStripMenuItem;
         private ToolStripMenuItem accountSettingsToolStripMenuItem;
+        private ToolStripMenuItem logoutToolStripMenuItem;
     }
 }

@@ -278,8 +278,185 @@ namespace DVLD.Helpers
         }
 
         public static bool IsNumber(string Number)
+            => ValidateInteger(Number) || ValidateFloat(Number);
+
+
+        // User Validation
+        public static bool IsUsernameValid(string Username, ref string ErrorMessage, int UserID = -1)
         {
-            return (ValidateInteger(Number) || ValidateFloat(Number));
+
+            if (string.IsNullOrWhiteSpace(Username))
+            {
+                ErrorMessage = "Username cannot be empty or whitespace.";
+                return false;
+            }
+
+            string trimmedUsername = Username.Trim();
+
+
+            if (trimmedUsername.Length < 3)
+            {
+                ErrorMessage = "Username must be at least 3 characters long.";
+                return false;
+            }
+
+
+            if (trimmedUsername.Length > 30)
+            {
+                ErrorMessage = "Username cannot exceed 30 characters.";
+                return false;
+            }
+
+
+            if (!trimmedUsername.All(c => char.IsLetterOrDigit(c) || c == '_' || c == '.'))
+            {
+                ErrorMessage = "Username can only contain letters, numbers, underscores (_), and dots (.).";
+                return false;
+            }
+
+
+            if (trimmedUsername.StartsWith(".") || trimmedUsername.StartsWith("_") ||
+                trimmedUsername.EndsWith(".") || trimmedUsername.EndsWith("_"))
+            {
+                ErrorMessage = "Username cannot start or end with underscore (_) or dot (.).";
+                return false;
+            }
+
+
+            if (trimmedUsername.Contains("..") || trimmedUsername.Contains("__"))
+            {
+                ErrorMessage = "Username cannot contain consecutive dots (..) or underscores (__).";
+                return false;
+            }
+
+
+            if (UserID == -1) // Add mode
+            {
+                if (clsUser.IsUserExistByUsername(trimmedUsername))
+                {
+                    ErrorMessage = "This username is already taken. Please choose another one.";
+                    return false;
+                }
+            }
+            else // Update mode
+            {
+                // Get the existing username from the database
+                string existingUsername = "";
+                clsUser existingUser = clsUser.GetUserByID(UserID);
+                if (existingUser != null)
+                {
+                    existingUsername = existingUser.Username;
+                }
+
+                // If username hasn't changed, skip uniqueness check
+                if (trimmedUsername != existingUsername)
+                {
+                    if (clsUser.IsUserExistByUsernameAndNotID(trimmedUsername, UserID))
+                    {
+                        ErrorMessage = "This username is already taken. Please choose another one.";
+                        return false;
+                    }
+                }
+            }
+
+            ErrorMessage = string.Empty;
+            return true;
+        }
+
+        public static bool IsPasswordValid(string Password, ref string ErrorMessage)
+        {
+
+            if (string.IsNullOrWhiteSpace(Password))
+            {
+                ErrorMessage = "Password cannot be empty or whitespace.";
+                return false;
+            }
+
+            string trimmedPassword = Password.Trim();
+
+
+            if (trimmedPassword.Length < 6)
+            {
+                ErrorMessage = "Password must be at least 6 characters long.";
+                return false;
+            }
+
+
+            if (trimmedPassword.Length > 50)
+            {
+                ErrorMessage = "Password cannot exceed 50 characters.";
+                return false;
+            }
+
+
+            if (!trimmedPassword.Any(char.IsUpper))
+            {
+                ErrorMessage = "Password must contain at least one uppercase letter.";
+                return false;
+            }
+
+
+            if (!trimmedPassword.Any(char.IsLower))
+            {
+                ErrorMessage = "Password must contain at least one lowercase letter.";
+                return false;
+            }
+
+
+            if (!trimmedPassword.Any(char.IsDigit))
+            {
+                ErrorMessage = "Password must contain at least one number.";
+                return false;
+            }
+
+
+            //string specialCharacters = @"!@#$%^&*()_+-=[]{}|;:,.<>?";
+            //if (!trimmedPassword.Any(c => specialCharacters.Contains(c)))
+            //{
+            //    ErrorMessage = "Password must contain at least one special character (!@#$%^&*()_+-=[]{}|;:,.<>?).";
+            //    return false;
+            //}
+
+
+            if (trimmedPassword.Any(char.IsWhiteSpace))
+            {
+                ErrorMessage = "Password cannot contain spaces.";
+                return false;
+            }
+
+            //// Check for common weak passwords (optional)
+            //string[] weakPasswords = { "Password123!", "Admin123!", "Qwerty123!", "123456Aa!", "Password@123" };
+            //if (weakPasswords.Contains(trimmedPassword))
+            //{
+            //    ErrorMessage = "Password is too weak. Please choose a stronger password.";
+            //    return false;
+            //}
+
+            ErrorMessage = string.Empty;
+            return true;
+        }
+
+        public static bool IsConfirmPasswordValid(string Password, string ConfirmPassword, ref string ErrorMessage)
+        {
+
+            if (string.IsNullOrWhiteSpace(ConfirmPassword))
+            {
+                ErrorMessage = "Confirm password cannot be empty.";
+                return false;
+            }
+
+            string trimmedPassword = Password?.Trim() ?? "";
+            string trimmedConfirmPassword = ConfirmPassword.Trim();
+
+            // Check if passwords match
+            if (trimmedPassword != trimmedConfirmPassword)
+            {
+                ErrorMessage = "Password and confirm password do not match.";
+                return false;
+            }
+
+            ErrorMessage = string.Empty;
+            return true;
         }
 
 

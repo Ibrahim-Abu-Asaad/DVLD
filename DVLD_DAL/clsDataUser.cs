@@ -263,6 +263,39 @@ namespace DVLD_DAL
 
         }
 
+        
+        //kkk////////////////////////////////
+        public static bool IsUserExistByUsernameAndNotID(string Username, int UserID)
+        {
+            bool IsUserExist = false;
+            string msg = "";
+
+            string query = @"SELECT Found=1 FROM Users WHERE Username = @Username AND ID != @UserID";
+            SqlCommand command = new SqlCommand(query, connection);
+            command.Parameters.AddWithValue("@Username", Username);
+            command.Parameters.AddWithValue("@UserID", UserID);
+
+            try
+            {
+                connection.Open();
+                SqlDataReader reader = command.ExecuteReader();
+
+                if (reader.HasRows)
+                    IsUserExist = true;
+            }
+            catch (Exception ex)
+            {
+                msg = ex.Message;
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+            return IsUserExist;
+        }
+
+
         public static int AddNewUser(int PersonID, string Username, string Password, bool IsActive)
         {
 

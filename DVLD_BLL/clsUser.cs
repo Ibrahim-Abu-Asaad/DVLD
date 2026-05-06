@@ -165,6 +165,9 @@ namespace DVLD_BLL
         public static int NumberOfTotalUsersAndAdmins()
             => clsDataUser.NumberOfTotalUsersAndAdmins();
 
+        public static bool IsUserExistByUsernameAndNotID(string trimmedUsername, int UserID)
+            => clsDataUser.IsUserExistByUsernameAndNotID(trimmedUsername, UserID);
+
 
         //public static int NumberOfTotalUsersOnly()
         //    => clsDataUser.NumberOfTotalUsersOnly();

@@ -226,6 +226,7 @@
             pbAddNewUser.SizeMode = PictureBoxSizeMode.Zoom;
             pbAddNewUser.TabIndex = 19;
             pbAddNewUser.TabStop = false;
+            pbAddNewUser.Click += pbAddNewUser_Click;
             // 
             // lblTotalUsers
             // 

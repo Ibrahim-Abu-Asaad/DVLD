@@ -25,5 +25,10 @@ namespace DVLD
             frm.ShowDialog();
 
         }
+
+        private void MainFormMenuStrip_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+            //
+        }
     }
 }
