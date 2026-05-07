@@ -27,7 +27,7 @@ namespace DVLD.Users
         private void _ListUsers()
         {
 
-            DataTable dtUsers = clsUser.GetAllUsers();
+            DataTable dtUsers = clsUser.GetAllUsersForDGV();
 
             dgvManageUsers.DataSource = dtUsers;
 
@@ -73,7 +73,7 @@ namespace DVLD.Users
         private void _FilterUsers()
         {
 
-            DataTable dtUsers = clsUser.GetAllUsers();
+            DataTable dtUsers = clsUser.GetAllUsersForDGV();
 
             if (cbSearchBy.Text.Trim().ToLower() == "none")
             {
@@ -225,6 +225,35 @@ namespace DVLD.Users
             frm.ShowDialog();
 
             _RefreshPage();
+
+        }
+
+        private void showDetailsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            if (dgvManageUsers.SelectedRows.Count > 0)
+            {
+
+                string username = dgvManageUsers.SelectedRows[0].Cells["Username"].Value.ToString();
+
+                clsUser User = clsUser.GetUserByUsername(username);
+
+                if (User != null)
+                {
+
+                    frmShowUserDetails frm = new frmShowUserDetails(User.ID);
+                    frm.ShowDialog();
+
+                    _RefreshPage();
+                }
+                else
+                {
+                    MessageBox.Show("User not found!", "Error",
+                                   MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+
+
 
         }
     }

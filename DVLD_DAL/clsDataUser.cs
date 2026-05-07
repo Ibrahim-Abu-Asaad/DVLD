@@ -452,6 +452,44 @@ namespace DVLD_DAL
 
         }
 
+        public static DataTable GetAllUsersForDGV()
+        {
+
+            DataTable dtUsers = new DataTable();
+            string msg = "";
+
+            string query = @"SELECT 
+                                CONCAT(People.FirstName, ' ', People.SecondName, ' ', People.ThirdName, ' ', People.LastName) AS FullName,
+                                Users.Username, 
+                                Users.IsActive
+                            FROM People 
+                            INNER JOIN Users ON People.ID = Users.PersonID";
+
+            SqlCommand command = new SqlCommand(query, connection);
+
+            try
+            {
+
+                connection.Open();
+
+                SqlDataReader reader = command.ExecuteReader();
+                if (reader.HasRows)
+                    dtUsers.Load(reader);
+
+            }
+            catch (Exception ex)
+            {
+                msg = ex.Message;
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+            return dtUsers;
+
+        }
+
         public static int NumberOfTotalUsersAndAdmins()
         {
 

@@ -163,6 +163,9 @@ namespace DVLD_BLL
         public static DataTable GetAllUsers()
             => clsDataUser.GetAllUsers();
 
+        public static DataTable GetAllUsersForDGV()
+            => clsDataUser.GetAllUsersForDGV();
+
         public static int NumberOfTotalUsersAndAdmins()
             => clsDataUser.NumberOfTotalUsersAndAdmins();
 

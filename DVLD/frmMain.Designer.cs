@@ -34,6 +34,8 @@
             driversToolStripMenuItem = new ToolStripMenuItem();
             usersToolStripMenuItem = new ToolStripMenuItem();
             accountSettingsToolStripMenuItem = new ToolStripMenuItem();
+            showAccountInfoToolStripMenuItem = new ToolStripMenuItem();
+            changePasswordToolStripMenuItem = new ToolStripMenuItem();
             logoutToolStripMenuItem = new ToolStripMenuItem();
             MainFormMenuStrip.SuspendLayout();
             SuspendLayout();
@@ -98,6 +100,7 @@
             // 
             // accountSettingsToolStripMenuItem
             // 
+            accountSettingsToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { showAccountInfoToolStripMenuItem, changePasswordToolStripMenuItem });
             accountSettingsToolStripMenuItem.Font = new Font("Trebuchet MS", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             accountSettingsToolStripMenuItem.Image = Properties.Resources.account_settings_64;
             accountSettingsToolStripMenuItem.ImageAlign = ContentAlignment.MiddleLeft;
@@ -106,6 +109,26 @@
             accountSettingsToolStripMenuItem.Name = "accountSettingsToolStripMenuItem";
             accountSettingsToolStripMenuItem.Size = new Size(256, 68);
             accountSettingsToolStripMenuItem.Text = "Account Settings";
+            // 
+            // showAccountInfoToolStripMenuItem
+            // 
+            showAccountInfoToolStripMenuItem.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            showAccountInfoToolStripMenuItem.Image = Properties.Resources.PersonDetails_321;
+            showAccountInfoToolStripMenuItem.ImageScaling = ToolStripItemImageScaling.None;
+            showAccountInfoToolStripMenuItem.Name = "showAccountInfoToolStripMenuItem";
+            showAccountInfoToolStripMenuItem.Size = new Size(276, 38);
+            showAccountInfoToolStripMenuItem.Text = "Show Account Info";
+            showAccountInfoToolStripMenuItem.Click += showAccountInfoToolStripMenuItem_Click;
+            // 
+            // changePasswordToolStripMenuItem
+            // 
+            changePasswordToolStripMenuItem.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            changePasswordToolStripMenuItem.Image = Properties.Resources.Password_321;
+            changePasswordToolStripMenuItem.ImageScaling = ToolStripItemImageScaling.None;
+            changePasswordToolStripMenuItem.Name = "changePasswordToolStripMenuItem";
+            changePasswordToolStripMenuItem.Size = new Size(276, 38);
+            changePasswordToolStripMenuItem.Text = "Change Password";
+            changePasswordToolStripMenuItem.Click += changePasswordToolStripMenuItem_Click;
             // 
             // logoutToolStripMenuItem
             // 
@@ -148,5 +171,7 @@
         private ToolStripMenuItem usersToolStripMenuItem;
         private ToolStripMenuItem accountSettingsToolStripMenuItem;
         private ToolStripMenuItem logoutToolStripMenuItem;
+        private ToolStripMenuItem showAccountInfoToolStripMenuItem;
+        private ToolStripMenuItem changePasswordToolStripMenuItem;
     }
 }

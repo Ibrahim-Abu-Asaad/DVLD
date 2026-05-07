@@ -258,7 +258,7 @@
             cmsUserRecord.ImageScalingSize = new Size(20, 20);
             cmsUserRecord.Items.AddRange(new ToolStripItem[] { showDetailsToolStripMenuItem, toolStripMenuItem1, editToolStripMenuItem1, deletePersonToolStripMenuItem, changePasswordToolStripMenuItem, toolStripMenuItem2, emailToolStripMenuItem, phoneCallToolStripMenuItem });
             cmsUserRecord.Name = "cmsManagePeople";
-            cmsUserRecord.Size = new Size(262, 244);
+            cmsUserRecord.Size = new Size(262, 272);
             // 
             // showDetailsToolStripMenuItem
             // 
@@ -268,6 +268,7 @@
             showDetailsToolStripMenuItem.Name = "showDetailsToolStripMenuItem";
             showDetailsToolStripMenuItem.Size = new Size(261, 38);
             showDetailsToolStripMenuItem.Text = "Show Details";
+            showDetailsToolStripMenuItem.Click += showDetailsToolStripMenuItem_Click;
             // 
             // toolStripMenuItem1
             // 

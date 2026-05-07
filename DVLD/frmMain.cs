@@ -30,5 +30,15 @@ namespace DVLD
         {
             //
         }
+
+        private void showAccountInfoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // Form To Show User Card Details
+        }
+
+        private void changePasswordToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // Form To Show Change Password Form
+        }
     }
 }
