@@ -119,17 +119,19 @@ namespace DVLD_BLL
         public static bool IsUserExistByUsername(string Username)
             => clsDataUser.IsUserExistByUsername(Username);
 
+        public string error = "error";
+
         private bool _AddNewUser()
         {
 
-            this.ID = clsDataUser.AddNewUser(this.PersonID, this.Username, this.Password, this.IsActive);
+            this.ID = clsDataUser.AddNewUser(this.PersonID, this.Username, this.Password, this.IsActive, ref error);
 
             return this.ID != -1;
 
         }
 
         private bool _UpdateUser()
-            => clsDataUser.UpdateUser(this.ID, this.PersonID, this.Username, this.Password, this.IsActive);
+            => clsDataUser.UpdateUserExceptPassword(this.ID, this.PersonID, this.Username, this.IsActive);
 
 
         public bool Save()
@@ -149,8 +151,7 @@ namespace DVLD_BLL
                         return false;
 
                 case enMode.Update:
-                    _UpdateUser();
-                    break;
+                    return _UpdateUser();
 
 
             }
@@ -172,7 +173,9 @@ namespace DVLD_BLL
         //public static int NumberOfTotalUsersOnly()
         //    => clsDataUser.NumberOfTotalUsersOnly();
 
-
+        public bool ChangePassword(string newPasswordHash)
+            => clsDataUser.ChangePassword(this.ID, newPasswordHash);
+        
 
     }
 }

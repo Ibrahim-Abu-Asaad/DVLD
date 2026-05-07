@@ -80,6 +80,13 @@ namespace DVLD.People.Controls
 
         }
 
+        public void LoadPersonInfo(int PersonID)
+        {
+
+            ctrlShowPersonDetails21.LoadPersonDataAndFillPersonCard(PersonID);
+
+        }
+
         private void FindNow()
         {
             ctrlShowPersonDetails21.LoadPersonDataAndFillPersonCard(txtSearchBy.Text);

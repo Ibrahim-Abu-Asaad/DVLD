@@ -296,7 +296,7 @@ namespace DVLD_DAL
         }
 
 
-        public static int AddNewUser(int PersonID, string Username, string Password, bool IsActive)
+        public static int AddNewUser(int PersonID, string Username, string Password, bool IsActive, ref string error)
         {
 
             int NewUserID = -1;
@@ -323,6 +323,8 @@ namespace DVLD_DAL
             catch (Exception ex)
             {
                 msg = ex.Message;
+                //Console.WriteLine(msg);
+                error = msg;
             }
             finally
             {
@@ -344,9 +346,10 @@ namespace DVLD_DAL
                                           PersonID = @PersonID,
                                           Username = @Username,
                                           Password = @Password,
-                                          IsActive = @IsActive";
+                                          IsActive = @IsActive WHERE ID = @ID";
 
             SqlCommand command = new SqlCommand(query, connection);
+            command.Parameters.AddWithValue("@ID", ID);
             command.Parameters.AddWithValue("@PersonID", PersonID);
             command.Parameters.AddWithValue("@Username", Username);
             command.Parameters.AddWithValue("@Password", Password);
@@ -373,6 +376,46 @@ namespace DVLD_DAL
 
             return IsUpdated;
 
+
+        }
+
+        public static bool UpdateUserExceptPassword(int ID, int PersonID, string Username, bool IsActive)
+        {
+
+            bool IsUpdated = false;
+            string msg = "";
+
+            string query = @"UPDATE Users SET 
+                                  PersonID = @PersonID,
+                                  Username = @Username,
+                                  IsActive = @IsActive 
+                      WHERE ID = @ID";
+
+            SqlCommand command = new SqlCommand(query, connection);
+            command.Parameters.AddWithValue("@ID", ID);
+            command.Parameters.AddWithValue("@PersonID", PersonID);
+            command.Parameters.AddWithValue("@Username", Username);
+            command.Parameters.AddWithValue("@IsActive", IsActive);
+
+            try
+            {
+                connection.Open();
+
+                int rowsAffected = command.ExecuteNonQuery();
+                if (rowsAffected > 0)
+                    IsUpdated = true;
+
+            }
+            catch (Exception ex)
+            {
+                msg = ex.Message;
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+            return IsUpdated;
 
         }
 
@@ -477,6 +520,43 @@ namespace DVLD_DAL
 
         //}
 
+
+        public static bool ChangePassword(int ID, string newPasswordHash)
+        {
+
+            bool IsChanged = false;
+            string msg = "";
+
+            string query = @"UPDATE Users SET 
+                                  Password = @newPasswordHash
+                      WHERE ID = @ID";
+
+            SqlCommand command = new SqlCommand(query, connection);
+            command.Parameters.AddWithValue("@ID", ID);
+            command.Parameters.AddWithValue("@newPasswordHash", newPasswordHash);
+
+
+            try
+            {
+                connection.Open();
+
+                int rowsAffected = command.ExecuteNonQuery();
+                if (rowsAffected > 0)
+                    IsChanged = true;
+
+            }
+            catch (Exception ex)
+            {
+                msg = ex.Message;
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+            return IsChanged;
+
+        }
 
 
 

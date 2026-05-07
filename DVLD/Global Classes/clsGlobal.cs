@@ -9,7 +9,7 @@ namespace DVLD.Global_Classes
 {
     internal class clsGlobal
     {
-        
+
         //public static clsUser CurrentUser;
 
         //public static bool RememberUsernameAndPassword(string Username, string Password)
@@ -94,6 +94,13 @@ namespace DVLD.Global_Classes
         //    }
 
         //}
+
+
+        public static string PasswordHash(string RealPassword)
+            => BCrypt.Net.BCrypt.HashPassword(RealPassword);
+
+        public static bool PasswordMatches(string enteredPassword, string storedHash)
+            => BCrypt.Net.BCrypt.Verify(enteredPassword, storedHash);
 
 
 

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
@@ -44,9 +45,19 @@
             btnClose = new Sunny.UI.UIButton();
             pbAddNewUser = new PictureBox();
             lblTotalUsers = new Label();
+            cmsUserRecord = new Sunny.UI.UIContextMenuStrip(components);
+            showDetailsToolStripMenuItem = new ToolStripMenuItem();
+            toolStripMenuItem1 = new ToolStripSeparator();
+            editToolStripMenuItem1 = new ToolStripMenuItem();
+            deletePersonToolStripMenuItem = new ToolStripMenuItem();
+            changePasswordToolStripMenuItem = new ToolStripMenuItem();
+            toolStripMenuItem2 = new ToolStripSeparator();
+            emailToolStripMenuItem = new ToolStripMenuItem();
+            phoneCallToolStripMenuItem = new ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvManageUsers).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbAddNewUser).BeginInit();
+            cmsUserRecord.SuspendLayout();
             SuspendLayout();
             // 
             // pictureBox1
@@ -202,6 +213,7 @@
             dgvManageUsers.Size = new Size(1242, 318);
             dgvManageUsers.StripeOddColor = Color.FromArgb(235, 243, 255);
             dgvManageUsers.TabIndex = 11;
+            dgvManageUsers.CellMouseClick += dgvManageUsers_CellMouseClick;
             // 
             // btnClose
             // 
@@ -239,6 +251,80 @@
             lblTotalUsers.TabIndex = 20;
             lblTotalUsers.Text = "0";
             // 
+            // cmsUserRecord
+            // 
+            cmsUserRecord.BackColor = Color.FromArgb(243, 249, 255);
+            cmsUserRecord.Font = new Font("Microsoft Sans Serif", 12F);
+            cmsUserRecord.ImageScalingSize = new Size(20, 20);
+            cmsUserRecord.Items.AddRange(new ToolStripItem[] { showDetailsToolStripMenuItem, toolStripMenuItem1, editToolStripMenuItem1, deletePersonToolStripMenuItem, changePasswordToolStripMenuItem, toolStripMenuItem2, emailToolStripMenuItem, phoneCallToolStripMenuItem });
+            cmsUserRecord.Name = "cmsManagePeople";
+            cmsUserRecord.Size = new Size(262, 244);
+            // 
+            // showDetailsToolStripMenuItem
+            // 
+            showDetailsToolStripMenuItem.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            showDetailsToolStripMenuItem.Image = Properties.Resources.PersonDetails_32;
+            showDetailsToolStripMenuItem.ImageScaling = ToolStripItemImageScaling.None;
+            showDetailsToolStripMenuItem.Name = "showDetailsToolStripMenuItem";
+            showDetailsToolStripMenuItem.Size = new Size(261, 38);
+            showDetailsToolStripMenuItem.Text = "Show Details";
+            // 
+            // toolStripMenuItem1
+            // 
+            toolStripMenuItem1.Name = "toolStripMenuItem1";
+            toolStripMenuItem1.Size = new Size(258, 6);
+            // 
+            // editToolStripMenuItem1
+            // 
+            editToolStripMenuItem1.Font = new Font("Trebuchet MS", 12F);
+            editToolStripMenuItem1.Image = Properties.Resources.edit_32;
+            editToolStripMenuItem1.ImageScaling = ToolStripItemImageScaling.None;
+            editToolStripMenuItem1.Name = "editToolStripMenuItem1";
+            editToolStripMenuItem1.Size = new Size(261, 38);
+            editToolStripMenuItem1.Text = "Edit";
+            editToolStripMenuItem1.Click += editToolStripMenuItem1_Click;
+            // 
+            // deletePersonToolStripMenuItem
+            // 
+            deletePersonToolStripMenuItem.Font = new Font("Trebuchet MS", 12F);
+            deletePersonToolStripMenuItem.Image = Properties.Resources.Delete_32;
+            deletePersonToolStripMenuItem.ImageScaling = ToolStripItemImageScaling.None;
+            deletePersonToolStripMenuItem.Name = "deletePersonToolStripMenuItem";
+            deletePersonToolStripMenuItem.Size = new Size(261, 38);
+            deletePersonToolStripMenuItem.Text = "Delete";
+            // 
+            // changePasswordToolStripMenuItem
+            // 
+            changePasswordToolStripMenuItem.Image = Properties.Resources.Password_32;
+            changePasswordToolStripMenuItem.ImageScaling = ToolStripItemImageScaling.None;
+            changePasswordToolStripMenuItem.Name = "changePasswordToolStripMenuItem";
+            changePasswordToolStripMenuItem.Size = new Size(261, 38);
+            changePasswordToolStripMenuItem.Text = "Change Password";
+            changePasswordToolStripMenuItem.Click += changePasswordToolStripMenuItem_Click;
+            // 
+            // toolStripMenuItem2
+            // 
+            toolStripMenuItem2.Name = "toolStripMenuItem2";
+            toolStripMenuItem2.Size = new Size(258, 6);
+            // 
+            // emailToolStripMenuItem
+            // 
+            emailToolStripMenuItem.Font = new Font("Trebuchet MS", 12F);
+            emailToolStripMenuItem.Image = Properties.Resources.send_email_32;
+            emailToolStripMenuItem.ImageScaling = ToolStripItemImageScaling.None;
+            emailToolStripMenuItem.Name = "emailToolStripMenuItem";
+            emailToolStripMenuItem.Size = new Size(261, 38);
+            emailToolStripMenuItem.Text = "Email";
+            // 
+            // phoneCallToolStripMenuItem
+            // 
+            phoneCallToolStripMenuItem.Font = new Font("Trebuchet MS", 12F);
+            phoneCallToolStripMenuItem.Image = Properties.Resources.call_32;
+            phoneCallToolStripMenuItem.ImageScaling = ToolStripItemImageScaling.None;
+            phoneCallToolStripMenuItem.Name = "phoneCallToolStripMenuItem";
+            phoneCallToolStripMenuItem.Size = new Size(261, 38);
+            phoneCallToolStripMenuItem.Text = "Phone Call";
+            // 
             // frmManageUsers
             // 
             AutoScaleMode = AutoScaleMode.None;
@@ -262,6 +348,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)dgvManageUsers).EndInit();
             ((System.ComponentModel.ISupportInitialize)pbAddNewUser).EndInit();
+            cmsUserRecord.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -283,5 +370,14 @@
         private PictureBox pbAddNewUser;
         private Label lblTotalUsers;
         private Sunny.UI.UIComboBox cbIsActive;
+        private Sunny.UI.UIContextMenuStrip cmsUserRecord;
+        private ToolStripMenuItem showDetailsToolStripMenuItem;
+        private ToolStripSeparator toolStripMenuItem1;
+        private ToolStripMenuItem editToolStripMenuItem1;
+        private ToolStripMenuItem deletePersonToolStripMenuItem;
+        private ToolStripSeparator toolStripMenuItem2;
+        private ToolStripMenuItem emailToolStripMenuItem;
+        private ToolStripMenuItem phoneCallToolStripMenuItem;
+        private ToolStripMenuItem changePasswordToolStripMenuItem;
     }
 }

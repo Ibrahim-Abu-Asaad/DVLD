@@ -152,6 +152,80 @@ namespace DVLD.Users
         {
             frmAddEditUser frm = new frmAddEditUser();
             frm.ShowDialog();
+            _RefreshPage();
+        }
+
+        private void dgvManageUsers_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+
+            if (e.Button == MouseButtons.Right)
+            {
+                if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+                {
+
+                    dgvManageUsers.ClearSelection();
+
+                    dgvManageUsers.Rows[e.RowIndex].Selected = true;
+
+                    dgvManageUsers.CurrentCell = dgvManageUsers.Rows[e.RowIndex].Cells[e.ColumnIndex];
+
+                    cmsUserRecord.Show(Cursor.Position);
+
+                }
+            }
+
+        }
+
+        private void editToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+
+            if (dgvManageUsers.SelectedRows.Count > 0)
+            {
+
+                string username = dgvManageUsers.SelectedRows[0].Cells["Username"].Value.ToString();
+
+                clsUser User = clsUser.GetUserByUsername(username);
+
+                if (User != null)
+                {
+
+                    frmAddEditUser frm = new frmAddEditUser(User.ID);
+                    frm.ShowDialog();
+
+                    _RefreshPage();
+                }
+                else
+                {
+                    MessageBox.Show("User not found!", "Error",
+                                   MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+
+        }
+
+        private void _RefreshPage()
+        {
+
+            _ListUsers();
+
+        }
+
+        private void changePasswordToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            string username = "";
+
+            if (dgvManageUsers.SelectedRows.Count > 0)
+                username = dgvManageUsers.CurrentRow.Cells["Username"].Value.ToString();
+
+
+            int ID = clsUser.GetUserByUsername(username).ID;
+
+            frmChangePassword frm = new frmChangePassword(ID);
+            frm.ShowDialog();
+
+            _RefreshPage();
+
         }
     }
 

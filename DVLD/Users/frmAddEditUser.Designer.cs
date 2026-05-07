@@ -28,39 +28,45 @@
         /// </summary>
         private void InitializeComponent()
         {
-            lblAddNewUser = new Label();
+            components = new System.ComponentModel.Container();
+            lblTitle = new Label();
             btnSave = new Sunny.UI.UIButton();
             btnClose = new Sunny.UI.UIButton();
             tabControl1 = new TabControl();
             tbPersonalInfo = new TabPage();
-            tbLoginInfo = new TabPage();
-            ctrlShowPersonDetailsWithFilter1 = new People.Controls.ctrlShowPersonDetailsWithFilter();
             btnNext = new Sunny.UI.UIButton();
-            txtUsername = new Sunny.UI.UITextBox();
+            ctrlShowPersonDetailsWithFilter1 = new People.Controls.ctrlShowPersonDetailsWithFilter();
+            tbLoginInfo = new TabPage();
+            llblChangePassword = new LinkLabel();
+            btnBack = new Sunny.UI.UIButton();
+            chbIsActive = new Sunny.UI.UICheckBox();
+            lblConfirmPassword = new Label();
+            lblPassword = new Label();
+            label2 = new Label();
             txtPassword = new Sunny.UI.UITextBox();
             txtConfirmPassword = new Sunny.UI.UITextBox();
-            label2 = new Label();
-            label1 = new Label();
-            label3 = new Label();
-            uiCheckBox1 = new Sunny.UI.UICheckBox();
+            txtUsername = new Sunny.UI.UITextBox();
+            errorProvider1 = new ErrorProvider(components);
             tabControl1.SuspendLayout();
             tbPersonalInfo.SuspendLayout();
             tbLoginInfo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)errorProvider1).BeginInit();
             SuspendLayout();
             // 
-            // lblAddNewUser
+            // lblTitle
             // 
-            lblAddNewUser.AutoSize = true;
-            lblAddNewUser.Font = new Font("Trebuchet MS", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblAddNewUser.ForeColor = SystemColors.HotTrack;
-            lblAddNewUser.Location = new Point(373, 71);
-            lblAddNewUser.Name = "lblAddNewUser";
-            lblAddNewUser.Size = new Size(282, 49);
-            lblAddNewUser.TabIndex = 3;
-            lblAddNewUser.Text = "Add New User";
+            lblTitle.AutoSize = true;
+            lblTitle.Font = new Font("Trebuchet MS", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblTitle.ForeColor = SystemColors.HotTrack;
+            lblTitle.Location = new Point(373, 71);
+            lblTitle.Name = "lblTitle";
+            lblTitle.Size = new Size(282, 49);
+            lblTitle.TabIndex = 3;
+            lblTitle.Text = "Add New User";
             // 
             // btnSave
             // 
+            btnSave.Cursor = Cursors.Hand;
             btnSave.Font = new Font("Microsoft Sans Serif", 12F);
             btnSave.Location = new Point(917, 788);
             btnSave.MinimumSize = new Size(1, 1);
@@ -70,9 +76,11 @@
             btnSave.TabIndex = 20;
             btnSave.Text = "Save";
             btnSave.TipsFont = new Font("Microsoft Sans Serif", 9F);
+            btnSave.Click += btnSave_Click;
             // 
             // btnClose
             // 
+            btnClose.Cursor = Cursors.Hand;
             btnClose.Font = new Font("Microsoft Sans Serif", 12F);
             btnClose.Location = new Point(786, 788);
             btnClose.MinimumSize = new Size(1, 1);
@@ -82,6 +90,7 @@
             btnClose.TabIndex = 21;
             btnClose.Text = "Close";
             btnClose.TipsFont = new Font("Microsoft Sans Serif", 9F);
+            btnClose.Click += btnClose_Click;
             // 
             // tabControl1
             // 
@@ -93,6 +102,7 @@
             tabControl1.SelectedIndex = 0;
             tabControl1.Size = new Size(1015, 620);
             tabControl1.TabIndex = 22;
+            tabControl1.SelectedIndexChanged += tabControl1_SelectedIndexChanged;
             // 
             // tbPersonalInfo
             // 
@@ -106,22 +116,19 @@
             tbPersonalInfo.TabIndex = 0;
             tbPersonalInfo.Text = "Personal Info";
             // 
-            // tbLoginInfo
+            // btnNext
             // 
-            tbLoginInfo.BackColor = Color.FromArgb(243, 249, 255);
-            tbLoginInfo.Controls.Add(uiCheckBox1);
-            tbLoginInfo.Controls.Add(label3);
-            tbLoginInfo.Controls.Add(label1);
-            tbLoginInfo.Controls.Add(label2);
-            tbLoginInfo.Controls.Add(txtPassword);
-            tbLoginInfo.Controls.Add(txtConfirmPassword);
-            tbLoginInfo.Controls.Add(txtUsername);
-            tbLoginInfo.Location = new Point(4, 35);
-            tbLoginInfo.Name = "tbLoginInfo";
-            tbLoginInfo.Padding = new Padding(3);
-            tbLoginInfo.Size = new Size(1007, 581);
-            tbLoginInfo.TabIndex = 1;
-            tbLoginInfo.Text = "Login Info";
+            btnNext.Cursor = Cursors.Hand;
+            btnNext.Font = new Font("Microsoft Sans Serif", 12F);
+            btnNext.Location = new Point(856, 481);
+            btnNext.MinimumSize = new Size(1, 1);
+            btnNext.Name = "btnNext";
+            btnNext.Radius = 10;
+            btnNext.Size = new Size(125, 44);
+            btnNext.TabIndex = 21;
+            btnNext.Text = "Next";
+            btnNext.TipsFont = new Font("Microsoft Sans Serif", 9F);
+            btnNext.Click += btnNext_Click;
             // 
             // ctrlShowPersonDetailsWithFilter1
             // 
@@ -138,17 +145,125 @@
             ctrlShowPersonDetailsWithFilter1.Text = "ctrlShowPersonDetailsWithFilter1";
             ctrlShowPersonDetailsWithFilter1.TextAlignment = ContentAlignment.MiddleCenter;
             // 
-            // btnNext
+            // tbLoginInfo
             // 
-            btnNext.Font = new Font("Microsoft Sans Serif", 12F);
-            btnNext.Location = new Point(856, 481);
-            btnNext.MinimumSize = new Size(1, 1);
-            btnNext.Name = "btnNext";
-            btnNext.Radius = 10;
-            btnNext.Size = new Size(125, 44);
-            btnNext.TabIndex = 21;
-            btnNext.Text = "Next";
-            btnNext.TipsFont = new Font("Microsoft Sans Serif", 9F);
+            tbLoginInfo.BackColor = Color.FromArgb(243, 249, 255);
+            tbLoginInfo.Controls.Add(llblChangePassword);
+            tbLoginInfo.Controls.Add(btnBack);
+            tbLoginInfo.Controls.Add(chbIsActive);
+            tbLoginInfo.Controls.Add(lblConfirmPassword);
+            tbLoginInfo.Controls.Add(lblPassword);
+            tbLoginInfo.Controls.Add(label2);
+            tbLoginInfo.Controls.Add(txtPassword);
+            tbLoginInfo.Controls.Add(txtConfirmPassword);
+            tbLoginInfo.Controls.Add(txtUsername);
+            tbLoginInfo.Location = new Point(4, 35);
+            tbLoginInfo.Name = "tbLoginInfo";
+            tbLoginInfo.Padding = new Padding(3);
+            tbLoginInfo.Size = new Size(1007, 581);
+            tbLoginInfo.TabIndex = 1;
+            tbLoginInfo.Text = "Login Info";
+            // 
+            // llblChangePassword
+            // 
+            llblChangePassword.AutoSize = true;
+            llblChangePassword.BackColor = Color.FromArgb(243, 249, 255);
+            llblChangePassword.Location = new Point(655, 151);
+            llblChangePassword.Name = "llblChangePassword";
+            llblChangePassword.Size = new Size(166, 26);
+            llblChangePassword.TabIndex = 23;
+            llblChangePassword.TabStop = true;
+            llblChangePassword.Text = "Change Password";
+            llblChangePassword.LinkClicked += llblChangePassword_LinkClicked;
+            // 
+            // btnBack
+            // 
+            btnBack.Cursor = Cursors.Hand;
+            btnBack.Font = new Font("Microsoft Sans Serif", 12F);
+            btnBack.Location = new Point(6, 481);
+            btnBack.MinimumSize = new Size(1, 1);
+            btnBack.Name = "btnBack";
+            btnBack.Radius = 10;
+            btnBack.Size = new Size(125, 44);
+            btnBack.TabIndex = 17;
+            btnBack.Text = "Back";
+            btnBack.TipsFont = new Font("Microsoft Sans Serif", 9F);
+            btnBack.Click += btnBack_Click;
+            // 
+            // chbIsActive
+            // 
+            chbIsActive.Font = new Font("Microsoft Sans Serif", 12F);
+            chbIsActive.ForeColor = Color.FromArgb(48, 48, 48);
+            chbIsActive.Location = new Point(400, 348);
+            chbIsActive.MinimumSize = new Size(1, 1);
+            chbIsActive.Name = "chbIsActive";
+            chbIsActive.Size = new Size(188, 36);
+            chbIsActive.TabIndex = 16;
+            chbIsActive.Text = "Is Active";
+            // 
+            // lblConfirmPassword
+            // 
+            lblConfirmPassword.AutoSize = true;
+            lblConfirmPassword.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblConfirmPassword.Location = new Point(223, 296);
+            lblConfirmPassword.Name = "lblConfirmPassword";
+            lblConfirmPassword.Size = new Size(172, 26);
+            lblConfirmPassword.TabIndex = 18;
+            lblConfirmPassword.Text = "Confirm Password";
+            // 
+            // lblPassword
+            // 
+            lblPassword.AutoSize = true;
+            lblPassword.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblPassword.Location = new Point(302, 224);
+            lblPassword.Name = "lblPassword";
+            lblPassword.Size = new Size(94, 26);
+            lblPassword.TabIndex = 17;
+            lblPassword.Text = "Password";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label2.Location = new Point(294, 151);
+            label2.Name = "label2";
+            label2.Size = new Size(102, 26);
+            label2.TabIndex = 16;
+            label2.Text = "Username";
+            // 
+            // txtPassword
+            // 
+            txtPassword.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtPassword.Location = new Point(400, 216);
+            txtPassword.Margin = new Padding(4, 5, 4, 5);
+            txtPassword.MinimumSize = new Size(1, 16);
+            txtPassword.Name = "txtPassword";
+            txtPassword.Padding = new Padding(5);
+            txtPassword.Radius = 10;
+            txtPassword.ShowText = false;
+            txtPassword.Size = new Size(224, 43);
+            txtPassword.TabIndex = 14;
+            txtPassword.TextAlignment = ContentAlignment.MiddleLeft;
+            txtPassword.Watermark = "";
+            txtPassword.TextChanged += txtUsername_TextChanged;
+            txtPassword.Leave += txt_Leave;
+            // 
+            // txtConfirmPassword
+            // 
+            txtConfirmPassword.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtConfirmPassword.Location = new Point(400, 288);
+            txtConfirmPassword.Margin = new Padding(4, 5, 4, 5);
+            txtConfirmPassword.MinimumSize = new Size(1, 16);
+            txtConfirmPassword.Name = "txtConfirmPassword";
+            txtConfirmPassword.Padding = new Padding(5);
+            txtConfirmPassword.Radius = 10;
+            txtConfirmPassword.ShowText = false;
+            txtConfirmPassword.Size = new Size(224, 43);
+            txtConfirmPassword.TabIndex = 15;
+            txtConfirmPassword.TextAlignment = ContentAlignment.MiddleLeft;
+            txtConfirmPassword.Watermark = "";
+            txtConfirmPassword.TextChanged += txtUsername_TextChanged;
+            txtConfirmPassword.Leave += txt_Leave;
             // 
             // txtUsername
             // 
@@ -164,77 +279,12 @@
             txtUsername.TabIndex = 13;
             txtUsername.TextAlignment = ContentAlignment.MiddleLeft;
             txtUsername.Watermark = "";
+            txtUsername.TextChanged += txtUsername_TextChanged;
+            txtUsername.Leave += txt_Leave;
             // 
-            // txtPassword
+            // errorProvider1
             // 
-            txtPassword.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtPassword.Location = new Point(400, 216);
-            txtPassword.Margin = new Padding(4, 5, 4, 5);
-            txtPassword.MinimumSize = new Size(1, 16);
-            txtPassword.Name = "txtPassword";
-            txtPassword.Padding = new Padding(5);
-            txtPassword.Radius = 10;
-            txtPassword.ShowText = false;
-            txtPassword.Size = new Size(224, 43);
-            txtPassword.TabIndex = 13;
-            txtPassword.TextAlignment = ContentAlignment.MiddleLeft;
-            txtPassword.Watermark = "";
-            // 
-            // txtConfirmPassword
-            // 
-            txtConfirmPassword.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtConfirmPassword.Location = new Point(400, 288);
-            txtConfirmPassword.Margin = new Padding(4, 5, 4, 5);
-            txtConfirmPassword.MinimumSize = new Size(1, 16);
-            txtConfirmPassword.Name = "txtConfirmPassword";
-            txtConfirmPassword.Padding = new Padding(5);
-            txtConfirmPassword.Radius = 10;
-            txtConfirmPassword.ShowText = false;
-            txtConfirmPassword.Size = new Size(224, 43);
-            txtConfirmPassword.TabIndex = 13;
-            txtConfirmPassword.TextAlignment = ContentAlignment.MiddleLeft;
-            txtConfirmPassword.Watermark = "";
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.Location = new Point(294, 151);
-            label2.Name = "label2";
-            label2.Size = new Size(102, 26);
-            label2.TabIndex = 16;
-            label2.Text = "Username";
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(302, 224);
-            label1.Name = "label1";
-            label1.Size = new Size(94, 26);
-            label1.TabIndex = 17;
-            label1.Text = "Password";
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.Location = new Point(223, 296);
-            label3.Name = "label3";
-            label3.Size = new Size(172, 26);
-            label3.TabIndex = 18;
-            label3.Text = "Confirm Password";
-            // 
-            // uiCheckBox1
-            // 
-            uiCheckBox1.Font = new Font("Microsoft Sans Serif", 12F);
-            uiCheckBox1.ForeColor = Color.FromArgb(48, 48, 48);
-            uiCheckBox1.Location = new Point(400, 348);
-            uiCheckBox1.MinimumSize = new Size(1, 1);
-            uiCheckBox1.Name = "uiCheckBox1";
-            uiCheckBox1.Size = new Size(188, 36);
-            uiCheckBox1.TabIndex = 19;
-            uiCheckBox1.Text = "Is Active";
+            errorProvider1.ContainerControl = this;
             // 
             // frmAddEditUser
             // 
@@ -243,21 +293,23 @@
             Controls.Add(tabControl1);
             Controls.Add(btnClose);
             Controls.Add(btnSave);
-            Controls.Add(lblAddNewUser);
+            Controls.Add(lblTitle);
             Name = "frmAddEditUser";
             ShowIcon = false;
             Text = "Add New User";
             ZoomScaleRect = new Rectangle(19, 19, 800, 450);
+            Load += frmAddEditUser_Load;
             tabControl1.ResumeLayout(false);
             tbPersonalInfo.ResumeLayout(false);
             tbLoginInfo.ResumeLayout(false);
             tbLoginInfo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)errorProvider1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-        private Label lblAddNewUser;
+        private Label lblTitle;
         private Sunny.UI.UIButton btnSave;
         private Sunny.UI.UIButton btnClose;
         private TabControl tabControl1;
@@ -268,9 +320,12 @@
         private Sunny.UI.UITextBox txtPassword;
         private Sunny.UI.UITextBox txtConfirmPassword;
         private Sunny.UI.UITextBox txtUsername;
-        private Label label3;
-        private Label label1;
+        private Label lblConfirmPassword;
+        private Label lblPassword;
         private Label label2;
-        private Sunny.UI.UICheckBox uiCheckBox1;
+        private Sunny.UI.UICheckBox chbIsActive;
+        private Sunny.UI.UIButton btnBack;
+        private ErrorProvider errorProvider1;
+        private LinkLabel llblChangePassword;
     }
 }
