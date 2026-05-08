@@ -50,7 +50,6 @@
             MainFormMenuStrip.Size = new Size(289, 634);
             MainFormMenuStrip.TabIndex = 0;
             MainFormMenuStrip.Text = "menuStrip1";
-            MainFormMenuStrip.ItemClicked += MainFormMenuStrip_ItemClicked;
             // 
             // peopleToolStripMenuItem
             // 
@@ -140,6 +139,7 @@
             logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
             logoutToolStripMenuItem.Size = new Size(256, 68);
             logoutToolStripMenuItem.Text = "Logout";
+            logoutToolStripMenuItem.Click += logoutToolStripMenuItem_Click;
             // 
             // frmMain
             // 
@@ -156,6 +156,7 @@
             Text = "DVLD";
             WindowState = FormWindowState.Maximized;
             ZoomScaleRect = new Rectangle(19, 19, 800, 450);
+            Load += frmMain_Load;
             MainFormMenuStrip.ResumeLayout(false);
             MainFormMenuStrip.PerformLayout();
             ResumeLayout(false);

@@ -178,7 +178,11 @@ namespace DVLD_BLL
 
         public bool ChangePassword(string newPasswordHash)
             => clsDataUser.ChangePassword(this.ID, newPasswordHash);
-        
+
+        public bool CheckIfUsernameAndPasswordRight(string Username, string PasswordHash)
+            => clsDataUser.CheckIfUsernameAndPasswordRight(Username, PasswordHash);
+
+
 
     }
 }

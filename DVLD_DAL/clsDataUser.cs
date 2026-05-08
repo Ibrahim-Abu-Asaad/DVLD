@@ -596,6 +596,45 @@ namespace DVLD_DAL
 
         }
 
+        public static bool CheckIfUsernameAndPasswordRight(string Username, string PasswordHash)
+        {
+
+            bool IsUserExist = false;
+            string msg = "";
+
+
+            string query = @"SELECT Found=1 FROM Users WHERE Username = @Username AND Password = @PasswordHash";
+            SqlCommand command = new SqlCommand(query, connection);
+            command.Parameters.AddWithValue("@Username", Username);
+            command.Parameters.AddWithValue("@Password", PasswordHash);
+
+            try
+            {
+
+                connection.Open();
+
+                SqlDataReader reader = command.ExecuteReader();
+
+                if (reader.HasRows)
+                    IsUserExist = true;
+
+
+
+
+            }
+            catch (Exception ex)
+            {
+                msg = ex.Message;
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+            return IsUserExist;
+
+        }
+
 
 
 
