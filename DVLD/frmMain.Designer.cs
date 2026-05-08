@@ -147,10 +147,13 @@
             BackgroundImage = Properties.Resources.Car3;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1044, 669);
+            ControlBox = false;
             ControlBoxFillHoverColor = Color.FromArgb(80, 160, 255);
             Controls.Add(MainFormMenuStrip);
             Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             MainMenuStrip = MainFormMenuStrip;
+            MaximizeBox = false;
+            MinimizeBox = false;
             Name = "frmMain";
             ShowIcon = false;
             Text = "DVLD";

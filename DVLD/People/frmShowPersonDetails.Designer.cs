@@ -55,6 +55,7 @@
             ctrlShowPersonDetails2.TabIndex = 1;
             ctrlShowPersonDetails2.Text = "ctrlShowPersonDetails21";
             ctrlShowPersonDetails2.TextAlignment = ContentAlignment.MiddleCenter;
+            ctrlShowPersonDetails2.Click += ctrlShowPersonDetails2_Click;
             // 
             // frmShowPersonDetails
             // 

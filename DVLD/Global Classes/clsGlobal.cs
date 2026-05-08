@@ -10,6 +10,9 @@ namespace DVLD.Global_Classes
     internal class clsGlobal
     {
 
+        public static clsUser CurrentUser = new clsUser();
+
+
         //public static clsUser CurrentUser;
 
         //public static bool RememberUsernameAndPassword(string Username, string Password)

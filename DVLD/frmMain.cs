@@ -1,3 +1,4 @@
+using DVLD.Global_Classes;
 using DVLD.Users;
 using DVLD_BLL;
 using Sunny.UI;
@@ -9,6 +10,7 @@ namespace DVLD
 
         int _CurrentUserID = -1;
         clsUser _CurrentUser = new clsUser();
+        //clsUser _CurrentUser = clsGlobal.CurrentUser;
 
         public frmMain(int userID)
         {

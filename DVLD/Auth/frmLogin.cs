@@ -16,6 +16,8 @@ namespace DVLD.Auth
 {
     public partial class frmLogin : UIForm
     {
+
+
         public frmLogin()
         {
             InitializeComponent();
@@ -25,9 +27,11 @@ namespace DVLD.Auth
         {
 
             txtPassword.PasswordChar = '●';
+
+            //////////////////////////////////TEST///////////////////////////////
             txtUsername.Text = "ibr";
             txtPassword.Text = "Ibrahim1";
-
+            //////////////////////////////////TEST///////////////////////////////
         }
 
         private void chbShowPassword_CheckedChanged(object sender, EventArgs e)
@@ -87,9 +91,19 @@ namespace DVLD.Auth
                 return;
 
             clsUser user = clsUser.GetUserByUsername(txtUsername.Text);
+            clsGlobal.CurrentUser = user;
 
+            this.Hide();
             frmMain frm = new frmMain(user.ID);
             frm.ShowDialog();
+            this.Show();
+
+            //////////////////////////////////Should Uncomment them later///////////////////////////////
+            //txtUsername.Text = "";
+            //txtPassword.Text = "";
+            //txtUsername.Focus();
+            //////////////////////////////////Should Uncomment them later///////////////////////////////
+
 
         }
     }

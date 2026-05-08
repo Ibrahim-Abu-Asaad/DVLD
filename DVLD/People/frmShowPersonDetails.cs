@@ -42,5 +42,10 @@ namespace DVLD
             //FillPersonInfo();
 
         }
+
+        private void ctrlShowPersonDetails2_Click(object sender, EventArgs e)
+        {
+            //
+        }
     }
 }
