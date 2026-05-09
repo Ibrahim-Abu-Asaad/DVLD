@@ -30,6 +30,7 @@
         {
             MainFormMenuStrip = new MenuStrip();
             peopleToolStripMenuItem = new ToolStripMenuItem();
+            manageApplicationTypesToolStripMenuItem = new ToolStripMenuItem();
             trebuchetMS12ptToolStripMenuItem = new ToolStripMenuItem();
             driversToolStripMenuItem = new ToolStripMenuItem();
             usersToolStripMenuItem = new ToolStripMenuItem();
@@ -53,6 +54,7 @@
             // 
             // peopleToolStripMenuItem
             // 
+            peopleToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { manageApplicationTypesToolStripMenuItem });
             peopleToolStripMenuItem.Font = new Font("Trebuchet MS", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             peopleToolStripMenuItem.Image = Properties.Resources.Applications_64;
             peopleToolStripMenuItem.ImageAlign = ContentAlignment.MiddleLeft;
@@ -61,6 +63,16 @@
             peopleToolStripMenuItem.Name = "peopleToolStripMenuItem";
             peopleToolStripMenuItem.Size = new Size(256, 68);
             peopleToolStripMenuItem.Text = "Applications";
+            // 
+            // manageApplicationTypesToolStripMenuItem
+            // 
+            manageApplicationTypesToolStripMenuItem.Font = new Font("Trebuchet MS", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            manageApplicationTypesToolStripMenuItem.Image = Properties.Resources.Application_Types_641;
+            manageApplicationTypesToolStripMenuItem.ImageScaling = ToolStripItemImageScaling.None;
+            manageApplicationTypesToolStripMenuItem.Name = "manageApplicationTypesToolStripMenuItem";
+            manageApplicationTypesToolStripMenuItem.Size = new Size(404, 70);
+            manageApplicationTypesToolStripMenuItem.Text = "Manage Application Types";
+            manageApplicationTypesToolStripMenuItem.Click += manageApplicationTypesToolStripMenuItem_Click;
             // 
             // trebuchetMS12ptToolStripMenuItem
             // 
@@ -177,5 +189,6 @@
         private ToolStripMenuItem logoutToolStripMenuItem;
         private ToolStripMenuItem showAccountInfoToolStripMenuItem;
         private ToolStripMenuItem changePasswordToolStripMenuItem;
+        private ToolStripMenuItem manageApplicationTypesToolStripMenuItem;
     }
 }

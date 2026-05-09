@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -279,6 +280,19 @@ namespace DVLD.Helpers
 
         public static bool IsNumber(string Number)
             => ValidateInteger(Number) || ValidateFloat(Number);
+
+        public static bool IsEmpty(string text, ref string ErrorMessage)
+        {
+
+            if (string.IsNullOrWhiteSpace(text))
+            {
+                ErrorMessage = "required.";
+                return true;
+            }
+
+            return false;
+
+        }
 
 
         // User Validation
