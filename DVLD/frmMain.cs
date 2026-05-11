@@ -1,3 +1,4 @@
+using DVLD.Applications.TestTypes;
 using DVLD.Global_Classes;
 using DVLD.Users;
 using DVLD_BLL;
@@ -66,5 +67,10 @@ namespace DVLD
             frm.ShowDialog();
         }
 
+        private void manageTestTypesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmManageTestTypes frm = new frmManageTestTypes();
+            frm.ShowDialog();
+        }
     }
 }

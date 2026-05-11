@@ -38,6 +38,7 @@
             showAccountInfoToolStripMenuItem = new ToolStripMenuItem();
             changePasswordToolStripMenuItem = new ToolStripMenuItem();
             logoutToolStripMenuItem = new ToolStripMenuItem();
+            manageTestTypesToolStripMenuItem = new ToolStripMenuItem();
             MainFormMenuStrip.SuspendLayout();
             SuspendLayout();
             // 
@@ -54,7 +55,7 @@
             // 
             // peopleToolStripMenuItem
             // 
-            peopleToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { manageApplicationTypesToolStripMenuItem });
+            peopleToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { manageApplicationTypesToolStripMenuItem, manageTestTypesToolStripMenuItem });
             peopleToolStripMenuItem.Font = new Font("Trebuchet MS", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             peopleToolStripMenuItem.Image = Properties.Resources.Applications_64;
             peopleToolStripMenuItem.ImageAlign = ContentAlignment.MiddleLeft;
@@ -153,6 +154,15 @@
             logoutToolStripMenuItem.Text = "Logout";
             logoutToolStripMenuItem.Click += logoutToolStripMenuItem_Click;
             // 
+            // manageTestTypesToolStripMenuItem
+            // 
+            manageTestTypesToolStripMenuItem.Image = Properties.Resources.Test_Type_64;
+            manageTestTypesToolStripMenuItem.ImageScaling = ToolStripItemImageScaling.None;
+            manageTestTypesToolStripMenuItem.Name = "manageTestTypesToolStripMenuItem";
+            manageTestTypesToolStripMenuItem.Size = new Size(404, 70);
+            manageTestTypesToolStripMenuItem.Text = "Manage Test Types";
+            manageTestTypesToolStripMenuItem.Click += manageTestTypesToolStripMenuItem_Click;
+            // 
             // frmMain
             // 
             AutoScaleMode = AutoScaleMode.None;
@@ -190,5 +200,6 @@
         private ToolStripMenuItem showAccountInfoToolStripMenuItem;
         private ToolStripMenuItem changePasswordToolStripMenuItem;
         private ToolStripMenuItem manageApplicationTypesToolStripMenuItem;
+        private ToolStripMenuItem manageTestTypesToolStripMenuItem;
     }
 }
