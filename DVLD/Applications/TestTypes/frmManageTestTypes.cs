@@ -71,10 +71,12 @@ namespace DVLD.Applications.TestTypes
         private void dgvManageTestTypes_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
 
-            int TestTypeID = (int)dgvManageTestTypes.Rows[e.RowIndex].Cells["ID"].Value;
+            
 
             if (e.RowIndex >= 0 && dgvManageTestTypes.Columns[e.ColumnIndex].Name == "colEdit")
             {
+
+                int TestTypeID = (int)dgvManageTestTypes.Rows[e.RowIndex].Cells["ID"].Value;
                 frmEditTestTypes frm = new frmEditTestTypes(TestTypeID);
                 frm.ShowDialog();
                 _RefreshPage();

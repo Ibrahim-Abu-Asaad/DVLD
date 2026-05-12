@@ -66,10 +66,10 @@ namespace DVLD
         private void dgvManageApplicationTypes_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
-            int ApplicationTypeID = (int)dgvManageApplicationTypes.Rows[e.RowIndex].Cells["ID"].Value;
 
             if (e.RowIndex >= 0 && dgvManageApplicationTypes.Columns[e.ColumnIndex].Name == "colEdit")
             {
+                int ApplicationTypeID = (int)dgvManageApplicationTypes.Rows[e.RowIndex].Cells["ID"].Value;
                 frmEditApplicationTypes frm = new frmEditApplicationTypes(ApplicationTypeID);
                 frm.ShowDialog();
                 _RefreshPage();

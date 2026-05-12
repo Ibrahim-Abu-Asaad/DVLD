@@ -63,6 +63,7 @@
     <Compile Include="clsDataApplicationTypes.cs" />
     <Compile Include="clsDataAccessSettings.cs" />
     <Compile Include="clsDataCountry.cs" />
+    <Compile Include="clsDataLicenseClasses.cs" />
     <Compile Include="clsDataPerson.cs" />
     <Compile Include="clsDataTestTypes.cs" />
     <Compile Include="clsDataUser.cs" />
