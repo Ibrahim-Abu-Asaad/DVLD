@@ -34,7 +34,7 @@ namespace DVLD.People.Controls
             set
             {
                 _ShowAddPersonIcon = value;
-                pbAddNewPerson.Visible = _ShowAddPersonIcon;
+                btnAddNewPerson.Visible = _ShowAddPersonIcon;
             }
         }
 
@@ -104,7 +104,7 @@ namespace DVLD.People.Controls
             txtSearchBy.Focus();
         }
 
-        private void pbSearchPerson_Click(object sender, EventArgs e)
+        private void btnSearch_Click(object sender, EventArgs e)
         {
 
             if (txtSearchBy.Text == string.Empty)
@@ -163,7 +163,7 @@ namespace DVLD.People.Controls
         private void ctrlShowPersonDetailsWithFilter_Click(object sender, EventArgs e)
         {
             _ShowAddPersonIcon = true;
-            pbAddNewPerson.Visible = true;
+            btnAddNewPerson.Visible = true;
         }
 
         public void FillComboBoxWithOnlyNationalNO()
@@ -187,5 +187,30 @@ namespace DVLD.People.Controls
             FillComboBoxWithOnlyNationalNO();
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+            if (txtSearchBy.Text == string.Empty)
+            {
+                ctrlShowPersonDetails21.ResetToDefault();
+                MessageBox.Show("National NO is required",
+                                "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            FindNow();
+
+        }
+
+        private void btnAddNewPerson_Click(object sender, EventArgs e)
+        {
+
+            frmAddEditPerson frm = new frmAddEditPerson();
+            frm.DataBack += DataBackEvent;
+            frm.ShowDialog();
+
+        }
+
     }
 }

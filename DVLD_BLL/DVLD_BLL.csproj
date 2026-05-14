@@ -42,6 +42,7 @@
     <Reference Include="System.Data.SqlClient, Version=4.6.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\DVLD\packages\System.Data.SqlClient.4.9.1\lib\net462\System.Data.SqlClient.dll</HintPath>
     </Reference>
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Memory, Version=4.0.5.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Memory.4.6.3\lib\net462\System.Memory.dll</HintPath>
     </Reference>
@@ -52,6 +53,7 @@
     <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.1.2\lib\net462\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
     </Reference>
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -60,11 +62,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="clsApplicationTypes.cs" />
+    <Compile Include="clsApplication.cs" />
+    <Compile Include="clsApplicationType.cs" />
     <Compile Include="clsCountry.cs" />
-    <Compile Include="clsLicenseClasses.cs" />
+    <Compile Include="clsLicenseClass.cs" />
     <Compile Include="clsPerson.cs" />
-    <Compile Include="clsTestTypes.cs" />
+    <Compile Include="clsTestType.cs" />
     <Compile Include="clsUser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

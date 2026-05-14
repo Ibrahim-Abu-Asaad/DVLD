@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DVLD_DAL
 {
-    public class clsDataTestTypes
+    public class clsDataTestType
     {
 
         readonly static string ConnectionString = clsDataAccessSettings.ConnectionString;

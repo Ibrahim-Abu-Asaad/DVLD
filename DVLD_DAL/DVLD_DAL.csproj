@@ -60,12 +60,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="clsDataApplicationTypes.cs" />
+    <Compile Include="clsDataApplication.cs" />
+    <Compile Include="clsDataApplicationType.cs" />
     <Compile Include="clsDataAccessSettings.cs" />
     <Compile Include="clsDataCountry.cs" />
-    <Compile Include="clsDataLicenseClasses.cs" />
+    <Compile Include="clsDataLicenseClass.cs" />
     <Compile Include="clsDataPerson.cs" />
-    <Compile Include="clsDataTestTypes.cs" />
+    <Compile Include="clsDataTestType.cs" />
     <Compile Include="clsDataUser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

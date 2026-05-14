@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace DVLD_BLL
 {
-    public class clsLicenseClasses
+    public class clsLicenseClass
     {
 
         // Properties
@@ -22,7 +22,7 @@ namespace DVLD_BLL
 
 
         // Constructors
-        public clsLicenseClasses()
+        public clsLicenseClass()
         {
             this.ID = -1;
             this.Name = "";
@@ -32,7 +32,7 @@ namespace DVLD_BLL
             this.ClassFees = 0;
         }
 
-        private clsLicenseClasses(int ID, string Name, string Description, int MinimumAllowedAge, int DefaultValidityLength, decimal ClassFees)
+        private clsLicenseClass(int ID, string Name, string Description, int MinimumAllowedAge, int DefaultValidityLength, decimal ClassFees)
         {
             this.ID = ID;
             this.Name = Name;
@@ -42,7 +42,7 @@ namespace DVLD_BLL
             this.ClassFees = ClassFees;
         }
 
-        private clsLicenseClasses(string Name, string Description, int MinimumAllowedAge, int DefaultValidityLength, decimal ClassFees)
+        private clsLicenseClass(string Name, string Description, int MinimumAllowedAge, int DefaultValidityLength, decimal ClassFees)
         {
             this.Name = Name;
             this.Description = Description;
@@ -54,7 +54,7 @@ namespace DVLD_BLL
         // Functions
 
         public static DataTable GetAllClassLisences()
-            => clsDataLicenseClasses.GetAllLisenceClasses();
+            => clsDataLicenseClass.GetAllLisenceClasses();
 
 
 

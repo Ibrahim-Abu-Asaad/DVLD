@@ -17,14 +17,14 @@ namespace DVLD.Applications.TestTypes
     {
 
         int _TestTypeID = -1;
-        clsTestTypes _TestType = new clsTestTypes();
+        clsTestType _TestType = new clsTestType();
 
         public frmEditTestTypes(int TestTypeID)
         {
             InitializeComponent();
 
             _TestTypeID = TestTypeID;
-            _TestType = clsTestTypes.GetTestTypeByID(TestTypeID);
+            _TestType = clsTestType.GetTestTypeByID(TestTypeID);
         }
 
         private void frmEditTestTypes_Load(object sender, EventArgs e)

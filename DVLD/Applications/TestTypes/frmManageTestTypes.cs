@@ -92,7 +92,7 @@ namespace DVLD.Applications.TestTypes
         private void _ListTestTypes()
         {
 
-            dgvManageTestTypes.DataSource = clsTestTypes.GetAllTestTypes();
+            dgvManageTestTypes.DataSource = clsTestType.GetAllTestTypes();
 
             dgvManageTestTypes.Columns["ID"].Visible = false;
 

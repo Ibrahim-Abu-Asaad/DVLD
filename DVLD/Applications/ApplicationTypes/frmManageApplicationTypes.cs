@@ -23,7 +23,7 @@ namespace DVLD
         private void _ListApplicationTypes()
         {
 
-            dgvManageApplicationTypes.DataSource = clsApplicationTypes.GetApplicationTypes();
+            dgvManageApplicationTypes.DataSource = clsApplicationType.GetApplicationTypes();
 
             dgvManageApplicationTypes.Columns["ID"].Visible = false;
 

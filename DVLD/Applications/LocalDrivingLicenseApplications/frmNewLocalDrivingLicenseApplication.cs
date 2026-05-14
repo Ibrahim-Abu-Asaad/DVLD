@@ -84,8 +84,8 @@ namespace DVLD.Applications
         private void _FillDataInForm()
         {
 
-            clsApplicationTypes NewLocalApplicationType = new clsApplicationTypes();
-            NewLocalApplicationType = clsApplicationTypes.Find(1);
+            clsApplicationType NewLocalApplicationType = new clsApplicationType();
+            NewLocalApplicationType = clsApplicationType.Find(1);
 
             lblAppFees.Text = NewLocalApplicationType.Fees.ToString();
 
@@ -101,7 +101,7 @@ namespace DVLD.Applications
         private void _FillComboBoxWithData()
         {
 
-            cbLisenceClass.DataSource = clsLicenseClasses.GetAllClassLisences();
+            cbLisenceClass.DataSource = clsLicenseClass.GetAllClassLisences();
 
             cbLisenceClass.DisplayMember = "ClassName";
 

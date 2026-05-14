@@ -34,12 +34,10 @@
             cbFindBy = new Sunny.UI.UIComboBox();
             txtSearchBy = new Sunny.UI.UITextBox();
             gbFilter = new Sunny.UI.UIGroupBox();
-            pbAddNewPerson = new PictureBox();
-            pbSearchPerson = new PictureBox();
+            btnAddNewPerson = new Button();
+            btnSearch = new Button();
             errorProvider1 = new ErrorProvider(components);
             gbFilter.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pbAddNewPerson).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pbSearchPerson).BeginInit();
             ((System.ComponentModel.ISupportInitialize)errorProvider1).BeginInit();
             SuspendLayout();
             // 
@@ -107,8 +105,8 @@
             // 
             // gbFilter
             // 
-            gbFilter.Controls.Add(pbAddNewPerson);
-            gbFilter.Controls.Add(pbSearchPerson);
+            gbFilter.Controls.Add(btnAddNewPerson);
+            gbFilter.Controls.Add(btnSearch);
             gbFilter.Controls.Add(label2);
             gbFilter.Controls.Add(txtSearchBy);
             gbFilter.Controls.Add(cbFindBy);
@@ -124,29 +122,31 @@
             gbFilter.Text = "Filter";
             gbFilter.TextAlignment = ContentAlignment.MiddleLeft;
             // 
-            // pbAddNewPerson
+            // btnAddNewPerson
             // 
-            pbAddNewPerson.Cursor = Cursors.Hand;
-            pbAddNewPerson.Image = Properties.Resources.Add_Person_404;
-            pbAddNewPerson.Location = new Point(609, 50);
-            pbAddNewPerson.Name = "pbAddNewPerson";
-            pbAddNewPerson.Size = new Size(46, 37);
-            pbAddNewPerson.SizeMode = PictureBoxSizeMode.Zoom;
-            pbAddNewPerson.TabIndex = 20;
-            pbAddNewPerson.TabStop = false;
-            pbAddNewPerson.Click += pbAddNewPerson_Click;
+            btnAddNewPerson.BackColor = Color.FromArgb(243, 249, 255);
+            btnAddNewPerson.BackgroundImage = Properties.Resources.Add_Person_405;
+            btnAddNewPerson.BackgroundImageLayout = ImageLayout.Zoom;
+            btnAddNewPerson.Cursor = Cursors.Hand;
+            btnAddNewPerson.Location = new Point(613, 44);
+            btnAddNewPerson.Name = "btnAddNewPerson";
+            btnAddNewPerson.Size = new Size(50, 41);
+            btnAddNewPerson.TabIndex = 9;
+            btnAddNewPerson.UseVisualStyleBackColor = false;
+            btnAddNewPerson.Click += btnAddNewPerson_Click;
             // 
-            // pbSearchPerson
+            // btnSearch
             // 
-            pbSearchPerson.Cursor = Cursors.Hand;
-            pbSearchPerson.Image = Properties.Resources.SearchPerson;
-            pbSearchPerson.Location = new Point(557, 50);
-            pbSearchPerson.Name = "pbSearchPerson";
-            pbSearchPerson.Size = new Size(46, 37);
-            pbSearchPerson.SizeMode = PictureBoxSizeMode.Zoom;
-            pbSearchPerson.TabIndex = 19;
-            pbSearchPerson.TabStop = false;
-            pbSearchPerson.Click += pbSearchPerson_Click;
+            btnSearch.BackColor = Color.FromArgb(243, 249, 255);
+            btnSearch.BackgroundImage = Properties.Resources.SearchPerson1;
+            btnSearch.BackgroundImageLayout = ImageLayout.Zoom;
+            btnSearch.Cursor = Cursors.Hand;
+            btnSearch.Location = new Point(557, 44);
+            btnSearch.Name = "btnSearch";
+            btnSearch.Size = new Size(50, 41);
+            btnSearch.TabIndex = 8;
+            btnSearch.UseVisualStyleBackColor = false;
+            btnSearch.Click += btnSearch_Click;
             // 
             // errorProvider1
             // 
@@ -164,8 +164,6 @@
             Click += ctrlShowPersonDetailsWithFilter_Click;
             gbFilter.ResumeLayout(false);
             gbFilter.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pbAddNewPerson).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pbSearchPerson).EndInit();
             ((System.ComponentModel.ISupportInitialize)errorProvider1).EndInit();
             ResumeLayout(false);
         }
@@ -177,8 +175,8 @@
         private Sunny.UI.UIComboBox cbFindBy;
         private Sunny.UI.UITextBox txtSearchBy;
         private Sunny.UI.UIGroupBox gbFilter;
-        private PictureBox pbSearchPerson;
-        private PictureBox pbAddNewPerson;
         private ErrorProvider errorProvider1;
+        private Button btnSearch;
+        private Button btnAddNewPerson;
     }
 }

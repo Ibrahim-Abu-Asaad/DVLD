@@ -17,13 +17,13 @@ namespace DVLD
     {
 
         int _ApplicationTypeID = -1;
-        clsApplicationTypes _ApplicationType = new clsApplicationTypes();
+        clsApplicationType _ApplicationType = new clsApplicationType();
 
         public frmEditApplicationTypes(int ApplicationTypeID)
         {
             InitializeComponent();
 
-            _ApplicationType = clsApplicationTypes.Find(ApplicationTypeID);
+            _ApplicationType = clsApplicationType.Find(ApplicationTypeID);
         }
 
         private void btnSave_Click(object sender, EventArgs e)

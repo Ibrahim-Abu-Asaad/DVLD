@@ -9,7 +9,7 @@ using System.Xml.Linq;
 
 namespace DVLD_BLL
 {
-    public class clsTestTypes
+    public class clsTestType
     {
 
 
@@ -21,7 +21,7 @@ namespace DVLD_BLL
 
 
         // Constructors
-        public clsTestTypes()
+        public clsTestType()
         {
             this.ID = -1;
             this.Title = "";
@@ -30,7 +30,7 @@ namespace DVLD_BLL
             
         }
 
-        public clsTestTypes(int ID, string Title, string Description, decimal Fees)
+        public clsTestType(int ID, string Title, string Description, decimal Fees)
         {
             this.ID = ID;
             this.Title = Title;
@@ -38,7 +38,7 @@ namespace DVLD_BLL
             this.Fees = Fees;
         }
 
-        public clsTestTypes(string Title, string Description, decimal Fees)
+        public clsTestType(string Title, string Description, decimal Fees)
         {
             this.Title = Title;
             this.Description = Title;
@@ -48,25 +48,25 @@ namespace DVLD_BLL
         // Functions
 
         public static DataTable GetAllTestTypes()
-            => clsDataTestTypes.GetTestTypes();
+            => clsDataTestType.GetTestTypes();
 
 
-        public static clsTestTypes GetTestTypeByID(int ID)
+        public static clsTestType GetTestTypeByID(int ID)
         {
 
             string title = "";
             string description = "";
             decimal fees = 0;
 
-            if (clsDataTestTypes.GetTestTypeByID(ID, ref title, ref description, ref fees))
-                return new clsTestTypes(ID, title, description, fees);
+            if (clsDataTestType.GetTestTypeByID(ID, ref title, ref description, ref fees))
+                return new clsTestType(ID, title, description, fees);
             else return null;
 
         }
 
 
         public bool Save()
-            => clsDataTestTypes.UpdateTestType(this.ID, this.Title, this.Description, this.Fees);
+            => clsDataTestType.UpdateTestType(this.ID, this.Title, this.Description, this.Fees);
 
 
 

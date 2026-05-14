@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DVLD_DAL
 {
-    public class clsDataLicenseClasses
+    public class clsDataLicenseClass
     {
 
         readonly static string ConnectionString = clsDataAccessSettings.ConnectionString;

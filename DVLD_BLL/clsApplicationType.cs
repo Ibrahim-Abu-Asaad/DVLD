@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DVLD_BLL
 {
-    public class clsApplicationTypes
+    public class clsApplicationType
     {
 
         //public enum enMode { Update = 0 };
@@ -19,7 +19,7 @@ namespace DVLD_BLL
         public decimal Fees { get; set; }
 
 
-        private clsApplicationTypes(int ID, string Title, decimal Fees)
+        private clsApplicationType(int ID, string Title, decimal Fees)
         {
             this.ID = ID;
             this.Title = Title;
@@ -28,7 +28,7 @@ namespace DVLD_BLL
         }
 
 
-        public clsApplicationTypes()
+        public clsApplicationType()
         {
             this.ID = -1;
             this.Title = "";
@@ -37,14 +37,14 @@ namespace DVLD_BLL
         }
 
 
-        public static clsApplicationTypes Find(int ID)
+        public static clsApplicationType Find(int ID)
         {
             
             string Title = "";
             decimal Fees = 0;
 
-            if (clsDataApplicationTypes.GetApplicationTypeByID(ID, ref Title, ref Fees))
-                return new clsApplicationTypes(ID, Title, Fees);
+            if (clsDataApplicationType.GetApplicationTypeByID(ID, ref Title, ref Fees))
+                return new clsApplicationType(ID, Title, Fees);
             else
                 return null;
 
@@ -53,7 +53,7 @@ namespace DVLD_BLL
 
 
         private bool _UpdateApplicationType()
-            => clsDataApplicationTypes.UpdateApplicationType(this.ID, this.Title, this.Fees);
+            => clsDataApplicationType.UpdateApplicationType(this.ID, this.Title, this.Fees);
 
 
         public bool Save()
@@ -61,7 +61,7 @@ namespace DVLD_BLL
 
 
         public static DataTable GetApplicationTypes()
-            => clsDataApplicationTypes.GetApplicationTypes();
+            => clsDataApplicationType.GetApplicationTypes();
 
 
 
