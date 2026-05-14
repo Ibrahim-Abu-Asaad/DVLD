@@ -10,11 +10,14 @@ using System.Xml.Linq;
 namespace DVLD_BLL
 {
     public class clsTestType
-    {
-
+    { 
+        
+        public enum enMode { AddNew = 0, Update = 1 };
+        public enMode Mode = enMode.AddNew;
+        public enum enTestType { VisionTest = 1, WrittenTest = 2, StreetTest = 3 };
 
         // Properties
-        public int ID { get; set; }
+        public clsTestType.enTestType ID { set; get; }
         public string Title { get; set; }
         public string Description { get; set; }
         public decimal Fees { get; set; }
@@ -23,14 +26,14 @@ namespace DVLD_BLL
         // Constructors
         public clsTestType()
         {
-            this.ID = -1;
+            this.ID = enTestType.VisionTest;
             this.Title = "";
             this.Description = "";
             this.Fees = 0;
             
         }
 
-        public clsTestType(int ID, string Title, string Description, decimal Fees)
+        public clsTestType(enTestType ID, string Title, string Description, decimal Fees)
         {
             this.ID = ID;
             this.Title = Title;
@@ -59,14 +62,14 @@ namespace DVLD_BLL
             decimal fees = 0;
 
             if (clsDataTestType.GetTestTypeByID(ID, ref title, ref description, ref fees))
-                return new clsTestType(ID, title, description, fees);
+                return new clsTestType((enTestType)ID, title, description, fees);
             else return null;
 
         }
 
 
         public bool Save()
-            => clsDataTestType.UpdateTestType(this.ID, this.Title, this.Description, this.Fees);
+            => clsDataTestType.UpdateTestType((int)this.ID, this.Title, this.Description, this.Fees);
 
 
 

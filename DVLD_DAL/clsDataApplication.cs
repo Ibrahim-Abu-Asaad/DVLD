@@ -74,7 +74,7 @@ namespace DVLD_DAL
                     ApplicationTypeID = (int)reader["ApplicationTypeID"];
                     ApplicationStatus = (byte)reader["ApplicationStatus"];
                     LastStatusDate = (DateTime)reader["LastStatusDate"];
-                    PaidFees = (decimal)reader["PaidFees"];
+                    PaidFees = (float)reader["PaidFees"];
                     CreatedByUserID = (int)reader["CreatedByUserID"];
                 }
 
