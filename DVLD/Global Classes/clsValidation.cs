@@ -107,6 +107,45 @@ namespace DVLD.Helpers
 
         }
 
+        public static bool IsAge21OrGreater(DateTime D, ref string ErrorMessage)
+        {
+
+            ErrorMessage = string.Empty;
+
+            if (D > DateTime.Today.AddYears(-21))
+            {
+
+                ErrorMessage = "You must be at least 21 years old.";
+
+                D = DateTime.Today.AddYears(-21);
+
+                return false;
+            }
+
+            return true;
+
+        }
+
+        public static bool IsAge18OrGreater(DateTime D, ref string ErrorMessage)
+        {
+
+            ErrorMessage = string.Empty;
+
+            if (D > DateTime.Today.AddYears(-18))
+            {
+
+                ErrorMessage = "You must be at least 18 years old.";
+
+                D = DateTime.Today.AddYears(-18);
+
+                return false;
+            }
+
+            return true;
+
+        }
+
+
         public static bool IsAddressValid(string Address, ref string ErrorMessage)
         {
 

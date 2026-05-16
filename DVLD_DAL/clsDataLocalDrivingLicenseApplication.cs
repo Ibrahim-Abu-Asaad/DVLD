@@ -10,7 +10,7 @@ using static System.Net.Mime.MediaTypeNames;
 
 namespace DVLD_DAL
 {
-    public class clsDataLocalDrivingLicenseApplications
+    public class clsDataLocalDrivingLicenseApplication
     {
 
         readonly static string ConnectionString = clsDataAccessSettings.ConnectionString;
@@ -36,6 +36,7 @@ namespace DVLD_DAL
                 while (reader.Read())
                 {
 
+                    IsFound = true;
                     ApplicationID = (int)reader["ApplicationID"];
                     LicenseClassID = (int)reader["LicenseClassID"];
 
@@ -242,6 +243,197 @@ namespace DVLD_DAL
             }
 
             return (rowsAffected > 0);
+
+        }
+
+        public static bool DoesPassTestType(int ID, int TestTypeID)
+
+        {
+
+            string msg = "";
+            bool Result = false;
+
+            SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
+
+            string query = @" SELECT top 1 TestResult
+                            FROM LocalDrivingLicenseApplications INNER JOIN
+                                 TestAppointments ON LocalDrivingLicenseApplications.ID = TestAppointments.LocalDrivingLicenseApplicationID INNER JOIN
+                                 Tests ON TestAppointments.ID = Tests.TestAppointmentID
+                            WHERE
+                            (LocalDrivingLicenseApplications.ID = @ID) 
+                            AND(TestAppointments.TestTypeID = @TestTypeID)
+                            ORDER BY TestAppointments.TestAppointmentID desc";
+
+            SqlCommand command = new SqlCommand(query, connection);
+
+            command.Parameters.AddWithValue("@ID", ID);
+            command.Parameters.AddWithValue("@TestTypeID", TestTypeID);
+
+            try
+            {
+                connection.Open();
+
+                object result = command.ExecuteScalar();
+
+                if (result != null && bool.TryParse(result.ToString(), out bool returnedResult))
+                    Result = returnedResult;
+            }
+
+            catch (Exception ex)
+            {
+                msg = ex.Message;
+            }
+
+            finally
+            {
+                connection.Close();
+            }
+
+            return Result;
+
+        }
+
+        public static bool DoesAttendTestType(int ID, int TestTypeID)
+
+        {
+
+            string msg = "";
+            bool IsFound = false;
+
+            SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
+
+            string query = @" SELECT top 1 Found=1
+                            FROM LocalDrivingLicenseApplications INNER JOIN
+                                 TestAppointments ON LocalDrivingLicenseApplications.ID = TestAppointments.LocalDrivingLicenseApplicationID INNER JOIN
+                                 Tests ON TestAppointments.ID = Tests.TestAppointmentID
+                            WHERE
+                            (LocalDrivingLicenseApplications.ID = @ID) 
+                            AND(TestAppointments.TestTypeID = @TestTypeID)
+                            ORDER BY TestAppointments.ID desc";
+
+            SqlCommand command = new SqlCommand(query, connection);
+
+            command.Parameters.AddWithValue("@ID", ID);
+            command.Parameters.AddWithValue("@TestTypeID", TestTypeID);
+
+            try
+            {
+                connection.Open();
+
+                object result = command.ExecuteScalar();
+
+                if (result != null)
+                    IsFound = true;
+            }
+
+            catch (Exception ex)
+            {
+                msg = ex.Message;
+            }
+
+            finally
+            {
+                connection.Close();
+            }
+
+            return IsFound;
+
+        }
+
+        public static byte TotalTrialsPerTest(int ID, int TestTypeID)
+
+        {
+
+            string msg = "";
+            byte TotalTrialsPerTest = 0;
+
+            SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
+
+            string query = @" SELECT TotalTrialsPerTest = count(TestID)
+                            FROM LocalDrivingLicenseApplications INNER JOIN
+                                 TestAppointments ON LocalDrivingLicenseApplications.ID = TestAppointments.LocalDrivingLicenseApplicationID INNER JOIN
+                                 Tests ON TestAppointments.ID = Tests.TestAppointmentID
+                            WHERE
+                            (LocalDrivingLicenseApplications.ID = @ID) 
+                            AND(TestAppointments.TestTypeID = @TestTypeID)
+                       ";
+
+            SqlCommand command = new SqlCommand(query, connection);
+
+            command.Parameters.AddWithValue("@ID", ID);
+            command.Parameters.AddWithValue("@TestTypeID", TestTypeID);
+
+            try
+            {
+                connection.Open();
+
+                object result = command.ExecuteScalar();
+
+                if (result != null && byte.TryParse(result.ToString(), out byte Trials))
+                    TotalTrialsPerTest = Trials;
+
+            }
+
+            catch (Exception ex)
+            {
+                msg = ex.Message;
+            }
+
+            finally
+            {
+                connection.Close();
+            }
+
+            return TotalTrialsPerTest;
+
+        }
+
+        public static bool IsThereAnActiveScheduledTest(int ID, int TestTypeID)
+        {
+
+            string msg = "";
+            bool Result = false;
+
+            SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
+
+            string query = @" SELECT top 1 Found=1
+                            FROM LocalDrivingLicenseApplications INNER JOIN
+                                 TestAppointments ON LocalDrivingLicenseApplications.ID = TestAppointments.LocalDrivingLicenseApplicationID 
+                            WHERE
+                            (LocalDrivingLicenseApplications.ID = @ID)
+                            AND(TestAppointments.TestTypeID = @TestTypeID) and isLocked=0
+                            ORDER BY TestAppointments.ID desc";
+
+            SqlCommand command = new SqlCommand(query, connection);
+
+            command.Parameters.AddWithValue("@ID", ID);
+            command.Parameters.AddWithValue("@TestTypeID", TestTypeID);
+
+            try
+            {
+                connection.Open();
+
+                object result = command.ExecuteScalar();
+
+
+                if (result != null)
+                {
+                    Result = true;
+                }
+
+            }
+
+            catch (Exception ex)
+            {
+                msg = ex.Message;
+            }
+
+            finally
+            {
+                connection.Close();
+            }
+
+            return Result;
 
         }
 

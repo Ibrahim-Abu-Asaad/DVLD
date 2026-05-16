@@ -212,5 +212,11 @@ namespace DVLD.People.Controls
 
         }
 
+        public void FilterFocus()
+        {
+            txtSearchBy.Focus();
+        }
+
+
     }
 }

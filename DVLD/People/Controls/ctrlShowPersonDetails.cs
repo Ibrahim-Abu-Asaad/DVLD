@@ -47,7 +47,6 @@ namespace DVLD
             _PersonID = -1;
             _Person = null;
 
-
             lblName.Text = "[?????]";
             lblNationalNO.Text = "[?????]";
             lblGender.Text = "[?????]";

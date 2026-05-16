@@ -11,7 +11,7 @@ namespace DVLD_BLL
     public class clsApplication
     {
 
-        public int ID { get; set; }
+        public int ApplicationID { get; set; }
         public int ApplicantPersonID { get; set; }
         //public string ApplicantFullName
         //{
@@ -67,7 +67,7 @@ namespace DVLD_BLL
             enApplicationStatus AppStatus, DateTime LastStatusDate,
             float PaidFees, int CreatedByUserID)
         {
-            this.ID = ID;
+            this.ApplicationID = ID;
             this.ApplicantPersonID = ApplicantPersonID;
             this.Date = Date;
             this.AppTypeID = AppTypeID;
@@ -83,7 +83,7 @@ namespace DVLD_BLL
 
         public clsApplication()
         {
-            this.ID = -1;
+            this.ApplicationID = -1;
             this.ApplicantPersonID = -1;
             this.Date = DateTime.Now;
             this.AppTypeID = -1;
@@ -99,19 +99,19 @@ namespace DVLD_BLL
         {
 
 
-            this.ID = clsDataApplication.AddNewApplication(
+            this.ApplicationID = clsDataApplication.AddNewApplication(
                 this.ApplicantPersonID, this.Date,
                 this.AppTypeID, (byte)this.AppStatus,
                 this.LastStatusDate, this.PaidFees, this.CreatedByUserID);
 
-            return (this.ID != -1);
+            return (this.ApplicationID != -1);
         }
 
         private bool _UpdateApplication()
         {
 
 
-            return clsDataApplication.UpdateApplication(this.ID, this.ApplicantPersonID, this.Date,
+            return clsDataApplication.UpdateApplication(this.ApplicationID, this.ApplicantPersonID, this.Date,
                 this.AppTypeID, (byte)this.AppStatus,
                 this.LastStatusDate, this.PaidFees, this.CreatedByUserID);
 
@@ -122,8 +122,9 @@ namespace DVLD_BLL
             int ApplicantPersonID = -1;
             DateTime ApplicationDate = DateTime.Now; int ApplicationTypeID = -1;
             byte ApplicationStatus = 1; DateTime LastStatusDate = DateTime.Now;
-            float PaidFees = 0; int CreatedByUserID = -1;
-
+            float PaidFees = 0;
+            int CreatedByUserID = -1;
+            // PROBLEM
             bool IsFound = clsDataApplication.GetApplicationInfoByID
                                 (
                                     ApplicationID, ref ApplicantPersonID,
@@ -133,20 +134,21 @@ namespace DVLD_BLL
                                 );
 
             if (IsFound)
-
+            {
                 return new clsApplication(ApplicationID, ApplicantPersonID,
                                      ApplicationDate, ApplicationTypeID,
                                     (enApplicationStatus)ApplicationStatus, LastStatusDate,
                                      PaidFees, CreatedByUserID);
+            }     
             else
                 return null;
         }
 
         public bool Cancel()
-            => clsDataApplication.UpdateStatus(ID, 2);
+            => clsDataApplication.UpdateStatus(ApplicationID, 2);
 
         public bool SetComplete()
-            => clsDataApplication.UpdateStatus(ID, 3);
+            => clsDataApplication.UpdateStatus(ApplicationID, 3);
 
         public bool Save()
         {
@@ -174,7 +176,7 @@ namespace DVLD_BLL
         }
 
         public bool Delete()
-            => clsDataApplication.DeleteApplication(this.ID);
+            => clsDataApplication.DeleteApplication(this.ApplicationID);
 
         public static bool IsApplicationExist(int ApplicationID)
             => clsDataApplication.IsApplicationExist(ApplicationID);

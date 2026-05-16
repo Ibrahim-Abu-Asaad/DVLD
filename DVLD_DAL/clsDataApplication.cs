@@ -74,8 +74,10 @@ namespace DVLD_DAL
                     ApplicationTypeID = (int)reader["ApplicationTypeID"];
                     ApplicationStatus = (byte)reader["ApplicationStatus"];
                     LastStatusDate = (DateTime)reader["LastStatusDate"];
-                    PaidFees = (float)reader["PaidFees"];
                     CreatedByUserID = (int)reader["CreatedByUserID"];
+                    PaidFees = (float)reader["PaidFees"];
+                    
+
                 }
 
                 reader.Close();
@@ -83,7 +85,6 @@ namespace DVLD_DAL
             catch (Exception ex)
             {
                 string msg = ex.Message;
-                isFound = false;
             }
             finally
             {

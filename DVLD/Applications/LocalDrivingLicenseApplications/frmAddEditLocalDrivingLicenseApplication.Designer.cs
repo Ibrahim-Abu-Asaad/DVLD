@@ -1,6 +1,6 @@
 ﻿namespace DVLD.Applications
 {
-    partial class frmNewLocalDrivingLicenseApplication
+    partial class frmAddEditLocalDrivingLicenseApplication
     {
         /// <summary>
         /// Required designer variable.
@@ -329,6 +329,7 @@
             btnSave.TabIndex = 23;
             btnSave.Text = "Save";
             btnSave.TipsFont = new Font("Microsoft Sans Serif", 9F);
+            btnSave.Click += btnSave_Click;
             // 
             // frmNewLocalDrivingLicenseApplication
             // 
@@ -342,6 +343,7 @@
             ShowIcon = false;
             Text = "New Local Driving License Application";
             ZoomScaleRect = new Rectangle(19, 19, 800, 450);
+            Activated += frmNewLocalDrivingLicenseApplication_Activated;
             Load += frmNewLocalDrivingLicenseApplication_Load;
             tabControl1.ResumeLayout(false);
             tbPersonalInfo.ResumeLayout(false);
