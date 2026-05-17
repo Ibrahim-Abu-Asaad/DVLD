@@ -54,7 +54,6 @@
             showAccountInfoToolStripMenuItem = new ToolStripMenuItem();
             changePasswordToolStripMenuItem = new ToolStripMenuItem();
             logoutToolStripMenuItem = new ToolStripMenuItem();
-            btnTest = new Sunny.UI.UIButton();
             MainFormMenuStrip.SuspendLayout();
             SuspendLayout();
             // 
@@ -68,6 +67,7 @@
             MainFormMenuStrip.Size = new Size(289, 634);
             MainFormMenuStrip.TabIndex = 0;
             MainFormMenuStrip.Text = "menuStrip1";
+            MainFormMenuStrip.ItemClicked += MainFormMenuStrip_ItemClicked;
             // 
             // peopleToolStripMenuItem
             // 
@@ -80,6 +80,7 @@
             peopleToolStripMenuItem.Name = "peopleToolStripMenuItem";
             peopleToolStripMenuItem.Size = new Size(256, 68);
             peopleToolStripMenuItem.Text = "Applications";
+            peopleToolStripMenuItem.Click += peopleToolStripMenuItem_Click;
             // 
             // drivingLicenseServicesToolStripMenuItem
             // 
@@ -180,6 +181,7 @@
             localDrivingLicenseApplicationToolStripMenuItem.Name = "localDrivingLicenseApplicationToolStripMenuItem";
             localDrivingLicenseApplicationToolStripMenuItem.Size = new Size(418, 38);
             localDrivingLicenseApplicationToolStripMenuItem.Text = "Local Driving License Applications";
+            localDrivingLicenseApplicationToolStripMenuItem.Click += localDrivingLicenseApplicationToolStripMenuItem_Click;
             // 
             // internationalLicenseApplicationsToolStripMenuItem
             // 
@@ -301,20 +303,6 @@
             logoutToolStripMenuItem.Text = "Logout";
             logoutToolStripMenuItem.Click += logoutToolStripMenuItem_Click;
             // 
-            // btnTest
-            // 
-            btnTest.Cursor = Cursors.Hand;
-            btnTest.Font = new Font("Microsoft Sans Serif", 12F);
-            btnTest.Location = new Point(408, 137);
-            btnTest.MinimumSize = new Size(1, 1);
-            btnTest.Name = "btnTest";
-            btnTest.Radius = 10;
-            btnTest.Size = new Size(125, 44);
-            btnTest.TabIndex = 27;
-            btnTest.Text = "Test";
-            btnTest.TipsFont = new Font("Microsoft Sans Serif", 9F);
-            btnTest.Click += btnTest_Click;
-            // 
             // frmMain
             // 
             AutoScaleMode = AutoScaleMode.None;
@@ -323,7 +311,6 @@
             ClientSize = new Size(1044, 669);
             ControlBox = false;
             ControlBoxFillHoverColor = Color.FromArgb(80, 160, 255);
-            Controls.Add(btnTest);
             Controls.Add(MainFormMenuStrip);
             Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             MainMenuStrip = MainFormMenuStrip;
@@ -369,6 +356,5 @@
         private ToolStripMenuItem internationalLicenseToolStripMenuItem;
         private ToolStripMenuItem localDrivingLicenseApplicationToolStripMenuItem;
         private ToolStripMenuItem internationalLicenseApplicationsToolStripMenuItem;
-        private Sunny.UI.UIButton btnTest;
     }
 }

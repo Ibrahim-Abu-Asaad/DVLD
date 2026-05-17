@@ -210,22 +210,38 @@ namespace DVLD.Applications
             _LocalDrivingLicenseApplication.CreatedByUserID = clsGlobal.CurrentUser.ID;
             _LocalDrivingLicenseApplication.LicenseClassID = LicenseClassID;
 
-
+            _LocalDrivingLicenseApplication.Mode = Mode;
             if (_LocalDrivingLicenseApplication.Save())
             {
                 Mode = clsLocalDrivingLicenseApplication.enMode.Update;
                 lblTitle.Text = "Update Local Driving License Application";
 
                 MessageBox.Show("Data Saved Successfully.", "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                _RefreshApplicationInfoPage();
 
             }
             else
                 MessageBox.Show("Error: Data Is not Saved Successfully.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
+            
 
 
 
+        }
 
+        private void _RefreshApplicationInfoPage()
+        {
+
+            clsApplicationType NewLocalApplicationType = new clsApplicationType();
+            NewLocalApplicationType = clsApplicationType.Find((int)clsApplication.enApplicationType.NewDrivingLicense);
+
+            lblAppFees.Text = NewLocalApplicationType.Fees.ToString();
+
+            lblAppDate.Text = DateTime.Now.ToShortDateString();
+            lblCreatedBy.Text = clsGlobal.CurrentUser.Username;
+
+            string Name = clsGlobal.CurrentUser.PersonInfo.FirstName + " " + clsGlobal.CurrentUser.PersonInfo.LastName;
+            lblFullName.Text = Name;
         }
 
         private bool _Validation()
