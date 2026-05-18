@@ -30,6 +30,7 @@ namespace DVLD.Applications
 
         public void LoadApplicationBasicInfoByApplicationID(int ApplicationID)
         {
+            _ApplicationID = ApplicationID;
 
             clsApplication App = clsApplication.FindBaseApplication(ApplicationID);
             if (App == null)
@@ -41,7 +42,7 @@ namespace DVLD.Applications
                 _LoadApplicationData(ApplicationID);
 
 
-            
+
 
 
         }
@@ -49,6 +50,7 @@ namespace DVLD.Applications
         private void _LoadApplicationData(int ApplicationID)
         {
 
+            _ApplicationID = ApplicationID;
             clsApplication App = clsApplication.FindBaseApplication(ApplicationID);
 
 
@@ -68,7 +70,7 @@ namespace DVLD.Applications
 
         public void ResetApplicationInfo()
         {
-
+            
             lblStatus.Text = "[??????]";
             lblFees.Text = "[$$$$$$]";
             lblType.Text = "[??????]";
@@ -78,6 +80,19 @@ namespace DVLD.Applications
             lblCreatedBy.Text = "[??????]";
             lblDate.Text = "[??????]";
             lblStatusDate.Text = "[??????]";
+
+        }
+
+        private void llblShowPersonInfo_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
+            clsApplication App = clsApplication.FindBaseApplication(_ApplicationID);
+            int PersonID = App.PersonInfo.ID;
+
+            frmShowPersonDetails frm = new frmShowPersonDetails(PersonID);
+            frm.ShowDialog();
+
+            _LoadApplicationData(_ApplicationID);
 
         }
     }

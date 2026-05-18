@@ -31,8 +31,8 @@ namespace DVLD.Applications.LocalDrivingLicenseApplications
 
             _ApplicationID = _LDLApp.ApplicationID;
             _Application = clsApplication.FindBaseApplication(_ApplicationID);
-        
-        
+
+
         }
 
         public frmShowLocalDrivingLicenseApplicationInfo()
@@ -46,11 +46,22 @@ namespace DVLD.Applications.LocalDrivingLicenseApplications
 
 
             ctrlLocalDrivingLicenseAppInfo1.LoadAllData(_LDLAppID);
+
         }
 
         private void llblShowLicenseInfo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             // Not implement yet
+        }
+
+        private void llblShowPersonInfo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
+            int PersonID = _Application.PersonInfo.ID;
+
+            frmShowPersonDetails frm = new frmShowPersonDetails(PersonID);
+            frm.ShowDialog();
+
         }
     }
 }

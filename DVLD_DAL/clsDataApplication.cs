@@ -376,7 +376,7 @@ namespace DVLD_DAL
 
             SqlCommand command = new SqlCommand(query, connection);
 
-            command.Parameters.AddWithValue("@ApplicationID", ID);
+            command.Parameters.AddWithValue("@ID", ID);
             command.Parameters.AddWithValue("@NewStatus", NewStatus);
             command.Parameters.AddWithValue("LastStatusDate", DateTime.Now);
 

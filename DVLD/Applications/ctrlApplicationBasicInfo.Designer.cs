@@ -50,6 +50,7 @@
             groupBox1 = new GroupBox();
             lblStatusDate = new Label();
             pictureBox1 = new PictureBox();
+            llblShowPersonInfo = new LinkLabel();
             ((System.ComponentModel.ISupportInitialize)pictureBox9).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
@@ -280,6 +281,7 @@
             // groupBox1
             // 
             groupBox1.BackColor = Color.FromArgb(243, 249, 255);
+            groupBox1.Controls.Add(llblShowPersonInfo);
             groupBox1.Controls.Add(lblStatusDate);
             groupBox1.Controls.Add(pictureBox1);
             groupBox1.Controls.Add(lblDate);
@@ -331,6 +333,18 @@
             pictureBox1.TabIndex = 50;
             pictureBox1.TabStop = false;
             // 
+            // llblShowPersonInfo
+            // 
+            llblShowPersonInfo.AutoSize = true;
+            llblShowPersonInfo.Font = new Font("Trebuchet MS", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            llblShowPersonInfo.Location = new Point(174, 131);
+            llblShowPersonInfo.Name = "llblShowPersonInfo";
+            llblShowPersonInfo.Size = new Size(138, 23);
+            llblShowPersonInfo.TabIndex = 55;
+            llblShowPersonInfo.TabStop = true;
+            llblShowPersonInfo.Text = "Show Person Info";
+            llblShowPersonInfo.LinkClicked += llblShowPersonInfo_LinkClicked_1;
+            // 
             // ctrlApplicationBasicInfo
             // 
             AutoScaleMode = AutoScaleMode.None;
@@ -378,5 +392,6 @@
         private GroupBox groupBox1;
         private PictureBox pictureBox1;
         private Label lblStatusDate;
+        private LinkLabel llblShowPersonInfo;
     }
 }

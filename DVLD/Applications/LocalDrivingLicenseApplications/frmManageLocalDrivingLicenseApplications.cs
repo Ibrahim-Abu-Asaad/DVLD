@@ -311,7 +311,27 @@ namespace DVLD.Applications.LocalDrivingLicenseApplications
 
         private void cancelToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Cancell it");
+
+            if (MessageBox.Show("Are you sure do want to cancel this application?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+                return;
+
+
+            int LDLAppID = (int)dgvManageLocalDrivingLicenseApps.CurrentRow.Cells["ID"].Value;
+            clsLocalDrivingLicenseApplication LDLApp = clsLocalDrivingLicenseApplication.FindLocalDrivingLicenseApplicationByID(LDLAppID);
+
+            if (LDLAppID == null)
+            {
+                MessageBox.Show("Application Not Found", "Not Found", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+
+            }
+
+            if (LDLApp.Cancel())
+                MessageBox.Show("This application is cancelled!", "Done", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            else MessageBox.Show("This application is NOT cancelled!", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            _ListAppsAndRefreshPage();
+
         }
 
         private void showLicenseToolStripMenuItem_Click(object sender, EventArgs e)
