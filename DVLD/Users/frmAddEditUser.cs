@@ -53,6 +53,7 @@ namespace DVLD.Users
                 {
                     tabControl1.SelectedTab = tbPersonalInfo;
                     MessageBox.Show("This person is already a user", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
                 }
 
             }
@@ -113,6 +114,18 @@ namespace DVLD.Users
                 }
                 else
                 {
+
+                    if (_Mode == enMode.AddNew)
+                    {
+
+                        if (clsUser.IsUserExistByPersonID(ctrlShowPersonDetailsWithFilter1.PersonID))
+                        {
+                            tabControl1.SelectedTab = tbPersonalInfo;
+                            MessageBox.Show("This person is already a user", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return;
+                        }
+
+                    }
 
                     btnSave.Enabled = true;
 
@@ -327,6 +340,11 @@ namespace DVLD.Users
 
 
 
+        }
+
+        private void tbLoginInfo_Click(object sender, EventArgs e)
+        {
+            //
         }
     }
 }

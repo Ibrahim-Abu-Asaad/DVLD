@@ -48,9 +48,9 @@
             label3 = new Label();
             lll1 = new Label();
             groupBox1 = new GroupBox();
+            llblShowPersonInfo = new LinkLabel();
             lblStatusDate = new Label();
             pictureBox1 = new PictureBox();
-            llblShowPersonInfo = new LinkLabel();
             ((System.ComponentModel.ISupportInitialize)pictureBox9).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
@@ -90,7 +90,7 @@
             lblApplicant.AutoSize = true;
             lblApplicant.BackColor = Color.FromArgb(243, 249, 255);
             lblApplicant.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblApplicant.ForeColor = Color.Black;
+            lblApplicant.ForeColor = Color.DarkBlue;
             lblApplicant.Location = new Point(211, 105);
             lblApplicant.Name = "lblApplicant";
             lblApplicant.Size = new Size(61, 26);
@@ -126,7 +126,7 @@
             lblStatus.AutoSize = true;
             lblStatus.BackColor = Color.FromArgb(243, 249, 255);
             lblStatus.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblStatus.ForeColor = Color.DarkBlue;
+            lblStatus.ForeColor = Color.Black;
             lblStatus.Location = new Point(211, 162);
             lblStatus.Name = "lblStatus";
             lblStatus.Size = new Size(61, 26);
@@ -311,6 +311,18 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "Application Basic Info";
             // 
+            // llblShowPersonInfo
+            // 
+            llblShowPersonInfo.AutoSize = true;
+            llblShowPersonInfo.Font = new Font("Trebuchet MS", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            llblShowPersonInfo.Location = new Point(174, 131);
+            llblShowPersonInfo.Name = "llblShowPersonInfo";
+            llblShowPersonInfo.Size = new Size(138, 23);
+            llblShowPersonInfo.TabIndex = 55;
+            llblShowPersonInfo.TabStop = true;
+            llblShowPersonInfo.Text = "Show Person Info";
+            llblShowPersonInfo.LinkClicked += llblShowPersonInfo_LinkClicked_1;
+            // 
             // lblStatusDate
             // 
             lblStatusDate.AutoSize = true;
@@ -332,18 +344,6 @@
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 50;
             pictureBox1.TabStop = false;
-            // 
-            // llblShowPersonInfo
-            // 
-            llblShowPersonInfo.AutoSize = true;
-            llblShowPersonInfo.Font = new Font("Trebuchet MS", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            llblShowPersonInfo.Location = new Point(174, 131);
-            llblShowPersonInfo.Name = "llblShowPersonInfo";
-            llblShowPersonInfo.Size = new Size(138, 23);
-            llblShowPersonInfo.TabIndex = 55;
-            llblShowPersonInfo.TabStop = true;
-            llblShowPersonInfo.Text = "Show Person Info";
-            llblShowPersonInfo.LinkClicked += llblShowPersonInfo_LinkClicked_1;
             // 
             // ctrlApplicationBasicInfo
             // 

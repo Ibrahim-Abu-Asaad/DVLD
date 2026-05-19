@@ -163,6 +163,7 @@
             tbLoginInfo.Size = new Size(1007, 581);
             tbLoginInfo.TabIndex = 1;
             tbLoginInfo.Text = "Login Info";
+            tbLoginInfo.Click += tbLoginInfo_Click;
             // 
             // llblChangePassword
             // 

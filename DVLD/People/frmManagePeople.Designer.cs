@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle10 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
             label1 = new Label();
             pictureBox1 = new PictureBox();
             dgvManagePeople = new Sunny.UI.UIDataGridView();
@@ -54,7 +54,6 @@
             phoneCallToolStripMenuItem = new ToolStripMenuItem();
             cmsPeopleDGV = new ContextMenuStrip(components);
             addNewPersonToolStripMenuItem = new ToolStripMenuItem();
-            Test = new Sunny.UI.UIButton();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvManagePeople).BeginInit();
             ((System.ComponentModel.ISupportInitialize)uiImageButton1).BeginInit();
@@ -88,28 +87,28 @@
             dgvManagePeople.AllowUserToAddRows = false;
             dgvManagePeople.AllowUserToDeleteRows = false;
             dgvManagePeople.AllowUserToOrderColumns = true;
-            dataGridViewCellStyle6.BackColor = Color.FromArgb(235, 243, 255);
-            dgvManagePeople.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(235, 243, 255);
+            dgvManagePeople.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dgvManagePeople.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvManagePeople.BackgroundColor = Color.White;
             dgvManagePeople.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = Color.FromArgb(80, 160, 255);
-            dataGridViewCellStyle7.Font = new Font("Microsoft Sans Serif", 12F);
-            dataGridViewCellStyle7.ForeColor = Color.White;
-            dataGridViewCellStyle7.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.True;
-            dgvManagePeople.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(80, 160, 255);
+            dataGridViewCellStyle2.Font = new Font("Microsoft Sans Serif", 12F);
+            dataGridViewCellStyle2.ForeColor = Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            dgvManagePeople.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dgvManagePeople.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = SystemColors.Window;
-            dataGridViewCellStyle8.Font = new Font("Microsoft Sans Serif", 12F);
-            dataGridViewCellStyle8.ForeColor = Color.FromArgb(48, 48, 48);
-            dataGridViewCellStyle8.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.False;
-            dgvManagePeople.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = SystemColors.Window;
+            dataGridViewCellStyle3.Font = new Font("Microsoft Sans Serif", 12F);
+            dataGridViewCellStyle3.ForeColor = Color.FromArgb(48, 48, 48);
+            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
+            dgvManagePeople.DefaultCellStyle = dataGridViewCellStyle3;
             dgvManagePeople.EnableHeadersVisualStyles = false;
             dgvManagePeople.Font = new Font("Microsoft Sans Serif", 12F);
             dgvManagePeople.GridColor = Color.FromArgb(80, 160, 255);
@@ -117,18 +116,18 @@
             dgvManagePeople.Name = "dgvManagePeople";
             dgvManagePeople.ReadOnly = true;
             dgvManagePeople.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle9.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = Color.FromArgb(235, 243, 255);
-            dataGridViewCellStyle9.Font = new Font("Microsoft Sans Serif", 12F);
-            dataGridViewCellStyle9.ForeColor = Color.FromArgb(48, 48, 48);
-            dataGridViewCellStyle9.SelectionBackColor = Color.FromArgb(80, 160, 255);
-            dataGridViewCellStyle9.SelectionForeColor = Color.White;
-            dataGridViewCellStyle9.WrapMode = DataGridViewTriState.True;
-            dgvManagePeople.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = Color.FromArgb(235, 243, 255);
+            dataGridViewCellStyle4.Font = new Font("Microsoft Sans Serif", 12F);
+            dataGridViewCellStyle4.ForeColor = Color.FromArgb(48, 48, 48);
+            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(80, 160, 255);
+            dataGridViewCellStyle4.SelectionForeColor = Color.White;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
+            dgvManagePeople.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             dgvManagePeople.RowHeadersWidth = 51;
-            dataGridViewCellStyle10.BackColor = Color.White;
-            dataGridViewCellStyle10.Font = new Font("Microsoft Sans Serif", 12F);
-            dgvManagePeople.RowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle5.BackColor = Color.White;
+            dataGridViewCellStyle5.Font = new Font("Microsoft Sans Serif", 12F);
+            dgvManagePeople.RowsDefaultCellStyle = dataGridViewCellStyle5;
             dgvManagePeople.SelectedIndex = -1;
             dgvManagePeople.Size = new Size(1242, 318);
             dgvManagePeople.StripeOddColor = Color.FromArgb(235, 243, 255);
@@ -321,23 +320,10 @@
             addNewPersonToolStripMenuItem.Text = "Add New Person";
             addNewPersonToolStripMenuItem.Click += addNewPersonToolStripMenuItem_Click_1;
             // 
-            // Test
-            // 
-            Test.Font = new Font("Microsoft Sans Serif", 12F);
-            Test.Location = new Point(861, 350);
-            Test.MinimumSize = new Size(1, 1);
-            Test.Name = "Test";
-            Test.Size = new Size(125, 44);
-            Test.TabIndex = 10;
-            Test.Text = "Test";
-            Test.TipsFont = new Font("Microsoft Sans Serif", 9F);
-            Test.Click += Test_Click;
-            // 
             // frmManagePeople
             // 
             AutoScaleMode = AutoScaleMode.None;
             ClientSize = new Size(1280, 809);
-            Controls.Add(Test);
             Controls.Add(lblTotalPeople);
             Controls.Add(label3);
             Controls.Add(uiButton1);
@@ -386,6 +372,5 @@
         private ToolStripMenuItem phoneCallToolStripMenuItem;
         private ContextMenuStrip cmsPeopleDGV;
         private ToolStripMenuItem addNewPersonToolStripMenuItem;
-        private Sunny.UI.UIButton Test;
     }
 }
