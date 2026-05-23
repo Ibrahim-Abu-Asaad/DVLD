@@ -76,7 +76,7 @@
             // 
             llblShowLicenseInfo.AutoSize = true;
             llblShowLicenseInfo.Font = new Font("Trebuchet MS", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            llblShowLicenseInfo.Location = new Point(28, 107);
+            llblShowLicenseInfo.Location = new Point(147, 69);
             llblShowLicenseInfo.Name = "llblShowLicenseInfo";
             llblShowLicenseInfo.Size = new Size(145, 23);
             llblShowLicenseInfo.TabIndex = 53;
@@ -89,7 +89,7 @@
             lblPassedTests.BackColor = Color.FromArgb(243, 249, 255);
             lblPassedTests.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblPassedTests.ForeColor = Color.Black;
-            lblPassedTests.Location = new Point(605, 70);
+            lblPassedTests.Location = new Point(332, 118);
             lblPassedTests.Name = "lblPassedTests";
             lblPassedTests.Size = new Size(61, 26);
             lblPassedTests.TabIndex = 52;
@@ -101,7 +101,7 @@
             lblAppliedForLicense.BackColor = Color.FromArgb(243, 249, 255);
             lblAppliedForLicense.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblAppliedForLicense.ForeColor = Color.Black;
-            lblAppliedForLicense.Location = new Point(275, 70);
+            lblAppliedForLicense.Location = new Point(394, 43);
             lblAppliedForLicense.Name = "lblAppliedForLicense";
             lblAppliedForLicense.Size = new Size(61, 26);
             lblAppliedForLicense.TabIndex = 51;
@@ -110,7 +110,7 @@
             // pictureBox9
             // 
             pictureBox9.Image = Properties.Resources.Person_321;
-            pictureBox9.Location = new Point(568, 65);
+            pictureBox9.Location = new Point(295, 113);
             pictureBox9.Name = "pictureBox9";
             pictureBox9.Size = new Size(31, 31);
             pictureBox9.SizeMode = PictureBoxSizeMode.Zoom;
@@ -120,7 +120,7 @@
             // pictureBox3
             // 
             pictureBox3.Image = Properties.Resources.ApplicationType;
-            pictureBox3.Location = new Point(238, 65);
+            pictureBox3.Location = new Point(357, 38);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(31, 31);
             pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
@@ -133,7 +133,7 @@
             label5.BackColor = Color.FromArgb(243, 249, 255);
             label5.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label5.ForeColor = Color.Black;
-            label5.Location = new Point(420, 70);
+            label5.Location = new Point(147, 118);
             label5.Name = "label5";
             label5.Size = new Size(129, 26);
             label5.TabIndex = 48;
@@ -145,7 +145,7 @@
             label4.BackColor = Color.FromArgb(243, 249, 255);
             label4.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label4.ForeColor = Color.Black;
-            label4.Location = new Point(28, 70);
+            label4.Location = new Point(147, 43);
             label4.Name = "label4";
             label4.Size = new Size(188, 26);
             label4.TabIndex = 47;

@@ -217,7 +217,25 @@ namespace DVLD_BLL
             => clsDataLocalDrivingLicenseApplication.IsThereAnActiveScheduledTest(this.LocalDrivingLicenseApplicationID, (int)TestTypeID);
 
 
+        public int GetPassedTestCount()
+        {
 
+            int TotalPassedTest = 0;
+
+            if (this.DoesPassTestType(clsTestType.enTestType.VisionTest))
+                TotalPassedTest++;
+
+            if (this.DoesPassTestType(clsTestType.enTestType.WrittenTest))
+                TotalPassedTest++;
+
+            if (this.DoesPassTestType(clsTestType.enTestType.StreetTest))
+                TotalPassedTest++;
+
+            return TotalPassedTest;
+
+
+
+        }
 
 
 

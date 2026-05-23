@@ -47,6 +47,49 @@ namespace DVLD_DAL
 
         }
 
+        public static bool FindByLicenseCLassID(int LC_ID, ref string ClassName, ref string ClassDescription, ref int MinimumAllowedAge, ref int DefaultValidityLength, ref decimal ClassFees)
+        {
+
+            bool IsFound = false;
+
+            string query = "SELECT * FROM LicenseClasses WHERE ID = @LC_ID;";
+            SqlCommand command = new SqlCommand(query, connection);
+            command.Parameters.AddWithValue("@LC_ID", LC_ID);
+
+
+            try
+            {
+
+                connection.Open();
+
+                SqlDataReader reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    IsFound = !IsFound;
+                    ClassName = (string)reader["ClassName"];
+                    ClassDescription = (string)reader["ClassDescription"];
+                    MinimumAllowedAge = (int)reader["MinimumAllowedAge"];
+                    DefaultValidityLength = (int)reader["DefaultValidityLength"];
+                    ClassFees = (decimal)reader["ClassFees"];
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+                string msg = ex.Message;
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+            return IsFound;
+
+        }
+
+
+
 
 
 

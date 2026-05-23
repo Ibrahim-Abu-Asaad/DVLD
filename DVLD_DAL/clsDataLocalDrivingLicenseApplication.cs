@@ -262,7 +262,7 @@ namespace DVLD_DAL
                             WHERE
                             (LocalDrivingLicenseApplications.ID = @ID) 
                             AND(TestAppointments.TestTypeID = @TestTypeID)
-                            ORDER BY TestAppointments.TestAppointmentID desc";
+                            ORDER BY TestAppointments.ID desc";
 
             SqlCommand command = new SqlCommand(query, connection);
 
