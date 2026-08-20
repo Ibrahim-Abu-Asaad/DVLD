@@ -231,11 +231,11 @@ namespace DVLD_DAL
 
         }
 
-        public static bool UpdateTestAppointment(ref int ID, ref int TestTypeID,
-            ref int LocalDrivingLicenseApplicationID,
-             ref DateTime AppointmentDate, ref float PaidFees,
-             ref int CreatedByUserID, ref bool IsLocked,
-            ref int RetakeTestApplicationID)
+        public static bool UpdateTestAppointment(int ID, int TestTypeID,
+            int LocalDrivingLicenseApplicationID,
+             DateTime AppointmentDate, float PaidFees,
+             int CreatedByUserID, bool IsLocked,
+            int RetakeTestApplicationID)
         {
 
             bool IsUpdated = false;
