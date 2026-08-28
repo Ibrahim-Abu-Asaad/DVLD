@@ -28,10 +28,11 @@ namespace DVLD.Auth
 
             txtPassword.PasswordChar = '●';
 
-            //////////////////////////////////TEST///////////////////////////////
+            //////////////////////////////////    ///////////////////////////////
+            // Erase this when finish the project
             txtUsername.Text = "ibr";
             txtPassword.Text = "Ibrahim1";
-            //////////////////////////////////TEST///////////////////////////////
+            //////////////////////////////////    ///////////////////////////////
         }
 
         private void chbShowPassword_CheckedChanged(object sender, EventArgs e)

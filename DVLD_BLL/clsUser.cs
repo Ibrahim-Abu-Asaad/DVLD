@@ -121,14 +121,9 @@ namespace DVLD_BLL
 
         public string error = "error";
 
+        // Change from this.id = ---- then return it to fast return
         private bool _AddNewUser()
-        {
-
-            this.ID = clsDataUser.AddNewUser(this.PersonID, this.Username, this.Password, this.IsActive, ref error);
-
-            return this.ID != -1;
-
-        }
+            => clsDataUser.AddNewUser(this.PersonID, this.Username, this.Password, this.IsActive, ref error) != -1;
 
         private bool _UpdateUser()
             => clsDataUser.UpdateUserExceptPassword(this.ID, this.PersonID, this.Username, this.IsActive);

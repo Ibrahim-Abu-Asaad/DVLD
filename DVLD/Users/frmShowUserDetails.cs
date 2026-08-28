@@ -30,5 +30,10 @@ namespace DVLD.Users
         {
             ctrlShowUserDetails2.FillInfoInUserCard(_User.ID);
         }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

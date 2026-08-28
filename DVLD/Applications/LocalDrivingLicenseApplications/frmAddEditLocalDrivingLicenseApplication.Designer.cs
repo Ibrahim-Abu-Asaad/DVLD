@@ -331,15 +331,18 @@
             btnSave.TipsFont = new Font("Microsoft Sans Serif", 9F);
             btnSave.Click += btnSave_Click;
             // 
-            // frmNewLocalDrivingLicenseApplication
+            // frmAddEditLocalDrivingLicenseApplication
             // 
             AutoScaleMode = AutoScaleMode.None;
             ClientSize = new Size(1079, 824);
+            ControlBox = false;
             Controls.Add(tabControl1);
             Controls.Add(btnClose);
             Controls.Add(btnSave);
             Controls.Add(lblTitle);
-            Name = "frmNewLocalDrivingLicenseApplication";
+            MaximizeBox = false;
+            MinimizeBox = false;
+            Name = "frmAddEditLocalDrivingLicenseApplication";
             ShowIcon = false;
             Text = "New Local Driving License Application";
             ZoomScaleRect = new Rectangle(19, 19, 800, 450);

@@ -28,15 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle11 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle12 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle13 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle14 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle15 = new DataGridViewCellStyle();
             dgvManageApplicationTypes = new Sunny.UI.UIDataGridView();
             colEdit = new DataGridViewImageColumn();
             label1 = new Label();
             pictureBox1 = new PictureBox();
+            btnClose = new Sunny.UI.UIButton();
             ((System.ComponentModel.ISupportInitialize)dgvManageApplicationTypes).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -46,30 +47,30 @@
             dgvManageApplicationTypes.AllowUserToAddRows = false;
             dgvManageApplicationTypes.AllowUserToDeleteRows = false;
             dgvManageApplicationTypes.AllowUserToOrderColumns = true;
-            dataGridViewCellStyle1.BackColor = Color.FromArgb(235, 243, 255);
-            dgvManageApplicationTypes.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle11.BackColor = Color.FromArgb(235, 243, 255);
+            dgvManageApplicationTypes.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle11;
             dgvManageApplicationTypes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvManageApplicationTypes.BackgroundColor = Color.White;
             dgvManageApplicationTypes.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = Color.FromArgb(80, 160, 255);
-            dataGridViewCellStyle2.Font = new Font("Microsoft Sans Serif", 12F);
-            dataGridViewCellStyle2.ForeColor = Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            dgvManageApplicationTypes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle12.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle12.BackColor = Color.FromArgb(80, 160, 255);
+            dataGridViewCellStyle12.Font = new Font("Microsoft Sans Serif", 12F);
+            dataGridViewCellStyle12.ForeColor = Color.White;
+            dataGridViewCellStyle12.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle12.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle12.WrapMode = DataGridViewTriState.True;
+            dgvManageApplicationTypes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle12;
             dgvManageApplicationTypes.ColumnHeadersHeight = 32;
             dgvManageApplicationTypes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             dgvManageApplicationTypes.Columns.AddRange(new DataGridViewColumn[] { colEdit });
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = SystemColors.Window;
-            dataGridViewCellStyle3.Font = new Font("Microsoft Sans Serif", 12F);
-            dataGridViewCellStyle3.ForeColor = Color.FromArgb(48, 48, 48);
-            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
-            dgvManageApplicationTypes.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle13.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle13.BackColor = SystemColors.Window;
+            dataGridViewCellStyle13.Font = new Font("Microsoft Sans Serif", 12F);
+            dataGridViewCellStyle13.ForeColor = Color.FromArgb(48, 48, 48);
+            dataGridViewCellStyle13.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle13.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle13.WrapMode = DataGridViewTriState.False;
+            dgvManageApplicationTypes.DefaultCellStyle = dataGridViewCellStyle13;
             dgvManageApplicationTypes.EnableHeadersVisualStyles = false;
             dgvManageApplicationTypes.Font = new Font("Microsoft Sans Serif", 12F);
             dgvManageApplicationTypes.GridColor = Color.FromArgb(80, 160, 255);
@@ -77,18 +78,18 @@
             dgvManageApplicationTypes.Name = "dgvManageApplicationTypes";
             dgvManageApplicationTypes.ReadOnly = true;
             dgvManageApplicationTypes.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = Color.FromArgb(235, 243, 255);
-            dataGridViewCellStyle4.Font = new Font("Microsoft Sans Serif", 12F);
-            dataGridViewCellStyle4.ForeColor = Color.FromArgb(48, 48, 48);
-            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(80, 160, 255);
-            dataGridViewCellStyle4.SelectionForeColor = Color.White;
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
-            dgvManageApplicationTypes.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle14.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle14.BackColor = Color.FromArgb(235, 243, 255);
+            dataGridViewCellStyle14.Font = new Font("Microsoft Sans Serif", 12F);
+            dataGridViewCellStyle14.ForeColor = Color.FromArgb(48, 48, 48);
+            dataGridViewCellStyle14.SelectionBackColor = Color.FromArgb(80, 160, 255);
+            dataGridViewCellStyle14.SelectionForeColor = Color.White;
+            dataGridViewCellStyle14.WrapMode = DataGridViewTriState.True;
+            dgvManageApplicationTypes.RowHeadersDefaultCellStyle = dataGridViewCellStyle14;
             dgvManageApplicationTypes.RowHeadersWidth = 51;
-            dataGridViewCellStyle5.BackColor = Color.White;
-            dataGridViewCellStyle5.Font = new Font("Microsoft Sans Serif", 12F);
-            dgvManageApplicationTypes.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle15.BackColor = Color.White;
+            dataGridViewCellStyle15.Font = new Font("Microsoft Sans Serif", 12F);
+            dgvManageApplicationTypes.RowsDefaultCellStyle = dataGridViewCellStyle15;
             dgvManageApplicationTypes.SelectedIndex = -1;
             dgvManageApplicationTypes.Size = new Size(842, 330);
             dgvManageApplicationTypes.StripeOddColor = Color.FromArgb(235, 243, 255);
@@ -130,13 +131,29 @@
             pictureBox1.TabIndex = 5;
             pictureBox1.TabStop = false;
             // 
+            // btnClose
+            // 
+            btnClose.Font = new Font("Microsoft Sans Serif", 12F);
+            btnClose.Location = new Point(720, 643);
+            btnClose.MinimumSize = new Size(1, 1);
+            btnClose.Name = "btnClose";
+            btnClose.Size = new Size(125, 44);
+            btnClose.TabIndex = 81;
+            btnClose.Text = "Close";
+            btnClose.TipsFont = new Font("Microsoft Sans Serif", 9F);
+            btnClose.Click += btnClose_Click;
+            // 
             // frmManageApplicationTypes
             // 
             AutoScaleMode = AutoScaleMode.None;
             ClientSize = new Size(848, 708);
+            ControlBox = false;
+            Controls.Add(btnClose);
             Controls.Add(pictureBox1);
             Controls.Add(label1);
             Controls.Add(dgvManageApplicationTypes);
+            MaximizeBox = false;
+            MinimizeBox = false;
             Name = "frmManageApplicationTypes";
             ShowIcon = false;
             Text = "Manage Application Types";
@@ -154,5 +171,6 @@
         private Label label1;
         private PictureBox pictureBox1;
         private DataGridViewImageColumn colEdit;
+        private Sunny.UI.UIButton btnClose;
     }
 }

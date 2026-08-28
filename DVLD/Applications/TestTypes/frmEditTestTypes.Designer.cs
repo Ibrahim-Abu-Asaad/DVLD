@@ -41,6 +41,7 @@
             pictureBox1 = new PictureBox();
             label2 = new Label();
             errorProvider1 = new ErrorProvider(components);
+            btnClose = new Sunny.UI.UIButton();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -71,7 +72,7 @@
             // 
             btnSave.Cursor = Cursors.Hand;
             btnSave.Font = new Font("Microsoft Sans Serif", 12F);
-            btnSave.Location = new Point(328, 516);
+            btnSave.Location = new Point(405, 516);
             btnSave.MinimumSize = new Size(1, 1);
             btnSave.Name = "btnSave";
             btnSave.Radius = 10;
@@ -181,10 +182,24 @@
             // 
             errorProvider1.ContainerControl = this;
             // 
+            // btnClose
+            // 
+            btnClose.Font = new Font("Microsoft Sans Serif", 12F);
+            btnClose.Location = new Point(274, 516);
+            btnClose.MinimumSize = new Size(1, 1);
+            btnClose.Name = "btnClose";
+            btnClose.Size = new Size(125, 44);
+            btnClose.TabIndex = 119;
+            btnClose.Text = "Close";
+            btnClose.TipsFont = new Font("Microsoft Sans Serif", 9F);
+            btnClose.Click += btnClose_Click;
+            // 
             // frmEditTestTypes
             // 
             AutoScaleMode = AutoScaleMode.None;
             ClientSize = new Size(800, 578);
+            ControlBox = false;
+            Controls.Add(btnClose);
             Controls.Add(pictureBox1);
             Controls.Add(label2);
             Controls.Add(rtxtDescription);
@@ -196,6 +211,8 @@
             Controls.Add(txtTitle);
             Controls.Add(txtFees);
             Controls.Add(label1);
+            MaximizeBox = false;
+            MinimizeBox = false;
             Name = "frmEditTestTypes";
             ShowIcon = false;
             Text = "Edit Test Types";
@@ -223,5 +240,6 @@
         private PictureBox pictureBox1;
         private Label label2;
         private ErrorProvider errorProvider1;
+        private Sunny.UI.UIButton btnClose;
     }
 }

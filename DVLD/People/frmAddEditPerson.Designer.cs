@@ -581,6 +581,7 @@
             // 
             AutoScaleMode = AutoScaleMode.None;
             ClientSize = new Size(1056, 626);
+            ControlBox = false;
             Controls.Add(btnClose);
             Controls.Add(txtAddress);
             Controls.Add(rbFemale);
@@ -619,6 +620,8 @@
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(lblTitle);
+            MaximizeBox = false;
+            MinimizeBox = false;
             Name = "frmAddEditPerson";
             ShowIcon = false;
             Text = "Add/Edit Person Info";

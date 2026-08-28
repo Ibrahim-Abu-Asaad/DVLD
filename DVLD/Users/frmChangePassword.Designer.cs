@@ -38,6 +38,7 @@
             lblTitle = new Label();
             btnSave = new Sunny.UI.UIButton();
             errorProvider1 = new ErrorProvider(components);
+            btnClose = new Sunny.UI.UIButton();
             ((System.ComponentModel.ISupportInitialize)errorProvider1).BeginInit();
             SuspendLayout();
             // 
@@ -134,7 +135,7 @@
             // 
             btnSave.Cursor = Cursors.Hand;
             btnSave.Font = new Font("Microsoft Sans Serif", 12F);
-            btnSave.Location = new Point(316, 378);
+            btnSave.Location = new Point(446, 378);
             btnSave.MinimumSize = new Size(1, 1);
             btnSave.Name = "btnSave";
             btnSave.Radius = 10;
@@ -148,10 +149,24 @@
             // 
             errorProvider1.ContainerControl = this;
             // 
+            // btnClose
+            // 
+            btnClose.Font = new Font("Microsoft Sans Serif", 12F);
+            btnClose.Location = new Point(316, 378);
+            btnClose.MinimumSize = new Size(1, 1);
+            btnClose.Name = "btnClose";
+            btnClose.Size = new Size(125, 44);
+            btnClose.TabIndex = 81;
+            btnClose.Text = "Close";
+            btnClose.TipsFont = new Font("Microsoft Sans Serif", 9F);
+            btnClose.Click += btnClose_Click;
+            // 
             // frmChangePassword
             // 
             AutoScaleMode = AutoScaleMode.None;
             ClientSize = new Size(734, 472);
+            ControlBox = false;
+            Controls.Add(btnClose);
             Controls.Add(btnSave);
             Controls.Add(lblTitle);
             Controls.Add(lblConfirmPassword);
@@ -160,6 +175,8 @@
             Controls.Add(txtNewPassword);
             Controls.Add(txtConfirmPassword);
             Controls.Add(txtCurrentPassword);
+            MaximizeBox = false;
+            MinimizeBox = false;
             Name = "frmChangePassword";
             ShowIcon = false;
             Text = "Change Password";
@@ -180,5 +197,6 @@
         private Label lblTitle;
         private Sunny.UI.UIButton btnSave;
         private ErrorProvider errorProvider1;
+        private Sunny.UI.UIButton btnClose;
     }
 }

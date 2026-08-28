@@ -30,6 +30,7 @@
         {
             label1 = new Label();
             ctrlShowUserDetails2 = new Controls.ctrlShowUserDetails();
+            btnClose = new Sunny.UI.UIButton();
             SuspendLayout();
             // 
             // label1
@@ -55,12 +56,28 @@
             ctrlShowUserDetails2.Text = "ctrlShowUserDetails2";
             ctrlShowUserDetails2.TextAlignment = ContentAlignment.MiddleCenter;
             // 
+            // btnClose
+            // 
+            btnClose.Font = new Font("Microsoft Sans Serif", 12F);
+            btnClose.Location = new Point(845, 627);
+            btnClose.MinimumSize = new Size(1, 1);
+            btnClose.Name = "btnClose";
+            btnClose.Size = new Size(125, 44);
+            btnClose.TabIndex = 81;
+            btnClose.Text = "Close";
+            btnClose.TipsFont = new Font("Microsoft Sans Serif", 9F);
+            btnClose.Click += btnClose_Click;
+            // 
             // frmShowUserDetails
             // 
             AutoScaleMode = AutoScaleMode.None;
-            ClientSize = new Size(994, 637);
+            ClientSize = new Size(994, 690);
+            ControlBox = false;
+            Controls.Add(btnClose);
             Controls.Add(ctrlShowUserDetails2);
             Controls.Add(label1);
+            MaximizeBox = false;
+            MinimizeBox = false;
             Name = "frmShowUserDetails";
             ShowIcon = false;
             Text = "Show User Details";
@@ -75,5 +92,6 @@
         private Controls.ctrlShowUserDetails ctrlShowUserDetails1;
         private Label label1;
         private Controls.ctrlShowUserDetails ctrlShowUserDetails2;
+        private Sunny.UI.UIButton btnClose;
     }
 }

@@ -54,7 +54,6 @@
             phoneCallToolStripMenuItem = new ToolStripMenuItem();
             cmsPeopleDGV = new ContextMenuStrip(components);
             addNewPersonToolStripMenuItem = new ToolStripMenuItem();
-            Test = new Sunny.UI.UIButton();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvManagePeople).BeginInit();
             ((System.ComponentModel.ISupportInitialize)uiImageButton1).BeginInit();
@@ -321,23 +320,11 @@
             addNewPersonToolStripMenuItem.Text = "Add New Person";
             addNewPersonToolStripMenuItem.Click += addNewPersonToolStripMenuItem_Click_1;
             // 
-            // Test
-            // 
-            Test.Font = new Font("Microsoft Sans Serif", 12F);
-            Test.Location = new Point(861, 350);
-            Test.MinimumSize = new Size(1, 1);
-            Test.Name = "Test";
-            Test.Size = new Size(125, 44);
-            Test.TabIndex = 10;
-            Test.Text = "Test";
-            Test.TipsFont = new Font("Microsoft Sans Serif", 9F);
-            Test.Click += Test_Click;
-            // 
             // frmManagePeople
             // 
             AutoScaleMode = AutoScaleMode.None;
             ClientSize = new Size(1280, 809);
-            Controls.Add(Test);
+            ControlBox = false;
             Controls.Add(lblTotalPeople);
             Controls.Add(label3);
             Controls.Add(uiButton1);
@@ -349,6 +336,8 @@
             Controls.Add(pictureBox1);
             Controls.Add(label1);
             Font = new Font("Trebuchet MS", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            MaximizeBox = false;
+            MinimizeBox = false;
             Name = "frmManagePeople";
             ShowIcon = false;
             Text = "Manage People";
@@ -386,6 +375,5 @@
         private ToolStripMenuItem phoneCallToolStripMenuItem;
         private ContextMenuStrip cmsPeopleDGV;
         private ToolStripMenuItem addNewPersonToolStripMenuItem;
-        private Sunny.UI.UIButton Test;
     }
 }

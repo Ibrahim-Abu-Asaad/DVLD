@@ -38,6 +38,7 @@
             txtTitle = new Sunny.UI.UITextBox();
             txtFees = new Sunny.UI.UITextBox();
             errorProvider1 = new ErrorProvider(components);
+            btnClose = new Sunny.UI.UIButton();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)errorProvider1).BeginInit();
@@ -78,7 +79,7 @@
             // 
             btnSave.Cursor = Cursors.Hand;
             btnSave.Font = new Font("Microsoft Sans Serif", 12F);
-            btnSave.Location = new Point(271, 333);
+            btnSave.Location = new Point(340, 328);
             btnSave.MinimumSize = new Size(1, 1);
             btnSave.Name = "btnSave";
             btnSave.Radius = 10;
@@ -143,10 +144,26 @@
             // 
             errorProvider1.ContainerControl = this;
             // 
+            // btnClose
+            // 
+            btnClose.Cursor = Cursors.Hand;
+            btnClose.Font = new Font("Microsoft Sans Serif", 12F);
+            btnClose.Location = new Point(209, 328);
+            btnClose.MinimumSize = new Size(1, 1);
+            btnClose.Name = "btnClose";
+            btnClose.Radius = 10;
+            btnClose.Size = new Size(125, 44);
+            btnClose.TabIndex = 108;
+            btnClose.Text = "Close";
+            btnClose.TipsFont = new Font("Microsoft Sans Serif", 9F);
+            btnClose.Click += lblClose_Click;
+            // 
             // frmEditApplicationTypes
             // 
             AutoScaleMode = AutoScaleMode.None;
             ClientSize = new Size(671, 409);
+            ControlBox = false;
+            Controls.Add(btnClose);
             Controls.Add(pictureBox3);
             Controls.Add(pictureBox2);
             Controls.Add(btnSave);
@@ -155,6 +172,8 @@
             Controls.Add(txtTitle);
             Controls.Add(txtFees);
             Controls.Add(label1);
+            MaximizeBox = false;
+            MinimizeBox = false;
             Name = "frmEditApplicationTypes";
             ShowIcon = false;
             Text = "Edit Application Types";
@@ -178,5 +197,6 @@
         private Sunny.UI.UITextBox txtTitle;
         private Sunny.UI.UITextBox txtFees;
         private ErrorProvider errorProvider1;
+        private Sunny.UI.UIButton btnClose;
     }
 }

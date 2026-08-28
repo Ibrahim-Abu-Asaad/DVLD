@@ -30,6 +30,7 @@
         {
             label1 = new Label();
             ctrlShowPersonDetails2 = new ctrlShowPersonDetails2();
+            btnClose = new Sunny.UI.UIButton();
             SuspendLayout();
             // 
             // label1
@@ -57,12 +58,28 @@
             ctrlShowPersonDetails2.TextAlignment = ContentAlignment.MiddleCenter;
             ctrlShowPersonDetails2.Click += ctrlShowPersonDetails2_Click;
             // 
+            // btnClose
+            // 
+            btnClose.Font = new Font("Microsoft Sans Serif", 12F);
+            btnClose.Location = new Point(835, 463);
+            btnClose.MinimumSize = new Size(1, 1);
+            btnClose.Name = "btnClose";
+            btnClose.Size = new Size(125, 44);
+            btnClose.TabIndex = 81;
+            btnClose.Text = "Close";
+            btnClose.TipsFont = new Font("Microsoft Sans Serif", 9F);
+            btnClose.Click += btnClose_Click;
+            // 
             // frmShowPersonDetails
             // 
             AutoScaleMode = AutoScaleMode.None;
-            ClientSize = new Size(973, 470);
+            ClientSize = new Size(973, 526);
+            ControlBox = false;
+            Controls.Add(btnClose);
             Controls.Add(ctrlShowPersonDetails2);
             Controls.Add(label1);
+            MaximizeBox = false;
+            MinimizeBox = false;
             Name = "frmShowPersonDetails";
             ShowIcon = false;
             Text = "frmShowPersonDetails";
@@ -76,5 +93,6 @@
 
         private Label label1;
         private ctrlShowPersonDetails2 ctrlShowPersonDetails2;
+        private Sunny.UI.UIButton btnClose;
     }
 }

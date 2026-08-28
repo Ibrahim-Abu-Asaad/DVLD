@@ -37,6 +37,7 @@
             label1 = new Label();
             dgvManageTestTypes = new Sunny.UI.UIDataGridView();
             colEdit = new DataGridViewImageColumn();
+            btnClose = new Sunny.UI.UIButton();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvManageTestTypes).BeginInit();
             SuspendLayout();
@@ -128,13 +129,29 @@
             colEdit.Resizable = DataGridViewTriState.True;
             colEdit.SortMode = DataGridViewColumnSortMode.Automatic;
             // 
+            // btnClose
+            // 
+            btnClose.Font = new Font("Microsoft Sans Serif", 12F);
+            btnClose.Location = new Point(838, 626);
+            btnClose.MinimumSize = new Size(1, 1);
+            btnClose.Name = "btnClose";
+            btnClose.Size = new Size(125, 44);
+            btnClose.TabIndex = 81;
+            btnClose.Text = "Close";
+            btnClose.TipsFont = new Font("Microsoft Sans Serif", 9F);
+            btnClose.Click += btnClose_Click;
+            // 
             // frmManageTestTypes
             // 
             AutoScaleMode = AutoScaleMode.None;
-            ClientSize = new Size(966, 666);
+            ClientSize = new Size(966, 686);
+            ControlBox = false;
+            Controls.Add(btnClose);
             Controls.Add(dgvManageTestTypes);
             Controls.Add(pictureBox2);
             Controls.Add(label1);
+            MaximizeBox = false;
+            MinimizeBox = false;
             Name = "frmManageTestTypes";
             ShowIcon = false;
             Text = "Manage Test Types";
@@ -152,5 +169,6 @@
         private Label label1;
         private Sunny.UI.UIDataGridView dgvManageTestTypes;
         private DataGridViewImageColumn colEdit;
+        private Sunny.UI.UIButton btnClose;
     }
 }

@@ -63,5 +63,10 @@ namespace DVLD.Applications.LocalDrivingLicenseApplications
             frm.ShowDialog();
 
         }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

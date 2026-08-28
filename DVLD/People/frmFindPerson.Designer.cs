@@ -75,10 +75,13 @@
             // frmFindPerson
             // 
             AutoScaleMode = AutoScaleMode.None;
-            ClientSize = new Size(1020, 679);
+            ClientSize = new Size(1020, 647);
+            ControlBox = false;
             Controls.Add(ctrlShowPersonDetailsWithFilter1);
             Controls.Add(btnClose);
             Controls.Add(lblTitle);
+            MaximizeBox = false;
+            MinimizeBox = false;
             Name = "frmFindPerson";
             ShowIcon = false;
             Text = "Find Person";

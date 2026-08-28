@@ -71,7 +71,7 @@ namespace DVLD.Applications.TestTypes
         private void dgvManageTestTypes_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
 
-            
+
 
             if (e.RowIndex >= 0 && dgvManageTestTypes.Columns[e.ColumnIndex].Name == "colEdit")
             {
@@ -123,10 +123,9 @@ namespace DVLD.Applications.TestTypes
 
         }
 
-
-
-
-
-
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

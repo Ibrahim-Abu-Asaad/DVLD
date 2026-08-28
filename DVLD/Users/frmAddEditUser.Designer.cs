@@ -290,10 +290,13 @@
             // 
             AutoScaleMode = AutoScaleMode.None;
             ClientSize = new Size(1068, 880);
+            ControlBox = false;
             Controls.Add(tabControl1);
             Controls.Add(btnClose);
             Controls.Add(btnSave);
             Controls.Add(lblTitle);
+            MaximizeBox = false;
+            MinimizeBox = false;
             Name = "frmAddEditUser";
             ShowIcon = false;
             Text = "Add New User";

@@ -62,6 +62,7 @@
             lblTotalApps = new Label();
             label3 = new Label();
             cbStatus = new Sunny.UI.UIComboBox();
+            btnClose = new Sunny.UI.UIButton();
             ((System.ComponentModel.ISupportInitialize)imgbtnAddNewApp).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvManageLocalDrivingLicenseApps).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -393,10 +394,24 @@
             cbStatus.Watermark = "";
             cbStatus.SelectedIndexChanged += cbStatus_SelectedIndexChanged;
             // 
+            // btnClose
+            // 
+            btnClose.Font = new Font("Microsoft Sans Serif", 12F);
+            btnClose.Location = new Point(1146, 756);
+            btnClose.MinimumSize = new Size(1, 1);
+            btnClose.Name = "btnClose";
+            btnClose.Size = new Size(125, 44);
+            btnClose.TabIndex = 81;
+            btnClose.Text = "Close";
+            btnClose.TipsFont = new Font("Microsoft Sans Serif", 9F);
+            btnClose.Click += btnClose_Click;
+            // 
             // frmManageLocalDrivingLicenseApplications
             // 
             AutoScaleMode = AutoScaleMode.None;
             ClientSize = new Size(1300, 815);
+            ControlBox = false;
+            Controls.Add(btnClose);
             Controls.Add(cbStatus);
             Controls.Add(lblTotalApps);
             Controls.Add(label3);
@@ -407,6 +422,8 @@
             Controls.Add(dgvManageLocalDrivingLicenseApps);
             Controls.Add(pictureBox1);
             Controls.Add(label1);
+            MaximizeBox = false;
+            MinimizeBox = false;
             Name = "frmManageLocalDrivingLicenseApplications";
             ShowIcon = false;
             Text = "Manage Local Driving License Applications";
@@ -449,5 +466,6 @@
         private Label lblTotalApps;
         private Label label3;
         private Sunny.UI.UIComboBox cbStatus;
+        private Sunny.UI.UIButton btnClose;
     }
 }

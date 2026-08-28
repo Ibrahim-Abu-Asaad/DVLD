@@ -102,7 +102,9 @@ namespace DVLD
 
         }
 
-
-
+        private void lblClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

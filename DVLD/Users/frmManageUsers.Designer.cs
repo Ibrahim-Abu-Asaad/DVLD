@@ -258,7 +258,7 @@
             cmsUserRecord.ImageScalingSize = new Size(20, 20);
             cmsUserRecord.Items.AddRange(new ToolStripItem[] { showDetailsToolStripMenuItem, toolStripMenuItem1, editToolStripMenuItem1, deletePersonToolStripMenuItem, changePasswordToolStripMenuItem, toolStripMenuItem2, emailToolStripMenuItem, phoneCallToolStripMenuItem });
             cmsUserRecord.Name = "cmsManagePeople";
-            cmsUserRecord.Size = new Size(262, 272);
+            cmsUserRecord.Size = new Size(262, 244);
             // 
             // showDetailsToolStripMenuItem
             // 
@@ -330,6 +330,7 @@
             // 
             AutoScaleMode = AutoScaleMode.None;
             ClientSize = new Size(1281, 802);
+            ControlBox = false;
             Controls.Add(lblTotalUsers);
             Controls.Add(pbAddNewUser);
             Controls.Add(btnClose);
@@ -341,6 +342,8 @@
             Controls.Add(dgvManageUsers);
             Controls.Add(pictureBox1);
             Controls.Add(label1);
+            MaximizeBox = false;
+            MinimizeBox = false;
             Name = "frmManageUsers";
             ShowIcon = false;
             Text = "Manage Users";
