@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ctrlSheduleTest));
             pbTestImage = new PictureBox();
-            label1 = new Label();
+            lblTitle = new Label();
             label2 = new Label();
             pictureBox2 = new PictureBox();
             pictureBox7 = new PictureBox();
@@ -49,17 +49,19 @@
             lblTrial = new Label();
             lblFees = new Label();
             dtpDate = new Sunny.UI.UIDatetimePicker();
-            uiGroupBox1 = new Sunny.UI.UIGroupBox();
-            lblRAppFees = new Label();
-            pictureBox8 = new PictureBox();
-            label12 = new Label();
+            gbRetakeTest = new Sunny.UI.UIGroupBox();
+            lblRTestAppID = new Label();
+            pictureBox11 = new PictureBox();
+            label17 = new Label();
             lblTotalFees = new Label();
             pictureBox9 = new PictureBox();
             label15 = new Label();
-            label17 = new Label();
-            pictureBox11 = new PictureBox();
-            lblRTestAppID = new Label();
+            lblRAppFees = new Label();
+            pictureBox8 = new PictureBox();
+            label12 = new Label();
             btnSave = new Sunny.UI.UIButton();
+            lblTestType = new Label();
+            lblMessage = new Label();
             ((System.ComponentModel.ISupportInitialize)pbTestImage).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
@@ -67,16 +69,16 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
-            uiGroupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox8).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox9).BeginInit();
+            gbRetakeTest.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox11).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox9).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox8).BeginInit();
             SuspendLayout();
             // 
             // pbTestImage
             // 
             pbTestImage.BackColor = Color.FromArgb(243, 249, 255);
-            pbTestImage.Image = Properties.Resources.Vision_512;
+            pbTestImage.Image = Properties.Resources.Written_Test_512;
             pbTestImage.Location = new Point(245, 32);
             pbTestImage.Name = "pbTestImage";
             pbTestImage.Size = new Size(142, 118);
@@ -84,17 +86,17 @@
             pbTestImage.TabIndex = 0;
             pbTestImage.TabStop = false;
             // 
-            // label1
+            // lblTitle
             // 
-            label1.AutoSize = true;
-            label1.BackColor = Color.FromArgb(243, 249, 255);
-            label1.Font = new Font("Trebuchet MS", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.ForeColor = SystemColors.HotTrack;
-            label1.Location = new Point(172, 153);
-            label1.Name = "label1";
-            label1.Size = new Size(278, 49);
-            label1.TabIndex = 1;
-            label1.Text = "Schedule Test";
+            lblTitle.AutoSize = true;
+            lblTitle.BackColor = Color.FromArgb(243, 249, 255);
+            lblTitle.Font = new Font("Trebuchet MS", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblTitle.ForeColor = SystemColors.HotTrack;
+            lblTitle.Location = new Point(172, 153);
+            lblTitle.Name = "lblTitle";
+            lblTitle.Size = new Size(278, 49);
+            lblTitle.TabIndex = 1;
+            lblTitle.Text = "Schedule Test";
             // 
             // label2
             // 
@@ -310,67 +312,67 @@
             dtpDate.SymbolNormal = 61555;
             dtpDate.SymbolSize = 24;
             dtpDate.TabIndex = 37;
-            dtpDate.Text = "Date";
+            dtpDate.Text = "2026-08-28 07:46:10";
             dtpDate.TextAlignment = ContentAlignment.MiddleLeft;
             dtpDate.Value = new DateTime(2026, 8, 28, 7, 46, 10, 138);
             dtpDate.Watermark = "";
             // 
-            // uiGroupBox1
+            // gbRetakeTest
             // 
-            uiGroupBox1.Controls.Add(lblRTestAppID);
-            uiGroupBox1.Controls.Add(pictureBox11);
-            uiGroupBox1.Controls.Add(label17);
-            uiGroupBox1.Controls.Add(lblTotalFees);
-            uiGroupBox1.Controls.Add(pictureBox9);
-            uiGroupBox1.Controls.Add(label15);
-            uiGroupBox1.Controls.Add(lblRAppFees);
-            uiGroupBox1.Controls.Add(pictureBox8);
-            uiGroupBox1.Controls.Add(label12);
-            uiGroupBox1.Font = new Font("Microsoft Sans Serif", 12F);
-            uiGroupBox1.Location = new Point(38, 585);
-            uiGroupBox1.Margin = new Padding(4, 5, 4, 5);
-            uiGroupBox1.MinimumSize = new Size(1, 1);
-            uiGroupBox1.Name = "uiGroupBox1";
-            uiGroupBox1.Padding = new Padding(0, 32, 0, 0);
-            uiGroupBox1.Size = new Size(560, 179);
-            uiGroupBox1.TabIndex = 38;
-            uiGroupBox1.Text = "Retake Test Info";
-            uiGroupBox1.TextAlignment = ContentAlignment.MiddleLeft;
+            gbRetakeTest.Controls.Add(lblRTestAppID);
+            gbRetakeTest.Controls.Add(pictureBox11);
+            gbRetakeTest.Controls.Add(label17);
+            gbRetakeTest.Controls.Add(lblTotalFees);
+            gbRetakeTest.Controls.Add(pictureBox9);
+            gbRetakeTest.Controls.Add(label15);
+            gbRetakeTest.Controls.Add(lblRAppFees);
+            gbRetakeTest.Controls.Add(pictureBox8);
+            gbRetakeTest.Controls.Add(label12);
+            gbRetakeTest.Font = new Font("Microsoft Sans Serif", 12F);
+            gbRetakeTest.Location = new Point(38, 585);
+            gbRetakeTest.Margin = new Padding(4, 5, 4, 5);
+            gbRetakeTest.MinimumSize = new Size(1, 1);
+            gbRetakeTest.Name = "gbRetakeTest";
+            gbRetakeTest.Padding = new Padding(0, 32, 0, 0);
+            gbRetakeTest.Size = new Size(560, 179);
+            gbRetakeTest.TabIndex = 38;
+            gbRetakeTest.Text = "Retake Test Info";
+            gbRetakeTest.TextAlignment = ContentAlignment.MiddleLeft;
             // 
-            // lblRAppFees
+            // lblRTestAppID
             // 
-            lblRAppFees.AutoSize = true;
-            lblRAppFees.BackColor = Color.FromArgb(243, 249, 255);
-            lblRAppFees.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblRAppFees.ForeColor = Color.FromArgb(48, 48, 48);
-            lblRAppFees.Location = new Point(175, 70);
-            lblRAppFees.Name = "lblRAppFees";
-            lblRAppFees.Size = new Size(66, 26);
-            lblRAppFees.TabIndex = 39;
-            lblRAppFees.Text = "[$$$$]";
+            lblRTestAppID.AutoSize = true;
+            lblRTestAppID.BackColor = Color.FromArgb(243, 249, 255);
+            lblRTestAppID.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblRTestAppID.ForeColor = Color.FromArgb(48, 48, 48);
+            lblRTestAppID.Location = new Point(195, 125);
+            lblRTestAppID.Name = "lblRTestAppID";
+            lblRTestAppID.Size = new Size(61, 26);
+            lblRTestAppID.TabIndex = 44;
+            lblRTestAppID.Text = "[?????]";
             // 
-            // pictureBox8
+            // pictureBox11
             // 
-            pictureBox8.BackColor = Color.FromArgb(243, 249, 255);
-            pictureBox8.Image = (Image)resources.GetObject("pictureBox8.Image");
-            pictureBox8.Location = new Point(145, 65);
-            pictureBox8.Name = "pictureBox8";
-            pictureBox8.Size = new Size(31, 31);
-            pictureBox8.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox8.TabIndex = 38;
-            pictureBox8.TabStop = false;
+            pictureBox11.BackColor = Color.FromArgb(243, 249, 255);
+            pictureBox11.Image = Properties.Resources.Number_32;
+            pictureBox11.Location = new Point(157, 120);
+            pictureBox11.Name = "pictureBox11";
+            pictureBox11.Size = new Size(31, 31);
+            pictureBox11.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox11.TabIndex = 39;
+            pictureBox11.TabStop = false;
             // 
-            // label12
+            // label17
             // 
-            label12.AutoSize = true;
-            label12.BackColor = Color.FromArgb(243, 249, 255);
-            label12.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label12.ForeColor = Color.FromArgb(48, 48, 48);
-            label12.Location = new Point(19, 70);
-            label12.Name = "label12";
-            label12.Size = new Size(120, 26);
-            label12.TabIndex = 37;
-            label12.Text = "R.App.Fees:";
+            label17.AutoSize = true;
+            label17.BackColor = Color.FromArgb(243, 249, 255);
+            label17.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label17.ForeColor = Color.FromArgb(48, 48, 48);
+            label17.Location = new Point(19, 125);
+            label17.Name = "label17";
+            label17.Size = new Size(141, 26);
+            label17.TabIndex = 43;
+            label17.Text = "R.Test.App.ID:";
             // 
             // lblTotalFees
             // 
@@ -407,40 +409,40 @@
             label15.TabIndex = 40;
             label15.Text = "Total Fees:";
             // 
-            // label17
+            // lblRAppFees
             // 
-            label17.AutoSize = true;
-            label17.BackColor = Color.FromArgb(243, 249, 255);
-            label17.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label17.ForeColor = Color.FromArgb(48, 48, 48);
-            label17.Location = new Point(19, 125);
-            label17.Name = "label17";
-            label17.Size = new Size(141, 26);
-            label17.TabIndex = 43;
-            label17.Text = "R.Test.App.ID:";
+            lblRAppFees.AutoSize = true;
+            lblRAppFees.BackColor = Color.FromArgb(243, 249, 255);
+            lblRAppFees.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblRAppFees.ForeColor = Color.FromArgb(48, 48, 48);
+            lblRAppFees.Location = new Point(175, 70);
+            lblRAppFees.Name = "lblRAppFees";
+            lblRAppFees.Size = new Size(66, 26);
+            lblRAppFees.TabIndex = 39;
+            lblRAppFees.Text = "[$$$$]";
             // 
-            // pictureBox11
+            // pictureBox8
             // 
-            pictureBox11.BackColor = Color.FromArgb(243, 249, 255);
-            pictureBox11.Image = Properties.Resources.Number_32;
-            pictureBox11.Location = new Point(157, 120);
-            pictureBox11.Name = "pictureBox11";
-            pictureBox11.Size = new Size(31, 31);
-            pictureBox11.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox11.TabIndex = 39;
-            pictureBox11.TabStop = false;
+            pictureBox8.BackColor = Color.FromArgb(243, 249, 255);
+            pictureBox8.Image = (Image)resources.GetObject("pictureBox8.Image");
+            pictureBox8.Location = new Point(145, 65);
+            pictureBox8.Name = "pictureBox8";
+            pictureBox8.Size = new Size(31, 31);
+            pictureBox8.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox8.TabIndex = 38;
+            pictureBox8.TabStop = false;
             // 
-            // lblRTestAppID
+            // label12
             // 
-            lblRTestAppID.AutoSize = true;
-            lblRTestAppID.BackColor = Color.FromArgb(243, 249, 255);
-            lblRTestAppID.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblRTestAppID.ForeColor = Color.FromArgb(48, 48, 48);
-            lblRTestAppID.Location = new Point(195, 125);
-            lblRTestAppID.Name = "lblRTestAppID";
-            lblRTestAppID.Size = new Size(61, 26);
-            lblRTestAppID.TabIndex = 44;
-            lblRTestAppID.Text = "[?????]";
+            label12.AutoSize = true;
+            label12.BackColor = Color.FromArgb(243, 249, 255);
+            label12.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label12.ForeColor = Color.FromArgb(48, 48, 48);
+            label12.Location = new Point(19, 70);
+            label12.Name = "label12";
+            label12.Size = new Size(120, 26);
+            label12.TabIndex = 37;
+            label12.Text = "R.App.Fees:";
             // 
             // btnSave
             // 
@@ -454,12 +456,39 @@
             btnSave.TabIndex = 39;
             btnSave.Text = "Save";
             btnSave.TipsFont = new Font("Microsoft Sans Serif", 9F);
+            btnSave.Click += btnSave_Click;
+            // 
+            // lblTestType
+            // 
+            lblTestType.AutoSize = true;
+            lblTestType.BackColor = Color.FromArgb(243, 249, 255);
+            lblTestType.Font = new Font("Trebuchet MS", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblTestType.ForeColor = SystemColors.HotTrack;
+            lblTestType.Location = new Point(248, 1);
+            lblTestType.Name = "lblTestType";
+            lblTestType.Size = new Size(127, 28);
+            lblTestType.TabIndex = 40;
+            lblTestType.Text = "Vision Test";
+            // 
+            // lblMessage
+            // 
+            lblMessage.AutoSize = true;
+            lblMessage.BackColor = Color.FromArgb(243, 249, 255);
+            lblMessage.Font = new Font("Trebuchet MS", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblMessage.ForeColor = Color.Tomato;
+            lblMessage.Location = new Point(38, 199);
+            lblMessage.Name = "lblMessage";
+            lblMessage.Size = new Size(155, 28);
+            lblMessage.TabIndex = 41;
+            lblMessage.Text = "User Message";
             // 
             // ctrlSheduleTest
             // 
             AutoScaleMode = AutoScaleMode.None;
+            Controls.Add(lblMessage);
+            Controls.Add(lblTestType);
             Controls.Add(btnSave);
-            Controls.Add(uiGroupBox1);
+            Controls.Add(gbRetakeTest);
             Controls.Add(dtpDate);
             Controls.Add(lblFees);
             Controls.Add(lblTrial);
@@ -478,7 +507,7 @@
             Controls.Add(label7);
             Controls.Add(pictureBox2);
             Controls.Add(label2);
-            Controls.Add(label1);
+            Controls.Add(lblTitle);
             Controls.Add(pbTestImage);
             Name = "ctrlSheduleTest";
             RectColor = Color.FromArgb(243, 249, 255);
@@ -490,11 +519,11 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
-            uiGroupBox1.ResumeLayout(false);
-            uiGroupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox8).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox9).EndInit();
+            gbRetakeTest.ResumeLayout(false);
+            gbRetakeTest.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox11).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox9).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox8).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -502,7 +531,7 @@
         #endregion
 
         private PictureBox pbTestImage;
-        private Label label1;
+        private Label lblTitle;
         private Label label2;
         private PictureBox pictureBox2;
         private PictureBox pictureBox7;
@@ -521,7 +550,7 @@
         private Label lblTrial;
         private Label lblFees;
         private Sunny.UI.UIDatetimePicker dtpDate;
-        private Sunny.UI.UIGroupBox uiGroupBox1;
+        private Sunny.UI.UIGroupBox gbRetakeTest;
         private Label label17;
         private Label lblTotalFees;
         private PictureBox pictureBox9;
@@ -532,5 +561,7 @@
         private Label lblRTestAppID;
         private PictureBox pictureBox11;
         private Sunny.UI.UIButton btnSave;
+        private Label lblTestType;
+        private Label lblMessage;
     }
 }

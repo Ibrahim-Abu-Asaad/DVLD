@@ -22,6 +22,9 @@ namespace DVLD_BLL
         public int LocalDrivingLicenseApplicationID { get; set; }
         public int LicenseClassID { get; set; }
         // clsLicens...
+        // implemented
+        public clsLicenseClass LicenseClassInfo;
+
 
         public clsLocalDrivingLicenseApplication()
         {
@@ -50,6 +53,9 @@ namespace DVLD_BLL
             this.CreatedByUserInfo = clsUser.GetUserByID(CreatedByUserID);
 
             this.LicenseClassID = LicenseClassID;
+            this.LicenseClassInfo = clsLicenseClass.FindByLicenseCLassID(LicenseClassID);
+
+            Mode = enMode.Update;
 
         }
 
