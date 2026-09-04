@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle10 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
             ctrlLocalDrivingLicenseAppInfo1 = new Applications.LocalDrivingLicenseApplications.ctrlLocalDrivingLicenseAppInfo();
             pbTestType = new PictureBox();
             lblTestType = new Label();
@@ -81,45 +81,45 @@
             // 
             // dgvLicenseTestAppointments
             // 
-            dataGridViewCellStyle6.BackColor = Color.FromArgb(235, 243, 255);
-            dgvLicenseTestAppointments.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(235, 243, 255);
+            dgvLicenseTestAppointments.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dgvLicenseTestAppointments.BackgroundColor = Color.White;
             dgvLicenseTestAppointments.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = Color.FromArgb(80, 160, 255);
-            dataGridViewCellStyle7.Font = new Font("Microsoft Sans Serif", 12F);
-            dataGridViewCellStyle7.ForeColor = Color.White;
-            dataGridViewCellStyle7.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.True;
-            dgvLicenseTestAppointments.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(80, 160, 255);
+            dataGridViewCellStyle2.Font = new Font("Microsoft Sans Serif", 12F);
+            dataGridViewCellStyle2.ForeColor = Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            dgvLicenseTestAppointments.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dgvLicenseTestAppointments.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = SystemColors.Window;
-            dataGridViewCellStyle8.Font = new Font("Microsoft Sans Serif", 12F);
-            dataGridViewCellStyle8.ForeColor = Color.FromArgb(48, 48, 48);
-            dataGridViewCellStyle8.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.False;
-            dgvLicenseTestAppointments.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = SystemColors.Window;
+            dataGridViewCellStyle3.Font = new Font("Microsoft Sans Serif", 12F);
+            dataGridViewCellStyle3.ForeColor = Color.FromArgb(48, 48, 48);
+            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
+            dgvLicenseTestAppointments.DefaultCellStyle = dataGridViewCellStyle3;
             dgvLicenseTestAppointments.EnableHeadersVisualStyles = false;
             dgvLicenseTestAppointments.Font = new Font("Microsoft Sans Serif", 12F);
             dgvLicenseTestAppointments.GridColor = Color.FromArgb(80, 160, 255);
             dgvLicenseTestAppointments.Location = new Point(47, 696);
             dgvLicenseTestAppointments.Name = "dgvLicenseTestAppointments";
             dgvLicenseTestAppointments.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle9.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = Color.FromArgb(235, 243, 255);
-            dataGridViewCellStyle9.Font = new Font("Microsoft Sans Serif", 12F);
-            dataGridViewCellStyle9.ForeColor = Color.FromArgb(48, 48, 48);
-            dataGridViewCellStyle9.SelectionBackColor = Color.FromArgb(80, 160, 255);
-            dataGridViewCellStyle9.SelectionForeColor = Color.White;
-            dataGridViewCellStyle9.WrapMode = DataGridViewTriState.True;
-            dgvLicenseTestAppointments.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = Color.FromArgb(235, 243, 255);
+            dataGridViewCellStyle4.Font = new Font("Microsoft Sans Serif", 12F);
+            dataGridViewCellStyle4.ForeColor = Color.FromArgb(48, 48, 48);
+            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(80, 160, 255);
+            dataGridViewCellStyle4.SelectionForeColor = Color.White;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
+            dgvLicenseTestAppointments.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             dgvLicenseTestAppointments.RowHeadersWidth = 51;
-            dataGridViewCellStyle10.BackColor = Color.White;
-            dataGridViewCellStyle10.Font = new Font("Microsoft Sans Serif", 12F);
-            dgvLicenseTestAppointments.RowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle5.BackColor = Color.White;
+            dataGridViewCellStyle5.Font = new Font("Microsoft Sans Serif", 12F);
+            dgvLicenseTestAppointments.RowsDefaultCellStyle = dataGridViewCellStyle5;
             dgvLicenseTestAppointments.SelectedIndex = -1;
             dgvLicenseTestAppointments.Size = new Size(852, 122);
             dgvLicenseTestAppointments.StripeOddColor = Color.FromArgb(235, 243, 255);
@@ -147,6 +147,7 @@
             btnClose.TabIndex = 43;
             btnClose.Text = "Close";
             btnClose.TipsFont = new Font("Microsoft Sans Serif", 9F);
+            btnClose.Click += btnClose_Click;
             // 
             // label1
             // 
@@ -201,6 +202,7 @@
             ShowIcon = false;
             Text = "List Test Appointments";
             ZoomScaleRect = new Rectangle(19, 19, 800, 450);
+            Load += frmListTestAppointments_Load;
             ((System.ComponentModel.ISupportInitialize)pbTestType).EndInit();
             ((System.ComponentModel.ISupportInitialize)dgvLicenseTestAppointments).EndInit();
             ResumeLayout(false);
