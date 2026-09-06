@@ -1,4 +1,5 @@
-﻿using DVLD_BLL;
+﻿using DVLD.Tests;
+using DVLD_BLL;
 using Sunny.UI;
 using System;
 using System.Collections.Generic;
@@ -384,5 +385,31 @@ namespace DVLD.Applications.LocalDrivingLicenseApplications
         {
             this.Close();
         }
+
+        private void scheduleVisionTestToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            _ScheduleTest(clsTestType.enTestType.VisionTest);
+        }
+
+        private void scheduleWrittenTestToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            _ScheduleTest(clsTestType.enTestType.WrittenTest);
+        }
+
+        private void scheduleStreetTestToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            _ScheduleTest(clsTestType.enTestType.StreetTest);
+        }
+
+        private void _ScheduleTest(clsTestType.enTestType TestType)
+        {
+            int LDLAppID = (int)dgvManageLocalDrivingLicenseApps.CurrentRow.Cells[0].Value;
+            frmListTestAppointments frm = new frmListTestAppointments(LDLAppID, TestType);
+            frm.ShowDialog();
+            _ListAppsAndRefreshPage();
+        }
+
+
+
     }
 }

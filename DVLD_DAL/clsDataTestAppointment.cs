@@ -154,12 +154,13 @@ namespace DVLD_DAL
         {
 
             DataTable dt = new DataTable();
-
-            string query = @"SELECT * FROM TestAppointments WHERE LocalDrivingLicenseApplicationID = @LocalDrivingLicenseApplicationID AND TestTypeID = @TestTypeID ORDER BY ID DESC";
+            // the error was: "@SELECT .....etc"; and it should be @"SELECT .....etc"; the @ should be before (")
+            //string query = @"SELECT * FROM TestAppointments WHERE ORDER BY ID DESC";
+            string query = @"SELECT ID, AppointmentDate, PaidFees, IsLocked FROM TestAppointments WHERE LocalDrivingLicenseApplicationID = @LocalDrivingLicenseApplicationID AND TestTypeID = @TestTypeID ORDER BY ID DESC;";
 
             SqlCommand command = new SqlCommand(query, connection);
-            command.Parameters.AddWithValue("LocalDrivingLicenseApplicationID", LocalDrivingLicenseApplicationID);
-            command.Parameters.AddWithValue("TestTypeID", TestTypeID);
+            command.Parameters.AddWithValue("@LocalDrivingLicenseApplicationID", LocalDrivingLicenseApplicationID);
+            command.Parameters.AddWithValue("@TestTypeID", TestTypeID);
 
             try
             {

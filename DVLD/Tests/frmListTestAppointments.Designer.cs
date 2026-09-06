@@ -61,7 +61,7 @@
             // pbTestType
             // 
             pbTestType.Image = Properties.Resources.Vision_5121;
-            pbTestType.Location = new Point(258, 50);
+            pbTestType.Location = new Point(47, 47);
             pbTestType.Name = "pbTestType";
             pbTestType.Size = new Size(98, 93);
             pbTestType.SizeMode = PictureBoxSizeMode.Zoom;
@@ -73,7 +73,7 @@
             lblTestType.AutoSize = true;
             lblTestType.Font = new Font("Trebuchet MS", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblTestType.ForeColor = SystemColors.HotTrack;
-            lblTestType.Location = new Point(37, 65);
+            lblTestType.Location = new Point(151, 77);
             lblTestType.Name = "lblTestType";
             lblTestType.Size = new Size(221, 49);
             lblTestType.TabIndex = 2;
@@ -105,7 +105,7 @@
             dgvLicenseTestAppointments.EnableHeadersVisualStyles = false;
             dgvLicenseTestAppointments.Font = new Font("Microsoft Sans Serif", 12F);
             dgvLicenseTestAppointments.GridColor = Color.FromArgb(80, 160, 255);
-            dgvLicenseTestAppointments.Location = new Point(47, 696);
+            dgvLicenseTestAppointments.Location = new Point(47, 697);
             dgvLicenseTestAppointments.Name = "dgvLicenseTestAppointments";
             dgvLicenseTestAppointments.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
@@ -121,7 +121,7 @@
             dataGridViewCellStyle5.Font = new Font("Microsoft Sans Serif", 12F);
             dgvLicenseTestAppointments.RowsDefaultCellStyle = dataGridViewCellStyle5;
             dgvLicenseTestAppointments.SelectedIndex = -1;
-            dgvLicenseTestAppointments.Size = new Size(852, 122);
+            dgvLicenseTestAppointments.Size = new Size(852, 160);
             dgvLicenseTestAppointments.StripeOddColor = Color.FromArgb(235, 243, 255);
             dgvLicenseTestAppointments.TabIndex = 3;
             // 
@@ -129,7 +129,7 @@
             // 
             btnAddAppointment.Cursor = Cursors.Hand;
             btnAddAppointment.Image = Properties.Resources.AddAppointment_32;
-            btnAddAppointment.Location = new Point(866, 653);
+            btnAddAppointment.Location = new Point(866, 655);
             btnAddAppointment.Name = "btnAddAppointment";
             btnAddAppointment.Size = new Size(37, 39);
             btnAddAppointment.TabIndex = 4;
@@ -139,7 +139,7 @@
             // 
             btnClose.Cursor = Cursors.Hand;
             btnClose.Font = new Font("Microsoft Sans Serif", 12F);
-            btnClose.Location = new Point(774, 824);
+            btnClose.Location = new Point(774, 863);
             btnClose.MinimumSize = new Size(1, 1);
             btnClose.Name = "btnClose";
             btnClose.Radius = 10;
@@ -154,7 +154,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Trebuchet MS", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = SystemColors.HotTrack;
-            label1.Location = new Point(47, 664);
+            label1.Location = new Point(47, 666);
             label1.Name = "label1";
             label1.Size = new Size(170, 28);
             label1.TabIndex = 44;
@@ -165,7 +165,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Trebuchet MS", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.ForeColor = SystemColors.HotTrack;
-            label2.Location = new Point(47, 824);
+            label2.Location = new Point(47, 863);
             label2.Name = "label2";
             label2.Size = new Size(171, 23);
             label2.TabIndex = 45;
@@ -176,7 +176,7 @@
             lblTotalAppointments.AutoSize = true;
             lblTotalAppointments.Font = new Font("Trebuchet MS", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblTotalAppointments.ForeColor = Color.Tomato;
-            lblTotalAppointments.Location = new Point(222, 824);
+            lblTotalAppointments.Location = new Point(222, 863);
             lblTotalAppointments.Name = "lblTotalAppointments";
             lblTotalAppointments.Size = new Size(20, 23);
             lblTotalAppointments.TabIndex = 46;
@@ -185,7 +185,7 @@
             // frmListTestAppointments
             // 
             AutoScaleMode = AutoScaleMode.None;
-            ClientSize = new Size(952, 885);
+            ClientSize = new Size(952, 919);
             ControlBox = false;
             Controls.Add(lblTotalAppointments);
             Controls.Add(label2);

@@ -77,8 +77,10 @@ namespace DVLD.Tests
 
             if (dgvLicenseTestAppointments.Rows.Count > 0)
             {
-                dgvLicenseTestAppointments.Columns[0].HeaderText = "Appointment ID";
-                dgvLicenseTestAppointments.Columns[0].Width = 150;
+                dgvLicenseTestAppointments.Columns[0].Visible = false;
+                //dgvLicenseTestAppointments.Columns[0].HeaderText = "ID";
+                //dgvLicenseTestAppointments.Columns[0].Width = 150;
+                
 
                 dgvLicenseTestAppointments.Columns[1].HeaderText = "Appointment Date";
                 dgvLicenseTestAppointments.Columns[1].Width = 200;
@@ -87,7 +89,7 @@ namespace DVLD.Tests
                 dgvLicenseTestAppointments.Columns[2].Width = 150;
 
                 dgvLicenseTestAppointments.Columns[3].HeaderText = "Is Locked";
-                dgvLicenseTestAppointments.Columns[3].Width = 100;
+                dgvLicenseTestAppointments.Columns[3].Width = 180;
             }
 
         }

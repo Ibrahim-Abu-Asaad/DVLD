@@ -212,7 +212,7 @@
             cmsPersonRecord.ImageScalingSize = new Size(20, 20);
             cmsPersonRecord.Items.AddRange(new ToolStripItem[] { showDetailsToolStripMenuItem, toolStripMenuItem1, editToolStripMenuItem1, deleteApplicationToolStripMenuItem, toolStripMenuItem2, cancelToolStripMenuItem, toolStripMenuItem3, scheduleTestToolStripMenuItem, phoneCallToolStripMenuItem, issueDrivingLicenseFirstTimeToolStripMenuItem, toolStripMenuItem4, showLicenseToolStripMenuItem, toolStripMenuItem5, showPersonLicenseHistoryToolStripMenuItem });
             cmsPersonRecord.Name = "cmsManagePeople";
-            cmsPersonRecord.Size = new Size(391, 344);
+            cmsPersonRecord.Size = new Size(391, 372);
             cmsPersonRecord.ZoomScaleDisabled = true;
             cmsPersonRecord.Opening += cmsPersonRecord_Opening;
             // 
@@ -289,6 +289,7 @@
             scheduleVisionTestToolStripMenuItem.Name = "scheduleVisionTestToolStripMenuItem";
             scheduleVisionTestToolStripMenuItem.Size = new Size(304, 38);
             scheduleVisionTestToolStripMenuItem.Text = "Schedule Vision Test";
+            scheduleVisionTestToolStripMenuItem.Click += scheduleVisionTestToolStripMenuItem_Click;
             // 
             // scheduleWrittenTestToolStripMenuItem
             // 
@@ -298,6 +299,7 @@
             scheduleWrittenTestToolStripMenuItem.Name = "scheduleWrittenTestToolStripMenuItem";
             scheduleWrittenTestToolStripMenuItem.Size = new Size(304, 38);
             scheduleWrittenTestToolStripMenuItem.Text = "Schedule Written Test";
+            scheduleWrittenTestToolStripMenuItem.Click += scheduleWrittenTestToolStripMenuItem_Click;
             // 
             // scheduleStreetTestToolStripMenuItem
             // 
@@ -307,6 +309,7 @@
             scheduleStreetTestToolStripMenuItem.Name = "scheduleStreetTestToolStripMenuItem";
             scheduleStreetTestToolStripMenuItem.Size = new Size(304, 38);
             scheduleStreetTestToolStripMenuItem.Text = "Schedule Street Test";
+            scheduleStreetTestToolStripMenuItem.Click += scheduleStreetTestToolStripMenuItem_Click;
             // 
             // phoneCallToolStripMenuItem
             // 
