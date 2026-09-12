@@ -14,6 +14,6 @@ A complete system for managing driving licenses, vehicle registrations, and all 
 - **Framework:** .NET Framework
 - **UI Library:** SunnyUI
 - **Database:** Microsoft SQL Server
-- **Architecture:** 3-Tier Architecture (UI, BLL, DAL)
+- **Architecture:** 3-Tier Architecture (UI, BLL, DAL) (User Interface, Business Logic Layer, Data Access Layer).
 
 ---
