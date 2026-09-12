@@ -73,11 +73,11 @@ namespace DVLD.Tests.Controls
 
         public void LoadInfo(int LDLAppID, int TestAppointmentID = -1)
         {
-
+            //
             if (TestAppointmentID != -1)
-                _Mode = enMode.AddNew;
-            else
                 _Mode = enMode.Update;
+            else
+                _Mode = enMode.AddNew;
 
             _LDLAppID = LDLAppID;
             _LDLApp = clsLocalDrivingLicenseApplication.FindLocalDrivingLicenseApplicationByID(LDLAppID);
@@ -110,9 +110,9 @@ namespace DVLD.Tests.Controls
 
                 gbRetakeTest.Enabled = false;
                 lblTitle.Text = "Schedule Test";
-                lblFees.Text = "0";
+                //lblFees.Text = "0";
                 lblRTestAppID.Text = "N/A";
-
+                lblRAppFees.Text = "0";
             }
 
             lblDLAppID.Text = _LDLAppID.ToString();
@@ -139,7 +139,17 @@ namespace DVLD.Tests.Controls
 
             }
 
-            lblTotalFees.Text = (Convert.ToSingle(lblFees.Text) + Convert.ToSingle(lblRAppFees.Text)).ToString();
+            //lblTotalFees.Text = (Convert.ToSingle(lblFees.Text) + Convert.ToSingle(lblRAppFees.Text)).ToString();
+
+            decimal fees = 0;
+            decimal rAppFees = 0;
+            //rAppFees = clsTest
+            rAppFees = clsApplicationType.Find(7).Fees;
+
+            decimal.TryParse(lblFees.Text, out fees);
+            decimal.TryParse(lblRAppFees.Text, out rAppFees);
+
+            lblTotalFees.Text = (fees + rAppFees).ToString();
 
             if (!_HandleActiveTestAppointmentConstraint())
                 return;
@@ -147,8 +157,8 @@ namespace DVLD.Tests.Controls
             if (!_HandleAppointmentLockedConstraint())
                 return;
 
-            //if (!HandlePrviousTestConstraint())
-            //    return;
+            if (!_HandlePreviousTestConstraint())
+                return;
 
 
 
@@ -178,7 +188,8 @@ namespace DVLD.Tests.Controls
 
             if (_TestAppointment.RetakeTestApplicationID == -1)
             {
-                lblFees.Text = "0";
+                //lblFees.Text = "0";
+                lblFees.Text = clsTestType.GetTestTypeByID((int)_TestTypeID).Fees.ToString();
                 lblRTestAppID.Text = "N/A";
             }
             else
@@ -223,60 +234,60 @@ namespace DVLD.Tests.Controls
             return true;
         }
 
-        //private bool _HandlePrviousTestConstraint()
-        //{
+        private bool _HandlePreviousTestConstraint()
+        {
 
-        //    switch (TestTypeID)
-        //    {
-        //        case clsTestType.enTestType.VisionTest:
+            switch (TestTypeID)
+            {
+                case clsTestType.enTestType.VisionTest:
 
-        //            lblMessage.Visible = false;
+                    lblMessage.Visible = false;
 
-        //            return true;
+                    return true;
 
-        //        case clsTestType.enTestType.WrittenTest:
-        //            if (!_LDLApp.DoesPassTestType(clsTestType.enTestType.VisionTest))
-        //            {
-        //                lblMessage.Text = "Cannot Schedule, Vision Test should be passed first";
-        //                lblMessage.Visible = true;
-        //                btnSave.Enabled = false;
-        //                dtpDate.Enabled = false;
-        //                return false;
-        //            }
-        //            else
-        //            {
-        //                lblMessage.Visible = false;
-        //                btnSave.Enabled = true;
-        //                dtpDate.Enabled = true;
-        //            }
-
-
-        //            return true;
-
-        //        case clsTestType.enTestType.StreetTest:
-
-        //            if (!_LDLApp.DoesPassTestType(clsTestType.enTestType.WrittenTest))
-        //            {
-        //                lblMessage.Text = "Cannot Schedule, Written Test should be passed first";
-        //                lblMessage.Visible = true;
-        //                btnSave.Enabled = false;
-        //                dtpDate.Enabled = false;
-        //                return false;
-        //            }
-        //            else
-        //            {
-        //                lblMessage.Visible = false;
-        //                btnSave.Enabled = true;
-        //                dtpDate.Enabled = true;
-        //            }
+                case clsTestType.enTestType.WrittenTest:
+                    if (!_LDLApp.DoesPassTestType(clsTestType.enTestType.VisionTest))
+                    {
+                        lblMessage.Text = "Cannot Schedule, Vision Test should be passed first";
+                        lblMessage.Visible = true;
+                        btnSave.Enabled = false;
+                        dtpDate.Enabled = false;
+                        return false;
+                    }
+                    else
+                    {
+                        lblMessage.Visible = false;
+                        btnSave.Enabled = true;
+                        dtpDate.Enabled = true;
+                    }
 
 
-        //            return true;
+                    return true;
 
-        //    }
-        //    return true;
+                case clsTestType.enTestType.StreetTest:
 
-        //}
+                    if (!_LDLApp.DoesPassTestType(clsTestType.enTestType.WrittenTest))
+                    {
+                        lblMessage.Text = "Cannot Schedule, Written Test should be passed first";
+                        lblMessage.Visible = true;
+                        btnSave.Enabled = false;
+                        dtpDate.Enabled = false;
+                        return false;
+                    }
+                    else
+                    {
+                        lblMessage.Visible = false;
+                        btnSave.Enabled = true;
+                        dtpDate.Enabled = true;
+                    }
+
+
+                    return true;
+
+            }
+            return true;
+
+        }
 
         private bool _HandleRetakeApplication()
         {
@@ -310,8 +321,11 @@ namespace DVLD.Tests.Controls
         private void btnSave_Click(object sender, EventArgs e)
         {
 
-            if (!_HandleRetakeApplication())
-                return;
+            if (_Mode == enMode.AddNew)
+            {
+                if (!_HandleRetakeApplication())
+                    return;
+            }
 
             _TestAppointment.TestTypeID = _TestTypeID;
             _TestAppointment.LocalDrivingLicenseApplicationID = _LDLApp.LocalDrivingLicenseApplicationID;
@@ -323,11 +337,24 @@ namespace DVLD.Tests.Controls
             {
                 _Mode = enMode.Update;
                 MessageBox.Show("Data Saved Successfully.", "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                btnSave.Enabled = false;
+                dtpDate.Enabled = false;
+                lblMessage.Text = "Appointment has been set";
+                
+            
             }
             else
+            {
                 MessageBox.Show("Error: Data Is not Saved Successfully.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
+
+
+        }
+
+        private void ctrlSheduleTest_Click(object sender, EventArgs e)
+        {
+            //
         }
     }
 }

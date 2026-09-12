@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
@@ -42,8 +43,12 @@
             label1 = new Label();
             label2 = new Label();
             lblTotalAppointments = new Label();
+            cmsApplications = new ContextMenuStrip(components);
+            editToolStripMenuItem = new ToolStripMenuItem();
+            takeTestToolStripMenuItem = new ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)pbTestType).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvLicenseTestAppointments).BeginInit();
+            cmsApplications.SuspendLayout();
             SuspendLayout();
             // 
             // ctrlLocalDrivingLicenseAppInfo1
@@ -81,6 +86,9 @@
             // 
             // dgvLicenseTestAppointments
             // 
+            dgvLicenseTestAppointments.AllowUserToAddRows = false;
+            dgvLicenseTestAppointments.AllowUserToDeleteRows = false;
+            dgvLicenseTestAppointments.AllowUserToOrderColumns = true;
             dataGridViewCellStyle1.BackColor = Color.FromArgb(235, 243, 255);
             dgvLicenseTestAppointments.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dgvLicenseTestAppointments.BackgroundColor = Color.White;
@@ -107,6 +115,7 @@
             dgvLicenseTestAppointments.GridColor = Color.FromArgb(80, 160, 255);
             dgvLicenseTestAppointments.Location = new Point(47, 697);
             dgvLicenseTestAppointments.Name = "dgvLicenseTestAppointments";
+            dgvLicenseTestAppointments.ReadOnly = true;
             dgvLicenseTestAppointments.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = Color.FromArgb(235, 243, 255);
@@ -124,6 +133,7 @@
             dgvLicenseTestAppointments.Size = new Size(852, 160);
             dgvLicenseTestAppointments.StripeOddColor = Color.FromArgb(235, 243, 255);
             dgvLicenseTestAppointments.TabIndex = 3;
+            dgvLicenseTestAppointments.CellMouseClick += dgvLicenseTestAppointments_CellMouseClick;
             // 
             // btnAddAppointment
             // 
@@ -134,6 +144,7 @@
             btnAddAppointment.Size = new Size(37, 39);
             btnAddAppointment.TabIndex = 4;
             btnAddAppointment.UseVisualStyleBackColor = true;
+            btnAddAppointment.Click += btnAddAppointment_Click;
             // 
             // btnClose
             // 
@@ -182,6 +193,33 @@
             lblTotalAppointments.TabIndex = 46;
             lblTotalAppointments.Text = "0";
             // 
+            // cmsApplications
+            // 
+            cmsApplications.ImageScalingSize = new Size(20, 20);
+            cmsApplications.Items.AddRange(new ToolStripItem[] { editToolStripMenuItem, takeTestToolStripMenuItem });
+            cmsApplications.Name = "cmsApplications";
+            cmsApplications.Size = new Size(174, 80);
+            // 
+            // editToolStripMenuItem
+            // 
+            editToolStripMenuItem.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            editToolStripMenuItem.Image = Properties.Resources.edit_322;
+            editToolStripMenuItem.ImageScaling = ToolStripItemImageScaling.None;
+            editToolStripMenuItem.Name = "editToolStripMenuItem";
+            editToolStripMenuItem.Size = new Size(173, 38);
+            editToolStripMenuItem.Text = "Edit";
+            editToolStripMenuItem.Click += editToolStripMenuItem_Click;
+            // 
+            // takeTestToolStripMenuItem
+            // 
+            takeTestToolStripMenuItem.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            takeTestToolStripMenuItem.Image = Properties.Resources.Test_32;
+            takeTestToolStripMenuItem.ImageScaling = ToolStripItemImageScaling.None;
+            takeTestToolStripMenuItem.Name = "takeTestToolStripMenuItem";
+            takeTestToolStripMenuItem.Size = new Size(173, 38);
+            takeTestToolStripMenuItem.Text = "Take Test";
+            takeTestToolStripMenuItem.Click += takeTestToolStripMenuItem_Click;
+            // 
             // frmListTestAppointments
             // 
             AutoScaleMode = AutoScaleMode.None;
@@ -205,6 +243,7 @@
             Load += frmListTestAppointments_Load;
             ((System.ComponentModel.ISupportInitialize)pbTestType).EndInit();
             ((System.ComponentModel.ISupportInitialize)dgvLicenseTestAppointments).EndInit();
+            cmsApplications.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -220,5 +259,8 @@
         private Label label1;
         private Label label2;
         private Label lblTotalAppointments;
+        private ContextMenuStrip cmsApplications;
+        private ToolStripMenuItem editToolStripMenuItem;
+        private ToolStripMenuItem takeTestToolStripMenuItem;
     }
 }

@@ -169,11 +169,19 @@ namespace DVLD_DAL
                                                 Notes,   CreatedByUserID)
                             VALUES (@TestAppointmentID,@TestResult,
                                                 @Notes,   @CreatedByUserID);
-                            
+
                                 UPDATE TestAppointments 
-                                SET IsLocked=1 WHERE TestAppointmentID = @TestAppointmentID;
+                                SET IsLocked=1 WHERE ID = @TestAppointmentID;
 
                                 SELECT SCOPE_IDENTITY();";
+
+            //string query = @"INSERT INTO Tests (TestAppointmentID, TestResult, Notes, CreatedByUserID)
+            //         VALUES (@TestAppointmentID, @TestResult, @Notes, @CreatedByUserID);
+            //         SELECT SCOPE_IDENTITY();
+
+            //         UPDATE TestAppointments 
+            //         SET IsLocked = 1 
+            //         WHERE TestAppointmentID = @TestAppointmentID;";
 
             SqlCommand command = new SqlCommand(query, connection);
 

@@ -66,9 +66,24 @@ namespace DVLD_BLL
             Mode = enMode.Update;
         }
 
+        //private bool _AddNewTestAppointment()
+        //    => clsDataTestAppointment.AddNewTestAppointment((int)this.TestTypeID, this.LocalDrivingLicenseApplicationID,
+        //        this.AppointmentDate, this.PaidFees, this.CreatedByUserID, this.IsLocked, this.RetakeTestApplicationID) != -1;
+
         private bool _AddNewTestAppointment()
-            => clsDataTestAppointment.AddNewTestAppointment((int)this.TestTypeID, this.LocalDrivingLicenseApplicationID,
-                this.AppointmentDate, this.PaidFees, this.CreatedByUserID, this.IsLocked, this.RetakeTestApplicationID) != -1;
+        {
+            this.ID = clsDataTestAppointment.AddNewTestAppointment(
+                (int)this.TestTypeID,
+                this.LocalDrivingLicenseApplicationID,
+                this.AppointmentDate,
+                this.PaidFees,
+                this.CreatedByUserID,
+                this.IsLocked,
+                this.RetakeTestApplicationID
+            );
+
+            return (this.ID != -1);
+        }
 
         private bool _UpdateTestAppointment()
             => clsDataTestAppointment.UpdateTestAppointment(this.ID, (int)this.TestTypeID, this.LocalDrivingLicenseApplicationID, this.AppointmentDate, this.PaidFees, this.CreatedByUserID, this.IsLocked, this.RetakeTestApplicationID);

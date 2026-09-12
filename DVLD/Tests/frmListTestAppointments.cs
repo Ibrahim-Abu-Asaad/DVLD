@@ -64,10 +64,8 @@ namespace DVLD.Tests
             }
         }
 
-        private void frmListTestAppointments_Load(object sender, EventArgs e)
+        private void _RefreshAndLoadData()
         {
-
-            _LoadTestTypeImageAndTitle();
 
             ctrlLocalDrivingLicenseAppInfo1.LoadAllData(_LDLAppID);
             _dtLicenseTestAppointments = clsTestAppointment.GetApplicationTestAppointmentsPerTestType(_LDLAppID, _TestTypeID);
@@ -80,7 +78,7 @@ namespace DVLD.Tests
                 dgvLicenseTestAppointments.Columns[0].Visible = false;
                 //dgvLicenseTestAppointments.Columns[0].HeaderText = "ID";
                 //dgvLicenseTestAppointments.Columns[0].Width = 150;
-                
+
 
                 dgvLicenseTestAppointments.Columns[1].HeaderText = "Appointment Date";
                 dgvLicenseTestAppointments.Columns[1].Width = 200;
@@ -94,11 +92,76 @@ namespace DVLD.Tests
 
         }
 
-        
+        private void frmListTestAppointments_Load(object sender, EventArgs e)
+        {
+
+            _LoadTestTypeImageAndTitle();
+
+            _RefreshAndLoadData();
+
+        }
+
+        private void dgvLicenseTestAppointments_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
 
 
+            if (e.Button == MouseButtons.Right)
+            {
+                if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+                {
+
+                    dgvLicenseTestAppointments.ClearSelection();
+
+                    dgvLicenseTestAppointments.Rows[e.RowIndex].Selected = true;
+
+                    dgvLicenseTestAppointments.CurrentCell = dgvLicenseTestAppointments.Rows[e.RowIndex].Cells[e.ColumnIndex];
+
+                    bool isLocked = Convert.ToBoolean(dgvLicenseTestAppointments.Rows[e.RowIndex].Cells["IsLocked"].Value);
+
+                    if (!isLocked)
+                        cmsApplications.Show(Cursor.Position);
 
 
+                }
+            }
 
+
+        }
+
+        private void editToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            int TestAppointmentID = (int)dgvLicenseTestAppointments.CurrentRow.Cells[0].Value;
+
+
+            frmScheduleTest frm = new frmScheduleTest(_LDLAppID, _TestTypeID, TestAppointmentID);
+            frm.ShowDialog();
+            frmListTestAppointments_Load(null, null);
+
+        }
+
+        private void takeTestToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            int TestAppointmentID = (int)dgvLicenseTestAppointments.CurrentRow.Cells[0].Value;
+
+            frmTakeTest frm = new frmTakeTest(TestAppointmentID, _TestTypeID);
+            frm.ShowDialog();
+            //frmListTestAppointments_Load(null, null);
+
+            //_LoadTestTypeImageAndTitle();
+            _RefreshAndLoadData();
+
+        }
+
+        private void btnAddAppointment_Click(object sender, EventArgs e)
+        {
+            frmScheduleTest frm = new frmScheduleTest(_LDLAppID, _TestTypeID, -1);
+            frm.ShowDialog();
+
+            //_LoadTestTypeImageAndTitle();
+            _RefreshAndLoadData();
+
+        }
     }
 }

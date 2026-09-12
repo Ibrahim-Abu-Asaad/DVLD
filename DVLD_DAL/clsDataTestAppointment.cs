@@ -206,7 +206,12 @@ namespace DVLD_DAL
             command.Parameters.AddWithValue("@PaidFees", PaidFees);
             command.Parameters.AddWithValue("@CreatedByUserID", CreatedByUserID);
             command.Parameters.AddWithValue("@IsLocked", IsLocked);
-            command.Parameters.AddWithValue("@RetakeTestApplicationID", RetakeTestApplicationID);
+            //command.Parameters.AddWithValue("@RetakeTestApplicationID", RetakeTestApplicationID);
+
+            if (RetakeTestApplicationID == -1)
+                command.Parameters.AddWithValue("@RetakeTestApplicationID", DBNull.Value);
+            else
+                command.Parameters.AddWithValue("@RetakeTestApplicationID", RetakeTestApplicationID);
 
             try
             {
@@ -222,6 +227,7 @@ namespace DVLD_DAL
             catch (Exception ex)
             {
                 string msg = ex.Message;
+                Console.WriteLine(msg);
             }
             finally
             {
@@ -249,9 +255,10 @@ namespace DVLD_DAL
                                 CreatedByUserID = @CreatedByUserID,
                                 IsLocked=@IsLocked,
                                 RetakeTestApplicationID=@RetakeTestApplicationID
-                                where TestAppointmentID = @TestAppointmentID;";
+                                where ID = @TestAppointmentID;";
 
             SqlCommand command = new SqlCommand(query, connection);
+            command.Parameters.AddWithValue("@TestAppointmentID", ID);
             command.Parameters.AddWithValue("@TestTypeID", TestTypeID);
             command.Parameters.AddWithValue("@LocalDrivingLicenseApplicationID", LocalDrivingLicenseApplicationID);
             command.Parameters.AddWithValue("@AppointmentDate", AppointmentDate);

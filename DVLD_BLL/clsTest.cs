@@ -21,7 +21,7 @@ namespace DVLD_BLL
         public string Notes { set; get; }
         public int CreatedByUserID { set; get; }
 
-        clsTest()
+        public clsTest()
         {
             this.ID = -1;
             this.TestAppointmentID = -1;
@@ -33,7 +33,7 @@ namespace DVLD_BLL
             this.Mode = enMode.AddNew;
         }
 
-        clsTest(int ID, int TestAppointmentID, bool TestResult, string Notes, int CreatedByUserID)
+        public clsTest(int ID, int TestAppointmentID, bool TestResult, string Notes, int CreatedByUserID)
         {
 
             this.ID = ID;
@@ -51,8 +51,20 @@ namespace DVLD_BLL
         public static DataTable GetAllTests() 
             => clsDataTest.GetAllTests();
 
-        public bool _AddNewTest()
-            => clsDataTest.AddNewTest(this.TestAppointmentID, this.TestResult, this.Notes, this.CreatedByUserID) != -1;
+        //public bool _AddNewTest()
+        //    => clsDataTest.AddNewTest(this.TestAppointmentID, this.TestResult, this.Notes, this.CreatedByUserID) != -1;
+
+        private bool _AddNewTest()
+        {
+            this.ID = clsDataTest.AddNewTest(
+                this.TestAppointmentID,
+                this.TestResult,
+                this.Notes,
+                this.CreatedByUserID
+            );
+
+            return (this.ID != -1);
+        }
 
         public bool _UpdateTest()
             => clsDataTest.UpdateTest(this.ID, this.TestAppointmentID, this.TestResult, this.Notes, this.CreatedByUserID);
@@ -108,7 +120,7 @@ namespace DVLD_BLL
         public static byte GetPassedTestCount(int LocalDrivingLicenseApplicationID)
             => clsDataTest.GetPassedTestCount(LocalDrivingLicenseApplicationID);
 
-        public static bool PassedAllTests(int LocalDrivingLicenseApplicationID)
+        public static bool IsPassedAllTests(int LocalDrivingLicenseApplicationID)
             => GetPassedTestCount(LocalDrivingLicenseApplicationID) == 3;
 
     }

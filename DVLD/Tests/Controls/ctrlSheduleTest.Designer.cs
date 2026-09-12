@@ -307,7 +307,7 @@
             dtpDate.MinimumSize = new Size(63, 0);
             dtpDate.Name = "dtpDate";
             dtpDate.Padding = new Padding(0, 0, 30, 2);
-            dtpDate.Size = new Size(206, 31);
+            dtpDate.Size = new Size(243, 31);
             dtpDate.SymbolDropDown = 61555;
             dtpDate.SymbolNormal = 61555;
             dtpDate.SymbolSize = 24;
@@ -474,11 +474,11 @@
             // 
             lblMessage.AutoSize = true;
             lblMessage.BackColor = Color.FromArgb(243, 249, 255);
-            lblMessage.Font = new Font("Trebuchet MS", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblMessage.Font = new Font("Trebuchet MS", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblMessage.ForeColor = Color.Tomato;
             lblMessage.Location = new Point(38, 199);
             lblMessage.Name = "lblMessage";
-            lblMessage.Size = new Size(155, 28);
+            lblMessage.Size = new Size(116, 23);
             lblMessage.TabIndex = 41;
             lblMessage.Text = "User Message";
             // 
@@ -512,6 +512,7 @@
             Name = "ctrlSheduleTest";
             RectColor = Color.FromArgb(243, 249, 255);
             Size = new Size(614, 847);
+            Click += ctrlSheduleTest_Click;
             ((System.ComponentModel.ISupportInitialize)pbTestImage).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox7).EndInit();
