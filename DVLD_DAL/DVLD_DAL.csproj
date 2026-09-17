@@ -71,6 +71,7 @@
     <Compile Include="clsDataTestAppointment.cs" />
     <Compile Include="clsDataTestType.cs" />
     <Compile Include="clsDataUser.cs" />
+    <Compile Include="clsDataDriver.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

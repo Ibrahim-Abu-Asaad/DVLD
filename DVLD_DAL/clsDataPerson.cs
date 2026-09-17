@@ -555,6 +555,37 @@ namespace DVLD_DAL
             return isFound;
         }
 
+        // This query is on Driver table: // the parameter ID is as same as ID in People Table and as same as PersonID in Driver Table;
+        public static bool IsThisPersonDriverByPersonID(int ID)
+        {
+
+            bool IsPersonADriver = false;
+
+            string query = @"SELECT * FROM Drivers WHERE PersonID = @ID;";
+            SqlCommand command = new SqlCommand(query, connection);
+            command.Parameters.AddWithValue("@ID", ID);
+
+            try
+            {
+                connection.Open();
+                SqlDataReader reader = command.ExecuteReader();
+                if (reader.HasRows)
+                    IsPersonADriver = true;
+
+            }
+            catch (Exception ex)
+            {
+                string msg = ex.Message;
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+
+            return IsPersonADriver;
+
+        }
 
 
 

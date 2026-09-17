@@ -214,7 +214,8 @@ namespace DVLD_BLL
         public static bool IsEmailExist(string Email, int ExcludePersonID)
             => clsDataPerson.IsEmailExist(Email, ExcludePersonID);
 
-
+        public static bool IsThisPersonDriverByPersonID(int ID)
+            => clsDataPerson.IsThisPersonDriverByPersonID(ID);
 
 
     }
