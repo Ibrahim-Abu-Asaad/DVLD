@@ -19,7 +19,7 @@ namespace DVLD_BLL
         public int CreatedByUserID { set; get; }
         public clsUser CreatedByUserInfo;
 
-        public DateTime CreatedDate { set; get; }
+        public DateTime CreatedDate { get; }
 
         public clsDriver()
         {
@@ -46,6 +46,7 @@ namespace DVLD_BLL
             this.Mode = enMode.Update;
 
         }
+
 
 
 
