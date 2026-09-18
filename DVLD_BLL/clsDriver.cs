@@ -1,5 +1,7 @@
-﻿using System;
+﻿using DVLD_DAL;
+using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -47,12 +49,69 @@ namespace DVLD_BLL
 
         }
 
+        public static clsDriver GetDriverByID(int ID)
+        {
+
+            int PersonID = -1, CreatedByUserID = -1;
+            DateTime CreatedDate = new DateTime();
+
+            if (clsDataDriver.GetDriverByID(ID, ref PersonID, ref CreatedByUserID, ref CreatedDate))
+                return new clsDriver(ID, PersonID, CreatedByUserID, CreatedDate);
+            else return new clsDriver();
 
 
+        }
+
+        public static clsDriver GetDriverByPersonID(int PersonID)
+        {
+
+            int ID = -1, CreatedByUserID = -1;
+            DateTime CreatedDate = new DateTime();
+
+            if (clsDataDriver.GetDriverByPersonID(PersonID, ref ID, ref CreatedByUserID, ref CreatedDate))
+                return new clsDriver(ID, PersonID, CreatedByUserID, CreatedDate);
+            else return new clsDriver();
 
 
+        }
+
+        public static DataTable GetAllDrivers()
+            => clsDataDriver.GetAllDrivers();
+
+        private bool _AddNew()
+        {
+
+            this.ID = clsDataDriver.AddNewDriver(this.PersonID, this.CreatedByUserID, this.CreatedDate);
+
+            return this.ID != -1;
+
+        }
+
+        private bool _Update()
+            => clsDataDriver.UpdateDriver(this.ID, this.PersonID, this.CreatedByUserID, this.CreatedDate);
+
+        public bool Save()
+        {
+
+            switch (this.Mode)
+            {
+                case enMode.AddNew:
+                    if (_AddNew())
+                    {
+                        Mode = enMode.Update;
+                        return true;
+                    }
+                    else return false;
 
 
+                case enMode.Update:
+                    return _Update();
+
+            }
+
+            return false;
+
+        }
 
 
     }

@@ -82,14 +82,6 @@ namespace DVLD_DAL
 
         }
 
-        // Get All Drivers
-
-        /*
-         
-
-         
-         */
-
         public static DataTable GetAllDrivers()
         {
 
@@ -160,7 +152,7 @@ namespace DVLD_DAL
 
         }
 
-        public static bool UpdateDriver(int ID ,ref int PersonID, ref int CreatedByUserID, ref DateTime CreatedDate)
+        public static bool UpdateDriver(int ID ,int PersonID, int CreatedByUserID, DateTime CreatedDate)
         {
 
             int rowsAffected = 0;
