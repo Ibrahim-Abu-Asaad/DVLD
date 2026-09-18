@@ -12,6 +12,9 @@ namespace DVLD_BLL
     public class clsLicenseClass
     {
 
+        public enum enMode { AddNew,Update};
+        public enMode Mode = enMode.AddNew;
+
         // Properties
         public int ID { get; set; }
         public string Name { get; set; }
@@ -27,9 +30,12 @@ namespace DVLD_BLL
             this.ID = -1;
             this.Name = "";
             this.Description = "";
-            this.MinimumAllowedAge = 0;
-            this.DefaultValidityLength = 0;
+            this.MinimumAllowedAge = 18;
+            this.DefaultValidityLength = 10;
             this.ClassFees = 0;
+
+            this.Mode = enMode.AddNew;
+            
         }
 
         private clsLicenseClass(int ID, string Name, string Description, int MinimumAllowedAge, int DefaultValidityLength, decimal ClassFees)
@@ -40,16 +46,18 @@ namespace DVLD_BLL
             this.MinimumAllowedAge = MinimumAllowedAge;
             this.DefaultValidityLength = DefaultValidityLength;
             this.ClassFees = ClassFees;
+
+            this.Mode = enMode.Update;
         }
 
-        private clsLicenseClass(string Name, string Description, int MinimumAllowedAge, int DefaultValidityLength, decimal ClassFees)
-        {
-            this.Name = Name;
-            this.Description = Description;
-            this.MinimumAllowedAge = MinimumAllowedAge;
-            this.DefaultValidityLength = DefaultValidityLength;
-            this.ClassFees = ClassFees;
-        }
+        //private clsLicenseClass(string Name, string Description, int MinimumAllowedAge, int DefaultValidityLength, decimal ClassFees)
+        //{
+        //    this.Name = Name;
+        //    this.Description = Description;
+        //    this.MinimumAllowedAge = MinimumAllowedAge;
+        //    this.DefaultValidityLength = DefaultValidityLength;
+        //    this.ClassFees = ClassFees;
+        //}
 
         // Functions
 
@@ -71,6 +79,25 @@ namespace DVLD_BLL
 
             if (IsFound)
                 return new clsLicenseClass(LC_ID, Name, Description, MinimumAllowedAge, DefaultValidityLength, ClassFees);
+            else return null;
+
+        }
+
+        public static clsLicenseClass FindByLicenseClassName(string ClassName)
+        {
+
+            clsLicenseClass LC = new clsLicenseClass();
+
+            int LC_ID = -1;
+            string Description = "";
+            int MinimumAllowedAge = 0;
+            int DefaultValidityLength = 0;
+            decimal ClassFees = 0;
+
+            bool IsFound = clsDataLicenseClass.FindByLicenseCLassName(ref LC_ID, ClassName, ref Description, ref MinimumAllowedAge, ref DefaultValidityLength, ref ClassFees);
+
+            if (IsFound)
+                return new clsLicenseClass(LC_ID, ClassName, Description, MinimumAllowedAge, DefaultValidityLength, ClassFees);
             else return null;
 
         }
