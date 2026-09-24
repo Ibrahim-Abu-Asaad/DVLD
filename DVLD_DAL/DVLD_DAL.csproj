@@ -64,6 +64,7 @@
     <Compile Include="clsDataApplicationType.cs" />
     <Compile Include="clsDataAccessSettings.cs" />
     <Compile Include="clsDataCountry.cs" />
+    <Compile Include="clsDataDetainedLicense.cs" />
     <Compile Include="clsDataLicense.cs" />
     <Compile Include="clsDataLicenseClass.cs" />
     <Compile Include="clsDataLocalDrivingLicenseApplication.cs" />
