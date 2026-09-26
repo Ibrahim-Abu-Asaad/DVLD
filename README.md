@@ -18,121 +18,254 @@ A complete system for managing driving licenses, vehicle registrations, and all 
 
 ---
 -->
-# 🚗 DVLD - Driving & Vehicle License Department Management System
+# 🚗 DVLD – Driving & Vehicle License Department
 
-A comprehensive Desktop Application designed to handle operations for a Driving & Vehicle License Department (DVLD). The system automates application processing, multi-stage testing schedules, license issuance, renewals, replacements, detentions, and international licensing.
+A desktop-based **Driving & Vehicle License Management System (DVLD)** developed as a full real-world project using **C# and .NET**.
 
----
+The system simulates the workflow of a driving license department, including people management, user management, license applications, driving tests, license issuance, renewal, replacement, detention, release, and international driving licenses.
 
-## 📌 Project Overview
-
-**DVLD System** provides end-to-end digital handling of driving license procedures. Built with a 3-Tier Architecture, it manages client records, tracks multi-stage driving exams (Vision, Written, Street), enforces age and class eligibility rules, handles fees, and manages international license workflows.
+> 📌 **Project Status:** Completed as part of my backend/software development learning journey.
 
 ---
 
-## ✨ Key Features
+## 📌 About the Project
 
-### 👤 Person & User Management
-* **Person Directory:** Centralized registry tied to National IDs to prevent duplicate entity profiles.
-* **User Accounts & RBAC:** Complete user account management with custom login authorization, status control (active/deactive), and password management.
-* **Reusable UI Components:** Uses custom User Controls (`PersonCard`, `PersonCardWithFilter`, `UserCard`) for consistent UI behavior across forms.
+**DVLD (Driving & Vehicle License Department)** is a comprehensive desktop application designed to manage the process of issuing and managing driving licenses.
 
-### 📝 Application & Service Processing
-* **Application Lifecycle:** Full tracking of application status (`New`, `Cancelled`, `Completed`).
-* **Services Handled:**
-  * First-time Local Driving License Application
-  * Retake Test Application
-  * Driving License Renewal
-  * Replacement for Lost or Damaged License
-  * License Detention & Release
-  * International Driving License Application
+The project covers the complete lifecycle of a driving license application:
 
-### 🧪 Multi-Stage Testing Pipeline
-Enforces strict sequential exam requirements before license eligibility:
-1. **Vision Test:** Evaluates initial medical/visual fitness.
-2. **Written (Theoretical) Test:** Records theoretical traffic rules exam scores.
-3. **Street (Practical) Test:** Evaluates practical driving capabilities.
-* Integrates automated retake rules with extra fee tracking for failed attempts.
+**Application → Scheduling Tests → Taking Tests → Issuing License → Renewal / Replacement → License Management**
 
-### 💳 License Management
-* **7 License Classes:** Enforces minimum age constraints, validity periods (5–10 years), and custom class fees across all 7 categories (Motorcycles, Passenger Cars, Commercial, Agricultural, Heavy Trucks, etc.).
-* **Driver Records:** Automatic promotion of applicant to registered `Driver` upon first successful license issuance.
-* **License Actions:**
-  * **Renewals:** Enforces vision re-tests and old license turnover.
-  * **Replacements:** Handles lost/damaged requests with active status validation.
-  * **Detain & Release System:** Allows authorized staff to detain licenses, assess fines, and release them upon fee settlement.
-  * **International Licenses:** Validates existing Class 3 licenses to issue active international permits.
+The system also provides administrative functionality for managing users, people, application types, test types, license classes, and detained licenses.
 
-### 🛠️ System Administration
-* **Dynamic Fee Management:** Adjust prices for Application Types, Test Types, and License Classes on the fly.
-* **Audit Logging:** Logs user activity and timestamps across critical domain actions.
+This project was developed while studying the **Programming Advices** C#/.NET learning path and was built to practice real-world software development concepts.
 
 ---
 
-## 📐 Architecture & Technologies
+## ✨ Main Features
 
-### Architecture Pattern
-Built using a **3-Tier Architecture**:
-* **Presentation Layer (UI):** Windows Forms (.NET Framework) with custom WinForms User Controls and Delegates/Events for seamless inter-form communication.
-* **Business Logic Layer (BLL):** Enforces system logic, validations, business constraints, and orchestrates domain operations.
-* **Data Access Layer (DAL):** Executes parameterised SQL queries and procedures for reliable data persistence.
+### 👤 People Management
 
-### Technical Stack
-* **Language:** C#
-* **Framework:** .NET Framework (Windows Forms)
-* **Database:** Microsoft SQL Server
-* **Data Provider:** ADO.NET
+* Add new people
+* Update person information
+* Delete people
+* Search by national number
+* View detailed person information
+* Manage countries/nationalities
+* Store personal information and profile images
+* Prevent duplicate people using the national number
+
+### 👨‍💼 User Management
+
+* User login
+* Add and edit users
+* Change passwords
+* Freeze user accounts
+* Manage user information
+* Assign permissions
+* Track the user responsible for system operations
+
+### 📝 Applications Management
+
+The system supports several types of applications:
+
+* 🪪 First-time local driving license
+* 🔄 Retake failed tests
+* ♻️ License renewal
+* 📄 Replacement for lost license
+* 📄 Replacement for damaged license
+* 🔒 Release detained license
+* 🌍 International driving license
+
+### 🧪 Driving Tests
+
+The system manages the different stages of driving tests:
+
+* 👁️ Vision Test
+* 📚 Theory Test
+* 🚗 Practical Driving Test
+* Schedule test appointments
+* Record test results
+* Support failed-test retakes
+* Prevent invalid test scheduling
+
+### 🪪 License Management
+
+* Issue a driving license for the first time
+* Renew existing licenses
+* Replace lost licenses
+* Replace damaged licenses
+* View driver licenses
+* View license history
+* Issue international driving licenses
+* Detain licenses
+* Release detained licenses
+
+### ⚙️ System Administration
+
+* Manage application types
+* Manage test types
+* Manage license classes
+* Configure license fees
+* Configure minimum ages
+* Configure license validity periods
+* Track system operations with user and date information
 
 ---
 
-## 🗄️ Database Design Highlights
+## 🏗️ Architecture
 
-The relational SQL Server database includes tables structured around normalized design principles:
-* **`People` & `Countries`:** Central personal data repository.
-* **`Users`:** Application access and credentials.
-* **`Applications` & `ApplicationTypes`:** Base transactional layer tracking system requests.
-* **`LocalDrivingLicenseApplications` & `LicenseClasses`:** Tracks class-specific application details.
-* **`TestTypes`, `TestAppointments`, & `Tests`:** Coordinates scheduled exam sessions and results.
-* **`Drivers`, `Licenses`, & `InternationalLicenses`:** Tracks issued physical driving credentials.
-* **`DetainedLicenses`:** Tracks fine amounts, detention dates, and release details.
+The project follows a **3-Layer Architecture** to separate responsibilities and make the application easier to maintain.
+
+```text
+┌──────────────────────────────┐
+│       Presentation Layer     │
+│        Windows Forms         │
+└──────────────┬───────────────┘
+               │
+               ▼
+┌──────────────────────────────┐
+│       Business Layer         │
+│       Business Logic         │
+└──────────────┬───────────────┘
+               │
+               ▼
+┌──────────────────────────────┐
+│       Data Access Layer      │
+│      Database Operations     │
+└──────────────┬───────────────┘
+               │
+               ▼
+┌──────────────────────────────┐
+│          SQL Server          │
+└──────────────────────────────┘
+```
+
+### Why this architecture?
+
+Separating the application into layers helps keep:
+
+* UI code separate from business logic
+* Business rules independent from database operations
+* Database access organized
+* The project easier to maintain and extend
 
 ---
 
-## 📸 Screenshots & Demonstrations
+## 🛠️ Technologies & Tools
 
-> *Visual assets and UI walkthroughs will be added here.*
+### Programming
 
-### Main Dashboard & System Navigation
-<!-- Add Main Form Screenshot Here -->
-`[Image Placeholder: Main Dashboard]`
+* **C#**
+* **.NET**
+* **Windows Forms**
 
-### Person Management & Reusable Controls
-<!-- Add Person Card / Person Management Screenshot Here -->
-`[Image Placeholder: Person Management & Filter Control]`
+### Database
 
-### Testing & Appointment Scheduling
-<!-- Add Schedule Test Screenshot Here -->
-`[Image Placeholder: Schedule Test & Exam Process]`
+* **Microsoft SQL Server**
+* **SQL**
+* Relational Database Design
 
-### License Issuance & Driver Profile
-<!-- Add Driver License Info Screenshot Here -->
-`[Image Placeholder: Driver License Info]`
+### Development Tools
+
+* Visual Studio
+* SQL Server Management Studio 19
+* UI Sunny Library (Chinese Library)
+* Git
+* GitHub
+  
+---
+
+## 🗄️ Database
+
+The system uses a relational SQL Server database to store and manage the application's data.
+
+The database contains entities related to:
+
+* People
+* Countries
+* Users
+* Applications
+* Application Types
+* License Classes
+* Test Types
+* Test Appointments
+* Tests
+* Drivers
+* Licenses
+* International Licenses
+* Detained Licenses
+* Local Driving License Applications
+
+The project also includes relationships between these entities to represent the real-world workflow of a driving license management system.
 
 ---
 
-## 🚀 Getting Started
+## 🔄 Application Workflow
 
-### Prerequisites
-* **Visual Studio** (2019 or later recommended) with .NET Desktop Development workload installed.
-* **Microsoft SQL Server** (2016 or later) / SQL Server Management Studio (SSMS).
+A typical local driving license application follows this workflow:
 
-### Database Setup
-1. Open SQL Server Management Studio (SSMS).
-2. Create a new database named `DVLD`.
-3. Locate the SQL script provided in the repository under `Database/DVLD_Database.sql`.
-4. Run the script to generate all required tables, constraints, relationships, and initial lookup data.
+```text
+Create Person
+     ↓
+Create Application
+     ↓
+Select License Class
+     ↓
+Schedule Vision Test
+     ↓
+Take Vision Test
+     ↓
+Schedule Theory Test
+     ↓
+Take Theory Test
+     ↓
+Schedule Practical Test
+     ↓
+Take Practical Test
+     ↓
+Pass All Tests
+     ↓
+Issue Driving License
+```
 
-### Application Configuration
-1. Clone the repository:
-   ```bash
-   git clone [https://github.com/your-username/DVLD-Driving-License-Management.git](https://github.com/your-username/DVLD-Driving-License-Management.git)
+If an applicant fails a test, the system allows the test to be scheduled again according to the application's rules.
+
+---
+
+## 🚀 Future Improvements
+
+Possible future improvements include:
+
+* [ ] Improve UI/UX
+* [ ] Add more advanced reporting
+* [ ] Add additional validation
+* [ ] Improve error handling
+* [ ] Improve security
+* [ ] Add more detailed audit logging
+* [ ] Migrate the system to a web-based architecture using ASP.NET Core
+
+---
+
+## 👨‍💻 Author
+
+**Ibrahim Abu-Asaad**
+
+IT Student — Faculty of Informatics Engineering
+Latakia University 🇸🇾
+
+**Backend Developer in Progress**
+
+Interested in building software systems using **C#, .NET, databases, and backend technologies**.
+
+---
+
+## 📌 Note
+
+This project was developed for **educational and learning purposes** as part of my journey toward becoming a professional software/backend developer.
+
+The project requirements are based on the DVLD project specification used during my learning path.
+
+---
+
+⭐ If you find this project useful or interesting, feel free to explore the source code.
