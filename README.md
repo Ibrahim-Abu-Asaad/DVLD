@@ -24,9 +24,11 @@ A desktop-based **Driving & Vehicle License Management System (DVLD)** developed
 
 The system simulates the workflow of a driving license department, including people management, user management, license applications, driving tests, license issuance, renewal, replacement, detention, release, and international driving licenses.
 
-> 📌 **Project Status:** Completed as part of my backend/software development learning journey.
-
+> 📌 **Project Status:** In Progress.
 ---
+
+## 📸 Screenshots
+
 
 ## 📌 About the Project
 
