@@ -40,7 +40,7 @@ The project covers the complete lifecycle of a driving license application:
 
 The system also provides administrative functionality for managing users, people, application types, test types, license classes, and detained licenses.
 
-This project was developed while studying the **Programming Advices** C#/.NET learning path and was built to practice real-world software development concepts.
+This project was developed while studying the **Programming Advices** C#/.NET learning path.
 
 ---
 
@@ -252,13 +252,6 @@ Possible future improvements include:
 ## 👨‍💻 Author
 
 **Ibrahim Abu-Asaad**
-
-IT Student — Faculty of Informatics Engineering
-Latakia University 🇸🇾
-
-**Backend Developer in Progress**
-
-Interested in building software systems using **C#, .NET, databases, and backend technologies**.
 
 ---
 
