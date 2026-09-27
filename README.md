@@ -30,12 +30,12 @@ The system simulates the workflow of a driving license department, including peo
 ## 📸 Screenshots
 
 ### Login Page
-![Login Page](screenshots/LoginPage.PNG)
+![Login Page](screenshots/LoginPage.jpg)
 
 ---
 
 ### Main Dashboard
-![Main Page](screenshots/MainPage.PNG)
+![Main Page](screenshots/MainPage.jpg)
 
 ## 📌 About the Project
 
