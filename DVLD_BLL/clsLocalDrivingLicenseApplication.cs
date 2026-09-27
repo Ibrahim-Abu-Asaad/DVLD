@@ -243,6 +243,56 @@ namespace DVLD_BLL
 
         }
 
+        public int IssueLicenseForTheFirstTime(string Notes, int CreatedByUserID)
+        {
+
+            int DriverID = -1;
+            clsDriver Driver = new clsDriver();
+
+            Driver = clsDriver.GetDriverByPersonID(this.ApplicantPersonID);
+            if (Driver == null)
+            {
+
+                Driver.PersonID = this.ApplicantPersonID;
+                Driver.CreatedByUserID = CreatedByUserID;
+
+                if (Driver.Save())
+                    DriverID = Driver.ID;
+                else return -1;
+
+            }
+            else DriverID = Driver.ID;
+
+            clsLicense License = new clsLicense();
+            License.ApplicationID = this.ApplicationID;
+            License.DriverID = DriverID;
+            License.LicenseClass = this.LicenseClassID;
+            License.IssueDate = DateTime.Now;
+            License.ExpirationDate = DateTime.Now.AddYears(this.LicenseClassInfo.DefaultValidityLength);
+            License.Notes = Notes;
+            License.PaidFees = (float)this.LicenseClassInfo.ClassFees;
+            License.IsActive = true;
+            License.IssueReason = clsLicense.enIssueReason.FirstTime;
+            License.CreatedByUserID = CreatedByUserID;
+
+            if (License.Save())
+            {
+                this.SetComplete();
+                return License.ID;
+            }
+
+            return -1;
+
+
+        }
+
+
+
+        public bool IsLicenseIssued()
+            => GetActiveLicenseID() != -1;
+
+        public int GetActiveLicenseID()
+            => clsLicense.GetActiveLicenseIDByPersonID(this.ApplicantPersonID, this.LicenseClassID);
 
 
 
