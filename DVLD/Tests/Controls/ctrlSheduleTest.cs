@@ -84,6 +84,17 @@ namespace DVLD.Tests.Controls
             _TestAppointmentID = TestAppointmentID;
             _TestAppointment = clsTestAppointment.Find(TestAppointmentID);
 
+            //////////////////////////////
+
+            // Temporary
+
+            RealLabelRTestAppID.Visible = false;
+            pbNumber.Visible = false;
+            lblRTestAppID.Visible = false;
+
+
+            //////////////////////////////
+
             if (_LDLApp == null)
             {
                 MessageBox.Show("There is no local driving license application with ID = " + _LDLAppID.ToString(), "Application Not Found", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -103,7 +114,9 @@ namespace DVLD.Tests.Controls
                 gbRetakeTest.Enabled = true;
                 lblTitle.Text = "Schedule Retake Test";
                 lblRTestAppID.Text = "0";
-
+                if (_Mode == enMode.Update)
+                    lblRTestAppID.Text = _TestAppointment.RetakeTestApplicationID.ToString();
+                
             }
             else
             {
@@ -119,14 +132,24 @@ namespace DVLD.Tests.Controls
             lblDClass.Text = _LDLApp.LicenseClassInfo.Name;
             lblName.Text = clsFormat.FullNameOf4Names(_LDLApp.PersonInfo.FirstName, _LDLApp.PersonInfo.SecondName, _LDLApp.PersonInfo.ThirdName, _LDLApp.PersonInfo.LastName);
 
-            lblTrial.Text = _LDLApp.TotalTrialPerTest(_TestTypeID).ToString();
+            int Trial = _LDLApp.TotalTrialPerTest(_TestTypeID);
+            //lblTrial.Text = _LDLApp.TotalTrialPerTest(_TestTypeID).ToString();
+            lblTrial.Text = Trial.ToString();
 
             if (_Mode == enMode.AddNew)
             {
 
-                lblFees.Text = clsTestType.GetTestTypeByID((int)_TestTypeID).Fees.ToString();
+                decimal Fees = clsTestType.GetTestTypeByID((int)_TestTypeID).Fees;
+
+                //lblFees.Text = (clsTestType.GetTestTypeByID((int)_TestTypeID).Fees).ToString();
+                lblFees.Text = Fees.ToString();
                 dtpDate.MinDate = DateTime.Now;
-                lblRTestAppID.Text = "N/A";
+                //lblRTestAppID.Text = "N/A";
+
+                if (_CreationMode == enCreationMode.RetakeTestSchedule)
+                    lblRTestAppID.Text = "0";
+                else
+                    lblRTestAppID.Text = "N/A";
 
                 _TestAppointment = new clsTestAppointment();
 
@@ -144,7 +167,7 @@ namespace DVLD.Tests.Controls
             decimal fees = 0;
             decimal rAppFees = 0;
             //rAppFees = clsTest
-            rAppFees = clsApplicationType.Find(7).Fees;
+            //rAppFees = clsApplicationType.Find(7).Fees;
 
             decimal.TryParse(lblFees.Text, out fees);
             decimal.TryParse(lblRAppFees.Text, out rAppFees);
@@ -194,7 +217,8 @@ namespace DVLD.Tests.Controls
             }
             else
             {
-                lblFees.Text = _TestAppointment.RetakeTestAppInfo.PaidFees.ToString();
+                //lblFees.Text = _TestAppointment.RetakeTestAppInfo.PaidFees.ToString();
+                lblRAppFees.Text = _TestAppointment.RetakeTestAppInfo.PaidFees.ToString();
                 gbRetakeTest.Enabled = true;
                 lblTitle.Text = "Schedule Retake Test";
                 lblRTestAppID.Text = _TestAppointment.RetakeTestApplicationID.ToString();
@@ -333,6 +357,8 @@ namespace DVLD.Tests.Controls
             _TestAppointment.PaidFees = Convert.ToSingle(lblFees.Text);
             _TestAppointment.CreatedByUserID = clsGlobal.CurrentUser.ID;
 
+            
+
             if (_TestAppointment.Save())
             {
                 _Mode = enMode.Update;
@@ -340,8 +366,13 @@ namespace DVLD.Tests.Controls
                 btnSave.Enabled = false;
                 dtpDate.Enabled = false;
                 lblMessage.Text = "Appointment has been set";
-                
-            
+                //lblRTestAppID.Text = _TestAppointment.RetakeTestApplicationID.ToString();
+
+                if (_TestAppointment.RetakeTestApplicationID != -1)
+                    lblRTestAppID.Text = _TestAppointment.RetakeTestApplicationID.ToString();
+                else
+                    lblRTestAppID.Text = "N/A";
+
             }
             else
             {

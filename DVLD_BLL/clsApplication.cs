@@ -34,7 +34,7 @@ namespace DVLD_BLL
                     case enApplicationStatus.Completed:
                         return "Completed";
                     default:
-                        return "Uknown";
+                        return "Unknown";
                 }
             }
         }

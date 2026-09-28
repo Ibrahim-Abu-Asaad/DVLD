@@ -39,7 +39,7 @@
             ctrlSheduleTest1.MinimumSize = new Size(1, 1);
             ctrlSheduleTest1.Name = "ctrlSheduleTest1";
             ctrlSheduleTest1.RectColor = Color.FromArgb(243, 249, 255);
-            ctrlSheduleTest1.Size = new Size(612, 834);
+            ctrlSheduleTest1.Size = new Size(633, 834);
             ctrlSheduleTest1.TabIndex = 0;
             ctrlSheduleTest1.TestTypeID = DVLD_BLL.clsTestType.enTestType.VisionTest;
             ctrlSheduleTest1.Text = "ctrlSheduleTest1";
@@ -62,7 +62,7 @@
             // frmScheduleTest
             // 
             AutoScaleMode = AutoScaleMode.None;
-            ClientSize = new Size(648, 942);
+            ClientSize = new Size(672, 942);
             ControlBox = false;
             Controls.Add(btnClose);
             Controls.Add(ctrlSheduleTest1);

@@ -243,6 +243,9 @@ namespace DVLD_BLL
 
         }
 
+        public bool IsPassedAllTests()
+            => this.GetPassedTestCount() == 3;
+
         public int IssueLicenseForTheFirstTime(string Notes, int CreatedByUserID)
         {
 

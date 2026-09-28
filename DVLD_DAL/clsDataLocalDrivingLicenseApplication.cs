@@ -349,7 +349,7 @@ namespace DVLD_DAL
 
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
 
-            string query = @" SELECT TotalTrialsPerTest = count(TestID)
+            string query = @" SELECT TotalTrialsPerTest = count(Tests.ID)
                             FROM LocalDrivingLicenseApplications INNER JOIN
                                  TestAppointments ON LocalDrivingLicenseApplications.ID = TestAppointments.LocalDrivingLicenseApplicationID INNER JOIN
                                  Tests ON TestAppointments.ID = Tests.TestAppointmentID

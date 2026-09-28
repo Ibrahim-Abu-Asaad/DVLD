@@ -51,8 +51,8 @@
             dtpDate = new Sunny.UI.UIDatetimePicker();
             gbRetakeTest = new Sunny.UI.UIGroupBox();
             lblRTestAppID = new Label();
-            pictureBox11 = new PictureBox();
-            label17 = new Label();
+            pbNumber = new PictureBox();
+            RealLabelRTestAppID = new Label();
             lblTotalFees = new Label();
             pictureBox9 = new PictureBox();
             label15 = new Label();
@@ -70,7 +70,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
             gbRetakeTest.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox11).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pbNumber).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox9).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox8).BeginInit();
             SuspendLayout();
@@ -320,8 +320,8 @@
             // gbRetakeTest
             // 
             gbRetakeTest.Controls.Add(lblRTestAppID);
-            gbRetakeTest.Controls.Add(pictureBox11);
-            gbRetakeTest.Controls.Add(label17);
+            gbRetakeTest.Controls.Add(pbNumber);
+            gbRetakeTest.Controls.Add(RealLabelRTestAppID);
             gbRetakeTest.Controls.Add(lblTotalFees);
             gbRetakeTest.Controls.Add(pictureBox9);
             gbRetakeTest.Controls.Add(label15);
@@ -334,7 +334,7 @@
             gbRetakeTest.MinimumSize = new Size(1, 1);
             gbRetakeTest.Name = "gbRetakeTest";
             gbRetakeTest.Padding = new Padding(0, 32, 0, 0);
-            gbRetakeTest.Size = new Size(560, 179);
+            gbRetakeTest.Size = new Size(573, 179);
             gbRetakeTest.TabIndex = 38;
             gbRetakeTest.Text = "Retake Test Info";
             gbRetakeTest.TextAlignment = ContentAlignment.MiddleLeft;
@@ -351,28 +351,28 @@
             lblRTestAppID.TabIndex = 44;
             lblRTestAppID.Text = "[?????]";
             // 
-            // pictureBox11
+            // pbNumber
             // 
-            pictureBox11.BackColor = Color.FromArgb(243, 249, 255);
-            pictureBox11.Image = Properties.Resources.Number_32;
-            pictureBox11.Location = new Point(157, 120);
-            pictureBox11.Name = "pictureBox11";
-            pictureBox11.Size = new Size(31, 31);
-            pictureBox11.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox11.TabIndex = 39;
-            pictureBox11.TabStop = false;
+            pbNumber.BackColor = Color.FromArgb(243, 249, 255);
+            pbNumber.Image = Properties.Resources.Number_32;
+            pbNumber.Location = new Point(157, 120);
+            pbNumber.Name = "pbNumber";
+            pbNumber.Size = new Size(31, 31);
+            pbNumber.SizeMode = PictureBoxSizeMode.Zoom;
+            pbNumber.TabIndex = 39;
+            pbNumber.TabStop = false;
             // 
-            // label17
+            // RealLabelRTestAppID
             // 
-            label17.AutoSize = true;
-            label17.BackColor = Color.FromArgb(243, 249, 255);
-            label17.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label17.ForeColor = Color.FromArgb(48, 48, 48);
-            label17.Location = new Point(19, 125);
-            label17.Name = "label17";
-            label17.Size = new Size(141, 26);
-            label17.TabIndex = 43;
-            label17.Text = "R.Test.App.ID:";
+            RealLabelRTestAppID.AutoSize = true;
+            RealLabelRTestAppID.BackColor = Color.FromArgb(243, 249, 255);
+            RealLabelRTestAppID.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            RealLabelRTestAppID.ForeColor = Color.FromArgb(48, 48, 48);
+            RealLabelRTestAppID.Location = new Point(19, 125);
+            RealLabelRTestAppID.Name = "RealLabelRTestAppID";
+            RealLabelRTestAppID.Size = new Size(141, 26);
+            RealLabelRTestAppID.TabIndex = 43;
+            RealLabelRTestAppID.Text = "R.Test.App.ID:";
             // 
             // lblTotalFees
             // 
@@ -380,7 +380,7 @@
             lblTotalFees.BackColor = Color.FromArgb(243, 249, 255);
             lblTotalFees.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblTotalFees.ForeColor = Color.FromArgb(48, 48, 48);
-            lblTotalFees.Location = new Point(482, 70);
+            lblTotalFees.Location = new Point(451, 70);
             lblTotalFees.Name = "lblTotalFees";
             lblTotalFees.Size = new Size(66, 26);
             lblTotalFees.TabIndex = 42;
@@ -390,7 +390,7 @@
             // 
             pictureBox9.BackColor = Color.FromArgb(243, 249, 255);
             pictureBox9.Image = (Image)resources.GetObject("pictureBox9.Image");
-            pictureBox9.Location = new Point(445, 65);
+            pictureBox9.Location = new Point(414, 65);
             pictureBox9.Name = "pictureBox9";
             pictureBox9.Size = new Size(31, 31);
             pictureBox9.SizeMode = PictureBoxSizeMode.Zoom;
@@ -403,7 +403,7 @@
             label15.BackColor = Color.FromArgb(243, 249, 255);
             label15.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label15.ForeColor = Color.FromArgb(48, 48, 48);
-            label15.Location = new Point(331, 70);
+            label15.Location = new Point(300, 70);
             label15.Name = "label15";
             label15.Size = new Size(112, 26);
             label15.TabIndex = 40;
@@ -511,7 +511,7 @@
             Controls.Add(pbTestImage);
             Name = "ctrlSheduleTest";
             RectColor = Color.FromArgb(243, 249, 255);
-            Size = new Size(614, 847);
+            Size = new Size(632, 847);
             Click += ctrlSheduleTest_Click;
             ((System.ComponentModel.ISupportInitialize)pbTestImage).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
@@ -522,7 +522,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
             gbRetakeTest.ResumeLayout(false);
             gbRetakeTest.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox11).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbNumber).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox9).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox8).EndInit();
             ResumeLayout(false);
@@ -552,7 +552,7 @@
         private Label lblFees;
         private Sunny.UI.UIDatetimePicker dtpDate;
         private Sunny.UI.UIGroupBox gbRetakeTest;
-        private Label label17;
+        private Label RealLabelRTestAppID;
         private Label lblTotalFees;
         private PictureBox pictureBox9;
         private Label label15;
@@ -560,7 +560,7 @@
         private PictureBox pictureBox8;
         private Label label12;
         private Label lblRTestAppID;
-        private PictureBox pictureBox11;
+        private PictureBox pbNumber;
         private Sunny.UI.UIButton btnSave;
         private Label lblTestType;
         private Label lblMessage;

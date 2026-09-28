@@ -126,37 +126,41 @@ namespace DVLD.Applications.LocalDrivingLicenseApplications
         private void cmsPersonRecord_Opening(object sender, CancelEventArgs e)
         {
 
-            //editToolStripMenuItem1.Enabled = dgvManageLocalDrivingLicenseApps.CurrentRow.Cells["Status"].Value.ToString() == "New";
-            //cancelToolStripMenuItem.Enabled = dgvManageLocalDrivingLicenseApps.CurrentRow.Cells["Status"].Value.ToString() == "New";
+            // LDLAppID stands for: Local Driving License Application ID
+            // LDLApp   stands for: Local Driving License Application
 
-            int LocalDrivingLicenseApplicationID = (int)dgvManageLocalDrivingLicenseApps.CurrentRow.Cells[0].Value;
-            clsLocalDrivingLicenseApplication LocalDrivingLicenseApplication = clsLocalDrivingLicenseApplication.FindLocalDrivingLicenseApplicationByID(LocalDrivingLicenseApplicationID);
+            int LDLAppID = (int)dgvManageLocalDrivingLicenseApps.CurrentRow.Cells[0].Value;
+            clsLocalDrivingLicenseApplication LDLApp = clsLocalDrivingLicenseApplication.FindLocalDrivingLicenseApplicationByID(LDLAppID);
 
             int TotalPassedTests = (int)dgvManageLocalDrivingLicenseApps.CurrentRow.Cells[5].Value;
 
-            //bool LicenseExists = LocalDrivingLicenseApplication.IsLicenseIssued();
+            issueDrivingLicenseFirstTimeToolStripMenuItem.Enabled = TotalPassedTests == 3;
+            showLicenseToolStripMenuItem.Enabled = false;
+            showPersonLicenseHistoryToolStripMenuItem.Enabled = false;
 
-            //issueDrivingLicenseFirstTimeToolStripMenuItem.Enabled = (TotalPassedTests == 3) && !LicenseExists;
-            issueDrivingLicenseFirstTimeToolStripMenuItem.Enabled = (TotalPassedTests == 3);
+            if (LDLApp.IsLicenseIssued())
+            {
+                showLicenseToolStripMenuItem.Enabled = true;
+                showPersonLicenseHistoryToolStripMenuItem.Enabled = true;
+                issueDrivingLicenseFirstTimeToolStripMenuItem.Enabled = false;
+            }
 
-            //showLicenseToolStripMenuItem.Enabled = LicenseExists;
-            //editToolStripMenuItem1.Enabled = !LicenseExists && (LocalDrivingLicenseApplication.AppStatus == clsApplication.enApplicationStatus.New);
-            editToolStripMenuItem1.Enabled = LocalDrivingLicenseApplication.AppStatus == clsApplication.enApplicationStatus.New;
-            //ScheduleTestsMenue.Enabled = !LicenseExists;
+            editToolStripMenuItem1.Enabled = LDLApp.AppStatus == clsApplication.enApplicationStatus.New;
 
-            cancelToolStripMenuItem.Enabled = (LocalDrivingLicenseApplication.AppStatus == clsApplication.enApplicationStatus.New);
+            cancelToolStripMenuItem.Enabled = LDLApp.AppStatus == clsApplication.enApplicationStatus.New;
 
             //We only allow delete incase the application status is new not complete or Cancelled.
-            deleteApplicationToolStripMenuItem.Enabled = LocalDrivingLicenseApplication.AppStatus == clsApplication.enApplicationStatus.New;
+            deleteApplicationToolStripMenuItem.Enabled = LDLApp.AppStatus == clsApplication.enApplicationStatus.New;
 
+            bool PassedVisionTest = LDLApp.DoesPassTestType(clsTestType.enTestType.VisionTest); ;
+            bool PassedWrittenTest = LDLApp.DoesPassTestType(clsTestType.enTestType.WrittenTest);
+            bool PassedStreetTest = LDLApp.DoesPassTestType(clsTestType.enTestType.StreetTest);
 
+            //scheduleStreetTestToolStripMenuItem.Enabled = (!PassedVisionTest || !PassedWrittenTest || !PassedStreetTest) && (LocalDrivingLicenseApplication.AppStatus == clsApplication.enApplicationStatus.New);
 
-            //Enable Disable Schedule menue and it's sub menue
-            bool PassedVisionTest = LocalDrivingLicenseApplication.DoesPassTestType(clsTestType.enTestType.VisionTest); ;
-            bool PassedWrittenTest = LocalDrivingLicenseApplication.DoesPassTestType(clsTestType.enTestType.WrittenTest);
-            bool PassedStreetTest = LocalDrivingLicenseApplication.DoesPassTestType(clsTestType.enTestType.StreetTest);
-
-            scheduleStreetTestToolStripMenuItem.Enabled = (!PassedVisionTest || !PassedWrittenTest || !PassedStreetTest) && (LocalDrivingLicenseApplication.AppStatus == clsApplication.enApplicationStatus.New);
+            if (PassedVisionTest && PassedWrittenTest && PassedStreetTest)
+                scheduleTestToolStripMenuItem.Enabled = false;
+            else scheduleTestToolStripMenuItem.Enabled = true;
 
             if (scheduleTestToolStripMenuItem.Enabled)
             {
@@ -169,6 +173,13 @@ namespace DVLD.Applications.LocalDrivingLicenseApplications
 
             }
 
+            if(LDLApp.AppStatus == clsApplication.enApplicationStatus.Cancelled)
+            {
+                issueDrivingLicenseFirstTimeToolStripMenuItem.Enabled = false;
+                showPersonLicenseHistoryToolStripMenuItem.Enabled = false;
+                showLicenseToolStripMenuItem.Enabled = false;
+                scheduleTestToolStripMenuItem.Enabled = false;
+            }
 
         }
 
@@ -320,7 +331,7 @@ namespace DVLD.Applications.LocalDrivingLicenseApplications
             int LDLAppID = (int)dgvManageLocalDrivingLicenseApps.CurrentRow.Cells["ID"].Value;
             clsLocalDrivingLicenseApplication LDLApp = clsLocalDrivingLicenseApplication.FindLocalDrivingLicenseApplicationByID(LDLAppID);
 
-            if (LDLAppID == null)
+            if (LDLApp == null)
             {
                 MessageBox.Show("Application Not Found", "Not Found", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -400,7 +411,7 @@ namespace DVLD.Applications.LocalDrivingLicenseApplications
         {
             _ScheduleTest(clsTestType.enTestType.StreetTest);
         }
-
+        
         private void _ScheduleTest(clsTestType.enTestType TestType)
         {
             int LDLAppID = (int)dgvManageLocalDrivingLicenseApps.CurrentRow.Cells[0].Value;
