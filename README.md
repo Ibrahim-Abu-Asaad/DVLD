@@ -118,6 +118,74 @@ The system manages the different stages of driving tests:
 
 ---
 
+## 📁 Project Structure
+
+The project is organized using a **3-Layer Architecture (3-Tier Architecture)**:
+
+```text
+DVLD/
+│
+├── DVLD.sln
+│
+├── DVLD/                              # Presentation Layer (UI)
+│   │
+│   ├── Applications/                 # Application-related forms
+│   ├── Auth/                         # Authentication and login
+│   ├── Global Classes/               # Shared/global classes
+│   ├── People/                       # People management
+│   ├── Resources/                    # Application resources
+│   ├── Tests/                        # Driving test management
+│   ├── Users/                        # User management
+│   │
+│   ├── frmMain.cs                    # Main application form
+│   ├── Program.cs                    # Application entry point
+│   ├── packages/
+│   └── ...
+│
+├── DVLD_BLL/                         # Business Logic Layer
+│   │
+│   ├── clsApplication.cs
+│   ├── clsApplicationType.cs
+│   ├── clsCountry.cs
+│   ├── clsDetainedLicense.cs
+│   ├── clsDriver.cs
+│   ├── clsInternationalLicense.cs
+│   ├── clsLicense.cs
+│   ├── clsLicenseClass.cs
+│   ├── clsLocalDrivingLicenseApplication.cs
+│   ├── clsPerson.cs
+│   ├── clsTest.cs
+│   ├── clsTestAppointment.cs
+│   ├── clsTestType.cs
+│   ├── clsUser.cs
+│   ├── packages.config
+│   └── ...
+│
+├── DVLD_DAL/                         # Data Access Layer
+│   │
+│   ├── clsDataAccessSettings.cs      # SQL Server connection settings
+│   ├── clsDataApplication.cs
+│   ├── clsDataApplicationType.cs
+│   ├── clsDataCountry.cs
+│   ├── clsDataDetainedLicense.cs
+│   ├── clsDataDriver.cs
+│   ├── clsDataInternationalLicense.cs
+│   ├── clsDataLicense.cs
+│   ├── clsDataLicenseClass.cs
+│   ├── clsDataLocalDrivingLicenseApplication.cs
+│   ├── clsDataPerson.cs
+│   ├── clsDataTest.cs
+│   ├── clsDataTestAppointment.cs
+│   ├── clsDataTestType.cs
+│   ├── clsDataUser.cs
+│   ├── packages.config
+│   └── ...
+│
+└── screenshots/                      # Project screenshots
+```
+
+---
+
 ## 🏗️ Architecture
 
 The project follows a **3-Layer Architecture** to separate responsibilities and make the application easier to maintain.
@@ -233,6 +301,11 @@ Issue Driving License
 ```
 
 If an applicant fails a test, the system allows the test to be scheduled again according to the application's rules.
+
+---
+
+## 🚀 Getting Started
+Coming Soon.
 
 ---
 
