@@ -20,7 +20,7 @@ A complete system for managing driving licenses, vehicle registrations, and all 
 -->
 # 🚗 DVLD – Driving & Vehicle License Department
 
-A desktop-based **Driving & Vehicle License Management System (DVLD)** developed as a full real-world project using **C# and .NET**.
+A desktop-based **Driving & Vehicle License Management System (DVLD)** developed using **C# and .NET**.
 
 The system simulates the workflow of a driving license department, including people management, user management, license applications, driving tests, license issuance, renewal, replacement, detention, release, and international driving licenses.
 
@@ -60,7 +60,6 @@ This project was developed while studying the **Programming Advices** C#/.NET le
 * Delete people
 * Search by national number
 * View detailed person information
-* Manage countries/nationalities
 * Store personal information and profile images
 * Prevent duplicate people using the national number
 
@@ -71,8 +70,6 @@ This project was developed while studying the **Programming Advices** C#/.NET le
 * Change passwords
 * Freeze user accounts
 * Manage user information
-* Assign permissions
-* Track the user responsible for system operations
 
 ### 📝 Applications Management
 
@@ -91,12 +88,11 @@ The system supports several types of applications:
 The system manages the different stages of driving tests:
 
 * 👁️ Vision Test
-* 📚 Theory Test
-* 🚗 Practical Driving Test
+* 📚 Written Test
+* 🚗 Street Test
 * Schedule test appointments
 * Record test results
 * Support failed-test retakes
-* Prevent invalid test scheduling
 
 ### 🪪 License Management
 
@@ -206,8 +202,6 @@ The database contains entities related to:
 * Detained Licenses
 * Local Driving License Applications
 
-The project also includes relationships between these entities to represent the real-world workflow of a driving license management system.
-
 ---
 
 ## 🔄 Application Workflow
@@ -225,13 +219,13 @@ Schedule Vision Test
      ↓
 Take Vision Test
      ↓
-Schedule Theory Test
+Schedule Written Test
      ↓
-Take Theory Test
+Take Written Test
      ↓
-Schedule Practical Test
+Schedule Street Test
      ↓
-Take Practical Test
+Take Street Test
      ↓
 Pass All Tests
      ↓
@@ -239,20 +233,6 @@ Issue Driving License
 ```
 
 If an applicant fails a test, the system allows the test to be scheduled again according to the application's rules.
-
----
-
-## 🚀 Future Improvements
-
-Possible future improvements include:
-
-* [ ] Improve UI/UX
-* [ ] Add more advanced reporting
-* [ ] Add additional validation
-* [ ] Improve error handling
-* [ ] Improve security
-* [ ] Add more detailed audit logging
-* [ ] Migrate the system to a web-based architecture using ASP.NET Core
 
 ---
 
@@ -264,9 +244,9 @@ Possible future improvements include:
 
 ## 📌 Note
 
-This project was developed for **educational and learning purposes** as part of my journey toward becoming a professional software/backend developer.
+This project was developed for **educational and learning purposes**.
 
-The project requirements are based on the DVLD project specification used during my learning path.
+Project requirements follow the DVLD specification from the "ProgrammingAdvices" platform learning path.
 
 ---
 
