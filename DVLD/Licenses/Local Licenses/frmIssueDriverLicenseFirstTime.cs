@@ -22,7 +22,7 @@ namespace DVLD.Licenses.Local_Licenses
         private int _LicenseID = -1;
 
 
-        public frmIssueDriverLicenseFirstTime(int LDLAppID, int LicenseID)
+        public frmIssueDriverLicenseFirstTime(int LDLAppID)
         {
             InitializeComponent();
             _LDLAppID = LDLAppID;
@@ -48,7 +48,7 @@ namespace DVLD.Licenses.Local_Licenses
             }
 
 
-            if (_LDLApp.IsPassedAllTests())
+            if (!_LDLApp.IsPassedAllTests())
             {
 
                 MessageBox.Show("Person Should Pass All Tests First.", "Not Allowed", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -72,7 +72,20 @@ namespace DVLD.Licenses.Local_Licenses
         private void btnIssue_Click(object sender, EventArgs e)
         {
             int CreatedByUserID = clsGlobal.CurrentUser.ID;
-            _LicenseID = _LDLApp.IssueLicenseForTheFirstTime(rtxtNotes.ToString(), CreatedByUserID);
+            _LicenseID = _LDLApp.IssueLicenseForTheFirstTime(rtxtNotes.Text, CreatedByUserID);
+
+            if (_LicenseID != -1)
+            {
+                MessageBox.Show("License Issued Successfully with License ID = " + _LicenseID.ToString(),
+                    "Succeeded", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("License Was not Issued ! ",
+                 "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
         }
 

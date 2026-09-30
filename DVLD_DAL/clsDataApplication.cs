@@ -75,7 +75,10 @@ namespace DVLD_DAL
                     ApplicationStatus = (byte)reader["ApplicationStatus"];
                     LastStatusDate = (DateTime)reader["LastStatusDate"];
                     CreatedByUserID = (int)reader["CreatedByUserID"];
-                    PaidFees = (float)reader["PaidFees"];
+                    
+                    decimal pf = (decimal)reader["PaidFees"];
+
+                    PaidFees = (float)pf;
                     
 
                 }

@@ -1,4 +1,5 @@
-﻿using DVLD.Tests;
+﻿using DVLD.Licenses.Local_Licenses;
+using DVLD.Tests;
 using DVLD_BLL;
 using Sunny.UI;
 using System;
@@ -185,7 +186,20 @@ namespace DVLD.Applications.LocalDrivingLicenseApplications
 
         private void issueDrivingLicenseFirstTimeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Issue License");
+            //MessageBox.Show("Issue License");
+            int LDLAppID = (int)dgvManageLocalDrivingLicenseApps.CurrentRow.Cells[0].Value;
+            clsLocalDrivingLicenseApplication LDLApp = clsLocalDrivingLicenseApplication.FindLocalDrivingLicenseApplicationByID(LDLAppID);
+            frmIssueDriverLicenseFirstTime frm = new frmIssueDriverLicenseFirstTime(LDLAppID);
+            frm.ShowDialog();
+            _ListAppsAndRefreshPage();
+            if (LDLApp.IsLicenseIssued())
+            {
+                issueDrivingLicenseFirstTimeToolStripMenuItem.Enabled = false;
+                //showDetailsToolStripMenuItem.Enabled = true;
+                showLicenseToolStripMenuItem.Enabled = true;
+                showPersonLicenseHistoryToolStripMenuItem.Enabled = true;
+            }
+            
         }
 
         private void txtSearchBy_TextChanged(object sender, EventArgs e)
@@ -348,7 +362,20 @@ namespace DVLD.Applications.LocalDrivingLicenseApplications
 
         private void showLicenseToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Showing License");
+
+            int LDLAppID = (int)dgvManageLocalDrivingLicenseApps.CurrentRow.Cells["ID"].Value;
+            clsLocalDrivingLicenseApplication LDLApp = clsLocalDrivingLicenseApplication.FindLocalDrivingLicenseApplicationByID(LDLAppID);
+            if (LDLApp.GetActiveLicenseID() == -1)
+            {
+                MessageBox.Show("There is no license for this person: " + LDLApp.PersonInfo.GetFullName(), "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            frmShowLicenseInfo frm = new frmShowLicenseInfo(LDLAppID);
+            frm.ShowDialog();
+            _ListAppsAndRefreshPage();
+               
+
         }
 
         private void showPersonLicenseHistoryToolStripMenuItem_Click(object sender, EventArgs e)

@@ -16,7 +16,15 @@ namespace DVLD_BLL
 
         public int ID { set; get; }
         public int PersonID { set; get; }
-        public clsPerson PersonInfo;
+        //public clsPerson PersonInfo;
+
+        public clsPerson PersonInfo
+        {
+            get
+            {
+                return clsPerson.Find(PersonID);
+            }
+        }
 
         public int CreatedByUserID { set; get; }
         public clsUser CreatedByUserInfo;
@@ -27,7 +35,7 @@ namespace DVLD_BLL
         {
             this.ID = -1;
             this.PersonID = -1;
-            this.PersonInfo = null;
+            //this.PersonInfo = null;
             this.CreatedByUserID = -1;
             this.CreatedByUserInfo = null;
             this.CreatedDate = DateTime.Now;
@@ -40,7 +48,7 @@ namespace DVLD_BLL
 
             this.ID = ID;
             this.PersonID = PersonID;
-            this.PersonInfo = clsPerson.Find(PersonID);
+            //this.PersonInfo = clsPerson.Find(PersonID);
             this.CreatedByUserID = CreatedByUserID;
             this.CreatedByUserInfo = clsUser.GetUserByID(CreatedByUserID);
             this.CreatedDate = CreatedDate;
@@ -81,7 +89,7 @@ namespace DVLD_BLL
         private bool _AddNew()
         {
 
-            this.ID = clsDataDriver.AddNewDriver(this.PersonID, this.CreatedByUserID, this.CreatedDate);
+            this.ID = clsDataDriver.AddNewDriver(this.PersonID, this.CreatedByUserID);
 
             return this.ID != -1;
 

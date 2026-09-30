@@ -253,7 +253,7 @@ namespace DVLD_BLL
             clsDriver Driver = new clsDriver();
 
             Driver = clsDriver.GetDriverByPersonID(this.ApplicantPersonID);
-            if (Driver == null)
+            if (Driver.ID == -1)
             {
 
                 Driver.PersonID = this.ApplicantPersonID;
@@ -297,7 +297,7 @@ namespace DVLD_BLL
         public int GetActiveLicenseID()
             => clsLicense.GetActiveLicenseIDByPersonID(this.ApplicantPersonID, this.LicenseClassID);
 
-
+    
 
 
 

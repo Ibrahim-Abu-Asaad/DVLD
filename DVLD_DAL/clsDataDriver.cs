@@ -119,7 +119,7 @@ namespace DVLD_DAL
 
         }
 
-        public static int AddNewDriver(int PersonID, int CreatedByUserID, DateTime CreatedDate)
+        public static int AddNewDriver(int PersonID, int CreatedByUserID)
         {
 
             int NewDriverID = -1;
@@ -129,6 +129,9 @@ namespace DVLD_DAL
                              SELECT SCOPE_IDENTITY();";
 
             SqlCommand command = new SqlCommand(query, connection);
+            command.Parameters.AddWithValue("@PersonID", PersonID);
+            command.Parameters.AddWithValue("@CreatedByUserID", CreatedByUserID);
+            command.Parameters.AddWithValue("@CreatedDate", DateTime.Now);
 
             try
             {

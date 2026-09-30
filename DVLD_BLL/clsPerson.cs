@@ -217,6 +217,17 @@ namespace DVLD_BLL
         public static bool IsThisPersonDriverByPersonID(int ID)
             => clsDataPerson.IsThisPersonDriverByPersonID(ID);
 
+        public string GetPersonGender()
+        {
+            if (this.Gender == 0)
+                return "Male";
+
+            return "Female";
+        }
+
+        public string GetFullName()
+            => this.FirstName + ' ' + this.SecondName + ' ' + this.ThirdName + ' ' + this.LastName;
+
 
     }
 }
