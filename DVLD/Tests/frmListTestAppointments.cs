@@ -90,6 +90,10 @@ namespace DVLD.Tests
                 dgvLicenseTestAppointments.Columns[3].Width = 180;
             }
 
+            clsLocalDrivingLicenseApplication LDLApp = clsLocalDrivingLicenseApplication.FindLocalDrivingLicenseApplicationByID(_LDLAppID);
+            if (LDLApp.DoesPassTestType(_TestTypeID))
+                btnAddAppointment.Enabled = false;
+
         }
 
         private void frmListTestAppointments_Load(object sender, EventArgs e)

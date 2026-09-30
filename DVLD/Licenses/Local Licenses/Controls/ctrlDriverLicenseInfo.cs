@@ -45,6 +45,7 @@ namespace DVLD.Licenses.Local_Licenses
         public void LoadAllData(int LDLAppID)
         {
 
+
             _LDLAppID = LDLAppID;
             _LDLApp = clsLocalDrivingLicenseApplication.FindLocalDrivingLicenseApplicationByID(_LDLAppID);
             _LicenseID = _LDLApp.GetActiveLicenseID();

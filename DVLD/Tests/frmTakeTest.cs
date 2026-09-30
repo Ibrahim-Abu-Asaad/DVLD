@@ -76,12 +76,14 @@ namespace DVLD.Tests
         private void btnSave_Click(object sender, EventArgs e)
         {
 
-            if (MessageBox.Show("Are you sure you want to save? After that you cannot change the Pass/Fail results after you save?.",
-                        "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.No
-               )
+            if (rbtnFail.Checked == false && rbtnPass.Checked == false)
             {
+                MessageBox.Show("You must choose to succeed or fail!!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+
+            if (MessageBox.Show("Are you sure you want to save? After that you cannot change the Pass/Fail results after you save?.","Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.No)
+                return;
 
             if (_Test == null)
                 _Test = new clsTest();

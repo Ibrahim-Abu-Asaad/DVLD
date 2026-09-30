@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DVLD.Licenses.Local_Licenses;
 using DVLD_BLL;
 using Sunny.UI;
 
@@ -33,6 +34,7 @@ namespace DVLD.Applications.LocalDrivingLicenseApplications
 
         public void LoadAllData(int LDLAppID)
         {
+            _LDLAppID = LDLAppID;
             _LDLApp = clsLocalDrivingLicenseApplication.FindLocalDrivingLicenseApplicationByID(LDLAppID);
             if (_LDLApp == null)
             {
@@ -42,6 +44,10 @@ namespace DVLD.Applications.LocalDrivingLicenseApplications
                 MessageBox.Show("No Application with ApplicationID = " + LocalDrivingLicenseApplicationID.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+
+            if (_LDLApp.IsLicenseIssued())
+                llblShowLicenseInfo.Enabled = true;
+            else llblShowLicenseInfo.Enabled = false;
 
             LoadAllDataByLDLAppID(LDLAppID);
         }
@@ -91,14 +97,18 @@ namespace DVLD.Applications.LocalDrivingLicenseApplications
 
         }
 
+        private void llblShowLicenseInfo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
 
+            if (_LDLApp.GetActiveLicenseID() == -1)
+            {
+                MessageBox.Show("There is no license for this person: " + _LDLApp.PersonInfo.GetFullName(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+                
 
-
-
-
-
-
-
-
+            frmShowLicenseInfo frm = new frmShowLicenseInfo(_LDLAppID);
+            frm.ShowDialog();
+        }
     }
 }
