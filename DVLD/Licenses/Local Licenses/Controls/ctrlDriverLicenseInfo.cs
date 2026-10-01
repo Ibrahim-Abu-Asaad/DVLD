@@ -30,17 +30,15 @@ namespace DVLD.Licenses.Local_Licenses
             InitializeComponent();
         }
 
+        public int LicenseID
+        {
+            get { return _LicenseID; }
+        }
 
-        //public ctrlDriverLicenseInfo(int LDLAppID)
-        //{
-        //    InitializeComponent();
-
-        //    _LDLApp = clsLocalDrivingLicenseApplication.FindLocalDrivingLicenseApplicationByID(_LDLAppID);
-        //    _LicenseID = _LDLApp.GetActiveLicenseID();
-        //    _License = clsLicense.Find(_LicenseID);
-
-        //    //LoadAllData();
-        //}
+        public clsLicense SelectedLicenseInfo
+        {
+            get { return _License; }
+        }
 
         public void LoadAllData(int LDLAppID)
         {
@@ -51,14 +49,13 @@ namespace DVLD.Licenses.Local_Licenses
             _LicenseID = _LDLApp.GetActiveLicenseID();
             _License = clsLicense.Find(_LicenseID);
 
-            lblClass.Text = _LDLApp.LicenseClassInfo.Name;
+            lblClass.Text = _License.LicenseClassInfo.Name;
 
-            string FullName = clsFormat.FullNameOf4Names(_LDLApp.PersonInfo.FirstName, _LDLApp.PersonInfo.SecondName, _LDLApp.PersonInfo.ThirdName, _LDLApp.PersonInfo.LastName);
-            lblName.Text = FullName;
+            lblName.Text = _License.DriverInfo.PersonInfo.GetFullName();
 
-            lblNationalNo.Text = _LDLApp.PersonInfo.NationalNO;
+            lblNationalNo.Text = _License.DriverInfo.PersonInfo.NationalNO;
 
-            lblGender.Text = _LDLApp.PersonInfo.GetPersonGender();
+            lblGender.Text = _License.DriverInfo.PersonInfo.GetPersonGender();
 
             lblIssueDate.Text = _License.IssueDate.ToString();
 
@@ -68,7 +65,7 @@ namespace DVLD.Licenses.Local_Licenses
 
             lblIsActive.Text = _License.IsActive ? "Yes" : "No";
 
-            lblDateOfBirth.Text = _LDLApp.PersonInfo.DateOfBirth.ToString();
+            lblDateOfBirth.Text = _License.DriverInfo.PersonInfo.DateOfBirth.ToString();
 
             lblExpirationDate.Text = _License.ExpirationDate.ToString();
 

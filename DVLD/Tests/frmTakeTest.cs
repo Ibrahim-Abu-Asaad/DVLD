@@ -78,7 +78,7 @@ namespace DVLD.Tests
 
             if (rbtnFail.Checked == false && rbtnPass.Checked == false)
             {
-                MessageBox.Show("You must choose to succeed or fail!!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("You must choose to pass or fail!!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 

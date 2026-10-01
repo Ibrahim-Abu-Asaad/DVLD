@@ -21,6 +21,22 @@ namespace DVLD_BLL
         public int ApplicationID { set; get; }
         public int DriverID { set; get; }
         public clsDriver DriverInfo;
+        //public clsDriver DriverInfo
+        //{
+        //    get
+        //    {
+        //        return clsDriver.GetDriverByID(DriverID);
+        //    }
+        //}
+
+        //public int PersonID { set; get; }
+        //public clsPerson PersonInfo
+        //{
+        //    get
+        //    {
+        //        return clsPerson.Find(DriverInfo.PersonID);
+        //    }
+        //}
 
         public int LicenseClass { set; get; }
         public clsLicenseClass LicenseClassInfo;

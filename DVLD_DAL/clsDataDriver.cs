@@ -29,6 +29,7 @@ namespace DVLD_DAL
                 SqlDataReader reader = command.ExecuteReader();
                 while (reader.Read())
                 {
+                    IsFound = true;
                     PersonID = (int)reader["PersonID"];
                     CreatedByUserID = (int)reader["CreatedByUserID"];
                     CreatedDate = (DateTime)reader["CreatedDate"];

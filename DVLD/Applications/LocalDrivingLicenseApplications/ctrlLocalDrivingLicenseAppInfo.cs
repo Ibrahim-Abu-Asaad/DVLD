@@ -47,7 +47,8 @@ namespace DVLD.Applications.LocalDrivingLicenseApplications
 
             if (_LDLApp.IsLicenseIssued())
                 llblShowLicenseInfo.Enabled = true;
-            else llblShowLicenseInfo.Enabled = false;
+            else
+                llblShowLicenseInfo.Enabled = false;
 
             LoadAllDataByLDLAppID(LDLAppID);
         }
