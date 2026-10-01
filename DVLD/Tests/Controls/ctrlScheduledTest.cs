@@ -120,7 +120,9 @@ namespace DVLD.Tests.Controls
 
 
             lblDate.Text = clsFormat.DateToShort(_TestAppointment.AppointmentDate);
-            lblFees.Text = _TestAppointment.PaidFees.ToString();
+            //lblFees.Text = _TestAppointment.PaidFees.ToString();
+            decimal Fees = clsTestType.GetTestTypeByID((int)_TestAppointment.TestTypeID).Fees;
+            lblFees.Text = Fees.ToString();
             lblTestID.Text = (_TestAppointment.TestID == -1) ? "Not Taken Yet" : _TestAppointment.TestID.ToString();
 
 

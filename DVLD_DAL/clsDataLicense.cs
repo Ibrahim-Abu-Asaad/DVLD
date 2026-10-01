@@ -385,7 +385,54 @@ namespace DVLD_DAL
             return rowsAffected > 0;
         }
 
+        public static int GetLDLAppIDForThisLicense(int LicenseID)
+        {
+            int LDLAppID = -1;
+            
+            SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
 
+            string query = @"SELECT LocalDrivingLicenseApplications.ID
+                             FROM Applications INNER JOIN
+                             Licenses ON Applications.ID = Licenses.ApplicationID INNER JOIN
+                             LocalDrivingLicenseApplications ON Applications.ID = LocalDrivingLicenseApplications.ApplicationID";
+
+            SqlCommand command = new SqlCommand(query, connection);
+
+            try
+            {
+                connection.Open();
+
+                object result = command.ExecuteScalar();
+
+                if (result != null && int.TryParse(result.ToString(), out int id))
+                    LDLAppID = id;
+
+            }
+
+            catch (Exception ex)
+            {
+                string msg = ex.Message;
+            }
+
+            finally
+            {
+                connection.Close();
+            }
+
+
+            return LDLAppID;
+
+        }
+
+
+        /*
+         
+        SELECT LocalDrivingLicenseApplications.ID
+FROM     Applications INNER JOIN
+                  Licenses ON Applications.ID = Licenses.ApplicationID INNER JOIN
+                  LocalDrivingLicenseApplications ON Applications.ID = LocalDrivingLicenseApplications.ApplicationID
+         
+         */
 
 
 

@@ -2,6 +2,7 @@ using DVLD.Applications;
 using DVLD.Applications.LocalDrivingLicenseApplications;
 using DVLD.Applications.TestTypes;
 using DVLD.Global_Classes;
+using DVLD.Licenses.Local_Licenses;
 using DVLD.Users;
 using DVLD_BLL;
 using Sunny.UI;
@@ -105,5 +106,13 @@ namespace DVLD
         {
             //
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            frmTesting frm = new frmTesting();
+            frm.ShowDialog();
+        }
+
+
     }
 }

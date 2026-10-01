@@ -160,7 +160,14 @@ namespace DVLD.Tests
 
         private void btnAddAppointment_Click(object sender, EventArgs e)
         {
-            frmScheduleTest frm = new frmScheduleTest(_LDLAppID, _TestTypeID, -1);
+            clsLocalDrivingLicenseApplication LDLApp = clsLocalDrivingLicenseApplication.FindLocalDrivingLicenseApplicationByID(_LDLAppID);
+            if (LDLApp.IsThereAnActiveScheduledTest(_TestTypeID))
+            {
+                MessageBox.Show("There is already an active appointment!!","Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+                frmScheduleTest frm = new frmScheduleTest(_LDLAppID, _TestTypeID, -1);
             frm.ShowDialog();
 
             //_LoadTestTypeImageAndTitle();
