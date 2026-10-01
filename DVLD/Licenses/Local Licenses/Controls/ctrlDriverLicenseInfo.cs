@@ -89,6 +89,8 @@ namespace DVLD.Licenses.Local_Licenses
                 return;
             }
 
+            lblLicenseID.Text = LicenseID.ToString();
+
             lblClass.Text = _License.LicenseClassInfo.Name;
 
             lblName.Text = _License.DriverInfo.PersonInfo.GetFullName();

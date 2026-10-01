@@ -39,7 +39,7 @@
             ctrlDriverLicenseInfo1.MinimumSize = new Size(1, 1);
             ctrlDriverLicenseInfo1.Name = "ctrlDriverLicenseInfo1";
             ctrlDriverLicenseInfo1.RectColor = Color.FromArgb(243, 249, 255);
-            ctrlDriverLicenseInfo1.Size = new Size(1068, 425);
+            ctrlDriverLicenseInfo1.Size = new Size(1146, 425);
             ctrlDriverLicenseInfo1.TabIndex = 0;
             ctrlDriverLicenseInfo1.Text = "ctrlDriverLicenseInfo1";
             ctrlDriverLicenseInfo1.TextAlignment = ContentAlignment.MiddleCenter;
@@ -47,7 +47,7 @@
             // btnClose
             // 
             btnClose.Font = new Font("Microsoft Sans Serif", 12F);
-            btnClose.Location = new Point(955, 479);
+            btnClose.Location = new Point(1033, 479);
             btnClose.MinimumSize = new Size(1, 1);
             btnClose.Name = "btnClose";
             btnClose.Size = new Size(125, 44);
@@ -59,7 +59,7 @@
             // frmShowLicenseInfo
             // 
             AutoScaleMode = AutoScaleMode.None;
-            ClientSize = new Size(1093, 535);
+            ClientSize = new Size(1171, 535);
             ControlBox = false;
             Controls.Add(btnClose);
             Controls.Add(ctrlDriverLicenseInfo1);

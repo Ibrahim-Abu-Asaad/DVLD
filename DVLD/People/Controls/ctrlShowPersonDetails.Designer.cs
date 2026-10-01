@@ -104,7 +104,7 @@
             gbPersonalInformation.Name = "gbPersonalInformation";
             gbPersonalInformation.Padding = new Padding(0, 32, 0, 0);
             gbPersonalInformation.RectColor = Color.FromArgb(173, 178, 181);
-            gbPersonalInformation.Size = new Size(947, 337);
+            gbPersonalInformation.Size = new Size(1008, 337);
             gbPersonalInformation.TabIndex = 0;
             gbPersonalInformation.Text = "Personal Information";
             gbPersonalInformation.TextAlignment = ContentAlignment.MiddleLeft;
@@ -113,7 +113,7 @@
             // 
             pbPersonImage.BackColor = Color.FromArgb(243, 249, 255);
             pbPersonImage.Image = Properties.Resources.Male_512;
-            pbPersonImage.Location = new Point(725, 117);
+            pbPersonImage.Location = new Point(784, 117);
             pbPersonImage.Name = "pbPersonImage";
             pbPersonImage.Size = new Size(212, 211);
             pbPersonImage.SizeMode = PictureBoxSizeMode.Zoom;
@@ -126,7 +126,7 @@
             lblCountry.BackColor = Color.FromArgb(243, 249, 255);
             lblCountry.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblCountry.ForeColor = Color.Black;
-            lblCountry.Location = new Point(614, 232);
+            lblCountry.Location = new Point(653, 232);
             lblCountry.Name = "lblCountry";
             lblCountry.Size = new Size(61, 26);
             lblCountry.TabIndex = 26;
@@ -138,7 +138,7 @@
             lblPhone.BackColor = Color.FromArgb(243, 249, 255);
             lblPhone.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblPhone.ForeColor = Color.Black;
-            lblPhone.Location = new Point(614, 177);
+            lblPhone.Location = new Point(653, 177);
             lblPhone.Name = "lblPhone";
             lblPhone.Size = new Size(61, 26);
             lblPhone.TabIndex = 25;
@@ -150,7 +150,7 @@
             lblDateOfBirth.BackColor = Color.FromArgb(243, 249, 255);
             lblDateOfBirth.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblDateOfBirth.ForeColor = Color.Black;
-            lblDateOfBirth.Location = new Point(614, 122);
+            lblDateOfBirth.Location = new Point(653, 122);
             lblDateOfBirth.Name = "lblDateOfBirth";
             lblDateOfBirth.Size = new Size(61, 26);
             lblDateOfBirth.TabIndex = 24;
@@ -229,7 +229,7 @@
             // pictureBox8
             // 
             pictureBox8.Image = Properties.Resources.Country_32;
-            pictureBox8.Location = new Point(577, 227);
+            pictureBox8.Location = new Point(616, 227);
             pictureBox8.Name = "pictureBox8";
             pictureBox8.Size = new Size(31, 31);
             pictureBox8.SizeMode = PictureBoxSizeMode.Zoom;
@@ -239,7 +239,7 @@
             // pictureBox7
             // 
             pictureBox7.Image = Properties.Resources.Phone_32;
-            pictureBox7.Location = new Point(577, 172);
+            pictureBox7.Location = new Point(616, 172);
             pictureBox7.Name = "pictureBox7";
             pictureBox7.Size = new Size(31, 31);
             pictureBox7.SizeMode = PictureBoxSizeMode.Zoom;
@@ -249,7 +249,7 @@
             // pictureBox6
             // 
             pictureBox6.Image = Properties.Resources.Calendar_32;
-            pictureBox6.Location = new Point(577, 117);
+            pictureBox6.Location = new Point(616, 117);
             pictureBox6.Name = "pictureBox6";
             pictureBox6.Size = new Size(31, 31);
             pictureBox6.SizeMode = PictureBoxSizeMode.Zoom;
@@ -300,7 +300,7 @@
             // 
             linkLabel1.AutoSize = true;
             linkLabel1.BackColor = Color.FromArgb(243, 249, 255);
-            linkLabel1.Location = new Point(769, 84);
+            linkLabel1.Location = new Point(828, 84);
             linkLabel1.Name = "linkLabel1";
             linkLabel1.Size = new Size(128, 20);
             linkLabel1.TabIndex = 8;
@@ -314,7 +314,7 @@
             label9.BackColor = Color.FromArgb(243, 249, 255);
             label9.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label9.ForeColor = Color.Black;
-            label9.Location = new Point(422, 232);
+            label9.Location = new Point(461, 232);
             label9.Name = "label9";
             label9.Size = new Size(90, 26);
             label9.TabIndex = 7;
@@ -326,7 +326,7 @@
             l2.BackColor = Color.FromArgb(243, 249, 255);
             l2.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             l2.ForeColor = Color.Black;
-            l2.Location = new Point(422, 177);
+            l2.Location = new Point(461, 177);
             l2.Name = "l2";
             l2.Size = new Size(73, 26);
             l2.TabIndex = 6;
@@ -338,7 +338,7 @@
             l1.BackColor = Color.FromArgb(243, 249, 255);
             l1.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             l1.ForeColor = Color.Black;
-            l1.Location = new Point(422, 122);
+            l1.Location = new Point(461, 122);
             l1.Name = "l1";
             l1.Size = new Size(137, 26);
             l1.TabIndex = 5;
@@ -412,7 +412,7 @@
             Controls.Add(gbPersonalInformation);
             Name = "ctrlShowPersonDetails2";
             RectColor = Color.FromArgb(243, 249, 255);
-            Size = new Size(973, 360);
+            Size = new Size(1040, 360);
             Text = "";
             gbPersonalInformation.ResumeLayout(false);
             gbPersonalInformation.PerformLayout();
