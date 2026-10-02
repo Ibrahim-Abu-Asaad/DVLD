@@ -172,6 +172,9 @@ namespace DVLD_BLL
         public static bool IsLicenseExistByPersonID(int PersonID, int LicenseClassID)
             => (GetActiveLicenseIDByPersonID(PersonID, LicenseClassID) != -1);
 
+        public static bool IsLicenseExistByID(int ID)
+            => clsDataLicense.IsLicenseExistByID(ID);
+
         public int GetLDLAppForThisLicense()
             => clsDataLicense.GetLDLAppIDForThisLicense(ID);
 

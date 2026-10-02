@@ -424,6 +424,44 @@ namespace DVLD_DAL
 
         }
 
+        public static bool IsLicenseExistByID(int ID)
+        {
+
+            bool IsFound = false;
+
+            SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
+
+            string query = @"SELECT ID FROM Licenses WHERE ID = @ID;";
+
+            SqlCommand command = new SqlCommand(query, connection);
+            command.Parameters.AddWithValue("@ID", ID);
+
+            try
+            {
+                connection.Open();
+
+                SqlDataReader reader = command.ExecuteReader();
+
+                if (reader.HasRows)
+                    IsFound = true;
+
+            }
+
+            catch (Exception ex)
+            {
+                string msg = ex.Message;
+            }
+
+            finally
+            {
+                connection.Close();
+            }
+
+
+            return IsFound;
+
+        }
+
 
         /*
          

@@ -15,6 +15,7 @@ namespace DVLD.Licenses.Local_Licenses
     {
 
         private int _LDLAppID = -1;
+        private int _LicenseID = -1;
 
         public frmShowLicenseInfo(int LDLAppID)
         {
@@ -22,9 +23,21 @@ namespace DVLD.Licenses.Local_Licenses
             _LDLAppID = LDLAppID;
         }
 
+        public frmShowLicenseInfo(int LicenseID, bool fl)
+        {
+            InitializeComponent();
+            _LicenseID = LicenseID;
+        }
+
         private void frmShowLicenseInfo_Load(object sender, EventArgs e)
         {
-            ctrlDriverLicenseInfo1.LoadAllData(_LDLAppID);
+
+            if (_LDLAppID != -1)
+                ctrlDriverLicenseInfo1.LoadAllData(_LDLAppID);
+            else
+                ctrlDriverLicenseInfo1.LoadAllDataByLicenseID(_LicenseID);
+
+
         }
 
         private void btnClose_Click(object sender, EventArgs e)

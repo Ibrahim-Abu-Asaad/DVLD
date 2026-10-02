@@ -28,14 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ctrlDriverLicenseInfoWithFilter));
             ctrlDriverLicenseInfo1 = new ctrlDriverLicenseInfo();
             gbFilter = new Sunny.UI.UIGroupBox();
+            label1 = new Label();
             btnSearch = new Button();
             label2 = new Label();
             txtSearchBy = new Sunny.UI.UITextBox();
-            label1 = new Label();
+            errorProvider1 = new ErrorProvider(components);
             gbFilter.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)errorProvider1).BeginInit();
             SuspendLayout();
             // 
             // ctrlDriverLicenseInfo1
@@ -45,7 +48,7 @@
             ctrlDriverLicenseInfo1.MinimumSize = new Size(1, 1);
             ctrlDriverLicenseInfo1.Name = "ctrlDriverLicenseInfo1";
             ctrlDriverLicenseInfo1.RectColor = Color.FromArgb(243, 249, 255);
-            ctrlDriverLicenseInfo1.Size = new Size(1073, 430);
+            ctrlDriverLicenseInfo1.Size = new Size(1142, 430);
             ctrlDriverLicenseInfo1.TabIndex = 0;
             ctrlDriverLicenseInfo1.Text = "ctrlDriverLicenseInfo1";
             ctrlDriverLicenseInfo1.TextAlignment = ContentAlignment.MiddleCenter;
@@ -63,10 +66,21 @@
             gbFilter.Name = "gbFilter";
             gbFilter.Padding = new Padding(0, 32, 0, 0);
             gbFilter.RectDisableColor = Color.FromArgb(243, 249, 255);
-            gbFilter.Size = new Size(1058, 104);
+            gbFilter.Size = new Size(1126, 104);
             gbFilter.TabIndex = 11;
             gbFilter.Text = "Filter";
             gbFilter.TextAlignment = ContentAlignment.MiddleLeft;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.BackColor = Color.FromArgb(243, 249, 255);
+            label1.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.Location = new Point(91, 52);
+            label1.Name = "label1";
+            label1.Size = new Size(103, 26);
+            label1.TabIndex = 10;
+            label1.Text = "License ID";
             // 
             // btnSearch
             // 
@@ -74,7 +88,7 @@
             btnSearch.BackgroundImage = (Image)resources.GetObject("btnSearch.BackgroundImage");
             btnSearch.BackgroundImageLayout = ImageLayout.Zoom;
             btnSearch.Cursor = Cursors.Hand;
-            btnSearch.Location = new Point(448, 37);
+            btnSearch.Location = new Point(483, 37);
             btnSearch.Name = "btnSearch";
             btnSearch.Size = new Size(50, 41);
             btnSearch.TabIndex = 8;
@@ -106,18 +120,12 @@
             txtSearchBy.TabIndex = 7;
             txtSearchBy.TextAlignment = ContentAlignment.MiddleLeft;
             txtSearchBy.Watermark = "";
+            txtSearchBy.Validating += txtSearchBy_Validating;
             txtSearchBy.KeyPress += txtSearchBy_KeyPress;
             // 
-            // label1
+            // errorProvider1
             // 
-            label1.AutoSize = true;
-            label1.BackColor = Color.FromArgb(243, 249, 255);
-            label1.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(91, 52);
-            label1.Name = "label1";
-            label1.Size = new Size(103, 26);
-            label1.TabIndex = 10;
-            label1.Text = "License ID";
+            errorProvider1.ContainerControl = this;
             // 
             // ctrlDriverLicenseInfoWithFilter
             // 
@@ -126,9 +134,10 @@
             Controls.Add(ctrlDriverLicenseInfo1);
             Name = "ctrlDriverLicenseInfoWithFilter";
             RectColor = Color.FromArgb(243, 249, 255);
-            Size = new Size(1105, 598);
+            Size = new Size(1170, 598);
             gbFilter.ResumeLayout(false);
             gbFilter.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)errorProvider1).EndInit();
             ResumeLayout(false);
         }
 
@@ -140,5 +149,6 @@
         private Label label2;
         private Sunny.UI.UITextBox txtSearchBy;
         private Label label1;
+        private ErrorProvider errorProvider1;
     }
 }

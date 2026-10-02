@@ -85,7 +85,8 @@ namespace DVLD.Licenses.Local_Licenses
 
             if(_License == null)
             {
-                MessageBox.Show("Not Found", "License With ID: " + _LicenseID + " is not found", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("License With ID: " + _LicenseID + " is not found", "Not Found", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ResetInformationToDefault();
                 return;
             }
 
@@ -114,6 +115,40 @@ namespace DVLD.Licenses.Local_Licenses
             lblIsDetained.Text = _License.IsDetained ? "Yes" : "No";
 
             _LoadPersonImage();
+
+        }
+
+        public void ResetInformationToDefault()
+        {
+
+            _LicenseID = -1;
+            _License = new clsLicense();
+
+            lblLicenseID.Text = "[????]";
+
+            lblClass.Text = "[????]";
+
+            lblName.Text = "[????]";
+
+            lblNationalNo.Text = "[????]";
+
+            lblGender.Text = "[????]";
+
+            lblIssueDate.Text = "[????]";
+
+            lblIssueReason.Text = "[????]";
+
+            lblNotes.Text = "[????]";
+
+            lblIsActive.Text = "[????]";
+
+            lblDateOfBirth.Text = "[????]";
+
+            lblExpirationDate.Text = "[????]";
+
+            lblIsDetained.Text = "[????]";
+
+            pbPersonImage.Image = Resources.Male_512;
 
         }
 
