@@ -49,7 +49,7 @@
             ctrlShowPersonDetails21.MinimumSize = new Size(1, 1);
             ctrlShowPersonDetails21.Name = "ctrlShowPersonDetails21";
             ctrlShowPersonDetails21.RectColor = Color.FromArgb(243, 249, 255);
-            ctrlShowPersonDetails21.Size = new Size(962, 351);
+            ctrlShowPersonDetails21.Size = new Size(1026, 351);
             ctrlShowPersonDetails21.TabIndex = 0;
             ctrlShowPersonDetails21.Text = "ctrlShowPersonDetails21";
             ctrlShowPersonDetails21.TextAlignment = ContentAlignment.MiddleCenter;
@@ -117,7 +117,7 @@
             gbFilter.Name = "gbFilter";
             gbFilter.Padding = new Padding(0, 32, 0, 0);
             gbFilter.RectColor = Color.FromArgb(173, 178, 181);
-            gbFilter.Size = new Size(949, 104);
+            gbFilter.Size = new Size(1004, 104);
             gbFilter.TabIndex = 10;
             gbFilter.Text = "Filter";
             gbFilter.TextAlignment = ContentAlignment.MiddleLeft;
@@ -159,7 +159,7 @@
             Controls.Add(gbFilter);
             Controls.Add(ctrlShowPersonDetails21);
             Name = "ctrlShowPersonDetailsWithFilter";
-            Size = new Size(988, 470);
+            Size = new Size(1040, 470);
             Load += ctrlShowPersonDetailsWithFilter_Load;
             Click += ctrlShowPersonDetailsWithFilter_Click;
             gbFilter.ResumeLayout(false);

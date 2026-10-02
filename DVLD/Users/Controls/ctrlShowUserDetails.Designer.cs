@@ -46,7 +46,7 @@
             ctrlShowPersonDetails21.MinimumSize = new Size(1, 1);
             ctrlShowPersonDetails21.Name = "ctrlShowPersonDetails21";
             ctrlShowPersonDetails21.RectColor = Color.FromArgb(243, 249, 255);
-            ctrlShowPersonDetails21.Size = new Size(962, 352);
+            ctrlShowPersonDetails21.Size = new Size(1020, 352);
             ctrlShowPersonDetails21.TabIndex = 0;
             ctrlShowPersonDetails21.Text = "ctrlShowPersonDetails21";
             ctrlShowPersonDetails21.TextAlignment = ContentAlignment.MiddleCenter;
@@ -65,7 +65,7 @@
             uiCheckBoxGroup1.Padding = new Padding(0, 32, 0, 0);
             uiCheckBoxGroup1.RectColor = Color.FromArgb(173, 178, 181);
             uiCheckBoxGroup1.SelectedIndexes = (List<int>)resources.GetObject("uiCheckBoxGroup1.SelectedIndexes");
-            uiCheckBoxGroup1.Size = new Size(948, 159);
+            uiCheckBoxGroup1.Size = new Size(1014, 159);
             uiCheckBoxGroup1.TabIndex = 1;
             uiCheckBoxGroup1.Text = "Login Information";
             uiCheckBoxGroup1.TextAlignment = ContentAlignment.MiddleLeft;
@@ -126,7 +126,7 @@
             Controls.Add(ctrlShowPersonDetails21);
             Name = "ctrlShowUserDetails";
             RectColor = Color.FromArgb(243, 249, 255);
-            Size = new Size(986, 526);
+            Size = new Size(1053, 526);
             Load += ctrlShowUserDetails_Load;
             Click += ctrlShowUserDetails_Click;
             uiCheckBoxGroup1.ResumeLayout(false);

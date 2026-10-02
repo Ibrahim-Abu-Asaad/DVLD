@@ -47,7 +47,7 @@
             // btnClose
             // 
             btnClose.Font = new Font("Microsoft Sans Serif", 12F);
-            btnClose.Location = new Point(860, 576);
+            btnClose.Location = new Point(920, 571);
             btnClose.MinimumSize = new Size(1, 1);
             btnClose.Name = "btnClose";
             btnClose.Size = new Size(125, 44);
@@ -66,7 +66,7 @@
             ctrlShowPersonDetailsWithFilter1.Name = "ctrlShowPersonDetailsWithFilter1";
             ctrlShowPersonDetailsWithFilter1.RectColor = Color.FromArgb(243, 249, 255);
             ctrlShowPersonDetailsWithFilter1.ShowAddPersonIcon = true;
-            ctrlShowPersonDetailsWithFilter1.Size = new Size(980, 460);
+            ctrlShowPersonDetailsWithFilter1.Size = new Size(1034, 460);
             ctrlShowPersonDetailsWithFilter1.TabIndex = 4;
             ctrlShowPersonDetailsWithFilter1.Text = "ctrlShowPersonDetailsWithFilter1";
             ctrlShowPersonDetailsWithFilter1.TextAlignment = ContentAlignment.MiddleCenter;
@@ -75,7 +75,7 @@
             // frmFindPerson
             // 
             AutoScaleMode = AutoScaleMode.None;
-            ClientSize = new Size(1020, 647);
+            ClientSize = new Size(1059, 647);
             ControlBox = false;
             Controls.Add(ctrlShowPersonDetailsWithFilter1);
             Controls.Add(btnClose);

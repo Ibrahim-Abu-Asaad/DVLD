@@ -51,7 +51,7 @@
             ctrlShowUserDetails2.MinimumSize = new Size(1, 1);
             ctrlShowUserDetails2.Name = "ctrlShowUserDetails2";
             ctrlShowUserDetails2.RectColor = Color.FromArgb(243, 249, 255);
-            ctrlShowUserDetails2.Size = new Size(981, 526);
+            ctrlShowUserDetails2.Size = new Size(1046, 526);
             ctrlShowUserDetails2.TabIndex = 4;
             ctrlShowUserDetails2.Text = "ctrlShowUserDetails2";
             ctrlShowUserDetails2.TextAlignment = ContentAlignment.MiddleCenter;
@@ -59,7 +59,7 @@
             // btnClose
             // 
             btnClose.Font = new Font("Microsoft Sans Serif", 12F);
-            btnClose.Location = new Point(845, 627);
+            btnClose.Location = new Point(907, 628);
             btnClose.MinimumSize = new Size(1, 1);
             btnClose.Name = "btnClose";
             btnClose.Size = new Size(125, 44);
@@ -71,7 +71,7 @@
             // frmShowUserDetails
             // 
             AutoScaleMode = AutoScaleMode.None;
-            ClientSize = new Size(994, 690);
+            ClientSize = new Size(1052, 690);
             ControlBox = false;
             Controls.Add(btnClose);
             Controls.Add(ctrlShowUserDetails2);

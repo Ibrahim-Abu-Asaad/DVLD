@@ -100,7 +100,7 @@
             tabControl1.Location = new Point(27, 162);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(1015, 620);
+            tabControl1.Size = new Size(1059, 620);
             tabControl1.TabIndex = 22;
             tabControl1.SelectedIndexChanged += tabControl1_SelectedIndexChanged;
             // 
@@ -112,7 +112,7 @@
             tbPersonalInfo.Location = new Point(4, 35);
             tbPersonalInfo.Name = "tbPersonalInfo";
             tbPersonalInfo.Padding = new Padding(3);
-            tbPersonalInfo.Size = new Size(1007, 581);
+            tbPersonalInfo.Size = new Size(1051, 581);
             tbPersonalInfo.TabIndex = 0;
             tbPersonalInfo.Text = "Personal Info";
             // 
@@ -120,7 +120,7 @@
             // 
             btnNext.Cursor = Cursors.Hand;
             btnNext.Font = new Font("Microsoft Sans Serif", 12F);
-            btnNext.Location = new Point(856, 481);
+            btnNext.Location = new Point(908, 478);
             btnNext.MinimumSize = new Size(1, 1);
             btnNext.Name = "btnNext";
             btnNext.Radius = 10;
@@ -140,7 +140,7 @@
             ctrlShowPersonDetailsWithFilter1.Name = "ctrlShowPersonDetailsWithFilter1";
             ctrlShowPersonDetailsWithFilter1.RectColor = Color.FromArgb(243, 249, 255);
             ctrlShowPersonDetailsWithFilter1.ShowAddPersonIcon = true;
-            ctrlShowPersonDetailsWithFilter1.Size = new Size(974, 454);
+            ctrlShowPersonDetailsWithFilter1.Size = new Size(1035, 454);
             ctrlShowPersonDetailsWithFilter1.TabIndex = 0;
             ctrlShowPersonDetailsWithFilter1.Text = "ctrlShowPersonDetailsWithFilter1";
             ctrlShowPersonDetailsWithFilter1.TextAlignment = ContentAlignment.MiddleCenter;
@@ -289,7 +289,7 @@
             // frmAddEditUser
             // 
             AutoScaleMode = AutoScaleMode.None;
-            ClientSize = new Size(1068, 880);
+            ClientSize = new Size(1093, 880);
             ControlBox = false;
             Controls.Add(tabControl1);
             Controls.Add(btnClose);

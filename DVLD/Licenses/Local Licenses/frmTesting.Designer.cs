@@ -33,12 +33,13 @@
             // 
             // ctrlDriverLicenseInfoWithFilter1
             // 
+            ctrlDriverLicenseInfoWithFilter1.FilterEnabled = true;
             ctrlDriverLicenseInfoWithFilter1.Font = new Font("Microsoft Sans Serif", 12F);
             ctrlDriverLicenseInfoWithFilter1.Location = new Point(13, 55);
             ctrlDriverLicenseInfoWithFilter1.MinimumSize = new Size(1, 1);
             ctrlDriverLicenseInfoWithFilter1.Name = "ctrlDriverLicenseInfoWithFilter1";
             ctrlDriverLicenseInfoWithFilter1.RectColor = Color.FromArgb(243, 249, 255);
-            ctrlDriverLicenseInfoWithFilter1.Size = new Size(1086, 551);
+            ctrlDriverLicenseInfoWithFilter1.Size = new Size(1160, 551);
             ctrlDriverLicenseInfoWithFilter1.TabIndex = 0;
             ctrlDriverLicenseInfoWithFilter1.Text = "ctrlDriverLicenseInfoWithFilter1";
             ctrlDriverLicenseInfoWithFilter1.TextAlignment = ContentAlignment.MiddleCenter;
@@ -46,7 +47,7 @@
             // frmTesting
             // 
             AutoScaleMode = AutoScaleMode.None;
-            ClientSize = new Size(1111, 613);
+            ClientSize = new Size(1178, 613);
             Controls.Add(ctrlDriverLicenseInfoWithFilter1);
             Name = "frmTesting";
             Text = "frmTesting";
