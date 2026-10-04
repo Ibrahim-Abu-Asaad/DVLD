@@ -129,6 +129,10 @@ namespace DVLD
             frm.ShowDialog();
         }
 
-
+        private void replacementForDamagedOrLostLicenseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmReplaceLostOrDamagedLicenseApplication frm = new frmReplaceLostOrDamagedLicenseApplication();
+            frm.ShowDialog();
+        }
     }
 }

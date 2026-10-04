@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DVLD.Global_Classes;
+using DVLD.Licenses.Local_Licenses;
 using DVLD_BLL;
 using Sunny.UI;
 
@@ -31,6 +32,8 @@ namespace DVLD.Applications.ReplaceLostOrDamagedLicense
         private void frmReplaceLostOrDamagedLicenseApplication_Load(object sender, EventArgs e)
         {
 
+            llblShowLicensesHistory.Enabled = false;
+            llblShowNewLicenseInfo.Enabled = false;
             rbtnDamaged.Checked = true;
             rbtnLost.Checked = false;
 
@@ -44,6 +47,16 @@ namespace DVLD.Applications.ReplaceLostOrDamagedLicense
             _LicenseID = LicenseID;
             _License = clsLicense.Find(_LicenseID);
 
+            gbReplaceFor.Enabled = true;
+            lblReplacedLicenseID.Text = "[????]";
+            lblRLApplicationID.Text = "[????]";
+
+            llblShowNewLicenseInfo.Enabled = false;
+
+            if (!clsLicense.IsLicenseExistByID(_LicenseID))
+                llblShowLicensesHistory.Enabled = false;
+            else llblShowLicensesHistory.Enabled = true;
+
             if (!_Validation())
                 return;
 
@@ -55,15 +68,17 @@ namespace DVLD.Applications.ReplaceLostOrDamagedLicense
         private bool _Validation()
         {
 
+            //llblShowNewLicenseInfo.Enabled = (_LicenseID != -1);
+
             if (_LicenseID == -1)
                 return false;
 
             if (!clsLicense.IsLicenseExistByID(_LicenseID))
             {
                 //MessageBox.Show("This license is not exist.", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                _ResetForm();               
+                _ResetForm();
                 return false;
-                
+
             }
 
             if (!_License.IsActive)
@@ -109,8 +124,10 @@ namespace DVLD.Applications.ReplaceLostOrDamagedLicense
             lblApplicationFees.Text = fees.ToString();
             lblOldLicenseID.Text = _LicenseID.ToString();
 
-            string Name = clsUser.GetUserByUsername(clsGlobal.CurrentUser.Username).PersonInfo.FirstName + ' ' + clsUser.GetUserByUsername(clsGlobal.CurrentUser.Username).PersonInfo.SecondName;
+            string Name = clsUser.GetUserByUsername(clsGlobal.CurrentUser.Username).PersonInfo.FirstName + ' ' + clsUser.GetUserByUsername(clsGlobal.CurrentUser.Username).PersonInfo.LastName;
             lblCreatedBy.Text = clsGlobal.CurrentUser.Username + '(' + Name + ')';
+
+
 
         }
 
@@ -136,10 +153,28 @@ namespace DVLD.Applications.ReplaceLostOrDamagedLicense
         private void btnIssueReplacement_Click(object sender, EventArgs e)
         {
 
-            MessageBox.Show("Replace");
-            //if (IssueReason == enIssueReason.Damaged)
-            //    _NewLicense = _License.Replace(clsLicense.enIssueReason.DamagedReplacement, clsGlobal.CurrentUser.ID);
-            //else _NewLicense = _License.Replace(clsLicense.enIssueReason.LostReplacement, clsGlobal.CurrentUser.ID);
+
+
+            //_NewLicense = _License.Replace(clsLicense.enIssueReason.DamagedReplacement, clsGlobal.CurrentUser.ID);
+            //MessageBox.Show("Replace");
+            if (IssueReason == enIssueReason.Damaged)
+                _NewLicense = _License.Replace(clsLicense.enIssueReason.DamagedReplacement, clsGlobal.CurrentUser.ID);
+            else _NewLicense = _License.Replace(clsLicense.enIssueReason.LostReplacement, clsGlobal.CurrentUser.ID);
+
+            if (_NewLicense == null)
+            {
+                MessageBox.Show("Data is not saved!", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            else
+                MessageBox.Show("Data is saved successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            btnIssueReplacement.Enabled = false;
+            lblReplacedLicenseID.Text = _NewLicense.ID.ToString();
+            lblRLApplicationID.Text = _NewLicense.ApplicationID.ToString();
+            llblShowNewLicenseInfo.Enabled = true;
+            ctrlDriverLicenseInfoWithFilter1.RefreshInformation();
+            gbReplaceFor.Enabled = false;
 
         }
 
@@ -147,5 +182,22 @@ namespace DVLD.Applications.ReplaceLostOrDamagedLicense
         {
             //
         }
+
+        private void llblShowNewLicenseInfo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            if (_NewLicense == null)
+                return;
+
+            frmShowLicenseInfo frm = new frmShowLicenseInfo(_NewLicense.ID, true);
+            frm.ShowDialog();
+        }
+
+        private void llblShowLicensesHistory_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            //
+        }
+
+
+
     }
 }

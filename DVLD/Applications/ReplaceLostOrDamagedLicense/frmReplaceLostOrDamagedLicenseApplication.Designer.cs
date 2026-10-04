@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmReplaceLostOrDamagedLicenseApplication));
             ctrlDriverLicenseInfoWithFilter1 = new Licenses.Local_Licenses.Controls.ctrlDriverLicenseInfoWithFilter();
-            uiGroupBox2 = new Sunny.UI.UIGroupBox();
+            gbReplaceFor = new Sunny.UI.UIGroupBox();
             rbtnLost = new Sunny.UI.UIRadioButton();
             rbtnDamaged = new Sunny.UI.UIRadioButton();
             uiGroupBox1 = new Sunny.UI.UIGroupBox();
@@ -57,7 +57,7 @@
             btnIssueReplacement = new Sunny.UI.UIButton();
             btnClose = new Sunny.UI.UIButton();
             ctrlDriverLicenseInfoWithFilter1.SuspendLayout();
-            uiGroupBox2.SuspendLayout();
+            gbReplaceFor.SuspendLayout();
             uiGroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
@@ -69,7 +69,7 @@
             // 
             // ctrlDriverLicenseInfoWithFilter1
             // 
-            ctrlDriverLicenseInfoWithFilter1.Controls.Add(uiGroupBox2);
+            ctrlDriverLicenseInfoWithFilter1.Controls.Add(gbReplaceFor);
             ctrlDriverLicenseInfoWithFilter1.FilterEnabled = true;
             ctrlDriverLicenseInfoWithFilter1.Font = new Font("Microsoft Sans Serif", 12F);
             ctrlDriverLicenseInfoWithFilter1.Location = new Point(12, 47);
@@ -82,20 +82,20 @@
             ctrlDriverLicenseInfoWithFilter1.TextAlignment = ContentAlignment.MiddleCenter;
             ctrlDriverLicenseInfoWithFilter1.Click += ctrlDriverLicenseInfoWithFilter1_Click;
             // 
-            // uiGroupBox2
+            // gbReplaceFor
             // 
-            uiGroupBox2.Controls.Add(rbtnLost);
-            uiGroupBox2.Controls.Add(rbtnDamaged);
-            uiGroupBox2.Font = new Font("Microsoft Sans Serif", 12F);
-            uiGroupBox2.Location = new Point(600, 9);
-            uiGroupBox2.Margin = new Padding(4, 5, 4, 5);
-            uiGroupBox2.MinimumSize = new Size(1, 1);
-            uiGroupBox2.Name = "uiGroupBox2";
-            uiGroupBox2.Padding = new Padding(0, 32, 0, 0);
-            uiGroupBox2.Size = new Size(286, 104);
-            uiGroupBox2.TabIndex = 12;
-            uiGroupBox2.Text = "Replace For:";
-            uiGroupBox2.TextAlignment = ContentAlignment.MiddleLeft;
+            gbReplaceFor.Controls.Add(rbtnLost);
+            gbReplaceFor.Controls.Add(rbtnDamaged);
+            gbReplaceFor.Font = new Font("Microsoft Sans Serif", 12F);
+            gbReplaceFor.Location = new Point(600, 9);
+            gbReplaceFor.Margin = new Padding(4, 5, 4, 5);
+            gbReplaceFor.MinimumSize = new Size(1, 1);
+            gbReplaceFor.Name = "gbReplaceFor";
+            gbReplaceFor.Padding = new Padding(0, 32, 0, 0);
+            gbReplaceFor.Size = new Size(286, 104);
+            gbReplaceFor.TabIndex = 12;
+            gbReplaceFor.Text = "Replace For:";
+            gbReplaceFor.TextAlignment = ContentAlignment.MiddleLeft;
             // 
             // rbtnLost
             // 
@@ -358,6 +358,7 @@
             llblShowLicensesHistory.TabIndex = 131;
             llblShowLicensesHistory.TabStop = true;
             llblShowLicensesHistory.Text = "Show Licenses History";
+            llblShowLicensesHistory.LinkClicked += llblShowLicensesHistory_LinkClicked;
             // 
             // llblShowNewLicenseInfo
             // 
@@ -369,6 +370,7 @@
             llblShowNewLicenseInfo.TabIndex = 130;
             llblShowNewLicenseInfo.TabStop = true;
             llblShowNewLicenseInfo.Text = "Show New License Info";
+            llblShowNewLicenseInfo.LinkClicked += llblShowNewLicenseInfo_LinkClicked;
             // 
             // btnIssueReplacement
             // 
@@ -413,7 +415,7 @@
             ZoomScaleRect = new Rectangle(19, 19, 800, 450);
             Load += frmReplaceLostOrDamagedLicenseApplication_Load;
             ctrlDriverLicenseInfoWithFilter1.ResumeLayout(false);
-            uiGroupBox2.ResumeLayout(false);
+            gbReplaceFor.ResumeLayout(false);
             uiGroupBox1.ResumeLayout(false);
             uiGroupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
@@ -452,7 +454,7 @@
         private LinkLabel llblShowNewLicenseInfo;
         private Sunny.UI.UIButton btnIssueReplacement;
         private Sunny.UI.UIButton btnClose;
-        private Sunny.UI.UIGroupBox uiGroupBox2;
+        private Sunny.UI.UIGroupBox gbReplaceFor;
         private Sunny.UI.UIRadioButton rbtnLost;
         private Sunny.UI.UIRadioButton rbtnDamaged;
     }

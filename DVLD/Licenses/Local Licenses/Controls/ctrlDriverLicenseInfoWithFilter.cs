@@ -73,6 +73,15 @@ namespace DVLD.Licenses.Local_Licenses.Controls
 
         }
 
+        public void RefreshInformation()
+        {
+            if (!clsLicense.IsLicenseExistByID(_LicenseID))
+                return;
+
+            ctrlDriverLicenseInfo1.RefreshInformation();
+
+        }
+
         private void btnSearch_Click(object sender, EventArgs e)
         {
             if (txtSearchBy.Text.IsNullOrEmpty())

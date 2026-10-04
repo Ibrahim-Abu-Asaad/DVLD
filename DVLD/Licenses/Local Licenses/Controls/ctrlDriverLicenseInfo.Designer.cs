@@ -426,6 +426,7 @@
             // pbPersonImage
             // 
             pbPersonImage.BackColor = Color.FromArgb(243, 249, 255);
+            pbPersonImage.Image = (Image)resources.GetObject("pbPersonImage.Image");
             pbPersonImage.Location = new Point(889, 158);
             pbPersonImage.Name = "pbPersonImage";
             pbPersonImage.Size = new Size(221, 231);
