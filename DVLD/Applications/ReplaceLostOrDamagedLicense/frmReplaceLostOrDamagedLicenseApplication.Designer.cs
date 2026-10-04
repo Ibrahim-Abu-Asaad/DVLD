@@ -30,9 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmReplaceLostOrDamagedLicenseApplication));
             ctrlDriverLicenseInfoWithFilter1 = new Licenses.Local_Licenses.Controls.ctrlDriverLicenseInfoWithFilter();
-            rbtnDamaged = new Sunny.UI.UIRadioButton();
+            uiGroupBox2 = new Sunny.UI.UIGroupBox();
             rbtnLost = new Sunny.UI.UIRadioButton();
-            lblPassword = new Label();
+            rbtnDamaged = new Sunny.UI.UIRadioButton();
             uiGroupBox1 = new Sunny.UI.UIGroupBox();
             lblRLApplicationID = new Label();
             pictureBox1 = new PictureBox();
@@ -57,6 +57,7 @@
             btnIssueReplacement = new Sunny.UI.UIButton();
             btnClose = new Sunny.UI.UIButton();
             ctrlDriverLicenseInfoWithFilter1.SuspendLayout();
+            uiGroupBox2.SuspendLayout();
             uiGroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
@@ -68,9 +69,7 @@
             // 
             // ctrlDriverLicenseInfoWithFilter1
             // 
-            ctrlDriverLicenseInfoWithFilter1.Controls.Add(lblPassword);
-            ctrlDriverLicenseInfoWithFilter1.Controls.Add(rbtnLost);
-            ctrlDriverLicenseInfoWithFilter1.Controls.Add(rbtnDamaged);
+            ctrlDriverLicenseInfoWithFilter1.Controls.Add(uiGroupBox2);
             ctrlDriverLicenseInfoWithFilter1.FilterEnabled = true;
             ctrlDriverLicenseInfoWithFilter1.Font = new Font("Microsoft Sans Serif", 12F);
             ctrlDriverLicenseInfoWithFilter1.Location = new Point(12, 47);
@@ -81,36 +80,44 @@
             ctrlDriverLicenseInfoWithFilter1.TabIndex = 0;
             ctrlDriverLicenseInfoWithFilter1.Text = "ctrlDriverLicenseInfoWithFilter1";
             ctrlDriverLicenseInfoWithFilter1.TextAlignment = ContentAlignment.MiddleCenter;
+            ctrlDriverLicenseInfoWithFilter1.Click += ctrlDriverLicenseInfoWithFilter1_Click;
             // 
-            // rbtnDamaged
+            // uiGroupBox2
             // 
-            rbtnDamaged.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            rbtnDamaged.Location = new Point(882, 51);
-            rbtnDamaged.MinimumSize = new Size(1, 1);
-            rbtnDamaged.Name = "rbtnDamaged";
-            rbtnDamaged.Size = new Size(121, 36);
-            rbtnDamaged.TabIndex = 12;
-            rbtnDamaged.Text = "Damaged";
+            uiGroupBox2.Controls.Add(rbtnLost);
+            uiGroupBox2.Controls.Add(rbtnDamaged);
+            uiGroupBox2.Font = new Font("Microsoft Sans Serif", 12F);
+            uiGroupBox2.Location = new Point(600, 9);
+            uiGroupBox2.Margin = new Padding(4, 5, 4, 5);
+            uiGroupBox2.MinimumSize = new Size(1, 1);
+            uiGroupBox2.Name = "uiGroupBox2";
+            uiGroupBox2.Padding = new Padding(0, 32, 0, 0);
+            uiGroupBox2.Size = new Size(286, 104);
+            uiGroupBox2.TabIndex = 12;
+            uiGroupBox2.Text = "Replace For:";
+            uiGroupBox2.TextAlignment = ContentAlignment.MiddleLeft;
             // 
             // rbtnLost
             // 
             rbtnLost.Font = new Font("Microsoft Sans Serif", 12F);
-            rbtnLost.Location = new Point(1013, 51);
+            rbtnLost.Location = new Point(183, 44);
             rbtnLost.MinimumSize = new Size(1, 1);
             rbtnLost.Name = "rbtnLost";
             rbtnLost.Size = new Size(80, 36);
-            rbtnLost.TabIndex = 13;
+            rbtnLost.TabIndex = 37;
             rbtnLost.Text = "Lost";
+            rbtnLost.CheckedChanged += rbtnLost_CheckedChanged;
             // 
-            // lblPassword
+            // rbtnDamaged
             // 
-            lblPassword.AutoSize = true;
-            lblPassword.Font = new Font("Trebuchet MS", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblPassword.Location = new Point(688, 53);
-            lblPassword.Name = "lblPassword";
-            lblPassword.Size = new Size(194, 28);
-            lblPassword.TabIndex = 32;
-            lblPassword.Text = "Replacement For:";
+            rbtnDamaged.Font = new Font("Trebuchet MS", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            rbtnDamaged.Location = new Point(44, 44);
+            rbtnDamaged.MinimumSize = new Size(1, 1);
+            rbtnDamaged.Name = "rbtnDamaged";
+            rbtnDamaged.Size = new Size(121, 36);
+            rbtnDamaged.TabIndex = 36;
+            rbtnDamaged.Text = "Damaged";
+            rbtnDamaged.CheckedChanged += rbtnDamaged_CheckedChanged;
             // 
             // uiGroupBox1
             // 
@@ -373,6 +380,7 @@
             btnIssueReplacement.TabIndex = 129;
             btnIssueReplacement.Text = "Issue Replacement";
             btnIssueReplacement.TipsFont = new Font("Microsoft Sans Serif", 9F);
+            btnIssueReplacement.Click += btnIssueReplacement_Click;
             // 
             // btnClose
             // 
@@ -384,6 +392,7 @@
             btnClose.TabIndex = 128;
             btnClose.Text = "Close";
             btnClose.TipsFont = new Font("Microsoft Sans Serif", 9F);
+            btnClose.Click += btnClose_Click;
             // 
             // frmReplaceLostOrDamagedLicenseApplication
             // 
@@ -404,7 +413,7 @@
             ZoomScaleRect = new Rectangle(19, 19, 800, 450);
             Load += frmReplaceLostOrDamagedLicenseApplication_Load;
             ctrlDriverLicenseInfoWithFilter1.ResumeLayout(false);
-            ctrlDriverLicenseInfoWithFilter1.PerformLayout();
+            uiGroupBox2.ResumeLayout(false);
             uiGroupBox1.ResumeLayout(false);
             uiGroupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
@@ -420,9 +429,6 @@
         #endregion
 
         private Licenses.Local_Licenses.Controls.ctrlDriverLicenseInfoWithFilter ctrlDriverLicenseInfoWithFilter1;
-        private Sunny.UI.UIRadioButton rbtnLost;
-        private Sunny.UI.UIRadioButton rbtnDamaged;
-        private Label lblPassword;
         private Sunny.UI.UIGroupBox uiGroupBox1;
         private Label lblRLApplicationID;
         private PictureBox pictureBox1;
@@ -446,5 +452,8 @@
         private LinkLabel llblShowNewLicenseInfo;
         private Sunny.UI.UIButton btnIssueReplacement;
         private Sunny.UI.UIButton btnClose;
+        private Sunny.UI.UIGroupBox uiGroupBox2;
+        private Sunny.UI.UIRadioButton rbtnLost;
+        private Sunny.UI.UIRadioButton rbtnDamaged;
     }
 }

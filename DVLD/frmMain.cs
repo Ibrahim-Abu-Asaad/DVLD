@@ -1,6 +1,7 @@
 using DVLD.Applications;
 using DVLD.Applications.LocalDrivingLicenseApplications;
 using DVLD.Applications.Renew_Local_License;
+using DVLD.Applications.ReplaceLostOrDamagedLicense;
 using DVLD.Applications.TestTypes;
 using DVLD.Global_Classes;
 using DVLD.Licenses.Local_Licenses;
@@ -120,6 +121,12 @@ namespace DVLD
             frmRenewLocalDrivingLicenseApplication frm = new frmRenewLocalDrivingLicenseApplication();
             frm.ShowDialog();
 
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            frmReplaceLostOrDamagedLicenseApplication frm = new frmReplaceLostOrDamagedLicenseApplication();
+            frm.ShowDialog();
         }
 
 

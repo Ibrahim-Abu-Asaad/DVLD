@@ -66,7 +66,7 @@
             gbFilter.Name = "gbFilter";
             gbFilter.Padding = new Padding(0, 32, 0, 0);
             gbFilter.RectDisableColor = Color.FromArgb(243, 249, 255);
-            gbFilter.Size = new Size(1126, 104);
+            gbFilter.Size = new Size(556, 104);
             gbFilter.TabIndex = 11;
             gbFilter.Text = "Filter";
             gbFilter.TextAlignment = ContentAlignment.MiddleLeft;
