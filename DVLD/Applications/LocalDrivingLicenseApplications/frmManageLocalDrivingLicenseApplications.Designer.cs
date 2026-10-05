@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle26 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle27 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle28 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle29 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle30 = new DataGridViewCellStyle();
             label2 = new Label();
             imgbtnAddNewApp = new Sunny.UI.UIImageButton();
             cbSearchBy = new Sunny.UI.UIComboBox();
@@ -137,28 +137,28 @@
             dgvManageLocalDrivingLicenseApps.AllowUserToAddRows = false;
             dgvManageLocalDrivingLicenseApps.AllowUserToDeleteRows = false;
             dgvManageLocalDrivingLicenseApps.AllowUserToOrderColumns = true;
-            dataGridViewCellStyle1.BackColor = Color.FromArgb(235, 243, 255);
-            dgvManageLocalDrivingLicenseApps.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle26.BackColor = Color.FromArgb(235, 243, 255);
+            dgvManageLocalDrivingLicenseApps.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle26;
             dgvManageLocalDrivingLicenseApps.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvManageLocalDrivingLicenseApps.BackgroundColor = Color.White;
             dgvManageLocalDrivingLicenseApps.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = Color.FromArgb(80, 160, 255);
-            dataGridViewCellStyle2.Font = new Font("Microsoft Sans Serif", 12F);
-            dataGridViewCellStyle2.ForeColor = Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            dgvManageLocalDrivingLicenseApps.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle27.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle27.BackColor = Color.FromArgb(80, 160, 255);
+            dataGridViewCellStyle27.Font = new Font("Microsoft Sans Serif", 12F);
+            dataGridViewCellStyle27.ForeColor = Color.White;
+            dataGridViewCellStyle27.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle27.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle27.WrapMode = DataGridViewTriState.True;
+            dgvManageLocalDrivingLicenseApps.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle27;
             dgvManageLocalDrivingLicenseApps.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = SystemColors.Window;
-            dataGridViewCellStyle3.Font = new Font("Microsoft Sans Serif", 12F);
-            dataGridViewCellStyle3.ForeColor = Color.FromArgb(48, 48, 48);
-            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
-            dgvManageLocalDrivingLicenseApps.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle28.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle28.BackColor = SystemColors.Window;
+            dataGridViewCellStyle28.Font = new Font("Microsoft Sans Serif", 12F);
+            dataGridViewCellStyle28.ForeColor = Color.FromArgb(48, 48, 48);
+            dataGridViewCellStyle28.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle28.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle28.WrapMode = DataGridViewTriState.False;
+            dgvManageLocalDrivingLicenseApps.DefaultCellStyle = dataGridViewCellStyle28;
             dgvManageLocalDrivingLicenseApps.EnableHeadersVisualStyles = false;
             dgvManageLocalDrivingLicenseApps.Font = new Font("Microsoft Sans Serif", 12F);
             dgvManageLocalDrivingLicenseApps.GridColor = Color.FromArgb(80, 160, 255);
@@ -166,18 +166,18 @@
             dgvManageLocalDrivingLicenseApps.Name = "dgvManageLocalDrivingLicenseApps";
             dgvManageLocalDrivingLicenseApps.ReadOnly = true;
             dgvManageLocalDrivingLicenseApps.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = Color.FromArgb(235, 243, 255);
-            dataGridViewCellStyle4.Font = new Font("Microsoft Sans Serif", 12F);
-            dataGridViewCellStyle4.ForeColor = Color.FromArgb(48, 48, 48);
-            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(80, 160, 255);
-            dataGridViewCellStyle4.SelectionForeColor = Color.White;
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
-            dgvManageLocalDrivingLicenseApps.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle29.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle29.BackColor = Color.FromArgb(235, 243, 255);
+            dataGridViewCellStyle29.Font = new Font("Microsoft Sans Serif", 12F);
+            dataGridViewCellStyle29.ForeColor = Color.FromArgb(48, 48, 48);
+            dataGridViewCellStyle29.SelectionBackColor = Color.FromArgb(80, 160, 255);
+            dataGridViewCellStyle29.SelectionForeColor = Color.White;
+            dataGridViewCellStyle29.WrapMode = DataGridViewTriState.True;
+            dgvManageLocalDrivingLicenseApps.RowHeadersDefaultCellStyle = dataGridViewCellStyle29;
             dgvManageLocalDrivingLicenseApps.RowHeadersWidth = 51;
-            dataGridViewCellStyle5.BackColor = Color.White;
-            dataGridViewCellStyle5.Font = new Font("Microsoft Sans Serif", 12F);
-            dgvManageLocalDrivingLicenseApps.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle30.BackColor = Color.White;
+            dataGridViewCellStyle30.Font = new Font("Microsoft Sans Serif", 12F);
+            dgvManageLocalDrivingLicenseApps.RowsDefaultCellStyle = dataGridViewCellStyle30;
             dgvManageLocalDrivingLicenseApps.SelectedIndex = -1;
             dgvManageLocalDrivingLicenseApps.Size = new Size(1242, 318);
             dgvManageLocalDrivingLicenseApps.StripeOddColor = Color.FromArgb(235, 243, 255);
@@ -212,7 +212,7 @@
             cmsPersonRecord.ImageScalingSize = new Size(20, 20);
             cmsPersonRecord.Items.AddRange(new ToolStripItem[] { showDetailsToolStripMenuItem, toolStripMenuItem1, editToolStripMenuItem1, deleteApplicationToolStripMenuItem, toolStripMenuItem2, cancelToolStripMenuItem, toolStripMenuItem3, scheduleTestToolStripMenuItem, phoneCallToolStripMenuItem, issueDrivingLicenseFirstTimeToolStripMenuItem, toolStripMenuItem4, showLicenseToolStripMenuItem, toolStripMenuItem5, showPersonLicenseHistoryToolStripMenuItem });
             cmsPersonRecord.Name = "cmsManagePeople";
-            cmsPersonRecord.Size = new Size(391, 372);
+            cmsPersonRecord.Size = new Size(391, 344);
             cmsPersonRecord.ZoomScaleDisabled = true;
             cmsPersonRecord.Opening += cmsPersonRecord_Opening;
             // 
@@ -363,6 +363,7 @@
             lblTotalApps.Size = new Size(22, 26);
             lblTotalApps.TabIndex = 19;
             lblTotalApps.Text = "0";
+            lblTotalApps.Click += lblTotalApps_Click;
             // 
             // label3
             // 
@@ -373,6 +374,7 @@
             label3.Size = new Size(131, 26);
             label3.TabIndex = 18;
             label3.Text = "Total People:";
+            label3.Click += label3_Click;
             // 
             // cbStatus
             // 

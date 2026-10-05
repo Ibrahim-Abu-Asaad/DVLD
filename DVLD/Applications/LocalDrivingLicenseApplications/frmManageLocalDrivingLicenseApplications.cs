@@ -174,7 +174,7 @@ namespace DVLD.Applications.LocalDrivingLicenseApplications
 
             }
 
-            if(LDLApp.AppStatus == clsApplication.enApplicationStatus.Cancelled)
+            if (LDLApp.AppStatus == clsApplication.enApplicationStatus.Cancelled)
             {
                 issueDrivingLicenseFirstTimeToolStripMenuItem.Enabled = false;
                 showPersonLicenseHistoryToolStripMenuItem.Enabled = false;
@@ -199,7 +199,7 @@ namespace DVLD.Applications.LocalDrivingLicenseApplications
                 showLicenseToolStripMenuItem.Enabled = true;
                 showPersonLicenseHistoryToolStripMenuItem.Enabled = true;
             }
-            
+
         }
 
         private void txtSearchBy_TextChanged(object sender, EventArgs e)
@@ -374,7 +374,7 @@ namespace DVLD.Applications.LocalDrivingLicenseApplications
             frmShowLicenseInfo frm = new frmShowLicenseInfo(LDLAppID);
             frm.ShowDialog();
             _ListAppsAndRefreshPage();
-               
+
 
         }
 
@@ -438,7 +438,7 @@ namespace DVLD.Applications.LocalDrivingLicenseApplications
         {
             _ScheduleTest(clsTestType.enTestType.StreetTest);
         }
-        
+
         private void _ScheduleTest(clsTestType.enTestType TestType)
         {
             int LDLAppID = (int)dgvManageLocalDrivingLicenseApps.CurrentRow.Cells[0].Value;
@@ -447,7 +447,14 @@ namespace DVLD.Applications.LocalDrivingLicenseApplications
             _ListAppsAndRefreshPage();
         }
 
+        private void label3_Click(object sender, EventArgs e)
+        {
 
+        }
 
+        private void lblTotalApps_Click(object sender, EventArgs e)
+        {
+            //
+        }
     }
 }
