@@ -1,4 +1,5 @@
-﻿using DVLD.Licenses.Local_Licenses;
+﻿using DVLD.Drivers;
+using DVLD.Licenses.Local_Licenses;
 using DVLD.Tests;
 using DVLD_BLL;
 using Sunny.UI;
@@ -380,7 +381,19 @@ namespace DVLD.Applications.LocalDrivingLicenseApplications
 
         private void showPersonLicenseHistoryToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Showing Person History");
+
+            int LDLAppID = (int)dgvManageLocalDrivingLicenseApps.CurrentRow.Cells["ID"].Value;
+            clsLocalDrivingLicenseApplication LDLApp = clsLocalDrivingLicenseApplication.FindLocalDrivingLicenseApplicationByID(LDLAppID);
+            //if (LDLApp == null)
+            //{
+            //    MessageBox.Show("There is no license for this person: " + LDLApp.PersonInfo.GetFullName(), "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //    return;
+            //}
+
+            frmShowPersonLicenseHistory frm = new frmShowPersonLicenseHistory(LDLApp.PersonInfo.ID);
+            frm.ShowDialog();
+            _ListAppsAndRefreshPage();
+
         }
 
         private void cbSearchBy_SelectedIndexChanged(object sender, EventArgs e)

@@ -218,7 +218,17 @@ namespace DVLD.Drivers
         private void showPersonLicenseHistoryToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
-            //
+            int driverID = (int)dgvManageDrivers.CurrentRow.Cells["ID"].Value;
+            clsDriver driver = clsDriver.GetDriverByID(driverID);
+            if (driver == null)
+            {
+                MessageBox.Show("There is no license for this person!", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            frmShowPersonLicenseHistory frm = new frmShowPersonLicenseHistory(driver.PersonID);
+            frm.ShowDialog();
+            _RefreshPage();
 
         }
         

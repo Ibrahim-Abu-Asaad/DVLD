@@ -70,25 +70,27 @@ namespace DVLD.Drivers
                 dgvInternationalLicenses.Columns[0].HeaderText = "Show";
                 dgvInternationalLicenses.Columns[0].Width = 100;
 
-                dgvInternationalLicenses.Columns[1].HeaderText = "Lic.ID";
-                dgvInternationalLicenses.Columns[1].Width = 110;
+                dgvInternationalLicenses.Columns[1].HeaderText = "Int.License ID";
+                dgvInternationalLicenses.Columns[1].Width = 160;
 
-                dgvInternationalLicenses.Columns[2].HeaderText = "App.ID";
-                dgvInternationalLicenses.Columns[2].Width = 110;
+                dgvInternationalLicenses.Columns[2].HeaderText = "Application ID";
+                dgvInternationalLicenses.Columns[2].Width = 130;
 
-                dgvInternationalLicenses.Columns[3].HeaderText = "Class Name";
-                dgvInternationalLicenses.Columns[3].Width = 270;
+                dgvInternationalLicenses.Columns[3].HeaderText = "L.License ID";
+                dgvInternationalLicenses.Columns[3].Width = 130;
 
                 dgvInternationalLicenses.Columns[4].HeaderText = "Issue Date";
-                dgvInternationalLicenses.Columns[4].Width = 170;
+                dgvInternationalLicenses.Columns[4].Width = 180;
 
                 dgvInternationalLicenses.Columns[5].HeaderText = "Expiration Date";
-                dgvInternationalLicenses.Columns[5].Width = 170;
+                dgvInternationalLicenses.Columns[5].Width = 180;
 
                 dgvInternationalLicenses.Columns[6].HeaderText = "Is Active";
-                dgvInternationalLicenses.Columns[6].Width = 110;
+                dgvInternationalLicenses.Columns[6].Width = 120;
 
             }
+
+
 
         }
 
@@ -184,7 +186,7 @@ namespace DVLD.Drivers
         private void dgvInternationalLicenses_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
-            if (e.RowIndex >= 0 && dgvLocalLicenses.Columns[e.ColumnIndex].Name == "colShow")
+            if (e.RowIndex >= 0 && dgvInternationalLicenses.Columns[e.ColumnIndex].Name == "colShowInt")
             {
 
                 MessageBox.Show("It works");
@@ -196,11 +198,10 @@ namespace DVLD.Drivers
         private void dgvInternationalLicenses_MouseMove(object sender, MouseEventArgs e)
         {
 
-            // local
             var hit = dgvInternationalLicenses.HitTest(e.X, e.Y);
 
             if (hit.RowIndex >= 0 && hit.ColumnIndex >= 0 &&
-                dgvInternationalLicenses.Columns[hit.ColumnIndex].Name == "colShow")
+                dgvInternationalLicenses.Columns[hit.ColumnIndex].Name == "colShowInt")
             {
                 Rectangle cellBounds = dgvInternationalLicenses.GetCellDisplayRectangle(hit.ColumnIndex, hit.RowIndex, false);
 
@@ -230,5 +231,16 @@ namespace DVLD.Drivers
             }
 
         }
+
+        public void Clear()
+        {
+
+            _dtLocalLicenses.Clear();
+            _dtInternationalLicenses.Clear();
+
+        }
+
+
+
     }
 }
