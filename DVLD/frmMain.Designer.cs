@@ -54,6 +54,7 @@
             showAccountInfoToolStripMenuItem = new ToolStripMenuItem();
             changePasswordToolStripMenuItem = new ToolStripMenuItem();
             logoutToolStripMenuItem = new ToolStripMenuItem();
+            button1 = new Button();
             MainFormMenuStrip.SuspendLayout();
             SuspendLayout();
             // 
@@ -306,6 +307,16 @@
             logoutToolStripMenuItem.Text = "Logout";
             logoutToolStripMenuItem.Click += logoutToolStripMenuItem_Click;
             // 
+            // button1
+            // 
+            button1.Location = new Point(400, 124);
+            button1.Name = "button1";
+            button1.Size = new Size(94, 29);
+            button1.TabIndex = 1;
+            button1.Text = "button1";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click_1;
+            // 
             // frmMain
             // 
             AutoScaleMode = AutoScaleMode.None;
@@ -314,6 +325,7 @@
             ClientSize = new Size(1044, 669);
             ControlBox = false;
             ControlBoxFillHoverColor = Color.FromArgb(80, 160, 255);
+            Controls.Add(button1);
             Controls.Add(MainFormMenuStrip);
             Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             MainMenuStrip = MainFormMenuStrip;
@@ -359,5 +371,6 @@
         private ToolStripMenuItem internationalLicenseToolStripMenuItem;
         private ToolStripMenuItem localDrivingLicenseApplicationToolStripMenuItem;
         private ToolStripMenuItem internationalLicenseApplicationsToolStripMenuItem;
+        private Button button1;
     }
 }

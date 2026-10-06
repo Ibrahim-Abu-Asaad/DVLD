@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DVLD.Applications.LocalDrivingLicenseApplications;
 using DVLD_BLL;
 using Sunny.UI;
 
@@ -28,9 +29,18 @@ namespace DVLD.Drivers
 
         private void frmListDrivers_Load(object sender, EventArgs e)
         {
+            dgvManageDrivers.DataSource = _dtDrivers;
+
+            _PutNumbersOnColumnsLong();
+
+            _LoadComboBoxInfo();
+
+        }
+
+        private void _PutNumbersOnColumnsLong()
+        {
 
             cbSearchBy.SelectedIndex = 0;
-            dgvManageDrivers.DataSource = _dtDrivers;
             lblTotalDrivers.Text = dgvManageDrivers.RowCount.ToString();
             if (dgvManageDrivers.Rows.Count > 0)
             {
@@ -53,8 +63,6 @@ namespace DVLD.Drivers
                 dgvManageDrivers.Columns[5].Width = 220;
             }
 
-            _LoadComboBoxInfo();
-
         }
 
         private void _LoadComboBoxInfo()
@@ -73,6 +81,14 @@ namespace DVLD.Drivers
                 cbSearchBy.SelectedIndex = 0;
 
 
+        }
+
+        private void _RefreshPage()
+        {
+            _dtDrivers = clsDriver.GetAllDrivers();
+            dgvManageDrivers.DataSource = _dtDrivers;
+            _PutNumbersOnColumnsLong();
+            _LoadComboBoxInfo();
         }
 
         private void cbSearchBy_SelectedIndexChanged(object sender, EventArgs e)
@@ -144,5 +160,67 @@ namespace DVLD.Drivers
             lblTotalDrivers.Text = dgvManageDrivers.Rows.Count.ToString();
 
         }
+
+        private void showPersonDetailsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            if (dgvManageDrivers.SelectedRows.Count > 0)
+            {
+
+                int personID = (int)dgvManageDrivers.SelectedRows[0].Cells["PersonID"].Value;
+                clsPerson person = clsPerson.Find(personID);
+
+                if (person != null)
+                {
+
+                    frmShowPersonDetails frm = new frmShowPersonDetails(personID);
+                    frm.ShowDialog();
+
+                    _RefreshPage();
+                }
+                else
+                {
+                    MessageBox.Show("Person is not found!", "Error",
+                                   MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+
+        }
+
+        private void dgvManageDrivers_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+
+            if (e.Button == MouseButtons.Right)
+            {
+                if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+                {
+
+                    dgvManageDrivers.ClearSelection();
+
+                    dgvManageDrivers.Rows[e.RowIndex].Selected = true;
+
+                    dgvManageDrivers.CurrentCell = dgvManageDrivers.Rows[e.RowIndex].Cells[e.ColumnIndex];
+
+                    cmsDrivers.Show(Cursor.Position);
+
+                }
+            }
+
+        }
+
+        private void issueInternationalLicenseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            //
+
+        }
+
+        private void showPersonLicenseHistoryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            //
+
+        }
+        
     }
 }

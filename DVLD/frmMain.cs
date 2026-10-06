@@ -141,5 +141,13 @@ namespace DVLD
             frmListDrivers frm = new frmListDrivers();
             frm.ShowDialog();
         }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            TEST frm = new TEST();
+            frm.ShowDialog();
+
+        }
+
     }
 }

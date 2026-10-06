@@ -175,6 +175,7 @@
             dgvManageDrivers.Size = new Size(1242, 318);
             dgvManageDrivers.StripeOddColor = Color.FromArgb(235, 243, 255);
             dgvManageDrivers.TabIndex = 26;
+            dgvManageDrivers.CellMouseClick += dgvManageDrivers_CellMouseClick;
             // 
             // btnClose
             // 
@@ -214,7 +215,7 @@
             cmsDrivers.ImageScalingSize = new Size(20, 20);
             cmsDrivers.Items.AddRange(new ToolStripItem[] { showPersonDetailsToolStripMenuItem, toolStripMenuItem1, issueInternationalLicenseToolStripMenuItem, toolStripMenuItem2, showPersonLicenseHistoryToolStripMenuItem });
             cmsDrivers.Name = "cmsDrivers";
-            cmsDrivers.Size = new Size(353, 158);
+            cmsDrivers.Size = new Size(353, 130);
             // 
             // showPersonDetailsToolStripMenuItem
             // 
@@ -224,6 +225,7 @@
             showPersonDetailsToolStripMenuItem.Name = "showPersonDetailsToolStripMenuItem";
             showPersonDetailsToolStripMenuItem.Size = new Size(352, 38);
             showPersonDetailsToolStripMenuItem.Text = "Show Person Info";
+            showPersonDetailsToolStripMenuItem.Click += showPersonDetailsToolStripMenuItem_Click;
             // 
             // toolStripMenuItem1
             // 
@@ -238,6 +240,7 @@
             issueInternationalLicenseToolStripMenuItem.Name = "issueInternationalLicenseToolStripMenuItem";
             issueInternationalLicenseToolStripMenuItem.Size = new Size(352, 38);
             issueInternationalLicenseToolStripMenuItem.Text = "Issue International License";
+            issueInternationalLicenseToolStripMenuItem.Click += issueInternationalLicenseToolStripMenuItem_Click;
             // 
             // toolStripMenuItem2
             // 
@@ -252,6 +255,7 @@
             showPersonLicenseHistoryToolStripMenuItem.Name = "showPersonLicenseHistoryToolStripMenuItem";
             showPersonLicenseHistoryToolStripMenuItem.Size = new Size(352, 38);
             showPersonLicenseHistoryToolStripMenuItem.Text = "Show Person License History";
+            showPersonLicenseHistoryToolStripMenuItem.Click += showPersonLicenseHistoryToolStripMenuItem_Click;
             // 
             // frmListDrivers
             // 

@@ -33,6 +33,11 @@ namespace DVLD
 
         private void frmShowPersonDetails_Load(object sender, EventArgs e)
         {
+            if(Person == null || PersonID == -1)
+            {
+                MessageBox.Show("Person is not found!", "Not Found", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             ctrlShowPersonDetails2.LoadPersonDataAndFillPersonCard(PersonID);
             this.Text = "Show Person Details";
         }

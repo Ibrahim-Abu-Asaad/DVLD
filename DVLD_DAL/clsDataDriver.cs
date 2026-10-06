@@ -189,7 +189,39 @@ namespace DVLD_DAL
 
         }
 
+        public static bool IsDriverExistByID(int ID)
+        {
 
+            bool isFound = false;
+
+            string query = @"SELECT Found=1 FROM Drivers WHERE ID = @ID;";
+
+            SqlCommand command = new SqlCommand(query, connection);
+            command.Parameters.AddWithValue("@ID", ID);
+
+            try
+            {
+                connection.Open();
+                object result = command.ExecuteScalar();
+
+                if (result != null)
+                    isFound = true;
+
+            }
+            catch (Exception ex)
+            {
+                string msg = ex.Message;
+                isFound = false;
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+            return isFound;
+
+
+        }
 
     }
 }

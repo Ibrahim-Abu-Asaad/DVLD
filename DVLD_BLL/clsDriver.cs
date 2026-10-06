@@ -98,6 +98,9 @@ namespace DVLD_BLL
         private bool _Update()
             => clsDataDriver.UpdateDriver(this.ID, this.PersonID, this.CreatedByUserID, this.CreatedDate);
 
+        public static bool IsDriverExistByID(int ID)
+            => clsDataDriver.IsDriverExistByID(ID);
+
         public bool Save()
         {
 
@@ -120,6 +123,12 @@ namespace DVLD_BLL
             return false;
 
         }
+
+        public static DataTable GetLicenses(int DriverID)
+            => clsLicense.GetDriverLicenses(DriverID);
+
+        public static DataTable GetInternationalLicenses(int DriverID)
+            => clsInternationalLicense.GetDriverInternationalLicenses(DriverID);
 
 
     }
