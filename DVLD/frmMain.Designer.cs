@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             MainFormMenuStrip = new MenuStrip();
             peopleToolStripMenuItem = new ToolStripMenuItem();
             drivingLicenseServicesToolStripMenuItem = new ToolStripMenuItem();
@@ -54,7 +55,11 @@
             showAccountInfoToolStripMenuItem = new ToolStripMenuItem();
             changePasswordToolStripMenuItem = new ToolStripMenuItem();
             logoutToolStripMenuItem = new ToolStripMenuItem();
-            button1 = new Button();
+            manageDetainedLicensesToolStripMenuItem = new ToolStripMenuItem();
+            toolStripMenuItem4 = new ToolStripSeparator();
+            detainLicenseToolStripMenuItem = new ToolStripMenuItem();
+            toolStripMenuItem5 = new ToolStripSeparator();
+            releaseDetainedLicenseToolStripMenuItem = new ToolStripMenuItem();
             MainFormMenuStrip.SuspendLayout();
             SuspendLayout();
             // 
@@ -166,6 +171,7 @@
             retakeTestToolStripMenuItem.Name = "retakeTestToolStripMenuItem";
             retakeTestToolStripMenuItem.Size = new Size(496, 38);
             retakeTestToolStripMenuItem.Text = "Retake Test";
+            retakeTestToolStripMenuItem.Click += retakeTestToolStripMenuItem_Click;
             // 
             // manageApplicationsToolStripMenuItem
             // 
@@ -202,6 +208,7 @@
             // 
             // detainLisencesToolStripMenuItem
             // 
+            detainLisencesToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { manageDetainedLicensesToolStripMenuItem, toolStripMenuItem4, detainLicenseToolStripMenuItem, toolStripMenuItem5, releaseDetainedLicenseToolStripMenuItem });
             detainLisencesToolStripMenuItem.Image = Properties.Resources.Detain_64;
             detainLisencesToolStripMenuItem.ImageScaling = ToolStripItemImageScaling.None;
             detainLisencesToolStripMenuItem.Name = "detainLisencesToolStripMenuItem";
@@ -307,15 +314,43 @@
             logoutToolStripMenuItem.Text = "Logout";
             logoutToolStripMenuItem.Click += logoutToolStripMenuItem_Click;
             // 
-            // button1
+            // manageDetainedLicensesToolStripMenuItem
             // 
-            button1.Location = new Point(400, 124);
-            button1.Name = "button1";
-            button1.Size = new Size(94, 29);
-            button1.TabIndex = 1;
-            button1.Text = "button1";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click_1;
+            manageDetainedLicensesToolStripMenuItem.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            manageDetainedLicensesToolStripMenuItem.Image = (Image)resources.GetObject("manageDetainedLicensesToolStripMenuItem.Image");
+            manageDetainedLicensesToolStripMenuItem.ImageScaling = ToolStripItemImageScaling.None;
+            manageDetainedLicensesToolStripMenuItem.Name = "manageDetainedLicensesToolStripMenuItem";
+            manageDetainedLicensesToolStripMenuItem.Size = new Size(348, 38);
+            manageDetainedLicensesToolStripMenuItem.Text = "Manage Detained Licenses";
+            // 
+            // toolStripMenuItem4
+            // 
+            toolStripMenuItem4.Name = "toolStripMenuItem4";
+            toolStripMenuItem4.Size = new Size(345, 6);
+            // 
+            // detainLicenseToolStripMenuItem
+            // 
+            detainLicenseToolStripMenuItem.Font = new Font("Trebuchet MS", 12F);
+            detainLicenseToolStripMenuItem.Image = (Image)resources.GetObject("detainLicenseToolStripMenuItem.Image");
+            detainLicenseToolStripMenuItem.ImageScaling = ToolStripItemImageScaling.None;
+            detainLicenseToolStripMenuItem.Name = "detainLicenseToolStripMenuItem";
+            detainLicenseToolStripMenuItem.Size = new Size(348, 38);
+            detainLicenseToolStripMenuItem.Text = "Detain License";
+            detainLicenseToolStripMenuItem.Click += detainLicenseToolStripMenuItem_Click;
+            // 
+            // toolStripMenuItem5
+            // 
+            toolStripMenuItem5.Name = "toolStripMenuItem5";
+            toolStripMenuItem5.Size = new Size(345, 6);
+            // 
+            // releaseDetainedLicenseToolStripMenuItem
+            // 
+            releaseDetainedLicenseToolStripMenuItem.Font = new Font("Trebuchet MS", 12F);
+            releaseDetainedLicenseToolStripMenuItem.Image = (Image)resources.GetObject("releaseDetainedLicenseToolStripMenuItem.Image");
+            releaseDetainedLicenseToolStripMenuItem.ImageScaling = ToolStripItemImageScaling.None;
+            releaseDetainedLicenseToolStripMenuItem.Name = "releaseDetainedLicenseToolStripMenuItem";
+            releaseDetainedLicenseToolStripMenuItem.Size = new Size(348, 38);
+            releaseDetainedLicenseToolStripMenuItem.Text = "Release Detained License";
             // 
             // frmMain
             // 
@@ -325,7 +360,6 @@
             ClientSize = new Size(1044, 669);
             ControlBox = false;
             ControlBoxFillHoverColor = Color.FromArgb(80, 160, 255);
-            Controls.Add(button1);
             Controls.Add(MainFormMenuStrip);
             Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             MainMenuStrip = MainFormMenuStrip;
@@ -371,6 +405,10 @@
         private ToolStripMenuItem internationalLicenseToolStripMenuItem;
         private ToolStripMenuItem localDrivingLicenseApplicationToolStripMenuItem;
         private ToolStripMenuItem internationalLicenseApplicationsToolStripMenuItem;
-        private Button button1;
+        private ToolStripMenuItem manageDetainedLicensesToolStripMenuItem;
+        private ToolStripSeparator toolStripMenuItem4;
+        private ToolStripMenuItem detainLicenseToolStripMenuItem;
+        private ToolStripSeparator toolStripMenuItem5;
+        private ToolStripMenuItem releaseDetainedLicenseToolStripMenuItem;
     }
 }

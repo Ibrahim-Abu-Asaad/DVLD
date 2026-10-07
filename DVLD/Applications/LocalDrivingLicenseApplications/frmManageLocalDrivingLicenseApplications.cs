@@ -384,11 +384,7 @@ namespace DVLD.Applications.LocalDrivingLicenseApplications
 
             int LDLAppID = (int)dgvManageLocalDrivingLicenseApps.CurrentRow.Cells["ID"].Value;
             clsLocalDrivingLicenseApplication LDLApp = clsLocalDrivingLicenseApplication.FindLocalDrivingLicenseApplicationByID(LDLAppID);
-            //if (LDLApp == null)
-            //{
-            //    MessageBox.Show("There is no license for this person: " + LDLApp.PersonInfo.GetFullName(), "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //    return;
-            //}
+
 
             frmShowPersonLicenseHistory frm = new frmShowPersonLicenseHistory(LDLApp.PersonInfo.ID);
             frm.ShowDialog();
