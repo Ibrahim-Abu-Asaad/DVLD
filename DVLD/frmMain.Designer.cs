@@ -46,6 +46,11 @@
             internationalLicenseApplicationsToolStripMenuItem = new ToolStripMenuItem();
             toolStripMenuItem1 = new ToolStripSeparator();
             detainLisencesToolStripMenuItem = new ToolStripMenuItem();
+            manageDetainedLicensesToolStripMenuItem = new ToolStripMenuItem();
+            toolStripMenuItem4 = new ToolStripSeparator();
+            detainLicenseToolStripMenuItem = new ToolStripMenuItem();
+            toolStripMenuItem5 = new ToolStripSeparator();
+            releaseDetainedLicenseToolStripMenuItem = new ToolStripMenuItem();
             manageApplicationTypesToolStripMenuItem = new ToolStripMenuItem();
             manageTestTypesToolStripMenuItem = new ToolStripMenuItem();
             trebuchetMS12ptToolStripMenuItem = new ToolStripMenuItem();
@@ -55,11 +60,6 @@
             showAccountInfoToolStripMenuItem = new ToolStripMenuItem();
             changePasswordToolStripMenuItem = new ToolStripMenuItem();
             logoutToolStripMenuItem = new ToolStripMenuItem();
-            manageDetainedLicensesToolStripMenuItem = new ToolStripMenuItem();
-            toolStripMenuItem4 = new ToolStripSeparator();
-            detainLicenseToolStripMenuItem = new ToolStripMenuItem();
-            toolStripMenuItem5 = new ToolStripSeparator();
-            releaseDetainedLicenseToolStripMenuItem = new ToolStripMenuItem();
             MainFormMenuStrip.SuspendLayout();
             SuspendLayout();
             // 
@@ -215,6 +215,45 @@
             detainLisencesToolStripMenuItem.Size = new Size(405, 70);
             detainLisencesToolStripMenuItem.Text = "Detain Lisences";
             // 
+            // manageDetainedLicensesToolStripMenuItem
+            // 
+            manageDetainedLicensesToolStripMenuItem.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            manageDetainedLicensesToolStripMenuItem.Image = (Image)resources.GetObject("manageDetainedLicensesToolStripMenuItem.Image");
+            manageDetainedLicensesToolStripMenuItem.ImageScaling = ToolStripItemImageScaling.None;
+            manageDetainedLicensesToolStripMenuItem.Name = "manageDetainedLicensesToolStripMenuItem";
+            manageDetainedLicensesToolStripMenuItem.Size = new Size(348, 38);
+            manageDetainedLicensesToolStripMenuItem.Text = "Manage Detained Licenses";
+            // 
+            // toolStripMenuItem4
+            // 
+            toolStripMenuItem4.Name = "toolStripMenuItem4";
+            toolStripMenuItem4.Size = new Size(345, 6);
+            // 
+            // detainLicenseToolStripMenuItem
+            // 
+            detainLicenseToolStripMenuItem.Font = new Font("Trebuchet MS", 12F);
+            detainLicenseToolStripMenuItem.Image = (Image)resources.GetObject("detainLicenseToolStripMenuItem.Image");
+            detainLicenseToolStripMenuItem.ImageScaling = ToolStripItemImageScaling.None;
+            detainLicenseToolStripMenuItem.Name = "detainLicenseToolStripMenuItem";
+            detainLicenseToolStripMenuItem.Size = new Size(348, 38);
+            detainLicenseToolStripMenuItem.Text = "Detain License";
+            detainLicenseToolStripMenuItem.Click += detainLicenseToolStripMenuItem_Click;
+            // 
+            // toolStripMenuItem5
+            // 
+            toolStripMenuItem5.Name = "toolStripMenuItem5";
+            toolStripMenuItem5.Size = new Size(345, 6);
+            // 
+            // releaseDetainedLicenseToolStripMenuItem
+            // 
+            releaseDetainedLicenseToolStripMenuItem.Font = new Font("Trebuchet MS", 12F);
+            releaseDetainedLicenseToolStripMenuItem.Image = (Image)resources.GetObject("releaseDetainedLicenseToolStripMenuItem.Image");
+            releaseDetainedLicenseToolStripMenuItem.ImageScaling = ToolStripItemImageScaling.None;
+            releaseDetainedLicenseToolStripMenuItem.Name = "releaseDetainedLicenseToolStripMenuItem";
+            releaseDetainedLicenseToolStripMenuItem.Size = new Size(348, 38);
+            releaseDetainedLicenseToolStripMenuItem.Text = "Release Detained License";
+            releaseDetainedLicenseToolStripMenuItem.Click += releaseDetainedLicenseToolStripMenuItem_Click;
+            // 
             // manageApplicationTypesToolStripMenuItem
             // 
             manageApplicationTypesToolStripMenuItem.Font = new Font("Trebuchet MS", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -313,44 +352,6 @@
             logoutToolStripMenuItem.Size = new Size(256, 68);
             logoutToolStripMenuItem.Text = "Logout";
             logoutToolStripMenuItem.Click += logoutToolStripMenuItem_Click;
-            // 
-            // manageDetainedLicensesToolStripMenuItem
-            // 
-            manageDetainedLicensesToolStripMenuItem.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            manageDetainedLicensesToolStripMenuItem.Image = (Image)resources.GetObject("manageDetainedLicensesToolStripMenuItem.Image");
-            manageDetainedLicensesToolStripMenuItem.ImageScaling = ToolStripItemImageScaling.None;
-            manageDetainedLicensesToolStripMenuItem.Name = "manageDetainedLicensesToolStripMenuItem";
-            manageDetainedLicensesToolStripMenuItem.Size = new Size(348, 38);
-            manageDetainedLicensesToolStripMenuItem.Text = "Manage Detained Licenses";
-            // 
-            // toolStripMenuItem4
-            // 
-            toolStripMenuItem4.Name = "toolStripMenuItem4";
-            toolStripMenuItem4.Size = new Size(345, 6);
-            // 
-            // detainLicenseToolStripMenuItem
-            // 
-            detainLicenseToolStripMenuItem.Font = new Font("Trebuchet MS", 12F);
-            detainLicenseToolStripMenuItem.Image = (Image)resources.GetObject("detainLicenseToolStripMenuItem.Image");
-            detainLicenseToolStripMenuItem.ImageScaling = ToolStripItemImageScaling.None;
-            detainLicenseToolStripMenuItem.Name = "detainLicenseToolStripMenuItem";
-            detainLicenseToolStripMenuItem.Size = new Size(348, 38);
-            detainLicenseToolStripMenuItem.Text = "Detain License";
-            detainLicenseToolStripMenuItem.Click += detainLicenseToolStripMenuItem_Click;
-            // 
-            // toolStripMenuItem5
-            // 
-            toolStripMenuItem5.Name = "toolStripMenuItem5";
-            toolStripMenuItem5.Size = new Size(345, 6);
-            // 
-            // releaseDetainedLicenseToolStripMenuItem
-            // 
-            releaseDetainedLicenseToolStripMenuItem.Font = new Font("Trebuchet MS", 12F);
-            releaseDetainedLicenseToolStripMenuItem.Image = (Image)resources.GetObject("releaseDetainedLicenseToolStripMenuItem.Image");
-            releaseDetainedLicenseToolStripMenuItem.ImageScaling = ToolStripItemImageScaling.None;
-            releaseDetainedLicenseToolStripMenuItem.Name = "releaseDetainedLicenseToolStripMenuItem";
-            releaseDetainedLicenseToolStripMenuItem.Size = new Size(348, 38);
-            releaseDetainedLicenseToolStripMenuItem.Text = "Release Detained License";
             // 
             // frmMain
             // 

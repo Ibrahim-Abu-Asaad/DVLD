@@ -12,7 +12,7 @@ namespace DVLD_DAL
     {
 
         static readonly string ConnectionString = clsDataAccessSettings.ConnectionString;
-        static SqlConnection connection = new SqlConnection();
+        static SqlConnection connection = new SqlConnection(ConnectionString);
 
         public static bool GetDetainedLicenseInfoByID(int ID, ref int LicenseID, ref DateTime DetainDate, ref float FineFees, ref int CreatedByUserID, ref bool IsReleased, ref DateTime ReleaseDate, ref int ReleasedByUserID, ref int ReleaseApplicationID)
         {
@@ -88,7 +88,7 @@ namespace DVLD_DAL
 
                     ID = (int)reader["ID"];
                     DetainDate = (DateTime)reader["DetainDate"];
-                    FineFees = (float)reader["FineFees"];
+                    FineFees = (float)(decimal)reader["FineFees"];
                     CreatedByUserID = (int)reader["CreatedByUserID"];
 
                     IsReleased = (bool)reader["IsReleased"];

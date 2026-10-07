@@ -27,11 +27,20 @@ namespace DVLD.Applications.Detain_Local_License
             _DisabledWhenNedded();
         }
 
+        public frmDetainLocalDrivingLicense(int licenseID)
+        {
+            InitializeComponent();
+            //_PersonID = personID;
+            ctrlDriverLicenseInfoWithFilter1.FilterEnabled = false;
+            _LicenseID = licenseID;
+            _License = clsLicense.Find(licenseID);
+        }
+
         private void _DisabledWhenNedded()
         {
             btnDetain.Enabled = false;
             llblShowLicenseInfo.Enabled = false;
-            llblShowPersonLicensesHistory.Enabled = false;
+            //llblShowPersonLicensesHistory.Enabled = false;
 
             txtFineFees.Text = string.Empty;
             txtFineFees.Enabled = false;
@@ -72,6 +81,8 @@ namespace DVLD.Applications.Detain_Local_License
                 return false;
             }
 
+            llblShowPersonLicensesHistory.Enabled = true;
+
             if (!_License.IsActive)
             {
                 MessageBox.Show("This license is not active, you can not detain it!", "Not Active", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -88,14 +99,7 @@ namespace DVLD.Applications.Detain_Local_License
             return true;
         }
 
-        public frmDetainLocalDrivingLicense(int licenseID)
-        {
-            InitializeComponent();
-            //_PersonID = personID;
-            ctrlDriverLicenseInfoWithFilter1.FilterEnabled = false;
-            _LicenseID = licenseID;
-            _License = clsLicense.Find(licenseID);
-        }
+        
 
         private void btnClose_Click(object sender, EventArgs e)
         {
@@ -121,6 +125,7 @@ namespace DVLD.Applications.Detain_Local_License
             }
 
             MessageBox.Show("License is detained successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            lblDetainID.Text = DetainID.ToString();
             ctrlDriverLicenseInfoWithFilter1.RefreshInformation();
             _DisabledWhenNedded();
             llblShowPersonLicensesHistory.Enabled = true;
@@ -158,7 +163,12 @@ namespace DVLD.Applications.Detain_Local_License
         private void frmDetainLocalDrivingLicense_Load(object sender, EventArgs e)
         {
             llblShowLicenseInfo.Visible = false;
+            llblShowPersonLicensesHistory.Enabled = false;
         }
 
+        private void ctrlDriverLicenseInfoWithFilter1_Click(object sender, EventArgs e)
+        {
+            //
+        }
     }
 }

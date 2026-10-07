@@ -72,9 +72,9 @@
             label1.ForeColor = SystemColors.HotTrack;
             label1.Location = new Point(524, 236);
             label1.Name = "label1";
-            label1.Size = new Size(234, 49);
+            label1.Size = new Size(306, 49);
             label1.TabIndex = 13;
-            label1.Text = "Drivers List";
+            label1.Text = "Manage Drivers";
             // 
             // label2
             // 
@@ -275,7 +275,7 @@
             MinimizeBox = false;
             Name = "frmListDrivers";
             ShowIcon = false;
-            Text = "List Drivers";
+            Text = "Manage Drivers";
             ZoomScaleRect = new Rectangle(19, 19, 800, 450);
             Load += frmListDrivers_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();

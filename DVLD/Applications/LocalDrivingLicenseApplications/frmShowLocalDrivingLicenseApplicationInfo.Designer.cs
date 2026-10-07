@@ -67,7 +67,7 @@
             MinimizeBox = false;
             Name = "frmShowLocalDrivingLicenseApplicationInfo";
             ShowIcon = false;
-            Text = "Show Local Driving License ApplicationInfo";
+            Text = "Show Local Driving License Application Info";
             ZoomScaleRect = new Rectangle(19, 19, 800, 450);
             Load += frmShowLocalDrivingLicenseApplicationInfo_Load;
             ResumeLayout(false);

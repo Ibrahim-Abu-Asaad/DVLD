@@ -56,6 +56,9 @@
             llblShowNewLicenseInfo = new LinkLabel();
             btnIssueReplacement = new Sunny.UI.UIButton();
             btnClose = new Sunny.UI.UIButton();
+            label7 = new Label();
+            pictureBox11 = new PictureBox();
+            pictureBox5 = new PictureBox();
             ctrlDriverLicenseInfoWithFilter1.SuspendLayout();
             gbReplaceFor.SuspendLayout();
             uiGroupBox1.SuspendLayout();
@@ -65,6 +68,8 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox8).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox11).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
             SuspendLayout();
             // 
             // ctrlDriverLicenseInfoWithFilter1
@@ -72,7 +77,7 @@
             ctrlDriverLicenseInfoWithFilter1.Controls.Add(gbReplaceFor);
             ctrlDriverLicenseInfoWithFilter1.FilterEnabled = true;
             ctrlDriverLicenseInfoWithFilter1.Font = new Font("Microsoft Sans Serif", 12F);
-            ctrlDriverLicenseInfoWithFilter1.Location = new Point(12, 47);
+            ctrlDriverLicenseInfoWithFilter1.Location = new Point(12, 143);
             ctrlDriverLicenseInfoWithFilter1.MinimumSize = new Size(1, 1);
             ctrlDriverLicenseInfoWithFilter1.Name = "ctrlDriverLicenseInfoWithFilter1";
             ctrlDriverLicenseInfoWithFilter1.RectColor = Color.FromArgb(243, 249, 255);
@@ -140,7 +145,7 @@
             uiGroupBox1.Controls.Add(label2);
             uiGroupBox1.Controls.Add(label1);
             uiGroupBox1.Font = new Font("Microsoft Sans Serif", 12F);
-            uiGroupBox1.Location = new Point(29, 590);
+            uiGroupBox1.Location = new Point(29, 686);
             uiGroupBox1.Margin = new Padding(4, 5, 4, 5);
             uiGroupBox1.MinimumSize = new Size(1, 1);
             uiGroupBox1.Name = "uiGroupBox1";
@@ -352,7 +357,7 @@
             // 
             llblShowLicensesHistory.AutoSize = true;
             llblShowLicensesHistory.Font = new Font("Trebuchet MS", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            llblShowLicensesHistory.Location = new Point(656, 836);
+            llblShowLicensesHistory.Location = new Point(656, 932);
             llblShowLicensesHistory.Name = "llblShowLicensesHistory";
             llblShowLicensesHistory.Size = new Size(179, 23);
             llblShowLicensesHistory.TabIndex = 131;
@@ -364,7 +369,7 @@
             // 
             llblShowNewLicenseInfo.AutoSize = true;
             llblShowNewLicenseInfo.Font = new Font("Trebuchet MS", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            llblShowNewLicenseInfo.Location = new Point(467, 836);
+            llblShowNewLicenseInfo.Location = new Point(467, 932);
             llblShowNewLicenseInfo.Name = "llblShowNewLicenseInfo";
             llblShowNewLicenseInfo.Size = new Size(183, 23);
             llblShowNewLicenseInfo.TabIndex = 130;
@@ -375,7 +380,7 @@
             // btnIssueReplacement
             // 
             btnIssueReplacement.Font = new Font("Microsoft Sans Serif", 12F);
-            btnIssueReplacement.Location = new Point(971, 823);
+            btnIssueReplacement.Location = new Point(971, 919);
             btnIssueReplacement.MinimumSize = new Size(1, 1);
             btnIssueReplacement.Name = "btnIssueReplacement";
             btnIssueReplacement.Size = new Size(187, 44);
@@ -387,7 +392,7 @@
             // btnClose
             // 
             btnClose.Font = new Font("Microsoft Sans Serif", 12F);
-            btnClose.Location = new Point(840, 823);
+            btnClose.Location = new Point(840, 919);
             btnClose.MinimumSize = new Size(1, 1);
             btnClose.Name = "btnClose";
             btnClose.Size = new Size(125, 44);
@@ -396,11 +401,45 @@
             btnClose.TipsFont = new Font("Microsoft Sans Serif", 9F);
             btnClose.Click += btnClose_Click;
             // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new Font("Trebuchet MS", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label7.ForeColor = SystemColors.HotTrack;
+            label7.Location = new Point(413, 71);
+            label7.Name = "label7";
+            label7.Size = new Size(300, 49);
+            label7.TabIndex = 132;
+            label7.Text = "Renew License";
+            // 
+            // pictureBox11
+            // 
+            pictureBox11.Image = (Image)resources.GetObject("pictureBox11.Image");
+            pictureBox11.Location = new Point(711, 71);
+            pictureBox11.Name = "pictureBox11";
+            pictureBox11.Size = new Size(66, 49);
+            pictureBox11.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox11.TabIndex = 133;
+            pictureBox11.TabStop = false;
+            // 
+            // pictureBox5
+            // 
+            pictureBox5.Image = (Image)resources.GetObject("pictureBox5.Image");
+            pictureBox5.Location = new Point(341, 71);
+            pictureBox5.Name = "pictureBox5";
+            pictureBox5.Size = new Size(66, 49);
+            pictureBox5.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox5.TabIndex = 134;
+            pictureBox5.TabStop = false;
+            // 
             // frmReplaceLostOrDamagedLicenseApplication
             // 
             AutoScaleMode = AutoScaleMode.None;
-            ClientSize = new Size(1186, 885);
+            ClientSize = new Size(1186, 981);
             ControlBox = false;
+            Controls.Add(pictureBox5);
+            Controls.Add(pictureBox11);
+            Controls.Add(label7);
             Controls.Add(llblShowLicensesHistory);
             Controls.Add(llblShowNewLicenseInfo);
             Controls.Add(btnIssueReplacement);
@@ -424,6 +463,8 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox8).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox11).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -457,5 +498,8 @@
         private Sunny.UI.UIGroupBox gbReplaceFor;
         private Sunny.UI.UIRadioButton rbtnLost;
         private Sunny.UI.UIRadioButton rbtnDamaged;
+        private Label label7;
+        private PictureBox pictureBox11;
+        private PictureBox pictureBox5;
     }
 }

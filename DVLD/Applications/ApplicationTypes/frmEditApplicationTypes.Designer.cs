@@ -51,9 +51,9 @@
             label1.ForeColor = SystemColors.HotTrack;
             label1.Location = new Point(120, 68);
             label1.Name = "label1";
-            label1.Size = new Size(433, 49);
+            label1.Size = new Size(492, 49);
             label1.TabIndex = 1;
-            label1.Text = "Edit Application Types";
+            label1.Text = "Update Application Types";
             // 
             // pictureBox3
             // 
@@ -176,7 +176,7 @@
             MinimizeBox = false;
             Name = "frmEditApplicationTypes";
             ShowIcon = false;
-            Text = "Edit Application Types";
+            Text = "Update Application Types";
             ZoomScaleRect = new Rectangle(19, 19, 800, 450);
             Load += frmEditApplicationTypes_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();

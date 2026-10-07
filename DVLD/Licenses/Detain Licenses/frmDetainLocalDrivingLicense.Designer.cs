@@ -49,18 +49,21 @@
             lblPassword = new Label();
             pictureBox6 = new PictureBox();
             txtFineFees = new Sunny.UI.UITextBox();
+            label7 = new Label();
+            pictureBox11 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox8).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox11).BeginInit();
             SuspendLayout();
             // 
             // ctrlDriverLicenseInfoWithFilter1
             // 
             ctrlDriverLicenseInfoWithFilter1.FilterEnabled = true;
             ctrlDriverLicenseInfoWithFilter1.Font = new Font("Microsoft Sans Serif", 12F);
-            ctrlDriverLicenseInfoWithFilter1.Location = new Point(3, 48);
+            ctrlDriverLicenseInfoWithFilter1.Location = new Point(5, 142);
             ctrlDriverLicenseInfoWithFilter1.MinimumSize = new Size(1, 1);
             ctrlDriverLicenseInfoWithFilter1.Name = "ctrlDriverLicenseInfoWithFilter1";
             ctrlDriverLicenseInfoWithFilter1.RectColor = Color.FromArgb(243, 249, 255);
@@ -68,12 +71,13 @@
             ctrlDriverLicenseInfoWithFilter1.TabIndex = 0;
             ctrlDriverLicenseInfoWithFilter1.Text = "ctrlDriverLicenseInfoWithFilter1";
             ctrlDriverLicenseInfoWithFilter1.TextAlignment = ContentAlignment.MiddleCenter;
+            ctrlDriverLicenseInfoWithFilter1.Click += ctrlDriverLicenseInfoWithFilter1_Click;
             // 
             // llblShowPersonLicensesHistory
             // 
             llblShowPersonLicensesHistory.AutoSize = true;
             llblShowPersonLicensesHistory.Font = new Font("Trebuchet MS", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            llblShowPersonLicensesHistory.Location = new Point(31, 785);
+            llblShowPersonLicensesHistory.Location = new Point(26, 876);
             llblShowPersonLicensesHistory.Name = "llblShowPersonLicensesHistory";
             llblShowPersonLicensesHistory.Size = new Size(234, 23);
             llblShowPersonLicensesHistory.TabIndex = 151;
@@ -85,7 +89,7 @@
             // 
             llblShowLicenseInfo.AutoSize = true;
             llblShowLicenseInfo.Font = new Font("Trebuchet MS", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            llblShowLicenseInfo.Location = new Point(265, 785);
+            llblShowLicenseInfo.Location = new Point(260, 876);
             llblShowLicenseInfo.Name = "llblShowLicenseInfo";
             llblShowLicenseInfo.Size = new Size(145, 23);
             llblShowLicenseInfo.TabIndex = 150;
@@ -96,7 +100,7 @@
             // btnDetain
             // 
             btnDetain.Font = new Font("Microsoft Sans Serif", 12F);
-            btnDetain.Location = new Point(545, 764);
+            btnDetain.Location = new Point(540, 855);
             btnDetain.MinimumSize = new Size(1, 1);
             btnDetain.Name = "btnDetain";
             btnDetain.Size = new Size(146, 44);
@@ -108,7 +112,7 @@
             // btnClose
             // 
             btnClose.Font = new Font("Microsoft Sans Serif", 12F);
-            btnClose.Location = new Point(414, 764);
+            btnClose.Location = new Point(409, 855);
             btnClose.MinimumSize = new Size(1, 1);
             btnClose.Name = "btnClose";
             btnClose.Size = new Size(125, 44);
@@ -122,7 +126,7 @@
             lblDetainID.AutoSize = true;
             lblDetainID.BackColor = Color.FromArgb(243, 249, 255);
             lblDetainID.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblDetainID.Location = new Point(256, 612);
+            lblDetainID.Location = new Point(251, 703);
             lblDetainID.Name = "lblDetainID";
             lblDetainID.Size = new Size(54, 26);
             lblDetainID.TabIndex = 143;
@@ -132,7 +136,7 @@
             // 
             pictureBox1.BackColor = Color.FromArgb(243, 249, 255);
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(219, 607);
+            pictureBox1.Location = new Point(214, 698);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(31, 31);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
@@ -144,7 +148,7 @@
             label9.AutoSize = true;
             label9.BackColor = Color.FromArgb(243, 249, 255);
             label9.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label9.Location = new Point(31, 612);
+            label9.Location = new Point(26, 703);
             label9.Name = "label9";
             label9.Size = new Size(102, 26);
             label9.TabIndex = 141;
@@ -155,7 +159,7 @@
             lblLicenseID.AutoSize = true;
             lblLicenseID.BackColor = Color.FromArgb(243, 249, 255);
             lblLicenseID.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblLicenseID.Location = new Point(787, 612);
+            lblLicenseID.Location = new Point(782, 703);
             lblLicenseID.Name = "lblLicenseID";
             lblLicenseID.Size = new Size(54, 26);
             lblLicenseID.TabIndex = 136;
@@ -166,7 +170,7 @@
             lblDetainDate.AutoSize = true;
             lblDetainDate.BackColor = Color.FromArgb(243, 249, 255);
             lblDetainDate.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblDetainDate.Location = new Point(256, 654);
+            lblDetainDate.Location = new Point(251, 745);
             lblDetainDate.Name = "lblDetainDate";
             lblDetainDate.Size = new Size(54, 26);
             lblDetainDate.TabIndex = 134;
@@ -177,7 +181,7 @@
             lblCreatedBy.AutoSize = true;
             lblCreatedBy.BackColor = Color.FromArgb(243, 249, 255);
             lblCreatedBy.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblCreatedBy.Location = new Point(787, 655);
+            lblCreatedBy.Location = new Point(782, 746);
             lblCreatedBy.Name = "lblCreatedBy";
             lblCreatedBy.Size = new Size(54, 26);
             lblCreatedBy.TabIndex = 133;
@@ -187,7 +191,7 @@
             // 
             pictureBox8.BackColor = Color.FromArgb(243, 249, 255);
             pictureBox8.Image = (Image)resources.GetObject("pictureBox8.Image");
-            pictureBox8.Location = new Point(750, 650);
+            pictureBox8.Location = new Point(745, 741);
             pictureBox8.Name = "pictureBox8";
             pictureBox8.Size = new Size(31, 31);
             pictureBox8.SizeMode = PictureBoxSizeMode.Zoom;
@@ -198,7 +202,7 @@
             // 
             pictureBox4.BackColor = Color.FromArgb(243, 249, 255);
             pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
-            pictureBox4.Location = new Point(750, 607);
+            pictureBox4.Location = new Point(745, 698);
             pictureBox4.Name = "pictureBox4";
             pictureBox4.Size = new Size(31, 31);
             pictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
@@ -209,7 +213,7 @@
             // 
             pictureBox2.BackColor = Color.FromArgb(243, 249, 255);
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(219, 649);
+            pictureBox2.Location = new Point(214, 740);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(31, 31);
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
@@ -221,7 +225,7 @@
             label5.AutoSize = true;
             label5.BackColor = Color.FromArgb(243, 249, 255);
             label5.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label5.Location = new Point(31, 696);
+            label5.Location = new Point(26, 787);
             label5.Name = "label5";
             label5.Size = new Size(105, 26);
             label5.TabIndex = 120;
@@ -232,7 +236,7 @@
             label2.AutoSize = true;
             label2.BackColor = Color.FromArgb(243, 249, 255);
             label2.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.Location = new Point(558, 612);
+            label2.Location = new Point(553, 703);
             label2.Name = "label2";
             label2.Size = new Size(110, 26);
             label2.TabIndex = 117;
@@ -243,7 +247,7 @@
             label1.AutoSize = true;
             label1.BackColor = Color.FromArgb(243, 249, 255);
             label1.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(31, 654);
+            label1.Location = new Point(26, 745);
             label1.Name = "label1";
             label1.Size = new Size(126, 26);
             label1.TabIndex = 116;
@@ -254,7 +258,7 @@
             lblPassword.AutoSize = true;
             lblPassword.BackColor = Color.FromArgb(243, 249, 255);
             lblPassword.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblPassword.Location = new Point(558, 655);
+            lblPassword.Location = new Point(553, 746);
             lblPassword.Name = "lblPassword";
             lblPassword.Size = new Size(118, 26);
             lblPassword.TabIndex = 115;
@@ -264,7 +268,7 @@
             // 
             pictureBox6.BackColor = Color.FromArgb(243, 249, 255);
             pictureBox6.Image = (Image)resources.GetObject("pictureBox6.Image");
-            pictureBox6.Location = new Point(219, 691);
+            pictureBox6.Location = new Point(214, 782);
             pictureBox6.Name = "pictureBox6";
             pictureBox6.Size = new Size(31, 31);
             pictureBox6.SizeMode = PictureBoxSizeMode.Zoom;
@@ -274,7 +278,7 @@
             // txtFineFees
             // 
             txtFineFees.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtFineFees.Location = new Point(257, 686);
+            txtFineFees.Location = new Point(252, 777);
             txtFineFees.Margin = new Padding(4, 5, 4, 5);
             txtFineFees.MinimumSize = new Size(1, 16);
             txtFineFees.Name = "txtFineFees";
@@ -287,11 +291,34 @@
             txtFineFees.TextChanged += txtFineFees_TextChanged;
             txtFineFees.KeyPress += txtFineFees_KeyPress;
             // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new Font("Trebuchet MS", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label7.ForeColor = SystemColors.HotTrack;
+            label7.Location = new Point(366, 63);
+            label7.Name = "label7";
+            label7.Size = new Size(297, 49);
+            label7.TabIndex = 153;
+            label7.Text = "Detain License";
+            // 
+            // pictureBox11
+            // 
+            pictureBox11.Image = (Image)resources.GetObject("pictureBox11.Image");
+            pictureBox11.Location = new Point(673, 53);
+            pictureBox11.Name = "pictureBox11";
+            pictureBox11.Size = new Size(98, 69);
+            pictureBox11.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox11.TabIndex = 154;
+            pictureBox11.TabStop = false;
+            // 
             // frmDetainLocalDrivingLicense
             // 
             AutoScaleMode = AutoScaleMode.None;
-            ClientSize = new Size(1167, 833);
+            ClientSize = new Size(1167, 916);
             ControlBox = false;
+            Controls.Add(pictureBox11);
+            Controls.Add(label7);
             Controls.Add(txtFineFees);
             Controls.Add(llblShowPersonLicensesHistory);
             Controls.Add(llblShowLicenseInfo);
@@ -324,6 +351,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox11).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -350,5 +378,7 @@
         private Label lblPassword;
         private PictureBox pictureBox6;
         private Sunny.UI.UITextBox txtFineFees;
+        private Label label7;
+        private PictureBox pictureBox11;
     }
 }

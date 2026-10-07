@@ -140,9 +140,9 @@
             label1.ForeColor = SystemColors.HotTrack;
             label1.Location = new Point(274, 72);
             label1.Name = "label1";
-            label1.Size = new Size(299, 49);
+            label1.Size = new Size(358, 49);
             label1.TabIndex = 108;
-            label1.Text = "Edit Test Types";
+            label1.Text = "Update Test Types";
             // 
             // rtxtDescription
             // 
@@ -215,7 +215,7 @@
             MinimizeBox = false;
             Name = "frmEditTestTypes";
             ShowIcon = false;
-            Text = "Edit Test Types";
+            Text = "Update Test Types";
             ZoomScaleRect = new Rectangle(19, 19, 800, 450);
             Load += frmEditTestTypes_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
