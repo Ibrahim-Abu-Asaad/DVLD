@@ -77,7 +77,7 @@ namespace DVLD.Applications.Detain_Local_License
 
             if (_License == null)
             {
-                MessageBox.Show("License is not exist!", "Not Found", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //MessageBox.Show("License is not exist!", "Not Found", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
 
@@ -110,7 +110,13 @@ namespace DVLD.Applications.Detain_Local_License
         {
 
             if (txtFineFees.Text == string.Empty)
+            {
                 MessageBox.Show("Enter Fine Fees!", "Fine Fees Needed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (MessageBox.Show("Are you sure?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Asterisk) == DialogResult.No)
+                return;
 
             int FineFees = 0;
             if (int.TryParse(txtFineFees.Text, out int fineAmount))

@@ -128,12 +128,20 @@ namespace DVLD_DAL
             DataTable dtDetainedLicenses = new DataTable();
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
 
-            string query = @"SELECT dbo.DetainedLicenses.ID, dbo.DetainedLicenses.LicenseID, dbo.DetainedLicenses.DetainDate, dbo.DetainedLicenses.IsReleased, dbo.DetainedLicenses.FineFees, dbo.DetainedLicenses.ReleaseDate, dbo.People.NationalNo, 
-                             dbo.People.FirstName + ' ' + dbo.People.SecondName + ' ' + ISNULL(dbo.People.ThirdName, ' ') + ' ' + dbo.People.LastName AS FullName, dbo.DetainedLicenses.ReleaseApplicationID
+            //string query = @"SELECT dbo.DetainedLicenses.ID, dbo.DetainedLicenses.LicenseID, dbo.DetainedLicenses.DetainDate, dbo.DetainedLicenses.IsReleased, dbo.DetainedLicenses.FineFees, dbo.DetainedLicenses.ReleaseDate, dbo.People.NationalNo, 
+            //                 dbo.People.FirstName + ' ' + dbo.People.SecondName + ' ' + ISNULL(dbo.People.ThirdName, ' ') + ' ' + dbo.People.LastName AS FullName, dbo.DetainedLicenses.ReleaseApplicationID
+            //                 FROM dbo.People INNER JOIN
+            //                 dbo.Drivers ON dbo.People.ID = dbo.Drivers.PersonID INNER JOIN
+            //                 dbo.Licenses ON dbo.Drivers.ID = dbo.Licenses.DriverID RIGHT OUTER JOIN
+            //                 dbo.DetainedLicenses ON dbo.Licenses.ID = dbo.DetainedLicenses.LicenseID ORDER BY IsReleased ,ID;";
+
+            string query = @"SELECT dbo.DetainedLicenses.ID AS 'Detain ID', dbo.DetainedLicenses.LicenseID AS 'License ID', dbo.DetainedLicenses.IsReleased AS 'Is Released', dbo.DetainedLicenses.FineFees AS 'Fine Fees', 
+                             dbo.People.FirstName + ' ' + dbo.People.LastName AS Name
                              FROM dbo.People INNER JOIN
                              dbo.Drivers ON dbo.People.ID = dbo.Drivers.PersonID INNER JOIN
                              dbo.Licenses ON dbo.Drivers.ID = dbo.Licenses.DriverID RIGHT OUTER JOIN
-                             dbo.DetainedLicenses ON dbo.Licenses.ID = dbo.DetainedLicenses.LicenseID ORDER BY IsReleased ,ID;";
+                             dbo.DetainedLicenses ON dbo.Licenses.ID = dbo.DetainedLicenses.LicenseID ORDER BY IsReleased ,DetainedLicenses.ID;";
+
 
             SqlCommand command = new SqlCommand(query, connection);
 

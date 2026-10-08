@@ -20,16 +20,25 @@ namespace DVLD.Applications.Release_Local_License
         private int _LicenseID = -1;
         clsLicense _License;
 
+        public enum enMode { OnlyOneID, AcceptAnyID}
+        public enMode Mode = enMode.AcceptAnyID;
+
         public frmReleaseDetainedLicense(int licenseID)
         {
             InitializeComponent();
+            Mode = enMode.OnlyOneID;
             _LicenseID = licenseID;
             _License = clsLicense.Find(_LicenseID);
+            ctrlDriverLicenseInfoWithFilter1.WriteInTheTextBox(licenseID);
+            ctrlDriverLicenseInfoWithFilter1.FilterEnabled = false;
+            ctrlDriverLicenseInfoWithFilter1.FillInformation(licenseID);
+            _LoadDetainedLicenseData();
         }
 
         public frmReleaseDetainedLicense()
         {
             InitializeComponent();
+            Mode = enMode.AcceptAnyID;
             ctrlDriverLicenseInfoWithFilter1.OnLicenseSelected += CtrlDriverLicenseInfoWithFilter1_OnLicenseSelected;
         }
 
@@ -92,7 +101,7 @@ namespace DVLD.Applications.Release_Local_License
 
             if (_License == null)
             {
-                MessageBox.Show("This license is not found", "Not Found", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //MessageBox.Show("This license is not found", "Not Found", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 _ResetForm();
                 return false;
             }
@@ -115,13 +124,15 @@ namespace DVLD.Applications.Release_Local_License
 
         private void frmReleaseDetainedLicense_Load(object sender, EventArgs e)
         {
-            _DisabledWhenNeeded();
+            if (Mode == enMode.AcceptAnyID)
+                _DisabledWhenNeeded();
+            else _EnabledWhenNeeded();
         }
 
         private void btnRelease_Click(object sender, EventArgs e)
         {
 
-            if (MessageBox.Show("Are you sure?", "Confirm", MessageBoxButtons.YesNo) == DialogResult.No)
+            if (MessageBox.Show("Are you sure?", "Confirm", MessageBoxButtons.YesNo,MessageBoxIcon.Asterisk) == DialogResult.No)
                 return;
 
             int ApplicationID = -1;
@@ -137,7 +148,12 @@ namespace DVLD.Applications.Release_Local_License
             lblApplicationID.Text = ApplicationID.ToString();
 
             btnRelease.Enabled = false;
-            ctrlDriverLicenseInfoWithFilter1.RefreshInformation();
+
+            if (Mode == enMode.AcceptAnyID)
+                ctrlDriverLicenseInfoWithFilter1.RefreshInformation();
+            else
+                ctrlDriverLicenseInfoWithFilter1.RefreshInformationByThisLicenseID(_LicenseID);
+
 
         }
 

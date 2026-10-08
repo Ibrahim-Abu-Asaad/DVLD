@@ -47,6 +47,14 @@ namespace DVLD.Licenses.Local_Licenses
 
             LoadAllDataByLicenseID(_LicenseID);
         }
+
+        public void RefreshInformation(int licenseID)
+        {
+            if (!clsLicense.IsLicenseExistByID(licenseID))
+                return;
+
+            LoadAllDataByLicenseID(licenseID);
+        }
         public void LoadAllData(int LDLAppID)
         {
 

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
@@ -46,14 +47,21 @@
             label1 = new Label();
             imgBtnReleaseDetainedLicense = new Button();
             imgBtnDetainLicense = new Button();
+            cmsDetainedLicenses = new ContextMenuStrip(components);
+            showPersonDetailsToolStripMenuItem = new ToolStripMenuItem();
+            showLicenseDetailsToolStripMenuItem = new ToolStripMenuItem();
+            showPersonLicenseHistoryToolStripMenuItem = new ToolStripMenuItem();
+            toolStripMenuItem1 = new ToolStripSeparator();
+            releaseDetainedLicenseToolStripMenuItem = new ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)dgvManageDetainedLicenses).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            cmsDetainedLicenses.SuspendLayout();
             SuspendLayout();
             // 
             // btnClose
             // 
             btnClose.Font = new Font("Microsoft Sans Serif", 12F);
-            btnClose.Location = new Point(1130, 735);
+            btnClose.Location = new Point(1147, 728);
             btnClose.MinimumSize = new Size(1, 1);
             btnClose.Name = "btnClose";
             btnClose.Size = new Size(125, 44);
@@ -83,6 +91,7 @@
             cbStatus.Text = "None";
             cbStatus.TextAlignment = ContentAlignment.MiddleLeft;
             cbStatus.Watermark = "";
+            cbStatus.SelectedIndexChanged += cbStatus_SelectedIndexChanged;
             // 
             // lblTotalDetainedLicenses
             // 
@@ -136,6 +145,7 @@
             cbSearchBy.Text = "None";
             cbSearchBy.TextAlignment = ContentAlignment.MiddleLeft;
             cbSearchBy.Watermark = "";
+            cbSearchBy.SelectedIndexChanged += cbSearchBy_SelectedIndexChanged;
             // 
             // txtSearchBy
             // 
@@ -151,6 +161,8 @@
             txtSearchBy.TabIndex = 85;
             txtSearchBy.TextAlignment = ContentAlignment.MiddleLeft;
             txtSearchBy.Watermark = "";
+            txtSearchBy.TextChanged += txtSearchBy_TextChanged;
+            txtSearchBy.KeyPress += txtSearchBy_KeyPress;
             // 
             // dgvManageDetainedLicenses
             // 
@@ -199,14 +211,15 @@
             dataGridViewCellStyle5.Font = new Font("Microsoft Sans Serif", 12F);
             dgvManageDetainedLicenses.RowsDefaultCellStyle = dataGridViewCellStyle5;
             dgvManageDetainedLicenses.SelectedIndex = -1;
-            dgvManageDetainedLicenses.Size = new Size(1242, 318);
+            dgvManageDetainedLicenses.Size = new Size(1259, 318);
             dgvManageDetainedLicenses.StripeOddColor = Color.FromArgb(235, 243, 255);
             dgvManageDetainedLicenses.TabIndex = 84;
+            dgvManageDetainedLicenses.CellMouseClick += dgvManageDetainedLicenses_CellMouseClick;
             // 
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(568, 47);
+            pictureBox1.Location = new Point(629, 54);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(164, 161);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
@@ -218,7 +231,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Trebuchet MS", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = SystemColors.HotTrack;
-            label1.Location = new Point(396, 222);
+            label1.Location = new Point(457, 229);
             label1.Name = "label1";
             label1.Size = new Size(511, 49);
             label1.TabIndex = 82;
@@ -229,26 +242,81 @@
             imgBtnReleaseDetainedLicense.Cursor = Cursors.Hand;
             imgBtnReleaseDetainedLicense.Image = (Image)resources.GetObject("imgBtnReleaseDetainedLicense.Image");
             imgBtnReleaseDetainedLicense.ImageAlign = ContentAlignment.MiddleRight;
-            imgBtnReleaseDetainedLicense.Location = new Point(1111, 334);
+            imgBtnReleaseDetainedLicense.Location = new Point(1128, 334);
             imgBtnReleaseDetainedLicense.Name = "imgBtnReleaseDetainedLicense";
             imgBtnReleaseDetainedLicense.Size = new Size(70, 65);
             imgBtnReleaseDetainedLicense.TabIndex = 94;
             imgBtnReleaseDetainedLicense.UseVisualStyleBackColor = true;
+            imgBtnReleaseDetainedLicense.Click += imgBtnReleaseDetainedLicense_Click;
             // 
             // imgBtnDetainLicense
             // 
             imgBtnDetainLicense.Cursor = Cursors.Hand;
             imgBtnDetainLicense.Image = (Image)resources.GetObject("imgBtnDetainLicense.Image");
-            imgBtnDetainLicense.Location = new Point(1187, 334);
+            imgBtnDetainLicense.Location = new Point(1204, 334);
             imgBtnDetainLicense.Name = "imgBtnDetainLicense";
             imgBtnDetainLicense.Size = new Size(68, 65);
             imgBtnDetainLicense.TabIndex = 95;
             imgBtnDetainLicense.UseVisualStyleBackColor = true;
+            imgBtnDetainLicense.Click += imgBtnDetainLicense_Click;
+            // 
+            // cmsDetainedLicenses
+            // 
+            cmsDetainedLicenses.ImageScalingSize = new Size(20, 20);
+            cmsDetainedLicenses.Items.AddRange(new ToolStripItem[] { showPersonDetailsToolStripMenuItem, showLicenseDetailsToolStripMenuItem, showPersonLicenseHistoryToolStripMenuItem, toolStripMenuItem1, releaseDetainedLicenseToolStripMenuItem });
+            cmsDetainedLicenses.Name = "cmsDetainedLicenses";
+            cmsDetainedLicenses.Size = new Size(312, 162);
+            cmsDetainedLicenses.Opening += cmsDetainedLicenses_Opening;
+            // 
+            // showPersonDetailsToolStripMenuItem
+            // 
+            showPersonDetailsToolStripMenuItem.Font = new Font("Trebuchet MS", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            showPersonDetailsToolStripMenuItem.Image = (Image)resources.GetObject("showPersonDetailsToolStripMenuItem.Image");
+            showPersonDetailsToolStripMenuItem.ImageScaling = ToolStripItemImageScaling.None;
+            showPersonDetailsToolStripMenuItem.Name = "showPersonDetailsToolStripMenuItem";
+            showPersonDetailsToolStripMenuItem.Size = new Size(311, 38);
+            showPersonDetailsToolStripMenuItem.Text = "Show Person Details";
+            showPersonDetailsToolStripMenuItem.Click += showPersonDetailsToolStripMenuItem_Click;
+            // 
+            // showLicenseDetailsToolStripMenuItem
+            // 
+            showLicenseDetailsToolStripMenuItem.Font = new Font("Trebuchet MS", 10.2F);
+            showLicenseDetailsToolStripMenuItem.Image = (Image)resources.GetObject("showLicenseDetailsToolStripMenuItem.Image");
+            showLicenseDetailsToolStripMenuItem.ImageScaling = ToolStripItemImageScaling.None;
+            showLicenseDetailsToolStripMenuItem.Name = "showLicenseDetailsToolStripMenuItem";
+            showLicenseDetailsToolStripMenuItem.Size = new Size(311, 38);
+            showLicenseDetailsToolStripMenuItem.Text = "Show License Details";
+            showLicenseDetailsToolStripMenuItem.Click += showLicenseDetailsToolStripMenuItem_Click;
+            // 
+            // showPersonLicenseHistoryToolStripMenuItem
+            // 
+            showPersonLicenseHistoryToolStripMenuItem.Font = new Font("Trebuchet MS", 10.2F);
+            showPersonLicenseHistoryToolStripMenuItem.Image = (Image)resources.GetObject("showPersonLicenseHistoryToolStripMenuItem.Image");
+            showPersonLicenseHistoryToolStripMenuItem.ImageScaling = ToolStripItemImageScaling.None;
+            showPersonLicenseHistoryToolStripMenuItem.Name = "showPersonLicenseHistoryToolStripMenuItem";
+            showPersonLicenseHistoryToolStripMenuItem.Size = new Size(311, 38);
+            showPersonLicenseHistoryToolStripMenuItem.Text = "Show Person License History";
+            showPersonLicenseHistoryToolStripMenuItem.Click += showPersonLicenseHistoryToolStripMenuItem_Click;
+            // 
+            // toolStripMenuItem1
+            // 
+            toolStripMenuItem1.Name = "toolStripMenuItem1";
+            toolStripMenuItem1.Size = new Size(308, 6);
+            // 
+            // releaseDetainedLicenseToolStripMenuItem
+            // 
+            releaseDetainedLicenseToolStripMenuItem.Font = new Font("Trebuchet MS", 10.2F);
+            releaseDetainedLicenseToolStripMenuItem.Image = (Image)resources.GetObject("releaseDetainedLicenseToolStripMenuItem.Image");
+            releaseDetainedLicenseToolStripMenuItem.ImageScaling = ToolStripItemImageScaling.None;
+            releaseDetainedLicenseToolStripMenuItem.Name = "releaseDetainedLicenseToolStripMenuItem";
+            releaseDetainedLicenseToolStripMenuItem.Size = new Size(311, 38);
+            releaseDetainedLicenseToolStripMenuItem.Text = "Release Detained License";
+            releaseDetainedLicenseToolStripMenuItem.Click += releaseDetainedLicenseToolStripMenuItem_Click;
             // 
             // frmListDetainedLicenses
             // 
             AutoScaleMode = AutoScaleMode.None;
-            ClientSize = new Size(1271, 786);
+            ClientSize = new Size(1280, 786);
             ControlBox = false;
             Controls.Add(imgBtnDetainLicense);
             Controls.Add(imgBtnReleaseDetainedLicense);
@@ -271,6 +339,7 @@
             Load += frmListDetainedLicenses_Load;
             ((System.ComponentModel.ISupportInitialize)dgvManageDetainedLicenses).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            cmsDetainedLicenses.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -289,5 +358,11 @@
         private Label label1;
         private Button imgBtnReleaseDetainedLicense;
         private Button imgBtnDetainLicense;
+        private ContextMenuStrip cmsDetainedLicenses;
+        private ToolStripMenuItem showPersonDetailsToolStripMenuItem;
+        private ToolStripMenuItem showLicenseDetailsToolStripMenuItem;
+        private ToolStripMenuItem showPersonLicenseHistoryToolStripMenuItem;
+        private ToolStripSeparator toolStripMenuItem1;
+        private ToolStripMenuItem releaseDetainedLicenseToolStripMenuItem;
     }
 }

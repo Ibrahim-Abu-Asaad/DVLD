@@ -62,6 +62,19 @@ namespace DVLD.Licenses.Local_Licenses.Controls
             }
         }
 
+        public void WriteInTheTextBox(int licenseID)
+        {
+            txtSearchBy.Text = licenseID.ToString();
+        }
+
+        public void FillInformation(int licenseID)
+        {
+            if (!clsLicense.IsLicenseExistByID(licenseID))
+                return;
+
+            ctrlDriverLicenseInfo1.LoadAllDataByLicenseID(licenseID);
+        }
+
         private void _LoadData(int LicenseID)
         {
             _LicenseID = LicenseID;
@@ -79,6 +92,15 @@ namespace DVLD.Licenses.Local_Licenses.Controls
                 return;
 
             ctrlDriverLicenseInfo1.RefreshInformation();
+
+        }
+
+        public void RefreshInformationByThisLicenseID(int licenseID)
+        {
+            if (!clsLicense.IsLicenseExistByID(licenseID))
+                return;
+
+            ctrlDriverLicenseInfo1.RefreshInformation(licenseID);
 
         }
 
