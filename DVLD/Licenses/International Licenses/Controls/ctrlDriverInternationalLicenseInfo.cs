@@ -45,7 +45,7 @@ namespace DVLD.Licenses.International_Licenses.Controls
             lblInternationalLicenseID.Text = internationalLicenseID.ToString();
             lblName.Text = _InternationalLicense.DriverInfo.PersonInfo.GetFullName();
             lblNationalNo.Text = _InternationalLicense.DriverInfo.PersonInfo.NationalNO.ToString();
-            lblGender.Text = _InternationalLicense.DriverInfo.PersonInfo.Gender.ToString();
+            lblGender.Text = _InternationalLicense.DriverInfo.PersonInfo.Gender == 0 ? "Male" : "Female";
             lblIssueDate.Text = _InternationalLicense.IssueDate.ToShortDateString();
             lblApplicationID.Text = _InternationalLicense.ApplicationID.ToString();
 

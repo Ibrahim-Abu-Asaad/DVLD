@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DVLD.Drivers;
 using DVLD.Global_Classes;
+using DVLD.Licenses.International_Licenses;
 using DVLD_BLL;
 using Sunny.UI;
 
@@ -41,6 +42,7 @@ namespace DVLD.Applications.International_Licenses
             else
             {
                 _Disabled();
+                lblLocalLicenseID.Text = "[????]";
                 return;
             }
 
@@ -178,7 +180,8 @@ namespace DVLD.Applications.International_Licenses
 
         private void llblShowInternationalLicenseInfo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            //
+            frmShowInternationalLicenseInfo frm = new frmShowInternationalLicenseInfo(_InternationalLicenseID);
+            frm.ShowDialog();
         }
     }
 }

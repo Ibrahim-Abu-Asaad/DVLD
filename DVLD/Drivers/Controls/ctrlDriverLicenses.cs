@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DVLD.Applications.TestTypes;
+using DVLD.Licenses.International_Licenses;
 using DVLD.Licenses.Local_Licenses;
 using DVLD_BLL;
 using Sunny.UI;
@@ -189,7 +190,10 @@ namespace DVLD.Drivers
             if (e.RowIndex >= 0 && dgvInternationalLicenses.Columns[e.ColumnIndex].Name == "colShowInt")
             {
 
-                MessageBox.Show("It works");
+                int InternationalLicenseID = (int)dgvInternationalLicenses.Rows[e.RowIndex].Cells["ID"].Value;
+                frmShowInternationalLicenseInfo frm = new frmShowInternationalLicenseInfo(InternationalLicenseID);
+                frm.ShowDialog();
+                //_RefreshPage();
 
             }
 
