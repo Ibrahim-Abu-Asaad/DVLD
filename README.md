@@ -19,7 +19,7 @@ This project was developed as part of the **DVLD Project – Programming Advices
 - [🔐 Security Implementation](#️-security-implementation)
 - [🎯 What I Learned](#-what-i-learned)
 - [🚀 Future Improvements](#-future-improvements)
-- [## 👨‍💻 Author](#️-author)
+- [👨‍💻 Author](#-author)
 - [🙏 Acknowledgments](#-acknowledgments)
 
 ---
