@@ -15,11 +15,11 @@ This project was developed as part of the **DVLD Project – Programming Advices
 - [🗄️ Database Design](#️-database-design)
 - [🧠 Technical Highlights](#-technical-highlights)
 - [📂 Project Structure](#-project-structure)
-- [⚙️ Getting Started](-getting-started)
-- [🔐 Security ](#️-security-implementation)
+- [⚙️ Getting Started](#-getting-started)
+- [🔐 Security Implementation](#️-security-implementation)
 - [🎯 What I Learned](#-what-i-learned)
 - [🚀 Future Improvements](#-future-improvements)
-- [👨‍💻 Author](#️-author)
+- [## 👨‍💻 Author](#️-author)
 - [🙏 Acknowledgments](#-acknowledgments)
 
 ---
