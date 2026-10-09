@@ -12,14 +12,14 @@ This project was developed as part of the **DVLD Project – Programming Advices
 - [Features](#-features)
 - [Architecture](#%EF%B8%8F-architecture)
 - [Technologies](#%EF%B8%8F-technologies)
-- [Database Design](#-database-design)
+- [Database Design](#db-design)
 - [Technical Highlights](#-technical-highlights)
 - [Project Structure](#-project-structure)
 - [Getting Started](#%EF%B8%8F-getting-started)
 - [Security Implementation](#-security-implementation)
 - [What I Learned](#-what-i-learned)
 - [Future Improvements](#-future-improvements)
-- [Author](#-author)
+- [Author](#project-author)
 - [Acknowledgments](#-acknowledgments)
 
 ---
@@ -144,6 +144,8 @@ Custom properties, delegates, and events allow controls and forms to exchange in
 | **Git & GitHub**       | Version control and project hosting        |
 
 ---
+
+<a id="db-design"></a>
 
 ## 🗄️ Database Design
 
@@ -409,6 +411,8 @@ Potential improvements for future iterations include:
 - ☁️ Exploring deployment options and a more scalable application architecture.
 
 ---
+
+<a id="project-author"></a>
 
 ## 👨‍💻 Author
 
