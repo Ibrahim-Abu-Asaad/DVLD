@@ -22,7 +22,6 @@ This project was developed as part of the **DVLD Project – Programming Advices
 - [Author](#author)
 - [Acknowledgments](#acknowledgments)
 
-
 ---
 
 ## 📖 Overview
