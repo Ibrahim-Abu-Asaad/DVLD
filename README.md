@@ -2,7 +2,7 @@
 
 A comprehensive **Driving License Management System** built with **C# Windows Forms, SQL Server, and ADO.NET**. The system manages people, users, driving license applications, examinations, license issuance, renewals, replacements, and license detention through a structured, database-driven desktop application.
 
-This project was developed as part of the **DVLD Project – Programming Advices** learning journey, with additional assistance from AI tools during development and problem-solving.
+This project was developed as part of the **DVLD Project – Programming Advices** learning journey.
 
 ---
 
@@ -394,7 +394,6 @@ Building this project helped me develop practical experience with:
 - Building reusable Windows Forms user controls.
 - Using delegates and events for communication between components.
 - Debugging, understanding, and extending an existing codebase.
-- Using AI tools as supplementary learning and help me alittle in designing and some debuging.
 
 ---
 
