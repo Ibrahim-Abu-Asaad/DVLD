@@ -8,19 +8,19 @@ This project was developed as part of the **DVLD Project – Programming Advices
 
 ## 📌 Table of Contents
 
-- [Overview](#overview)
-- [Features](#features)
-- [Architecture](#architecture)
-- [Technologies](#technologies)
-- [Database Design](#database-design)
-- [Technical Highlights](#technical-highlights)
-- [Project Structure](#project-structure)
-- [Getting Started](#getting-started)
-- [Security Implementation](#security-implementation)
-- [What I Learned](#what-i-learned)
-- [Future Improvements](#future-improvements)
-- [Author](#author)
-- [Acknowledgments](#acknowledgments)
+- [Overview](#-overview)
+- [Features](#-features)
+- [Architecture](#%EF%B8%8F-architecture)
+- [Technologies](#%EF%B8%8F-technologies)
+- [Database Design](#-database-design)
+- [Technical Highlights](#-technical-highlights)
+- [Project Structure](#-project-structure)
+- [Getting Started](#%EF%B8%8F-getting-started)
+- [Security Implementation](#-security-implementation)
+- [What I Learned](#-what-i-learned)
+- [Future Improvements](#-future-improvements)
+- [Author](#-author)
+- [Acknowledgments](#-acknowledgments)
 
 ---
 
