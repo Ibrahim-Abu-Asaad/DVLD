@@ -9,6 +9,7 @@ This project was developed as part of the **DVLD Project – Programming Advices
 ## 📌 Table of Contents
 
 - [Overview](#-overview)
+- [Screenshots](#-screenshots)
 - [Features](#-features)
 - [Architecture](#%EF%B8%8F-architecture)
 - [Technologies](#%EF%B8%8F-technologies)
@@ -31,6 +32,31 @@ The DVLD system simulates the core operations of a driving license department. I
 The system follows a **three-tier architecture** to separate the user interface, business logic, and database access responsibilities.
 
 The main objective of this project was to apply object-oriented programming, relational database design, ADO.NET, reusable UI components, and real-world business rules in a complete desktop application.
+
+---
+
+## 📸 Screenshots
+
+<div align="center">
+
+### Authentication & Dashboard
+| Login Screen | Main Dashboard |
+| :-: | :-: |
+| <img src="screenshots/LoginPage.jpg" width="400" alt="Login Page"/> | <img src="screenshots/MainPage.jpg" width="400" alt="Main Page"/> |
+
+### Application & License Management
+| Application Services | Manage Local Applications |
+| :-: | :-: |
+| <img src="screenshots/ApplicationServices.PNG" width="400" alt="Application Services"/> | <img src="screenshots/ManageLocalDrivingLicenseApplications.PNG" width="400" alt="Manage Local Applications"/> |
+
+### License Operations & Records
+| Show License Info | License History | Detain License |
+| :-: | :-: | :-: |
+| <img src="screenshots/ShowLocalLicenseInfo.PNG" width="260" alt="Show License Info"/> | <img src="screenshots/ShowPersonLicensesHistory.PNG" width="260" alt="Person License History"/> | <img src="screenshots/Detain License.PNG" width="260" alt="Detain License"/> |
+
+</div>
+
+---
 
 ## ✨ Features
 
