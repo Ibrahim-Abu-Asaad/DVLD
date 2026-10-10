@@ -196,7 +196,8 @@ The system uses a relational database to maintain data consistency and represent
 <img src="screenshots/DatabaseDiagramDVLD.png" width="100%" alt="DVLD Database Diagram"/>
 </div>
 
-Core database entities include:
+
+Database Tables:
 
 - `People` — Personal and contact information.
 - `Users` — System accounts and user-related information.
