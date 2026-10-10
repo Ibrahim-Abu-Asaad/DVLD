@@ -15,12 +15,13 @@ This project was developed as part of the **DVLD Project – Programming Advices
 - [Database Design](#db-design)
 - [Technical Highlights](#-technical-highlights)
 - [Project Structure](#-project-structure)
+- [Getting Started](#-getting-started)
 - [Security Implementation](#-security-implementation)
 - [What I Learned](#-what-i-learned)
 - [Future Improvements](#-future-improvements)
 - [Author](#project-author)
 - [Acknowledgments](#-acknowledgments)
- <!-- - [Getting Started](#%EF%B8%8F-getting-started) -->
+ <!-- - lkj -->
 ---
 
 ## 📖 Overview
@@ -366,57 +367,117 @@ Solution 'DVLD' (3 of 3 projects)
     └── clsDataUser.cs
 ```
 
-<!-- ---
+---
 
-## ⚙️ Getting Started
+## 🚀 Getting Started
 
-Follow these steps to run the project locally.
+Follow these steps to set up and run the DVLD application locally.
 
-### ✅ Prerequisites
+### 📋 Prerequisites
 
-- Windows operating system.
-- Visual Studio with the required .NET desktop development workload.
-- A compatible .NET Framework or .NET runtime matching the solution.
-- SQL Server.
-- SQL Server Management Studio (SSMS), or another compatible database management tool.
+Make sure you have the following installed:
 
-### 📥 1. Clone the Repository
+- **Visual Studio** — to open, build, and run the solution.
+- **SQL Server** — to host the DVLD database.
+- **SQL Server Management Studio (SSMS)** — to execute the database scripts.
+
+### 1. Clone the Repository
+
+Clone the repository and open the solution file (`DVLD.sln`) in Visual Studio.
 
 ```bash
 git clone https://github.com/Ibrahim-Abu-Asaad/DVLD.git
 ```
 
-Open the cloned repository and locate the solution file (`.sln`).
+### 2. Set Up the Database
 
-### 🗄️ 2. Set Up the Database
+The repository includes two SQL scripts generated using SQL Server Management Studio (SSMS). Each script targets a different SQL Server version and includes both the database schema and data.
 
-1. Open SQL Server Management Studio.
-2. Connect to your SQL Server instance.
-3. Locate the DVLD database script in the repository or the project's provided database files.
-4. Execute the script to create and populate the database, if sample data is included.
+1. Open SQL Server Management Studio and connect to your SQL Server instance.
+2. Open the `scripts/` folder in the repository.
+3. Choose the script corresponding to your SQL Server version, or the appropriate target version for your environment.
+4. Execute the script.
+5. Verify that the `DVLD` database and its tables and data were created successfully.
 
-**Note:** The database script must be available separately if it has not been committed to the repository.
+**Important:** Use one script for your setup. Both scripts target a database named `DVLD`, so do not execute both against the same database.
 
-### 🔌 3. Configure the Connection String
+### 📁 Scripts Directory
 
-Locate the database connection settings in the Data Access Layer. In this project, the connection settings are maintained in:
+The `scripts/` folder contains the following database setup files:
 
-`DVLD_DAL/clsDataAccessSettings.cs`
+| File | Description |
+|---|---|
+| `DVLD2019.sql` | Database schema and data scripted for SQL Server 2019 |
+| `DVLD2022.sql` | Database schema and data scripted for SQL Server 2022 |
 
-Update the connection string to match your SQL Server instance and database configuration.
+### 3. Configure the Database Connection
 
-Never commit passwords or other sensitive connection details to a public repository.
+Open the following file in the `DVLD_DAL` project:
 
-### ▶️ 4. Build & Run
+`clsDataAccessSettings.cs`
 
-1. Open the solution in Visual Studio.
-2. Restore any required dependencies.
-3. Ensure the database is accessible and the connection string is correct.
-4. Build the solution.
-5. Run the Windows Forms application.
+Update the connection string to match your SQL Server configuration:
 
-If the application requires an initial user account, configure one using the project's supported setup process.
--->
+```csharp
+public static string ConnectionString =
+    "Server=.;Database=DVLD;User Id=sa;Password=YOUR_PASSWORD;";
+```
+
+Replace `YOUR_PASSWORD` with your SQL Server login password and adjust the connection settings if necessary.
+
+- `Server=.` — connects to the default local SQL Server instance.
+- `Database=DVLD` — specifies the database name.
+- `User Id=sa` — uses the SQL Server `sa` login.
+- `Password=YOUR_PASSWORD` — specifies the password for that login.
+
+Make sure SQL Server authentication is enabled if you use the `sa` account. Alternatively, configure the connection string to use your own SQL Server credentials.
+
+**Security note:** Never commit your real database password or other private credentials to a public repository.
+
+### 4. Restore Dependencies
+
+The project uses the following libraries and technologies:
+
+- [Sunny.UI](https://github.com/yhuse/SunnyUI) — Provides modern, customizable Windows Forms controls for the application's user interface.
+- [BCrypt.Net-Next](https://www.nuget.org/packages/BCrypt.Net-Next/) — Uses BCrypt to hash passwords before storing them in the database, rather than storing them as plain text.
+- **System.Data.SqlClient** — Provides ADO.NET functionality for connecting to SQL Server and executing database commands from the Data Access Layer (`DVLD_DAL`).
+
+Other supporting packages may be required by these libraries.
+
+To restore dependencies:
+
+1. Open `DVLD.sln` in Visual Studio.
+2. In Solution Explorer, right-click the solution and select **Restore NuGet Packages**, if the option is available.
+3. Build the solution to verify that the required packages and references are resolved.
+
+Visual Studio can usually restore the required NuGet packages automatically. If a package is missing, verify that it is installed and compatible with the project's target .NET version.
+
+### 5. Run the Application
+
+1. Set `DVLD` as the startup project in Visual Studio.
+2. Build the solution.
+3. Run the application.
+
+If the database connection is configured correctly, the login screen should appear.
+
+### 6. Demo Login Credentials
+
+Use the following credentials to access the application:
+
+| Field | Value |
+|---|---|
+| Username | `ibr` |
+| Password | `Ibrahim1` |
+
+**Note:** All users have the same permissions in the current version. The application does not have separate administrator and standard-user roles.
+
+### ⚠️ Troubleshooting
+
+- **Database connection error:** Verify the SQL Server instance name, database name, authentication mode, and connection string.
+- **Login failed:** Make sure the database script executed successfully and the demo user exists in the `Users` table.
+- **Missing Sunny.UI references:** Restore the NuGet packages and verify that the required Sunny.UI version is available.
+- **Build errors:** Ensure that the required .NET Framework version and development dependencies are installed.
+
 ---
 
 ## 🔐 Security Implementation
