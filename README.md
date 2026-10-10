@@ -43,6 +43,11 @@ The main objective of this project was to apply object-oriented programming, rel
 | :-: | :-: |
 | <img src="screenshots/LoginPage.jpg" width="400" alt="Login Page"/> | <img src="screenshots/MainPage.jpg" width="400" alt="Main Page"/> |
 
+### People Management
+| Person Info Card | Update Person |
+| :-: | :-: |
+| <img src="screenshots/PersonInfoCard.PNG" width="400" alt="Person Details"/> | <img src="screenshots/UpdatePersonInfo.PNG" width="400" alt="Update Person"/> |
+
 ### Application & License Management
 | Application Services | Manage Local Applications |
 | :-: | :-: |
