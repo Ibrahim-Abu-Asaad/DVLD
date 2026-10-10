@@ -406,16 +406,16 @@
             label7.AutoSize = true;
             label7.Font = new Font("Trebuchet MS", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label7.ForeColor = SystemColors.HotTrack;
-            label7.Location = new Point(413, 71);
+            label7.Location = new Point(404, 71);
             label7.Name = "label7";
-            label7.Size = new Size(300, 49);
+            label7.Size = new Size(321, 49);
             label7.TabIndex = 132;
-            label7.Text = "Renew License";
+            label7.Text = "Replace License";
             // 
             // pictureBox11
             // 
             pictureBox11.Image = (Image)resources.GetObject("pictureBox11.Image");
-            pictureBox11.Location = new Point(711, 71);
+            pictureBox11.Location = new Point(722, 71);
             pictureBox11.Name = "pictureBox11";
             pictureBox11.Size = new Size(66, 49);
             pictureBox11.SizeMode = PictureBoxSizeMode.Zoom;
@@ -425,7 +425,7 @@
             // pictureBox5
             // 
             pictureBox5.Image = (Image)resources.GetObject("pictureBox5.Image");
-            pictureBox5.Location = new Point(341, 71);
+            pictureBox5.Location = new Point(332, 71);
             pictureBox5.Name = "pictureBox5";
             pictureBox5.Size = new Size(66, 49);
             pictureBox5.SizeMode = PictureBoxSizeMode.Zoom;
