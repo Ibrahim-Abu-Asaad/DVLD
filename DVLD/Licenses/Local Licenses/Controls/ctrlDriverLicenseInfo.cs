@@ -115,7 +115,7 @@ namespace DVLD.Licenses.Local_Licenses
 
             lblGender.Text = _License.DriverInfo.PersonInfo.GetPersonGender();
 
-            lblIssueDate.Text = _License.IssueDate.ToString();
+            lblIssueDate.Text = _License.IssueDate.DateString();
 
             lblIssueReason.Text = _License.IssueReasonText;
 
@@ -123,9 +123,9 @@ namespace DVLD.Licenses.Local_Licenses
 
             lblIsActive.Text = _License.IsActive ? "Yes" : "No";
 
-            lblDateOfBirth.Text = _License.DriverInfo.PersonInfo.DateOfBirth.ToString();
+            lblDateOfBirth.Text = _License.DriverInfo.PersonInfo.DateOfBirth.DateString();
 
-            lblExpirationDate.Text = _License.ExpirationDate.ToString();
+            lblExpirationDate.Text = _License.ExpirationDate.DateString();
 
             lblIsDetained.Text = _License.IsDetained ? "Yes" : "No";
 

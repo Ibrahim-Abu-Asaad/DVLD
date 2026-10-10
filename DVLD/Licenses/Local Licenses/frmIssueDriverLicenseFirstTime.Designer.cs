@@ -55,7 +55,7 @@
             // 
             lblPassword.AutoSize = true;
             lblPassword.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblPassword.Location = new Point(58, 598);
+            lblPassword.Location = new Point(59, 655);
             lblPassword.Name = "lblPassword";
             lblPassword.Size = new Size(70, 26);
             lblPassword.TabIndex = 32;

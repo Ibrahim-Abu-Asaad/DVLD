@@ -153,7 +153,7 @@
             lblLicenseID.AutoSize = true;
             lblLicenseID.BackColor = Color.FromArgb(243, 249, 255);
             lblLicenseID.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblLicenseID.Location = new Point(238, 65);
+            lblLicenseID.Location = new Point(232, 65);
             lblLicenseID.Name = "lblLicenseID";
             lblLicenseID.Size = new Size(54, 26);
             lblLicenseID.TabIndex = 70;
@@ -163,7 +163,7 @@
             // 
             pictureBox1.BackColor = Color.FromArgb(243, 249, 255);
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(201, 60);
+            pictureBox1.Location = new Point(195, 60);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(31, 31);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
@@ -175,7 +175,7 @@
             label9.AutoSize = true;
             label9.BackColor = Color.FromArgb(243, 249, 255);
             label9.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label9.Location = new Point(55, 65);
+            label9.Location = new Point(49, 65);
             label9.Name = "label9";
             label9.Size = new Size(110, 26);
             label9.TabIndex = 68;
@@ -186,7 +186,7 @@
             lblIsDetained.AutoSize = true;
             lblIsDetained.BackColor = Color.FromArgb(243, 249, 255);
             lblIsDetained.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblIsDetained.Location = new Point(646, 311);
+            lblIsDetained.Location = new Point(707, 311);
             lblIsDetained.Name = "lblIsDetained";
             lblIsDetained.Size = new Size(54, 26);
             lblIsDetained.TabIndex = 67;
@@ -197,7 +197,7 @@
             lblExpirationDate.AutoSize = true;
             lblExpirationDate.BackColor = Color.FromArgb(243, 249, 255);
             lblExpirationDate.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblExpirationDate.Location = new Point(646, 270);
+            lblExpirationDate.Location = new Point(707, 270);
             lblExpirationDate.Name = "lblExpirationDate";
             lblExpirationDate.Size = new Size(54, 26);
             lblExpirationDate.TabIndex = 66;
@@ -208,7 +208,7 @@
             lblDateOfBirth.AutoSize = true;
             lblDateOfBirth.BackColor = Color.FromArgb(243, 249, 255);
             lblDateOfBirth.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblDateOfBirth.Location = new Point(646, 229);
+            lblDateOfBirth.Location = new Point(707, 229);
             lblDateOfBirth.Name = "lblDateOfBirth";
             lblDateOfBirth.Size = new Size(54, 26);
             lblDateOfBirth.TabIndex = 65;
@@ -219,7 +219,7 @@
             lblIsActive.AutoSize = true;
             lblIsActive.BackColor = Color.FromArgb(243, 249, 255);
             lblIsActive.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblIsActive.Location = new Point(646, 188);
+            lblIsActive.Location = new Point(707, 188);
             lblIsActive.Name = "lblIsActive";
             lblIsActive.Size = new Size(54, 26);
             lblIsActive.TabIndex = 64;
@@ -230,7 +230,7 @@
             lblNotes.AutoSize = true;
             lblNotes.BackColor = Color.FromArgb(243, 249, 255);
             lblNotes.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblNotes.Location = new Point(238, 352);
+            lblNotes.Location = new Point(232, 352);
             lblNotes.Name = "lblNotes";
             lblNotes.Size = new Size(54, 26);
             lblNotes.TabIndex = 63;
@@ -241,7 +241,7 @@
             lblIssueReason.AutoSize = true;
             lblIssueReason.BackColor = Color.FromArgb(243, 249, 255);
             lblIssueReason.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblIssueReason.Location = new Point(238, 311);
+            lblIssueReason.Location = new Point(232, 311);
             lblIssueReason.Name = "lblIssueReason";
             lblIssueReason.Size = new Size(54, 26);
             lblIssueReason.TabIndex = 62;
@@ -252,7 +252,7 @@
             lblIssueDate.AutoSize = true;
             lblIssueDate.BackColor = Color.FromArgb(243, 249, 255);
             lblIssueDate.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblIssueDate.Location = new Point(238, 270);
+            lblIssueDate.Location = new Point(232, 270);
             lblIssueDate.Name = "lblIssueDate";
             lblIssueDate.Size = new Size(54, 26);
             lblIssueDate.TabIndex = 61;
@@ -263,7 +263,7 @@
             lblGender.AutoSize = true;
             lblGender.BackColor = Color.FromArgb(243, 249, 255);
             lblGender.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblGender.Location = new Point(238, 229);
+            lblGender.Location = new Point(232, 229);
             lblGender.Name = "lblGender";
             lblGender.Size = new Size(54, 26);
             lblGender.TabIndex = 60;
@@ -274,7 +274,7 @@
             lblNationalNo.AutoSize = true;
             lblNationalNo.BackColor = Color.FromArgb(243, 249, 255);
             lblNationalNo.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblNationalNo.Location = new Point(238, 188);
+            lblNationalNo.Location = new Point(232, 188);
             lblNationalNo.Name = "lblNationalNo";
             lblNationalNo.Size = new Size(54, 26);
             lblNationalNo.TabIndex = 59;
@@ -285,7 +285,8 @@
             lblName.AutoSize = true;
             lblName.BackColor = Color.FromArgb(243, 249, 255);
             lblName.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblName.Location = new Point(238, 147);
+            lblName.ForeColor = Color.DarkBlue;
+            lblName.Location = new Point(232, 147);
             lblName.Name = "lblName";
             lblName.Size = new Size(54, 26);
             lblName.TabIndex = 58;
@@ -296,7 +297,7 @@
             lblClass.AutoSize = true;
             lblClass.BackColor = Color.FromArgb(243, 249, 255);
             lblClass.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblClass.Location = new Point(238, 106);
+            lblClass.Location = new Point(232, 106);
             lblClass.Name = "lblClass";
             lblClass.Size = new Size(54, 26);
             lblClass.TabIndex = 57;
@@ -306,7 +307,7 @@
             // 
             pictureBox9.BackColor = Color.FromArgb(243, 249, 255);
             pictureBox9.Image = (Image)resources.GetObject("pictureBox9.Image");
-            pictureBox9.Location = new Point(609, 311);
+            pictureBox9.Location = new Point(670, 311);
             pictureBox9.Name = "pictureBox9";
             pictureBox9.Size = new Size(31, 31);
             pictureBox9.SizeMode = PictureBoxSizeMode.Zoom;
@@ -317,7 +318,7 @@
             // 
             pictureBox10.BackColor = Color.FromArgb(243, 249, 255);
             pictureBox10.Image = (Image)resources.GetObject("pictureBox10.Image");
-            pictureBox10.Location = new Point(609, 270);
+            pictureBox10.Location = new Point(670, 270);
             pictureBox10.Name = "pictureBox10";
             pictureBox10.Size = new Size(31, 31);
             pictureBox10.SizeMode = PictureBoxSizeMode.Zoom;
@@ -328,7 +329,7 @@
             // 
             pictureBox11.BackColor = Color.FromArgb(243, 249, 255);
             pictureBox11.Image = (Image)resources.GetObject("pictureBox11.Image");
-            pictureBox11.Location = new Point(609, 229);
+            pictureBox11.Location = new Point(670, 229);
             pictureBox11.Name = "pictureBox11";
             pictureBox11.Size = new Size(31, 31);
             pictureBox11.SizeMode = PictureBoxSizeMode.Zoom;
@@ -339,7 +340,7 @@
             // 
             pictureBox12.BackColor = Color.FromArgb(243, 249, 255);
             pictureBox12.Image = (Image)resources.GetObject("pictureBox12.Image");
-            pictureBox12.Location = new Point(609, 188);
+            pictureBox12.Location = new Point(670, 188);
             pictureBox12.Name = "pictureBox12";
             pictureBox12.Size = new Size(31, 31);
             pictureBox12.SizeMode = PictureBoxSizeMode.Zoom;
@@ -350,7 +351,7 @@
             // 
             pictureBox8.BackColor = Color.FromArgb(243, 249, 255);
             pictureBox8.Image = (Image)resources.GetObject("pictureBox8.Image");
-            pictureBox8.Location = new Point(201, 101);
+            pictureBox8.Location = new Point(195, 101);
             pictureBox8.Name = "pictureBox8";
             pictureBox8.Size = new Size(31, 31);
             pictureBox8.SizeMode = PictureBoxSizeMode.Zoom;
@@ -361,7 +362,7 @@
             // 
             pictureBox7.BackColor = Color.FromArgb(243, 249, 255);
             pictureBox7.Image = (Image)resources.GetObject("pictureBox7.Image");
-            pictureBox7.Location = new Point(201, 347);
+            pictureBox7.Location = new Point(195, 347);
             pictureBox7.Name = "pictureBox7";
             pictureBox7.Size = new Size(31, 31);
             pictureBox7.SizeMode = PictureBoxSizeMode.Zoom;
@@ -372,7 +373,7 @@
             // 
             pictureBox6.BackColor = Color.FromArgb(243, 249, 255);
             pictureBox6.Image = (Image)resources.GetObject("pictureBox6.Image");
-            pictureBox6.Location = new Point(201, 306);
+            pictureBox6.Location = new Point(195, 306);
             pictureBox6.Name = "pictureBox6";
             pictureBox6.Size = new Size(31, 31);
             pictureBox6.SizeMode = PictureBoxSizeMode.Zoom;
@@ -383,7 +384,7 @@
             // 
             pictureBox5.BackColor = Color.FromArgb(243, 249, 255);
             pictureBox5.Image = (Image)resources.GetObject("pictureBox5.Image");
-            pictureBox5.Location = new Point(201, 265);
+            pictureBox5.Location = new Point(195, 265);
             pictureBox5.Name = "pictureBox5";
             pictureBox5.Size = new Size(31, 31);
             pictureBox5.SizeMode = PictureBoxSizeMode.Zoom;
@@ -394,7 +395,7 @@
             // 
             pictureBox4.BackColor = Color.FromArgb(243, 249, 255);
             pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
-            pictureBox4.Location = new Point(201, 224);
+            pictureBox4.Location = new Point(195, 224);
             pictureBox4.Name = "pictureBox4";
             pictureBox4.Size = new Size(31, 31);
             pictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
@@ -405,7 +406,7 @@
             // 
             pictureBox3.BackColor = Color.FromArgb(243, 249, 255);
             pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.Location = new Point(201, 183);
+            pictureBox3.Location = new Point(195, 183);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(31, 31);
             pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
@@ -416,7 +417,7 @@
             // 
             pictureBox2.BackColor = Color.FromArgb(243, 249, 255);
             pictureBox2.Image = Properties.Resources.Person_322;
-            pictureBox2.Location = new Point(201, 142);
+            pictureBox2.Location = new Point(195, 142);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(31, 31);
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
@@ -439,7 +440,7 @@
             label8.AutoSize = true;
             label8.BackColor = Color.FromArgb(243, 249, 255);
             label8.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label8.Location = new Point(446, 270);
+            label8.Location = new Point(507, 270);
             label8.Name = "label8";
             label8.Size = new Size(160, 26);
             label8.TabIndex = 44;
@@ -450,7 +451,7 @@
             label10.AutoSize = true;
             label10.BackColor = Color.FromArgb(243, 249, 255);
             label10.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label10.Location = new Point(446, 311);
+            label10.Location = new Point(507, 311);
             label10.Name = "label10";
             label10.Size = new Size(120, 26);
             label10.TabIndex = 42;
@@ -461,7 +462,7 @@
             label11.AutoSize = true;
             label11.BackColor = Color.FromArgb(243, 249, 255);
             label11.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label11.Location = new Point(446, 229);
+            label11.Location = new Point(507, 229);
             label11.Name = "label11";
             label11.Size = new Size(135, 26);
             label11.TabIndex = 41;
@@ -472,7 +473,7 @@
             label12.AutoSize = true;
             label12.BackColor = Color.FromArgb(243, 249, 255);
             label12.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label12.Location = new Point(446, 188);
+            label12.Location = new Point(507, 188);
             label12.Name = "label12";
             label12.Size = new Size(91, 26);
             label12.TabIndex = 40;
@@ -483,7 +484,7 @@
             label6.AutoSize = true;
             label6.BackColor = Color.FromArgb(243, 249, 255);
             label6.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label6.Location = new Point(54, 352);
+            label6.Location = new Point(48, 352);
             label6.Name = "label6";
             label6.Size = new Size(70, 26);
             label6.TabIndex = 38;
@@ -494,7 +495,7 @@
             label5.AutoSize = true;
             label5.BackColor = Color.FromArgb(243, 249, 255);
             label5.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label5.Location = new Point(54, 311);
+            label5.Location = new Point(48, 311);
             label5.Name = "label5";
             label5.Size = new Size(132, 26);
             label5.TabIndex = 37;
@@ -505,7 +506,7 @@
             label4.AutoSize = true;
             label4.BackColor = Color.FromArgb(243, 249, 255);
             label4.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label4.Location = new Point(54, 188);
+            label4.Location = new Point(48, 188);
             label4.Name = "label4";
             label4.Size = new Size(126, 26);
             label4.TabIndex = 36;
@@ -516,7 +517,7 @@
             label3.AutoSize = true;
             label3.BackColor = Color.FromArgb(243, 249, 255);
             label3.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.Location = new Point(54, 270);
+            label3.Location = new Point(48, 270);
             label3.Name = "label3";
             label3.Size = new Size(111, 26);
             label3.TabIndex = 35;
@@ -527,7 +528,7 @@
             label2.AutoSize = true;
             label2.BackColor = Color.FromArgb(243, 249, 255);
             label2.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.Location = new Point(54, 229);
+            label2.Location = new Point(48, 229);
             label2.Name = "label2";
             label2.Size = new Size(85, 26);
             label2.TabIndex = 34;
@@ -538,7 +539,7 @@
             label1.AutoSize = true;
             label1.BackColor = Color.FromArgb(243, 249, 255);
             label1.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(54, 147);
+            label1.Location = new Point(48, 147);
             label1.Name = "label1";
             label1.Size = new Size(71, 26);
             label1.TabIndex = 33;
@@ -549,7 +550,7 @@
             lblPassword.AutoSize = true;
             lblPassword.BackColor = Color.FromArgb(243, 249, 255);
             lblPassword.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblPassword.Location = new Point(54, 106);
+            lblPassword.Location = new Point(48, 106);
             lblPassword.Name = "lblPassword";
             lblPassword.Size = new Size(64, 26);
             lblPassword.TabIndex = 32;

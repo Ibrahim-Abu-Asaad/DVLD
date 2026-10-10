@@ -30,7 +30,6 @@
         {
             ctrlApplicationBasicInfo1 = new ctrlApplicationBasicInfo();
             groupBox1 = new GroupBox();
-            llblShowLicenseInfo = new LinkLabel();
             lblPassedTests = new Label();
             lblAppliedForLicense = new Label();
             pictureBox9 = new PictureBox();
@@ -57,7 +56,6 @@
             // groupBox1
             // 
             groupBox1.BackColor = Color.FromArgb(243, 249, 255);
-            groupBox1.Controls.Add(llblShowLicenseInfo);
             groupBox1.Controls.Add(lblPassedTests);
             groupBox1.Controls.Add(lblAppliedForLicense);
             groupBox1.Controls.Add(pictureBox9);
@@ -71,18 +69,6 @@
             groupBox1.TabIndex = 2;
             groupBox1.TabStop = false;
             groupBox1.Text = "L.D.L Application Info";
-            // 
-            // llblShowLicenseInfo
-            // 
-            llblShowLicenseInfo.AutoSize = true;
-            llblShowLicenseInfo.Font = new Font("Trebuchet MS", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            llblShowLicenseInfo.Location = new Point(147, 69);
-            llblShowLicenseInfo.Name = "llblShowLicenseInfo";
-            llblShowLicenseInfo.Size = new Size(145, 23);
-            llblShowLicenseInfo.TabIndex = 53;
-            llblShowLicenseInfo.TabStop = true;
-            llblShowLicenseInfo.Text = "Show License Info";
-            llblShowLicenseInfo.LinkClicked += llblShowLicenseInfo_LinkClicked;
             // 
             // lblPassedTests
             // 
@@ -170,7 +156,6 @@
 
         private ctrlApplicationBasicInfo ctrlApplicationBasicInfo1;
         private GroupBox groupBox1;
-        private LinkLabel llblShowLicenseInfo;
         private Label lblPassedTests;
         private Label lblAppliedForLicense;
         private PictureBox pictureBox9;

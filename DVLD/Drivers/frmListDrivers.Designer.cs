@@ -46,8 +46,6 @@
             label3 = new Label();
             cmsDrivers = new ContextMenuStrip(components);
             showPersonDetailsToolStripMenuItem = new ToolStripMenuItem();
-            toolStripMenuItem1 = new ToolStripSeparator();
-            issueInternationalLicenseToolStripMenuItem = new ToolStripMenuItem();
             toolStripMenuItem2 = new ToolStripSeparator();
             showPersonLicenseHistoryToolStripMenuItem = new ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -213,9 +211,9 @@
             // cmsDrivers
             // 
             cmsDrivers.ImageScalingSize = new Size(20, 20);
-            cmsDrivers.Items.AddRange(new ToolStripItem[] { showPersonDetailsToolStripMenuItem, toolStripMenuItem1, issueInternationalLicenseToolStripMenuItem, toolStripMenuItem2, showPersonLicenseHistoryToolStripMenuItem });
+            cmsDrivers.Items.AddRange(new ToolStripItem[] { showPersonDetailsToolStripMenuItem, toolStripMenuItem2, showPersonLicenseHistoryToolStripMenuItem });
             cmsDrivers.Name = "cmsDrivers";
-            cmsDrivers.Size = new Size(353, 130);
+            cmsDrivers.Size = new Size(353, 114);
             // 
             // showPersonDetailsToolStripMenuItem
             // 
@@ -226,21 +224,6 @@
             showPersonDetailsToolStripMenuItem.Size = new Size(352, 38);
             showPersonDetailsToolStripMenuItem.Text = "Show Person Info";
             showPersonDetailsToolStripMenuItem.Click += showPersonDetailsToolStripMenuItem_Click;
-            // 
-            // toolStripMenuItem1
-            // 
-            toolStripMenuItem1.Name = "toolStripMenuItem1";
-            toolStripMenuItem1.Size = new Size(349, 6);
-            // 
-            // issueInternationalLicenseToolStripMenuItem
-            // 
-            issueInternationalLicenseToolStripMenuItem.Font = new Font("Trebuchet MS", 12F);
-            issueInternationalLicenseToolStripMenuItem.Image = (Image)resources.GetObject("issueInternationalLicenseToolStripMenuItem.Image");
-            issueInternationalLicenseToolStripMenuItem.ImageScaling = ToolStripItemImageScaling.None;
-            issueInternationalLicenseToolStripMenuItem.Name = "issueInternationalLicenseToolStripMenuItem";
-            issueInternationalLicenseToolStripMenuItem.Size = new Size(352, 38);
-            issueInternationalLicenseToolStripMenuItem.Text = "Issue International License";
-            issueInternationalLicenseToolStripMenuItem.Click += issueInternationalLicenseToolStripMenuItem_Click;
             // 
             // toolStripMenuItem2
             // 
@@ -300,8 +283,6 @@
         private Label label3;
         private ContextMenuStrip cmsDrivers;
         private ToolStripMenuItem showPersonDetailsToolStripMenuItem;
-        private ToolStripSeparator toolStripMenuItem1;
-        private ToolStripMenuItem issueInternationalLicenseToolStripMenuItem;
         private ToolStripSeparator toolStripMenuItem2;
         private ToolStripMenuItem showPersonLicenseHistoryToolStripMenuItem;
     }

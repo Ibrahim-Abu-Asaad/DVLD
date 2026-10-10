@@ -101,7 +101,7 @@ namespace DVLD
             lblPhone.Text = _Person.Phone;
             lblEmail.Text = _Person.Email;
             lblAddress.Text = _Person.Address;
-            lblDateOfBirth.Text = _Person.DateOfBirth.ToShortDateString();
+            lblDateOfBirth.Text = _Person.DateOfBirth.DateString();
 
             lblGender.Text = (_Person.Gender == 0) ? "Male" : "Female";
 

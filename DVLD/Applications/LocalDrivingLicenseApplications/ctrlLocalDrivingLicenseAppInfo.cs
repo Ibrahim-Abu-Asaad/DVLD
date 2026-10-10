@@ -45,10 +45,10 @@ namespace DVLD.Applications.LocalDrivingLicenseApplications
                 return;
             }
 
-            if (_LDLApp.IsLicenseIssued())
-                llblShowLicenseInfo.Enabled = true;
-            else
-                llblShowLicenseInfo.Enabled = false;
+            //if (_LDLApp.IsLicenseIssued())
+            //    llblShowLicenseInfo.Enabled = true;
+            //else
+            //    llblShowLicenseInfo.Enabled = false;
 
             LoadAllDataByLDLAppID(LDLAppID);
         }
