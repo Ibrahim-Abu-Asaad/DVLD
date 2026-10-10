@@ -49,9 +49,9 @@ The main objective of this project was to apply object-oriented programming, rel
 | <img src="screenshots/ApplicationServices.PNG" width="400" alt="Application Services"/> | <img src="screenshots/ManageLocalDrivingLicenseApplications.PNG" width="400" alt="Manage Local Applications"/> |
 
 ### License Operations & Records
-| Show License Info | License History | Detain License |
+| Driver License Info Card | License History | Detain License |
 | :-: | :-: | :-: |
-| <img src="screenshots/ShowLocalLicenseInfo.PNG" width="260" alt="Show License Info"/> | <img src="screenshots/ShowPersonLicensesHistory.PNG" width="260" alt="Person License History"/> | <img src="screenshots/Detain License.PNG" width="260" alt="Detain License"/> |
+| <img src="screenshots/DriverLicenseInfoCard.PNG" width="260" alt="Show License Info"/> | <img src="screenshots/ShowPersonLicensesHistory.PNG" width="260" alt="Person License History"/> | <img src="screenshots/Detain License.PNG" width="260" alt="Detain License"/> |
 
 </div>
 
