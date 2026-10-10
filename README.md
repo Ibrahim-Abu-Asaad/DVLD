@@ -192,7 +192,7 @@ Core database entities include:
 - `Licenses` — Issued driving licenses and their details.
 - `DetainedLicenses` — License detention and release information.
 - `InternationalDrivingLicenseApplications` — International driving application details.
-- Countries — Country names.
+- `Countries` — Country names.
 
 ---
 
