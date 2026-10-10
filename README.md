@@ -1,5 +1,4 @@
 # 🚗 Driving & Vehicle License Department (DVLD)
-
 A comprehensive **Driving License Management System** built with **C# Windows Forms, SQL Server, and ADO.NET**. The system manages people, users, driving license applications, examinations, license issuance, renewals, replacements, and license detention through a structured, database-driven desktop application.
 
 This project was developed as part of the **DVLD Project – Programming Advices** learning journey.
@@ -52,6 +51,16 @@ The main objective of this project was to apply object-oriented programming, rel
 | Application Services | Manage Local Applications |
 | :-: | :-: |
 | <img src="screenshots/ApplicationServices.PNG" width="400" alt="Application Services"/> | <img src="screenshots/ManageLocalDrivingLicenseApplications.PNG" width="400" alt="Manage Local Applications"/> |
+
+### System Configuration & Management
+| Manage Application Types | Manage Test Types |
+| :-: | :-: |
+| <img src="screenshots/ManageApplicationTypes.PNG" width="400" alt="Manage Application Types"/> | <img src="screenshots/ManageTestTypes.PNG" width="400" alt="Manage Test Types"/> |
+
+### Drivers & Advanced License Operations
+| Manage Drivers | Replace Lost or Damaged License |
+| :-: | :-: |
+| <img src="screenshots/ManageDrivers.PNG" width="400" alt="Manage Drivers"/> | <img src="screenshots/ReplaceLicense.PNG" width="400" alt="Replace License"/> |
 
 ### License Operations & Records
 | Driver License Info Card | License History | Detain License |
