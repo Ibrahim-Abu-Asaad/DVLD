@@ -441,14 +441,12 @@ Potential improvements for future iterations include:
 
 ## 👨‍💻 Author
 
-**Ibrahim Abu-Asaad**
-
-IT Student at Faculty of Informatics Engineering – Latakia University 🇸🇾
-
+**Ibrahim Abu-Asaad**  
+IT Student at Faculty of Informatics Engineering – Latakia University 🇸🇾  
 Interested in backend development, software engineering, databases, and building practical software systems.
 
 - 🐙 **GitHub:** [Ibrahim-Abu-Asaad](https://github.com/Ibrahim-Abu-Asaad)
-- 🚗 **Project Repository:** [DVLD – Driving License Management System](https://github.com/Ibrahim-Abu-Asaad/DVLD)
+- 💼 **LinkedIn:** [Ibrahim Abu-Asaad](https://www.linkedin.com/in/ibrahim-abu-asaad-42676a395/)
 
 ---
 
