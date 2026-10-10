@@ -190,6 +190,12 @@ Custom properties, delegates, and events allow controls and forms to exchange in
 
 The system uses a relational database to maintain data consistency and represent relationships between people, applications, examinations, drivers, and licenses.
 
+### 📊 Database Schema Diagram
+
+<div align="center">
+<img src="screenshots/DatabaseDiagramDVLD.png" width="100%" alt="DVLD Database Diagram"/>
+</div>
+
 Core database entities include:
 
 - `People` — Personal and contact information.
