@@ -433,7 +433,7 @@ Replace `YOUR_PASSWORD` with your SQL Server login password and adjust the conne
 Make sure SQL Server authentication is enabled if you use the `sa` account. Alternatively, configure the connection string to use your own SQL Server credentials.
 
 **Security note:** Never commit your real database password or other private credentials to a public repository.
-
+<!--
 ### 4. Restore Dependencies
 
 The project uses the following libraries and technologies:
@@ -451,6 +451,24 @@ To restore dependencies:
 3. Build the solution to verify that the required packages and references are resolved.
 
 Visual Studio can usually restore the required NuGet packages automatically. If a package is missing, verify that it is installed and compatible with the project's target .NET version.
+-->
+
+### 4. Restore Dependencies
+The project relies on NuGet package management to restore required dependencies automatically during build, including:
+- **Sunny.UI** — Provides modern, customizable Windows Forms controls for the user interface.
+- **BCrypt.Net-Next** — Uses BCrypt to hash passwords securely before storing them.
+- **System.Data.SqlClient** — Provides ADO.NET functionality for connecting to SQL Server from `DVLD_DAL`.
+
+To restore dependencies:
+1. Open `DVLD.sln` in Visual Studio.
+2. Visual Studio should automatically restore missing NuGet packages when you open or build the solution.
+3. If packages do not restore automatically:
+   - Right-click the solution in **Solution Explorer** and select **Restore NuGet Packages**.
+   - Or go to **Tools > NuGet Package Manager > Package Manager Console** and run:
+     ```powershell
+     Update-Package -reinstall
+     ```
+4. Build the solution (**Ctrl + Shift + B**) to confirm all packages and references are properly resolved.
 
 ### 5. Run the Application
 
