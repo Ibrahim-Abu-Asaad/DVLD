@@ -10,3 +10,6 @@
 # SQL Server files
 *.mdf
 *.ldf
+
+# Packages files
+packages/
