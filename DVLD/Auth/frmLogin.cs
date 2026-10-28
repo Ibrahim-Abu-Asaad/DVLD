@@ -30,8 +30,8 @@ namespace DVLD.Auth
 
             //////////////////////////////////    ///////////////////////////////
             // Erase this when finish the project
-            txtUsername.Text = "ibr";
-            txtPassword.Text = "Ibrahim1";
+            //txtUsername.Text = "ibr";
+            //txtPassword.Text = "Ibrahim1";
             //////////////////////////////////    ///////////////////////////////
         }
 
@@ -85,6 +85,12 @@ namespace DVLD.Auth
 
         }
 
+        private void _ClearTheTextBoxesForUsernameAndPassword()
+        {
+            txtUsername.Text = "";
+            txtPassword.Text = "";
+        }
+
         private void btnLogin_Click(object sender, EventArgs e)
         {
 
@@ -95,9 +101,15 @@ namespace DVLD.Auth
             clsGlobal.CurrentUser = user;
 
             this.Hide();
+
             frmMain frm = new frmMain(user.ID);
             frm.ShowDialog();
+
+            _ClearTheTextBoxesForUsernameAndPassword();
+
             this.Show();
+
+            txtUsername.Focus();
 
             //////////////////////////////////Should Uncomment them later///////////////////////////////
             //txtUsername.Text = "";
